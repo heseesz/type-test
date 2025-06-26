@@ -1,0 +1,143 @@
+import { useState } from 'react';
+import { WelcomeScreen } from '@/components/test/welcome-screen';
+import { TestScreen } from '@/components/test/test-screen';
+import { ResultScreen } from '@/components/test/result-screen';
+import { questions, testResults } from '@/lib/test-data';
+import { Gender, TestState } from '@/lib/test-types';
+
+export default function Home() {
+  const [testState, setTestState] = useState<TestState>({
+    screen: 'welcome',
+    gender: null,
+    currentQuestion: 0,
+    answers: [],
+    tetoScore: 0,
+    egenScore: 0
+  });
+
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+
+  const handleGenderSelect = (gender: Gender) => {
+    setTestState(prev => ({
+      ...prev,
+      gender,
+      screen: 'test'
+    }));
+  };
+
+  const handleAnswerSelect = (answerIndex: number) => {
+    setSelectedAnswer(answerIndex);
+  };
+
+  const handleNext = () => {
+    if (selectedAnswer === null) return;
+
+    // Store the answer
+    const newAnswers = [...testState.answers];
+    newAnswers[testState.currentQuestion] = selectedAnswer;
+
+    if (testState.currentQuestion < questions.length - 1) {
+      // Move to next question
+      setTestState(prev => ({
+        ...prev,
+        currentQuestion: prev.currentQuestion + 1,
+        answers: newAnswers
+      }));
+      setSelectedAnswer(
+        newAnswers[testState.currentQuestion + 1] !== undefined 
+          ? newAnswers[testState.currentQuestion + 1] 
+          : null
+      );
+    } else {
+      // Calculate results
+      let tetoScore = 0;
+      let egenScore = 0;
+
+      newAnswers.forEach((answerIndex, questionIndex) => {
+        const question = questions[questionIndex];
+        const answer = question.answers[answerIndex];
+        
+        if (answer.type === 'teto') {
+          tetoScore += answer.weight;
+        } else {
+          egenScore += answer.weight;
+        }
+      });
+
+      setTestState(prev => ({
+        ...prev,
+        answers: newAnswers,
+        tetoScore,
+        egenScore,
+        screen: 'result'
+      }));
+    }
+  };
+
+  const handlePrevious = () => {
+    if (testState.currentQuestion > 0) {
+      const newQuestionIndex = testState.currentQuestion - 1;
+      setTestState(prev => ({
+        ...prev,
+        currentQuestion: newQuestionIndex
+      }));
+      setSelectedAnswer(
+        testState.answers[newQuestionIndex] !== undefined 
+          ? testState.answers[newQuestionIndex] 
+          : null
+      );
+    }
+  };
+
+  const handleRestart = () => {
+    setTestState({
+      screen: 'welcome',
+      gender: null,
+      currentQuestion: 0,
+      answers: [],
+      tetoScore: 0,
+      egenScore: 0
+    });
+    setSelectedAnswer(null);
+  };
+
+  const getResult = () => {
+    if (!testState.gender) return testResults.teto_male;
+    
+    const isTetoType = testState.tetoScore > testState.egenScore;
+    const resultKey = `${isTetoType ? 'teto' : 'egen'}_${testState.gender}`;
+    return testResults[resultKey];
+  };
+
+  // Set selected answer when navigating to a question that already has an answer
+  if (testState.screen === 'test' && selectedAnswer === null && testState.answers[testState.currentQuestion] !== undefined) {
+    setSelectedAnswer(testState.answers[testState.currentQuestion]);
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center p-4">
+      {testState.screen === 'welcome' && (
+        <WelcomeScreen onGenderSelect={handleGenderSelect} />
+      )}
+      
+      {testState.screen === 'test' && (
+        <TestScreen
+          currentQuestion={testState.currentQuestion}
+          selectedAnswer={selectedAnswer}
+          onAnswerSelect={handleAnswerSelect}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+        />
+      )}
+      
+      {testState.screen === 'result' && (
+        <ResultScreen
+          result={getResult()}
+          tetoScore={testState.tetoScore}
+          egenScore={testState.egenScore}
+          onRestart={handleRestart}
+        />
+      )}
+    </div>
+  );
+}
