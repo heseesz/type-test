@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw';
+export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja';
 
 interface LanguageContextType {
   language: Language;
@@ -191,6 +191,40 @@ const translations = {
     
     // Theme
     'theme.toggle': '切換主題'
+  },
+  ja: {
+    // Welcome Screen
+    'welcome.title': 'Teto-Egen性格テスト',
+    'welcome.subtitle': '深層心理分析であなたの真の性格タイプを発見しよう',
+    'welcome.selectGender': '性別を選択してください',
+    'welcome.male': '男性',
+    'welcome.female': '女性',
+    
+    // Test Screen
+    'test.progress': '質問 {current} / {total}',
+    'test.previous': '前へ',
+    'test.next': '次へ',
+    'test.showResult': '結果を見る',
+    'test.home': 'ホーム',
+    
+    // Result Screen
+    'result.title': 'テスト結果',
+    'result.personalityTraits': 'あなたの性格特性',
+    'result.yourScore': 'あなたのスコア',
+    'result.tetoScore': 'Teto傾向',
+    'result.egenScore': 'Egen傾向',
+    'result.points': '点',
+    'result.share': '結果をシェア',
+    'result.restart': '再テスト',
+    'result.shareTitle': 'Teto-Egen性格テストを完了しました！',
+    'result.shareText': '私の結果：{result}。あなたもテストしてみませんか！',
+    'result.copySuccess': 'クリップボードにコピーしました',
+    'result.copySuccessDesc': '結果がクリップボードにコピーされました！',
+    'result.copyFail': 'コピーに失敗しました',
+    'result.copyFailDesc': '結果をコピーできませんでした。',
+    
+    // Theme
+    'theme.toggle': 'テーマ切り替え'
   }
 };
 
@@ -207,6 +241,9 @@ function detectBrowserLanguage(): Language {
   }
   if (browserLang.startsWith('zh-tw') || browserLang === 'zh-hant') {
     return 'zh-tw';
+  }
+  if (browserLang.startsWith('ja')) {
+    return 'ja';
   }
   return 'en'; // Default to English
 }

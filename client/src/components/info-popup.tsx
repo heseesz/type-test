@@ -41,6 +41,13 @@ export function InfoPopup() {
           subtitle: '了解韓國性格分類系統',
           content: 'Teto-Egen 性格類型是在韓國流行的約會和性格類型分類方法。Teto 和 Egen 分別是睪酮（男性荷爾蒙）和雌激素（女性荷爾蒙）的縮寫，性格類型根據性激素的特徵來確定。'
         };
+      case 'ja':
+        return {
+          buttonText: 'Teto-Egenとは？',
+          title: 'Teto-Egen性格タイプ',
+          subtitle: '韓国の性格分類システムについて学ぶ',
+          content: 'Teto-Egen性格タイプは、韓国で人気のデートと性格タイプ分類方法です。TetoとEgenはそれぞれテストステロン（男性ホルモン）とエストロゲン（女性ホルモン）の略で、性ホルモンの特徴に基づいて性格タイプが決定されます。'
+        };
       default:
         return {
           buttonText: 'What is Teto-Egen?',

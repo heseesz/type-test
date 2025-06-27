@@ -1,6 +1,6 @@
 import { Question, TestResult } from './test-types';
 
-export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw', Question[]> = {
+export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja', Question[]> = {
   ko: [
     {
       question: "새로운 사람들과 만날 때 어떤 스타일인가요?",
@@ -550,10 +550,120 @@ export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw
         { text: "我獨自反思", type: "egen", weight: 1 }
       ]
     }
+  ],
+  ja: [
+    {
+      question: "新しい人と出会うときのスタイルは？",
+      answers: [
+        { text: "積極的に話しかけて、自分から近づく", type: "teto", weight: 2 },
+        { text: "相手から近づいてくるのを待つ", type: "egen", weight: 2 },
+        { text: "共通の話題を見つけたら話しかける", type: "teto", weight: 1 },
+        { text: "慣れるまで時間が必要", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "気分が悪いときの表現方法は？",
+      answers: [
+        { text: "オープンに表現して慰めを求める", type: "teto", weight: 2 },
+        { text: "自分で抱え込んで一人で解決する", type: "egen", weight: 2 },
+        { text: "状況と相手によって決める", type: "teto", weight: 1 },
+        { text: "なるべく表に出さない", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "計画を立てるときのスタイルは？",
+      answers: [
+        { text: "事前に詳細な計画を立てる", type: "egen", weight: 2 },
+        { text: "その時の気分で決める", type: "teto", weight: 2 },
+        { text: "大まかな計画を立てる", type: "egen", weight: 1 },
+        { text: "自発性を楽しむ", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "他人から助けを求められたときの反応は？",
+      answers: [
+        { text: "まず自分ができるかどうか分析する", type: "egen", weight: 2 },
+        { text: "すぐに「はい」と言う", type: "teto", weight: 2 },
+        { text: "誰から頼まれるかによる", type: "egen", weight: 1 },
+        { text: "断るのが難しい", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "あなたのコミュニケーションスタイルは？",
+      answers: [
+        { text: "直接的で明確", type: "teto", weight: 2 },
+        { text: "思いやりがあり慎重", type: "egen", weight: 2 },
+        { text: "感情的で表現豊か", type: "teto", weight: 1 },
+        { text: "話すより聞くことが多い", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "批判を受けたときの反応は？",
+      answers: [
+        { text: "オープンに受け入れて改善に努める", type: "teto", weight: 2 },
+        { text: "深く分析する", type: "egen", weight: 2 },
+        { text: "最初は傷つくが後で反省する", type: "teto", weight: 1 },
+        { text: "処理するのに時間が必要", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "決断を下すとき何が重要？",
+      answers: [
+        { text: "直感と感情", type: "teto", weight: 2 },
+        { text: "論理的分析", type: "egen", weight: 2 },
+        { text: "他人の意見", type: "egen", weight: 1 },
+        { text: "過去の経験", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "新しい環境に適応するときのスタイルは？",
+      answers: [
+        { text: "素早く適応し新しい挑戦を楽しむ", type: "teto", weight: 2 },
+        { text: "ゆっくりと適応する", type: "egen", weight: 2 },
+        { text: "周囲の人と一緒に適応する", type: "teto", weight: 1 },
+        { text: "安定を好む", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "週末はどのように過ごしますか？",
+      answers: [
+        { text: "友達と会って積極的に過ごす", type: "teto", weight: 2 },
+        { text: "家で休んで個人的な時間を楽しむ", type: "egen", weight: 2 },
+        { text: "新しい場所を探索したり新しい体験をする", type: "teto", weight: 1 },
+        { text: "好きな趣味に集中する", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "他人に頼まれごとをされたときの反応は？",
+      answers: [
+        { text: "まず「はい」と言ってから考える", type: "teto", weight: 2 },
+        { text: "慎重に考えてから答える", type: "egen", weight: 2 },
+        { text: "断るのが難しい", type: "egen", weight: 1 },
+        { text: "まず自分の状況を考える", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "チームプロジェクトで好む役割は？",
+      answers: [
+        { text: "リーダーシップを発揮してチーム全体を引っ張る", type: "teto", weight: 2 },
+        { text: "サポートして具体的な作業を手伝う", type: "egen", weight: 2 },
+        { text: "メンバー間の調整を行う", type: "teto", weight: 1 },
+        { text: "独立して自分の部分に集中する", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "ミスをしたときの通常の反応は？",
+      answers: [
+        { text: "素早く認めて解決策を探す", type: "teto", weight: 2 },
+        { text: "原因を分析して予防策を考える", type: "egen", weight: 2 },
+        { text: "感情的に受け取る", type: "teto", weight: 1 },
+        { text: "一人で反省する", type: "egen", weight: 1 }
+      ]
+    }
   ]
 };
 
-export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw', Record<string, TestResult>> = {
+export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja', Record<string, TestResult>> = {
   ko: {
     teto_male: {
       type: "teto_male",
@@ -799,6 +909,56 @@ export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw', 
         "你擁有平靜、穩定、值得信賴的性格。",
         "你重視深層關係，給出真誠的建議。",
         "你的溫暖和智慧安慰著許多人。"
+      ]
+    }
+  },
+  ja: {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto 男性",
+      emoji: "🔥",
+      description: [
+        "あなたは活発で積極的なTeto男性です！",
+        "新しい挑戦を恐れず、いつも先頭に立ってチームを引っ張ります。",
+        "人との交流を楽しみ、エネルギッシュな性格を持っています。",
+        "あなたの自信と熱意は他の人を励まします。",
+        "生まれ持った力強さとリーダーシップがあなたの最大の強みです。"
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto 女性",
+      emoji: "✨",
+      description: [
+        "あなたは輝く魅力的なTeto女性です！",
+        "生まれ持った魅力と優れたコミュニケーション能力を持っています。",
+        "他の人を励まし、ポジティブな雰囲気を作り出すのが得意です。",
+        "あなたの活力と積極性は周りの人に良い影響を与えます。",
+        "あなたの自信と温かさは人々を心地よくさせます。"
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen 男性",
+      emoji: "😊",
+      description: [
+        "あなたは安定感のある信頼できるEgen男性です！",
+        "他の人の話をよく聞き、深く考えたアドバイスをするのが得意です。",
+        "落ち着きがあり信頼できる性格で、人から頼りにされています。",
+        "あなたの誠実さと忠実さは周りの人から高く評価されています。",
+        "思いやりのある一貫した性格があなたの最大の強みです。"
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen 女性",
+      emoji: "🌸",
+      description: [
+        "あなたは温かく繊細なEgen女性です！",
+        "他の人の感情を理解し共感するのが得意です。",
+        "落ち着きがあり安定した信頼できる性格を持っています。",
+        "深い関係を大切にし、真心のこもったアドバイスをします。",
+        "あなたの温かさと知恵は多くの人を慰めています。"
       ]
     }
   }
