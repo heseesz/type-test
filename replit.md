@@ -135,6 +135,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Optimized mobile UX: Added top padding (pt-20 on mobile) to prevent overlap with navigation controls, enhanced button touch targets with min-height and touch-manipulation CSS, improved responsive design for better mobile interaction
 - June 27, 2025. Fixed social media sharing meta tags with Open Graph and Twitter Card support for proper link previews
 - June 27, 2025. Implemented dynamic meta tag system using useMetaTags hook for page-specific SEO optimization
 - June 27, 2025. Rebranded site to "TypeTest" (타입테스트) as a multi-test platform

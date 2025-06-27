@@ -56,7 +56,7 @@ export function TestScreen({
                   key={displayIndex}
                   onClick={() => onAnswerSelect(displayIndex)}
                   variant="outline"
-                  className={`w-full text-left p-3 sm:p-4 md:p-6 h-auto justify-start transition-all duration-300 transform hover:scale-[1.02] ${
+                  className={`w-full text-left p-3 sm:p-4 md:p-6 h-auto justify-start transition-all duration-300 transform hover:scale-[1.02] min-h-[56px] touch-manipulation ${
                     selectedAnswer === displayIndex
                       ? 'bg-indigo-100 dark:bg-indigo-900/30 border-indigo-500 dark:border-indigo-400 text-indigo-700 dark:text-indigo-300'
                       : 'bg-gray-50 dark:bg-gray-700 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500 text-gray-700 dark:text-gray-300'
@@ -85,7 +85,7 @@ export function TestScreen({
           <Button
             onClick={onPrevious}
             variant="outline"
-            className={`px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium text-sm sm:text-base ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation ${
               currentQuestion === 0 ? 'hidden' : ''
             }`}
           >
@@ -93,10 +93,10 @@ export function TestScreen({
           </Button>
           
           {/* 처음으로 버튼 */}
-          <Link href="/teto-egen">
+          <Link href="/teto-egen" className="touch-manipulation">
             <Button
               variant="outline"
-              className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base"
+              className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
             >
               {t('test.home')}
             </Button>
@@ -105,7 +105,7 @@ export function TestScreen({
           <Button
             onClick={onNext}
             disabled={selectedAnswer === null}
-            className={`px-4 sm:px-6 py-2 sm:py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors text-sm sm:text-base ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors text-sm sm:text-base min-h-[44px] touch-manipulation ${
               selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
@@ -115,10 +115,10 @@ export function TestScreen({
         
         {/* Back to Main Button */}
         <div className="flex justify-center">
-          <Link href="/">
+          <Link href="/" className="touch-manipulation">
             <Button
               variant="outline"
-              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
             >
               <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               {t('test.backToMain')}

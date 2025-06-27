@@ -89,7 +89,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
             <Button
               onClick={handleShare}
               variant="outline"
-              className="w-full bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              className="w-full bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation"
             >
               <Share2 className="w-5 h-5 mr-2" />
               {t('result.share')}
@@ -97,7 +97,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
             
             <Button
               onClick={onRestart}
-              className="w-full gradient-teto-egen hover:opacity-90 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              className="w-full gradient-teto-egen hover:opacity-90 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
             >
               {t('result.restart')}
             </Button>
@@ -107,10 +107,10 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       
       {/* Back to Main Button */}
       <div className="flex justify-center mt-8">
-        <Link href="/">
+        <Link href="/" className="touch-manipulation">
           <Button
             variant="outline"
-            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
           >
             <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             {t('test.backToMain')}

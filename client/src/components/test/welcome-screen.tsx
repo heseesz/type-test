@@ -34,7 +34,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Button
               onClick={() => onGenderSelect('male')}
-              className="group bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-blue-700 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
+              className="group bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-blue-700 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200 min-h-[80px] touch-manipulation"
               variant="outline"
             >
               <div className="flex flex-col items-center space-y-3">
@@ -45,7 +45,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
             
             <Button
               onClick={() => onGenderSelect('female')}
-              className="group bg-pink-50 dark:bg-pink-900/20 hover:bg-pink-100 dark:hover:bg-pink-900/40 border-2 border-pink-200 dark:border-pink-700 hover:border-pink-400 dark:hover:border-pink-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-pink-700 dark:text-pink-300 hover:text-pink-700 dark:hover:text-pink-200"
+              className="group bg-pink-50 dark:bg-pink-900/20 hover:bg-pink-100 dark:hover:bg-pink-900/40 border-2 border-pink-200 dark:border-pink-700 hover:border-pink-400 dark:hover:border-pink-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-pink-700 dark:text-pink-300 hover:text-pink-700 dark:hover:text-pink-200 min-h-[80px] touch-manipulation"
               variant="outline"
             >
               <div className="flex flex-col items-center space-y-3">

@@ -181,7 +181,7 @@ export default function TetoEgen() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
       <div className="w-full max-w-4xl mx-auto">
         {testState.screen === 'welcome' && (
           <WelcomeScreen onGenderSelect={handleGenderSelect} />
