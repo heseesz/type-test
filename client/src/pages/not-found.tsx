@@ -1,7 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function NotFound() {
+  const { t } = useLanguage();
+  
+  // Set meta tags for 404 page
+  useMetaTags('meta.title', 'meta.description');
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
       <Card className="w-full max-w-md mx-4">

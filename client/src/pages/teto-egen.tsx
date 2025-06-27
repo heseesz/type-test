@@ -5,12 +5,16 @@ import { ResultScreen } from '@/components/test/result-screen';
 import { Gender, TestState } from '@/lib/test-types';
 import { shuffleQuestions, getOriginalAnswerIndex } from '@/lib/shuffle-utils';
 import { useLanguage } from '@/contexts/language-context';
+import { useMetaTags } from '@/hooks/use-meta-tags';
 import { questionsTranslations, resultTranslations } from '@/lib/translations-data';
 
 export default function TetoEgen() {
   const { language, t } = useLanguage();
   const questions = questionsTranslations[language];
   const testResults = resultTranslations[language];
+  
+  // Set meta tags for teto-egen page
+  useMetaTags('tests.tetoEgen.meta.title', 'tests.tetoEgen.meta.description');
   
   const [testState, setTestState] = useState<TestState>({
     screen: 'welcome',

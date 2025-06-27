@@ -382,19 +382,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return (langTranslations as any)[key] || key;
   };
 
-  // Update document title and meta description when language changes
-  useEffect(() => {
-    const newTitle = t('meta.title');
-    const newDescription = t('meta.description');
-    
-    document.title = newTitle;
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', newDescription);
-    }
-  }, [language, t]);
+  // This effect is now handled by individual pages using useMetaTags hook
 
   useEffect(() => {
     // Set document language attribute
