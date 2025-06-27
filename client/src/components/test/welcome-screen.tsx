@@ -10,22 +10,22 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
   return (
     <div className="w-full max-w-2xl mx-auto text-center space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
           테토-에겐 성향 테스트
         </h1>
-        <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
           당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.
         </p>
       </div>
       
-      <Card className="bg-white rounded-2xl shadow-xl">
+      <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-gray-200 dark:border-gray-700">
         <CardContent className="p-8 space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-800">성별을 선택해주세요</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">성별을 선택해주세요</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Button
               onClick={() => onGenderSelect('male')}
-              className="group bg-blue-50 hover:bg-blue-100 border-2 border-blue-200 hover:border-blue-400 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-blue-700 hover:text-blue-700"
+              className="group bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-blue-700 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
               variant="outline"
             >
               <div className="flex flex-col items-center space-y-3">
@@ -36,7 +36,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
             
             <Button
               onClick={() => onGenderSelect('female')}
-              className="group bg-pink-50 hover:bg-pink-100 border-2 border-pink-200 hover:border-pink-400 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-pink-700 hover:text-pink-700"
+              className="group bg-pink-50 dark:bg-pink-900/20 hover:bg-pink-100 dark:hover:bg-pink-900/40 border-2 border-pink-200 dark:border-pink-700 hover:border-pink-400 dark:hover:border-pink-500 rounded-xl p-6 h-auto transition-all duration-300 transform hover:scale-105 text-pink-700 dark:text-pink-300 hover:text-pink-700 dark:hover:text-pink-200"
               variant="outline"
             >
               <div className="flex flex-col items-center space-y-3">

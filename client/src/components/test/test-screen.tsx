@@ -26,16 +26,16 @@ export function TestScreen({
       {/* Progress Bar */}
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-gray-600">진행률</span>
-          <span className="text-sm font-medium text-teto">{currentQuestion + 1}/{questions.length}</span>
+          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
+          <span className="text-sm font-medium text-teto dark:text-teto">{currentQuestion + 1}/{questions.length}</span>
         </div>
         <Progress value={progress} className="w-full h-3" />
       </div>
 
       {/* Question Card */}
-      <Card className="bg-white rounded-2xl shadow-xl mb-6">
+      <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl mb-6 border-gray-200 dark:border-gray-700">
         <CardContent className="p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-8 leading-relaxed text-center">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-8 leading-relaxed text-center">
             {question.question}
           </h2>
           
@@ -47,15 +47,15 @@ export function TestScreen({
                 variant="outline"
                 className={`w-full text-left p-6 h-auto justify-start transition-all duration-300 transform hover:scale-[1.02] ${
                   selectedAnswer === index
-                    ? 'bg-indigo-100 border-indigo-500 text-indigo-700'
-                    : 'bg-gray-50 hover:bg-indigo-50 border-gray-200 hover:border-indigo-300 text-gray-700'
+                    ? 'bg-indigo-100 dark:bg-indigo-900/30 border-indigo-500 dark:border-indigo-400 text-indigo-700 dark:text-indigo-300'
+                    : 'bg-gray-50 dark:bg-gray-700 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500 text-gray-700 dark:text-gray-300'
                 }`}
               >
                 <div className="flex items-center space-x-4">
                   <div className={`w-6 h-6 border-2 rounded-full flex-shrink-0 ${
                     selectedAnswer === index
-                      ? 'bg-indigo-500 border-indigo-500'
-                      : 'border-gray-300'
+                      ? 'bg-indigo-500 dark:bg-indigo-400 border-indigo-500 dark:border-indigo-400'
+                      : 'border-gray-300 dark:border-gray-500'
                   }`} />
                   <span className="text-lg font-medium">{answer.text}</span>
                 </div>
@@ -70,7 +70,7 @@ export function TestScreen({
         <Button
           onClick={onPrevious}
           variant="outline"
-          className={`px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-xl font-medium ${
+          className={`px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium ${
             currentQuestion === 0 ? 'hidden' : ''
           }`}
         >

@@ -45,6 +45,8 @@ This is a Korean personality test application that determines whether users alig
 - Custom Korean font integration (Noto Sans KR)
 - Responsive design with mobile-first approach
 - Gradient color scheme with custom Teto/Egen brand colors
+- Dark mode support with system preference detection and manual toggle
+- Theme persistence via localStorage
 
 ## Data Flow
 
@@ -107,6 +109,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Added dark mode support with system preference detection and manual toggle
 - June 26, 2025. Initial setup
 
 ## User Preferences
