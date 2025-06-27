@@ -24,7 +24,7 @@ const translations = {
     
     // Tests
     'tests.tetoEgen.title': '테토-에겐 성향 테스트',
-    'tests.tetoEgen.description': '당신의 성향이 테토형과 에겐형 중\n어느 쪽에 가까운지 확인하세요.',
+    'tests.tetoEgen.description': '당신의 성향이 테토형과 에겐형 중\n어느 쪽에 가까운지 확인하세요',
     'tests.tetoEgen.start': '테스트 시작하기',
     'tests.tetoEgen.meta.title': '타입테스트: 테토-에겐 성향 테스트',
     'tests.tetoEgen.meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
@@ -79,17 +79,17 @@ const translations = {
     
     // Site
     'site.title': 'TypeTest',
-    'site.subtitle': 'Discover yourself through psychological testing',
-    'site.footer': 'More tests coming soon!',
+    'site.subtitle': 'All the content to discover yourself',
+    'site.footer': 'More content coming soon!',
     
     // Tests
-    'tests.tetoEgen.title': 'Teto-Egen Personality Test',
+    'tests.tetoEgen.title': 'Teto-Egen\nPersonality Test',
     'tests.tetoEgen.description': 'Find out whether your personality\nis closer to Teto or Egen type.',
     'tests.tetoEgen.start': 'Start Test',
     'tests.tetoEgen.meta.title': 'TypeTest: Teto-Egen Personality Test',
-    'tests.tetoEgen.meta.description': 'Discover your true personality type through in-depth psychological analysis. Take our Korean personality classification test to find out if you\'re more Teto or Egen.',
-    'tests.comingSoon.title': 'New Test',
-    'tests.comingSoon.description': 'New psychological tests will be added soon',
+    'tests.tetoEgen.meta.description': 'Discover your true personality type through in-depth psychological analysis. Take our Korean personality classification test to find out if you\'re more Teto or Egen',
+    'tests.comingSoon.title': 'Preparing content',
+    'tests.comingSoon.description': 'New content will be added soon',
     'tests.comingSoon.button': 'Coming Soon',
     
     // Welcome Screen
@@ -137,17 +137,17 @@ const translations = {
     'meta.description': 'Descubre tu verdadero yo con diversas pruebas de personalidad y contenido de IA.',
     
     'site.title': 'TypeTest',
-    'site.subtitle': 'Descúbrete a través de pruebas psicológicas',
-    'site.footer': '¡Más pruebas próximamente!',
+    'site.subtitle': 'Todo el contenido para descubrirte',
+    'site.footer': '¡Pronto habrá más contenido!',
     
     // Tests
     'tests.tetoEgen.title': 'Test de Personalidad Teto-Egen',
-    'tests.tetoEgen.description': 'Descubre si tu personalidad se acerca más\nal tipo Teto o al tipo Egen.',
+    'tests.tetoEgen.description': 'Descubre si tu personalidad se acerca más\nal tipo Teto o al tipo Egen',
     'tests.tetoEgen.start': 'Comenzar Test',
     'tests.tetoEgen.meta.title': 'TypeTest: Test de Personalidad Teto-Egen',
     'tests.tetoEgen.meta.description': 'Descubre tu verdadero tipo de personalidad a través de análisis psicológico en profundidad. Realiza nuestro test de clasificación de personalidad coreana para saber si eres más Teto o Egen.',
-    'tests.comingSoon.title': 'Nueva Prueba',
-    'tests.comingSoon.description': 'Próximamente se añadirán nuevas pruebas psicológicas',
+    'tests.comingSoon.title': 'Preparando Contenido',
+    'tests.comingSoon.description': 'Pronto se añadirá nuevo contenido',
     'tests.comingSoon.button': 'Próximamente',
     
     'welcome.title': 'Test de Personalidad Teto-Egen',
@@ -190,8 +190,8 @@ const translations = {
     'meta.description': '通通过各种性格测试和人工智能内容发现真实的自我。',
     
     'site.title': 'TypeTest',
-    'site.subtitle': '通过心理测试发现自己',
-    'site.footer': '更多测试即将推出！',
+    'site.subtitle': '所有内容等您自己去发现',
+    'site.footer': '更多内容即将推出！',
     
     // Tests
     'tests.tetoEgen.title': 'Teto-Egen 性格测试',
@@ -199,8 +199,8 @@ const translations = {
     'tests.tetoEgen.start': '开始测试',
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen 性格测试',
     'tests.tetoEgen.meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
-    'tests.comingSoon.title': '新测试',
-    'tests.comingSoon.description': '即将推出新的心理测试',
+    'tests.comingSoon.title': '准备内容',
+    'tests.comingSoon.description': '新内容即将添加',
     'tests.comingSoon.button': '即将推出',
     
     // Welcome Screen
@@ -242,8 +242,8 @@ const translations = {
     'meta.description': '透過各種性格測驗和人工智慧內容發現真實的自我。',
     
     'site.title': 'TypeTest',
-    'site.subtitle': '透過心理測試發現自己',
-    'site.footer': '更多測試即將推出！',
+    'site.subtitle': '所有內容等您自己去發現',
+    'site.footer': '更多內容即將推出！',
     
     // Tests
     'tests.tetoEgen.title': 'Teto-Egen 性格測試',
@@ -251,8 +251,8 @@ const translations = {
     'tests.tetoEgen.start': '開始測試',
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen 性格測試',
     'tests.tetoEgen.meta.description': '透過深入的心理分析發現您的真實性格類型。進行我們的韓國性格分類測試，了解您更偏向於 Teto 還是 Egen 類型。',
-    'tests.comingSoon.title': '新測試',
-    'tests.comingSoon.description': '即將推出新的心理測試',
+    'tests.comingSoon.title': '準備內容',
+    'tests.comingSoon.description': '新內容即將新增',
     'tests.comingSoon.button': '即將推出',
     
     // Welcome Screen
@@ -294,8 +294,8 @@ const translations = {
     'meta.description': 'さまざまな性格テストとAIコンテンツであなたの本当の外観を発見してください。',
     
     'site.title': 'TypeTest',
-    'site.subtitle': '心理テストで自分を発見',
-    'site.footer': 'より多くのテストが近日公開予定！',
+    'site.subtitle': '自分自身を発見するためのあらゆるコンテンツ',
+    'site.footer': 'より多くのコンテンツがすぐに追加されます！',
     
     // Tests
     'tests.tetoEgen.title': 'Teto-Egen性格テスト',
@@ -303,8 +303,8 @@ const translations = {
     'tests.tetoEgen.start': 'テスト開始',
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen性格テスト',
     'tests.tetoEgen.meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
-    'tests.comingSoon.title': '新しいテスト',
-    'tests.comingSoon.description': '新しい心理テストが近日公開予定',
+    'tests.comingSoon.title': 'コンテンツ準備中',
+    'tests.comingSoon.description': 'まもなく新しいコンテンツが追加される予定です',
     'tests.comingSoon.button': '近日公開',
     
     // Welcome Screen
