@@ -72,8 +72,9 @@ export default function TetoEgen() {
 
     const currentQuestion = testState.shuffledQuestions[testState.currentQuestion];
     const originalAnswerIndex = getOriginalAnswerIndex(
-      testState.shuffledAnswers[testState.currentQuestion],
-      selectedAnswer
+      testState.currentQuestion,
+      selectedAnswer,
+      testState.shuffledAnswers
     );
     const selectedAnswerData = currentQuestion.answers[originalAnswerIndex];
 
@@ -119,8 +120,9 @@ export default function TetoEgen() {
       const lastAnswerIndex = testState.answers[testState.answers.length - 1];
       const prevQuestion = testState.shuffledQuestions[testState.currentQuestion - 1];
       const originalAnswerIndex = getOriginalAnswerIndex(
-        testState.shuffledAnswers[testState.currentQuestion - 1],
-        lastAnswerIndex
+        testState.currentQuestion - 1,
+        lastAnswerIndex,
+        testState.shuffledAnswers
       );
       const lastAnswerData = prevQuestion.answers[originalAnswerIndex];
 
