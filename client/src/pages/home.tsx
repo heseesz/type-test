@@ -27,7 +27,7 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.tetoEgen.description')}
               </p>
               <Link href="/teto-egen">
@@ -46,7 +46,7 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.comingSoon.description')}
               </p>
               <Button disabled className="w-full">
@@ -63,7 +63,7 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.comingSoon.description')}
               </p>
               <Button disabled className="w-full">
