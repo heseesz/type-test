@@ -26,7 +26,7 @@ export default function Home() {
                 {t('tests.tetoEgen.title')}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-6">
+            <CardContent className="text-center space-y-4">
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 {t('tests.tetoEgen.description')}
               </p>
