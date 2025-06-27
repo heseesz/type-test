@@ -12,8 +12,8 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
   const languages = [
-    { code: 'ko', label: '한국어', buttonLabel: 'KR', flag: '🇰🇷' },
-    { code: 'en', label: 'English', buttonLabel: 'EN', flag: '🇺🇸' }
+    { code: 'ko', label: '한국어', buttonLabel: 'KR' },
+    { code: 'en', label: 'English', buttonLabel: 'EN' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -27,7 +27,6 @@ export function LanguageToggle() {
           className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700 gap-2"
         >
           <Globe className="w-4 h-4" />
-          <span className="hidden sm:inline">{currentLanguage?.flag}</span>
           <span className="text-xs font-medium">{currentLanguage?.buttonLabel}</span>
         </Button>
       </DropdownMenuTrigger>
@@ -39,7 +38,7 @@ export function LanguageToggle() {
             className="flex items-center justify-between cursor-pointer"
           >
             <div className="flex items-center gap-2">
-              <span>{lang.flag}</span>
+              <span>{lang.code === 'ko' ? '🇰🇷' : '🇺🇸'}</span>
               <span>{lang.label}</span>
             </div>
             {language === lang.code && <Check className="w-4 h-4" />}

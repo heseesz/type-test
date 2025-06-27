@@ -114,6 +114,8 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Added info button for English users explaining Teto-Egen personality types with popup dialog
+- June 27, 2025. Improved language toggle UI - moved to top-left with dropdown menu format showing KR/EN and 한국어/English
 - June 27, 2025. Implemented complete multi-language support (Korean/English) with automatic browser language detection
 - June 27, 2025. Added navigation features (home button during test) and social sharing functionality with Web Share API
 - June 27, 2025. Updated "에겐남" emoji to more positive representation (😊)

@@ -4,8 +4,10 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/contexts/theme-context";
+import { LanguageProvider } from "@/contexts/language-context";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
+import { InfoPopup } from "@/components/info-popup";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
@@ -22,18 +24,21 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <TooltipProvider>
-          <Toaster />
-          {/* Language Toggle - Top Left */}
-          <div className="fixed top-4 left-4 z-50">
-            <LanguageToggle />
-          </div>
-          {/* Theme Toggle - Top Right */}
-          <div className="fixed top-4 right-4 z-50">
-            <ThemeToggle />
-          </div>
-          <Router />
-        </TooltipProvider>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            {/* Language Toggle and Info Button - Top Left */}
+            <div className="fixed top-4 left-4 z-50 flex gap-2">
+              <LanguageToggle />
+              <InfoPopup />
+            </div>
+            {/* Theme Toggle - Top Right */}
+            <div className="fixed top-4 right-4 z-50">
+              <ThemeToggle />
+            </div>
+            <Router />
+          </TooltipProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
