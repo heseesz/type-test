@@ -26,7 +26,7 @@ const translations = {
     'tests.tetoEgen.title': '테토-에겐 성향 테스트',
     'tests.tetoEgen.description': '당신의 성향이 테토형과 에겐형 중\n어느 쪽에 가까운지 확인하세요.',
     'tests.tetoEgen.start': '테스트 시작하기',
-    'tests.tetoEgen.meta.title': '타입테스트: Teto-Egen 성향 테스트',
+    'tests.tetoEgen.meta.title': '타입테스트: 테토-에겐 성향 테스트',
     'tests.tetoEgen.meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
     'tests.comingSoon.title': '컨텐츠 준비중',
     'tests.comingSoon.description': '곧 새로운 컨텐츠가 추가될 예정입니다',
@@ -83,7 +83,7 @@ const translations = {
     'site.footer': 'More tests coming soon!',
     
     // Tests
-    'tests.tetoEgen.title': 'Teto-Egen\nPersonality Test',
+    'tests.tetoEgen.title': 'Teto-Egen Personality Test',
     'tests.tetoEgen.description': 'Find out whether your personality\nis closer to Teto or Egen type.',
     'tests.tetoEgen.start': 'Start Test',
     'tests.tetoEgen.meta.title': 'TypeTest: Teto-Egen Personality Test',
@@ -296,7 +296,7 @@ const translations = {
     
     // Tests
     'tests.tetoEgen.title': 'Teto-Egen性格テスト',
-    'tests.tetoEgen.description': 'あなたの性格がTetoタイプと\nEgenタイプのどちらに近いかを確認しましょう。',
+    'tests.tetoEgen.description': 'あなたの性格がTetoタイプと\nEgenタイプのどちらに近いかを\n確認しましょう。',
     'tests.tetoEgen.start': 'テスト開始',
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen性格テスト',
     'tests.tetoEgen.meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',

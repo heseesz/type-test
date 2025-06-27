@@ -91,7 +91,7 @@ TestState {
 
 ### Meta Title Strategy
 - Main site: "타입테스트" / "TypeTest"
-- Teto-Egen test: "타입테스트: Teto-Egen 성향 테스트" / "TypeTest: Teto-Egen Personality Test"
+- Teto-Egen test: "타입테스트: 테토-에겐 성향 테스트" / "TypeTest: Teto-Egen Personality Test"
 - Dynamic updates based on current page and language
 
 ## External Dependencies
