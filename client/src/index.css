@@ -109,4 +109,21 @@
   .gradient-teto-egen {
     background: linear-gradient(90deg, var(--teto), var(--egen));
   }
+  
+  /* Korean text optimization */
+  .break-keep {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.6;
+  }
+  
+  /* Mobile-specific text handling */
+  @media (max-width: 640px) {
+    .break-keep {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      line-height: 1.7;
+    }
+  }
 }
