@@ -20,7 +20,8 @@ export default function TetoEgen() {
     tetoScore: 0,
     egenScore: 0,
     shuffledQuestions: [],
-    shuffledAnswers: []
+    shuffledAnswers: [],
+    questionOrder: []
   });
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -52,14 +53,30 @@ export default function TetoEgen() {
     };
   }, [language, t]);
 
+  // Update questions when language changes during test while preserving shuffle order
+  useEffect(() => {
+    if (testState.screen === 'test' && testState.questionOrder) {
+      const newQuestions = questionsTranslations[language];
+      if (newQuestions) {
+        // Recreate shuffled questions using the same order but with new language content
+        const newShuffledQuestions = testState.questionOrder.map(index => newQuestions[index]);
+        setTestState(prev => ({
+          ...prev,
+          shuffledQuestions: newShuffledQuestions as any
+        }));
+      }
+    }
+  }, [language]);
+
   const handleGenderSelect = (gender: Gender) => {
-    const { shuffledQuestions, shuffledAnswers } = shuffleQuestions(questions as any);
+    const { shuffledQuestions, shuffledAnswers, questionOrder } = shuffleQuestions(questions as any);
     setTestState(prev => ({
       ...prev,
       gender,
       screen: 'test',
       shuffledQuestions,
-      shuffledAnswers
+      shuffledAnswers,
+      questionOrder
     }));
   };
 
@@ -151,7 +168,8 @@ export default function TetoEgen() {
       tetoScore: 0,
       egenScore: 0,
       shuffledQuestions: [],
-      shuffledAnswers: []
+      shuffledAnswers: [],
+      questionOrder: []
     });
     setSelectedAnswer(null);
   };

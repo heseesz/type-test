@@ -29,5 +29,6 @@ export interface TestState {
   egenScore: number;
   shuffledQuestions: Question[];
   shuffledAnswers: number[][];
+  questionOrder?: number[]; // Store the original shuffle order
   finalResult?: 'teto_male' | 'egen_male' | 'teto_female' | 'egen_female';
 }

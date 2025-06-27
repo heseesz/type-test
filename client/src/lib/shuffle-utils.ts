@@ -12,7 +12,9 @@ export function shuffleArray<T>(array: T[]): T[] {
 
 // Shuffle questions and return both shuffled questions and answer mappings
 export function shuffleQuestions(questions: Question[]) {
-  const shuffledQuestions = shuffleArray(questions);
+  const questionIndices = Array.from({ length: questions.length }, (_, i) => i);
+  const shuffledQuestionOrder = shuffleArray(questionIndices);
+  const shuffledQuestions = shuffledQuestionOrder.map(index => questions[index]);
   const shuffledAnswers = shuffledQuestions.map(question => {
     const answerIndices = Array.from({ length: question.answers.length }, (_, i) => i);
     return shuffleArray(answerIndices);
@@ -20,7 +22,8 @@ export function shuffleQuestions(questions: Question[]) {
 
   return {
     shuffledQuestions,
-    shuffledAnswers
+    shuffledAnswers,
+    questionOrder: shuffledQuestionOrder
   };
 }
 
