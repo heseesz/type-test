@@ -194,6 +194,7 @@ export default function TetoEgen() {
             onAnswerSelect={handleAnswerSelect}
             onNext={handleNext}
             onPrevious={handlePrevious}
+            onRestart={handleRestart}
             shuffledQuestions={testState.shuffledQuestions}
             shuffledAnswers={testState.shuffledAnswers}
           />

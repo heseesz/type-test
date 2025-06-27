@@ -12,6 +12,7 @@ interface TestScreenProps {
   onAnswerSelect: (answerIndex: number) => void;
   onNext: () => void;
   onPrevious: () => void;
+  onRestart: () => void;
   shuffledQuestions: Question[];
   shuffledAnswers: number[][];
 }
@@ -22,6 +23,7 @@ export function TestScreen({
   onAnswerSelect,
   onNext,
   onPrevious,
+  onRestart,
   shuffledQuestions,
   shuffledAnswers
 }: TestScreenProps) {
@@ -32,7 +34,7 @@ export function TestScreen({
   const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
 
   const handleHomeClick = () => {
-    setLocation("/teto-egen");
+    onRestart();
   };
 
   const handleBackToMain = () => {
