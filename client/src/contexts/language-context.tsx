@@ -105,7 +105,7 @@ const translations = {
     'test.next': 'Next',
     'test.showResult': 'Show Result',
     'test.home': 'Home',
-    'test.backToMain': '← Back to Main',
+    'test.backToMain': 'Back to TypeTest',
     
     // Result Screen
     'result.title': 'Test Result',
@@ -158,8 +158,9 @@ const translations = {
     'test.progress': 'Pregunta {current} de {total}',
     'test.previous': 'Anterior',
     'test.next': 'Siguiente',
+    'test.showResult': 'Ver Resultado',
     'test.home': 'Inicio',
-    'test.backToMain': '← Volver al Inicio',
+    'test.backToMain': 'Volver al TypeTest',
     'result.title': 'Tu Resultado',
     'result.personalityTraits': 'Tus Rasgos de Personalidad',
     'result.yourScore': 'Tu Puntuación',
@@ -213,8 +214,9 @@ const translations = {
     'test.progress': '第 {current} 题，共 {total} 题',
     'test.previous': '上一题',
     'test.next': '下一题',
+    'test.showResult': '查看结果',
     'test.home': '首页',
-    'test.backToMain': '← 返回主页',
+    'test.backToMain': '返回 TypeTest',
     
     // Result Screen
     'result.title': '测试结果',
@@ -264,8 +266,9 @@ const translations = {
     'test.progress': '第 {current} 題，共 {total} 題',
     'test.previous': '上一題',
     'test.next': '下一題',
+    'test.showResult': '查看結果',
     'test.home': '首頁',
-    'test.backToMain': '← 返回主頁',
+    'test.backToMain': '返回 TypeTest',
     
     // Result Screen
     'result.title': '測試結果',
@@ -317,7 +320,7 @@ const translations = {
     'test.next': '次へ',
     'test.showResult': '結果を見る',
     'test.home': 'ホーム',
-    'test.backToMain': '← メインに戻る',
+    'test.backToMain': 'TypeTestに戻る',
     
     // Result Screen
     'result.title': 'テスト結果',
@@ -375,7 +378,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations['ko']] || key;
+    const langTranslations = translations[language];
+    return (langTranslations as any)[key] || key;
   };
 
   // Update document title and meta description when language changes

@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { Question } from "@/lib/test-types";
 import { Home } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import { Link } from "wouter";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -11,7 +12,6 @@ interface TestScreenProps {
   onAnswerSelect: (answerIndex: number) => void;
   onNext: () => void;
   onPrevious: () => void;
-  onHome: () => void;
   shuffledQuestions: Question[];
   shuffledAnswers: number[][];
 }
@@ -22,7 +22,6 @@ export function TestScreen({
   onAnswerSelect,
   onNext,
   onPrevious,
-  onHome,
   shuffledQuestions,
   shuffledAnswers
 }: TestScreenProps) {
@@ -103,16 +102,17 @@ export function TestScreen({
           </Button>
         </div>
         
-        {/* Home Button */}
+        {/* Back to Main Button */}
         <div className="flex justify-center">
-          <Button
-            onClick={onHome}
-            variant="outline"
-            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
-          >
-            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-            {t('test.home')}
-          </Button>
+          <Link href="/">
+            <Button
+              variant="outline"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
+            >
+              <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+              {t('test.backToMain')}
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

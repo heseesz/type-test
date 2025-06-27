@@ -174,9 +174,7 @@ export default function TetoEgen() {
     setSelectedAnswer(null);
   };
 
-  const handleHome = () => {
-    handleRestart();
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
@@ -196,26 +194,15 @@ export default function TetoEgen() {
         )}
 
         {testState.screen === 'test' && (
-          <>
-            <TestScreen
-              currentQuestion={testState.currentQuestion}
-              selectedAnswer={selectedAnswer}
-              onAnswerSelect={handleAnswerSelect}
-              onNext={handleNext}
-              onPrevious={handlePrevious}
-              onHome={handleHome}
-              shuffledQuestions={testState.shuffledQuestions}
-              shuffledAnswers={testState.shuffledAnswers}
-            />
-            <div className="text-center mt-8">
-              <a 
-                href="/" 
-                className="inline-flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
-              >
-                {t('test.backToMain')}
-              </a>
-            </div>
-          </>
+          <TestScreen
+            currentQuestion={testState.currentQuestion}
+            selectedAnswer={selectedAnswer}
+            onAnswerSelect={handleAnswerSelect}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+            shuffledQuestions={testState.shuffledQuestions}
+            shuffledAnswers={testState.shuffledAnswers}
+          />
         )}
 
         {testState.screen === 'result' && testState.finalResult && (
