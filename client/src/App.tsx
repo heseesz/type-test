@@ -8,12 +8,14 @@ import { LanguageProvider } from "@/contexts/language-context";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import Home from "@/pages/home";
+import TetoEgen from "@/pages/teto-egen";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/teto-egen" component={TetoEgen} />
       <Route component={NotFound} />
     </Switch>
   );

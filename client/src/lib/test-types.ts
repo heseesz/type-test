@@ -29,4 +29,5 @@ export interface TestState {
   egenScore: number;
   shuffledQuestions: Question[];
   shuffledAnswers: number[][];
+  finalResult?: 'teto_male' | 'egen_male' | 'teto_female' | 'egen_female';
 }

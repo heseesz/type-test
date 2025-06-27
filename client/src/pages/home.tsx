@@ -1,168 +1,84 @@
-import { useState } from 'react';
-import { WelcomeScreen } from '@/components/test/welcome-screen';
-import { TestScreen } from '@/components/test/test-screen';
-import { ResultScreen } from '@/components/test/result-screen';
-import { Gender, TestState } from '@/lib/test-types';
-import { shuffleQuestions, getOriginalAnswerIndex } from '@/lib/shuffle-utils';
-import { useLanguage } from '@/contexts/language-context';
-import { questionsTranslations, resultTranslations } from '@/lib/translations-data';
+import { Link } from "wouter";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Home() {
-  const { language } = useLanguage();
-  const questions = questionsTranslations[language];
-  const testResults = resultTranslations[language];
-  
-  const [testState, setTestState] = useState<TestState>({
-    screen: 'welcome',
-    gender: null,
-    currentQuestion: 0,
-    answers: [],
-    tetoScore: 0,
-    egenScore: 0,
-    shuffledQuestions: [],
-    shuffledAnswers: []
-  });
-
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-
-  const handleGenderSelect = (gender: Gender) => {
-    const { shuffledQuestions, shuffledAnswers } = shuffleQuestions(questions as any);
-    setTestState(prev => ({
-      ...prev,
-      gender,
-      screen: 'test',
-      shuffledQuestions,
-      shuffledAnswers
-    }));
-  };
-
-  const handleAnswerSelect = (answerIndex: number) => {
-    setSelectedAnswer(answerIndex);
-  };
-
-  const handleNext = () => {
-    if (selectedAnswer === null) return;
-
-    // Store the answer
-    const newAnswers = [...testState.answers];
-    newAnswers[testState.currentQuestion] = selectedAnswer;
-
-    if (testState.currentQuestion < testState.shuffledQuestions.length - 1) {
-      // Move to next question
-      setTestState(prev => ({
-        ...prev,
-        currentQuestion: prev.currentQuestion + 1,
-        answers: newAnswers
-      }));
-      setSelectedAnswer(
-        newAnswers[testState.currentQuestion + 1] !== undefined 
-          ? newAnswers[testState.currentQuestion + 1] 
-          : null
-      );
-    } else {
-      // Calculate results
-      let tetoScore = 0;
-      let egenScore = 0;
-
-      newAnswers.forEach((shuffledAnswerIndex, questionIndex) => {
-        const shuffledQuestion = testState.shuffledQuestions[questionIndex];
-        const originalAnswerIndex = getOriginalAnswerIndex(
-          questionIndex, 
-          shuffledAnswerIndex, 
-          testState.shuffledAnswers
-        );
-        const answer = shuffledQuestion.answers[originalAnswerIndex];
-        
-        if (answer.type === 'teto') {
-          tetoScore += answer.weight;
-        } else {
-          egenScore += answer.weight;
-        }
-      });
-
-      setTestState(prev => ({
-        ...prev,
-        answers: newAnswers,
-        tetoScore,
-        egenScore,
-        screen: 'result'
-      }));
-    }
-  };
-
-  const handlePrevious = () => {
-    if (testState.currentQuestion > 0) {
-      const newQuestionIndex = testState.currentQuestion - 1;
-      setTestState(prev => ({
-        ...prev,
-        currentQuestion: newQuestionIndex
-      }));
-      setSelectedAnswer(
-        testState.answers[newQuestionIndex] !== undefined 
-          ? testState.answers[newQuestionIndex] 
-          : null
-      );
-    }
-  };
-
-  const handleRestart = () => {
-    setTestState({
-      screen: 'welcome',
-      gender: null,
-      currentQuestion: 0,
-      answers: [],
-      tetoScore: 0,
-      egenScore: 0,
-      shuffledQuestions: [],
-      shuffledAnswers: []
-    });
-    setSelectedAnswer(null);
-  };
-
-  const handleHome = () => {
-    handleRestart();
-  };
-
-  const getResult = () => {
-    if (!testState.gender) return testResults.teto_male as any;
-    
-    const isTetoType = testState.tetoScore > testState.egenScore;
-    const resultKey = `${isTetoType ? 'teto' : 'egen'}_${testState.gender}`;
-    return testResults[resultKey] as any;
-  };
-
-  // Set selected answer when navigating to a question that already has an answer
-  if (testState.screen === 'test' && selectedAnswer === null && testState.answers[testState.currentQuestion] !== undefined) {
-    setSelectedAnswer(testState.answers[testState.currentQuestion]);
-  }
+  const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      {testState.screen === 'welcome' && (
-        <WelcomeScreen onGenderSelect={handleGenderSelect} />
-      )}
-      
-      {testState.screen === 'test' && (
-        <TestScreen
-          currentQuestion={testState.currentQuestion}
-          selectedAnswer={selectedAnswer}
-          onAnswerSelect={handleAnswerSelect}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-          onHome={handleHome}
-          shuffledQuestions={testState.shuffledQuestions}
-          shuffledAnswers={testState.shuffledAnswers}
-        />
-      )}
-      
-      {testState.screen === 'result' && (
-        <ResultScreen
-          result={getResult()}
-          tetoScore={testState.tetoScore}
-          egenScore={testState.egenScore}
-          onRestart={handleRestart}
-        />
-      )}
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            {t('site.title')}
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {t('site.subtitle')}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700">
+            <CardHeader className="text-center pb-4">
+              <div className="text-4xl mb-4">🔥✨</div>
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                {t('tests.tetoEgen.title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                {t('tests.tetoEgen.description')}
+              </p>
+              <Link href="/teto-egen">
+                <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                  {t('tests.tetoEgen.start')}
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 opacity-60">
+            <CardHeader className="text-center pb-4">
+              <div className="text-4xl mb-4">🧠💡</div>
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                {t('tests.comingSoon.title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                {t('tests.comingSoon.description')}
+              </p>
+              <Button disabled className="w-full">
+                {t('tests.comingSoon.button')}
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 opacity-60">
+            <CardHeader className="text-center pb-4">
+              <div className="text-4xl mb-4">❤️🌟</div>
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                {t('tests.comingSoon.title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                {t('tests.comingSoon.description')}
+              </p>
+              <Button disabled className="w-full">
+                {t('tests.comingSoon.button')}
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
+            {t('site.footer')}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

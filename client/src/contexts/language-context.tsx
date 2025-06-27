@@ -14,8 +14,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   ko: {
     // Meta
-    'meta.title': '테토-에겐 성향 테스트',
-    'meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
+    'meta.title': '타입테스트',
+    'meta.description': '다양한 성격 테스트로 당신의 진짜 모습을 발견해보세요. 심리 분석을 통한 정확한 성격 유형 분류.',
+    
+    // Site
+    'site.title': '타입테스트',
+    'site.subtitle': '나를 알아가는 심리 테스트의 모든 것',
+    'site.footer': '더 많은 테스트가 곧 추가됩니다!',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Teto-Egen 성향 테스트',
+    'tests.tetoEgen.description': '당신의 성향을 알아보세요! 테토형과 에겐형 중 어느 쪽에 가까운지 확인',
+    'tests.tetoEgen.start': '테스트 시작하기',
+    'tests.tetoEgen.meta.title': '타입테스트: Teto-Egen 성향 테스트',
+    'tests.tetoEgen.meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
+    'tests.comingSoon.title': '새로운 테스트',
+    'tests.comingSoon.description': '곧 새로운 심리 테스트가 추가될 예정입니다',
+    'tests.comingSoon.button': '준비 중',
     
     // Welcome Screen
     'welcome.title': '테토-에겐 성향 테스트',
@@ -58,8 +73,23 @@ const translations = {
   },
   en: {
     // Meta
-    'meta.title': 'Teto-Egen Personality Test',
-    'meta.description': 'Discover your true personality type through in-depth psychological analysis. Take our Korean personality classification test to find out if you\'re more Teto or Egen.',
+    'meta.title': 'TypeTest',
+    'meta.description': 'Discover your true self with various personality tests. Accurate personality type classification through psychological analysis.',
+    
+    // Site
+    'site.title': 'TypeTest',
+    'site.subtitle': 'Discover yourself through psychological testing',
+    'site.footer': 'More tests coming soon!',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Teto-Egen Personality Test',
+    'tests.tetoEgen.description': 'Discover your personality type! Find out if you\'re more Teto or Egen',
+    'tests.tetoEgen.start': 'Start Test',
+    'tests.tetoEgen.meta.title': 'TypeTest: Teto-Egen Personality Test',
+    'tests.tetoEgen.meta.description': 'Discover your true personality type through in-depth psychological analysis. Take our Korean personality classification test to find out if you\'re more Teto or Egen.',
+    'tests.comingSoon.title': 'New Test',
+    'tests.comingSoon.description': 'New psychological tests will be added soon',
+    'tests.comingSoon.button': 'Coming Soon',
     
     // Welcome Screen
     'welcome.title': 'Teto-Egen Personality Test',

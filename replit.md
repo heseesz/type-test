@@ -1,8 +1,8 @@
-# Teto-Egen Personality Test Application
+# TypeTest - Personality Testing Platform
 
 ## Overview
 
-This is a Korean personality test application that determines whether users align with "Teto" or "Egen" personality types. The application is built as a full-stack web application with a React frontend and Express backend, featuring a clean, modern UI with shadcn/ui components and Tailwind CSS styling.
+TypeTest is a multilingual personality testing platform that hosts various psychological assessments. The flagship test is the Teto-Egen personality classification, originally a Korean dating and personality type system. The platform is designed to accommodate multiple tests with a scalable routing structure. Built as a full-stack web application with React frontend and Express backend, featuring a modern UI with shadcn/ui components and Tailwind CSS styling.
 
 ## System Architecture
 
@@ -53,9 +53,24 @@ This is a Korean personality test application that determines whether users alig
 - Theme and language persistence via localStorage
 - Optimized UI layout with separated language and theme controls
 
-## Data Flow
+## Site Architecture
 
-1. **Application Start**: User lands on welcome screen
+### Routing Structure
+```
+/ - Main homepage with test selection
+/teto-egen/ - Teto-Egen personality test
+/[future-tests]/ - Additional tests as they are added
+```
+
+### Data Flow
+
+#### Main Site Flow
+1. **Landing Page**: User arrives at TypeTest homepage
+2. **Test Selection**: User chooses from available personality tests
+3. **Test Navigation**: User navigates to specific test route
+
+#### Teto-Egen Test Flow
+1. **Test Start**: User lands on Teto-Egen test page
 2. **Gender Selection**: User selects gender, transitions to test screen
 3. **Question Progression**: User answers questions sequentially with progress tracking
 4. **Score Calculation**: Weighted scoring determines personality type
@@ -70,8 +85,14 @@ TestState {
   answers: number[]
   tetoScore: number
   egenScore: number
+  finalResult?: 'teto_male' | 'egen_male' | 'teto_female' | 'egen_female'
 }
 ```
+
+### Meta Title Strategy
+- Main site: "타입테스트" / "TypeTest"
+- Teto-Egen test: "타입테스트: Teto-Egen 성향 테스트" / "TypeTest: Teto-Egen Personality Test"
+- Dynamic updates based on current page and language
 
 ## External Dependencies
 
@@ -114,6 +135,11 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Rebranded site to "TypeTest" (타입테스트) as a multi-test platform
+- June 27, 2025. Restructured routing: main homepage at "/" and Teto-Egen test at "/teto-egen/"
+- June 27, 2025. Added dynamic meta titles: "TypeTest: Teto-Egen Personality Test" format
+- June 27, 2025. Created scalable test selection homepage with cards for current and future tests
+- June 27, 2025. Implemented page-specific meta tag updates for better SEO
 - June 27, 2025. Added Simplified Chinese (zh-cn) and Traditional Chinese (zh-tw) language support with complete translations
 - June 27, 2025. Extended InfoPopup to support Chinese users with localized content explaining Teto-Egen personality types
 - June 27, 2025. Added Chinese browser language detection (zh, zh-hans, zh-hant, zh-cn, zh-tw)
