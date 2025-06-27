@@ -45,7 +45,7 @@ const translations = {
     'test.next': '다음',
     'test.showResult': '결과 보기',
     'test.home': '처음으로',
-    'test.backToMain': '← 메인으로 돌아가기',
+    'test.backToMain': '타입테스트 홈으로 돌아가기',
     
     // Result Screen
     'result.title': '테스트 결과',
