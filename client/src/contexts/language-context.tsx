@@ -83,7 +83,7 @@ const translations = {
     'site.footer': 'More tests coming soon!',
     
     // Tests
-    'tests.tetoEgen.title': 'Teto-Egen Personality Test',
+    'tests.tetoEgen.title': 'Teto-Egen\nPersonality Test',
     'tests.tetoEgen.description': 'Find out whether your personality\nis closer to Teto or Egen type.',
     'tests.tetoEgen.start': 'Start Test',
     'tests.tetoEgen.meta.title': 'TypeTest: Teto-Egen Personality Test',
