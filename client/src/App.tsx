@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import { LanguageProvider } from "@/contexts/language-context";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
-import { InfoPopup } from "@/components/info-popup";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
@@ -27,10 +26,9 @@ function App() {
         <LanguageProvider>
           <TooltipProvider>
             <Toaster />
-            {/* Language Toggle and Info Button - Top Left */}
-            <div className="fixed top-4 left-4 z-50 flex gap-2">
+            {/* Language Toggle - Top Left */}
+            <div className="fixed top-4 left-4 z-50">
               <LanguageToggle />
-              <InfoPopup />
             </div>
             {/* Theme Toggle - Top Right */}
             <div className="fixed top-4 right-4 z-50">

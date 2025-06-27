@@ -24,9 +24,10 @@ export function InfoPopup() {
         <Button
           variant="outline"
           size="sm"
-          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700 p-2"
+          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700 gap-2 px-3"
         >
           <Info className="w-4 h-4" />
+          <span className="text-sm">What is Teto-Egen?</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">

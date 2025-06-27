@@ -38,7 +38,6 @@ export function LanguageToggle() {
             className="flex items-center justify-between cursor-pointer"
           >
             <div className="flex items-center gap-2">
-              <span>{lang.code === 'ko' ? '🇰🇷' : '🇺🇸'}</span>
               <span>{lang.label}</span>
             </div>
             {language === lang.code && <Check className="w-4 h-4" />}

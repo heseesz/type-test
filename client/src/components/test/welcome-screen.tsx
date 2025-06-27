@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gender } from "@/lib/test-types";
 import { useLanguage } from "@/contexts/language-context";
+import { InfoPopup } from "@/components/info-popup";
 
 interface WelcomeScreenProps {
   onGenderSelect: (gender: Gender) => void;
@@ -19,6 +20,9 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
           {t('welcome.subtitle')}
         </p>
+        <div className="flex justify-center mt-4">
+          <InfoPopup />
+        </div>
       </div>
       
       <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-gray-200 dark:border-gray-700">
