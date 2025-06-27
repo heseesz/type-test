@@ -150,7 +150,7 @@ const translations = {
     'tests.comingSoon.description': 'Pronto se añadirá nuevo contenido',
     'tests.comingSoon.button': 'Próximamente',
     
-    'welcome.title': 'Test de Personalidad Teto-Egen',
+    'welcome.title': 'Test de Personalidad\nTeto-Egen',
     'welcome.subtitle': '¡Descubre tu verdadero tipo de personalidad!',
     'welcome.selectGender': 'Selecciona tu género',
     'welcome.male': 'Masculino',
