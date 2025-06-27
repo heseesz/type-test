@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en' | 'es';
+export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw';
 
 interface LanguageContextType {
   language: Language;
@@ -125,6 +125,72 @@ const translations = {
     'result.female': 'Femenino',
     'result.vs': 'vs',
     'theme.toggle': 'Cambiar tema'
+  },
+  'zh-cn': {
+    // Welcome Screen
+    'welcome.title': 'Teto-Egen 性格测试',
+    'welcome.subtitle': '通过深入的心理分析发现你的真实性格类型',
+    'welcome.selectGender': '请选择你的性别',
+    'welcome.male': '男性',
+    'welcome.female': '女性',
+    
+    // Test Screen
+    'test.progress': '第 {current} 题，共 {total} 题',
+    'test.previous': '上一题',
+    'test.next': '下一题',
+    'test.home': '首页',
+    
+    // Result Screen
+    'result.title': '测试结果',
+    'result.personalityTraits': '你的性格特征',
+    'result.yourScore': '你的得分',
+    'result.tetoScore': 'Teto 倾向',
+    'result.egenScore': 'Egen 倾向',
+    'result.points': '分',
+    'result.share': '分享结果',
+    'result.restart': '重新测试',
+    'result.shareTitle': '我完成了 Teto-Egen 性格测试！',
+    'result.shareText': '我的结果：{result}。你也来测试一下吧！',
+    'result.copySuccess': '已复制到剪贴板',
+    'result.copySuccessDesc': '结果已复制到剪贴板！',
+    'result.copyFail': '复制失败',
+    'result.copyFailDesc': '无法复制结果。',
+    
+    // Theme
+    'theme.toggle': '切换主题'
+  },
+  'zh-tw': {
+    // Welcome Screen
+    'welcome.title': 'Teto-Egen 性格測試',
+    'welcome.subtitle': '透過深入的心理分析發現你的真實性格類型',
+    'welcome.selectGender': '請選擇你的性別',
+    'welcome.male': '男性',
+    'welcome.female': '女性',
+    
+    // Test Screen
+    'test.progress': '第 {current} 題，共 {total} 題',
+    'test.previous': '上一題',
+    'test.next': '下一題',
+    'test.home': '首頁',
+    
+    // Result Screen
+    'result.title': '測試結果',
+    'result.personalityTraits': '你的性格特徵',
+    'result.yourScore': '你的得分',
+    'result.tetoScore': 'Teto 傾向',
+    'result.egenScore': 'Egen 傾向',
+    'result.points': '分',
+    'result.share': '分享結果',
+    'result.restart': '重新測試',
+    'result.shareTitle': '我完成了 Teto-Egen 性格測試！',
+    'result.shareText': '我的結果：{result}。你也來測試一下吧！',
+    'result.copySuccess': '已複製到剪貼簿',
+    'result.copySuccessDesc': '結果已複製到剪貼簿！',
+    'result.copyFail': '複製失敗',
+    'result.copyFailDesc': '無法複製結果。',
+    
+    // Theme
+    'theme.toggle': '切換主題'
   }
 };
 
@@ -135,6 +201,12 @@ function detectBrowserLanguage(): Language {
   }
   if (browserLang.startsWith('es')) {
     return 'es';
+  }
+  if (browserLang.startsWith('zh-cn') || browserLang === 'zh' || browserLang === 'zh-hans') {
+    return 'zh-cn';
+  }
+  if (browserLang.startsWith('zh-tw') || browserLang === 'zh-hant') {
+    return 'zh-tw';
   }
   return 'en'; // Default to English
 }

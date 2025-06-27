@@ -14,7 +14,9 @@ export function LanguageToggle() {
   const languages = [
     { code: 'ko', label: '한국어', buttonLabel: 'KR' },
     { code: 'en', label: 'English', buttonLabel: 'EN' },
-    { code: 'es', label: 'Español', buttonLabel: 'ES' }
+    { code: 'es', label: 'Español', buttonLabel: 'ES' },
+    { code: 'zh-cn', label: '简体中文', buttonLabel: 'CN' },
+    { code: 'zh-tw', label: '繁體中文', buttonLabel: 'TW' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -35,7 +37,7 @@ export function LanguageToggle() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as 'ko' | 'en' | 'es')}
+            onClick={() => setLanguage(lang.code as 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw')}
             className="flex items-center justify-between cursor-pointer"
           >
             <div className="flex items-center gap-2">

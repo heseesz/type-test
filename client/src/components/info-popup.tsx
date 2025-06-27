@@ -18,12 +18,40 @@ export function InfoPopup() {
     return null;
   }
 
-  const buttonText = language === 'es' ? '¿Qué es Teto-Egen?' : 'What is Teto-Egen?';
-  const title = language === 'es' ? 'Tipo de Personalidad Teto-Egen' : 'Teto-Egen Personality Type';
-  const subtitle = language === 'es' ? 'Conoce sobre el sistema de clasificación de personalidad coreano' : 'Learn about the Korean personality classification system';
-  const content = language === 'es' 
-    ? 'El tipo de personalidad Teto-Egen es un método de clasificación de personalidad y citas que es popular en Corea. Teto y Egen son abreviaciones de testosterona (hormona masculina) y estrógeno (hormona femenina), y los tipos de personalidad se determinan basándose en características según las hormonas sexuales.'
-    : 'Teto-Egen personality type is a dating and personality type classification method that is popular in Korea. Teto and Egen are short for testosterone (male hormone) and estrogen (female hormone), and personality types are determined based on characteristics according to sex hormones.';
+  const getLocalizedText = () => {
+    switch (language) {
+      case 'es':
+        return {
+          buttonText: '¿Qué es Teto-Egen?',
+          title: 'Tipo de Personalidad Teto-Egen',
+          subtitle: 'Conoce sobre el sistema de clasificación de personalidad coreano',
+          content: 'El tipo de personalidad Teto-Egen es un método de clasificación de personalidad y citas que es popular en Corea. Teto y Egen son abreviaciones de testosterona (hormona masculina) y estrógeno (hormona femenina), y los tipos de personalidad se determinan basándose en características según las hormonas sexuales.'
+        };
+      case 'zh-cn':
+        return {
+          buttonText: '什么是 Teto-Egen？',
+          title: 'Teto-Egen 性格类型',
+          subtitle: '了解韩国性格分类系统',
+          content: 'Teto-Egen 性格类型是在韩国流行的约会和性格类型分类方法。Teto 和 Egen 分别是睾酮（男性荷尔蒙）和雌激素（女性荷尔蒙）的缩写，性格类型根据性激素的特征来确定。'
+        };
+      case 'zh-tw':
+        return {
+          buttonText: '什麼是 Teto-Egen？',
+          title: 'Teto-Egen 性格類型',
+          subtitle: '了解韓國性格分類系統',
+          content: 'Teto-Egen 性格類型是在韓國流行的約會和性格類型分類方法。Teto 和 Egen 分別是睪酮（男性荷爾蒙）和雌激素（女性荷爾蒙）的縮寫，性格類型根據性激素的特徵來確定。'
+        };
+      default:
+        return {
+          buttonText: 'What is Teto-Egen?',
+          title: 'Teto-Egen Personality Type',
+          subtitle: 'Learn about the Korean personality classification system',
+          content: 'Teto-Egen personality type is a dating and personality type classification method that is popular in Korea. Teto and Egen are short for testosterone (male hormone) and estrogen (female hormone), and personality types are determined based on characteristics according to sex hormones.'
+        };
+    }
+  };
+
+  const { buttonText, title, subtitle, content } = getLocalizedText();
 
   return (
     <Dialog>

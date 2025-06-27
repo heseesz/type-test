@@ -1,6 +1,6 @@
 import { Question, TestResult } from './test-types';
 
-export const questionsTranslations: Record<'ko' | 'en' | 'es', Question[]> = {
+export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw', Question[]> = {
   ko: [
     {
       question: "새로운 사람들과 만날 때 어떤 스타일인가요?",
@@ -330,10 +330,230 @@ export const questionsTranslations: Record<'ko' | 'en' | 'es', Question[]> = {
         { text: "Reflexiono sobre ello a solas", type: "egen", weight: 1 }
       ]
     }
+  ],
+  'zh-cn': [
+    {
+      question: "认识新朋友时你的风格是什么？",
+      answers: [
+        { text: "我会主动说话，积极接近", type: "teto", weight: 2 },
+        { text: "我等待别人先接近我", type: "egen", weight: 2 },
+        { text: "当我找到共同话题时才会交谈", type: "teto", weight: 1 },
+        { text: "我需要时间来适应", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "心情不好时你如何表达？",
+      answers: [
+        { text: "我会开放地表达并寻求安慰", type: "teto", weight: 2 },
+        { text: "我会自己保留并独自解决", type: "egen", weight: 2 },
+        { text: "这取决于情况和人", type: "teto", weight: 1 },
+        { text: "我尽量不表现出来", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "计划事情时你的风格是什么？",
+      answers: [
+        { text: "提前详细计划", type: "egen", weight: 2 },
+        { text: "根据当时的心情决定", type: "teto", weight: 2 },
+        { text: "制定大概的计划", type: "egen", weight: 1 },
+        { text: "享受自发性", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "别人向你寻求帮助时你如何表现？",
+      answers: [
+        { text: "首先分析我是否能做到", type: "egen", weight: 2 },
+        { text: "立即说'好的'", type: "teto", weight: 2 },
+        { text: "这取决于是谁", type: "egen", weight: 1 },
+        { text: "我很难拒绝", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "你的沟通风格是什么？",
+      answers: [
+        { text: "直接和清楚", type: "teto", weight: 2 },
+        { text: "体贴和谨慎", type: "egen", weight: 2 },
+        { text: "情感和表达性", type: "teto", weight: 1 },
+        { text: "我听得比说得多", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "收到批评时你如何反应？",
+      answers: [
+        { text: "我开放地接受并努力改进", type: "teto", weight: 2 },
+        { text: "我深入分析", type: "egen", weight: 2 },
+        { text: "一开始会受伤但然后会反思", type: "teto", weight: 1 },
+        { text: "我需要时间来处理", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "做决定时什么更重要？",
+      answers: [
+        { text: "直觉和情感", type: "teto", weight: 2 },
+        { text: "逻辑分析", type: "egen", weight: 2 },
+        { text: "他人的意见", type: "egen", weight: 1 },
+        { text: "过去的经验", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "适应新环境时你的风格是什么？",
+      answers: [
+        { text: "我快速适应并享受新挑战", type: "teto", weight: 2 },
+        { text: "我慢慢适应", type: "egen", weight: 2 },
+        { text: "我与周围的人一起适应", type: "teto", weight: 1 },
+        { text: "我更喜欢稳定", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "你通常如何度过周末？",
+      answers: [
+        { text: "和朋友见面，积极度过时光", type: "teto", weight: 2 },
+        { text: "在家休息，享受个人时间", type: "egen", weight: 2 },
+        { text: "探索新地方或有新体验", type: "teto", weight: 1 },
+        { text: "专注于喜欢的爱好", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "别人请你帮忙时你如何反应？",
+      answers: [
+        { text: "我先说'好的'然后再考虑", type: "teto", weight: 2 },
+        { text: "我仔细考虑然后回应", type: "egen", weight: 2 },
+        { text: "我很难拒绝", type: "egen", weight: 1 },
+        { text: "我首先考虑自己的情况", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "在团队项目中你更喜欢什么角色？",
+      answers: [
+        { text: "展现领导力，带领整个团队", type: "teto", weight: 2 },
+        { text: "支持并帮助完成具体任务", type: "egen", weight: 2 },
+        { text: "在成员之间进行协调", type: "teto", weight: 1 },
+        { text: "独立专注于我的部分", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "犯错时你通常如何反应？",
+      answers: [
+        { text: "我快速承认并寻找解决方案", type: "teto", weight: 2 },
+        { text: "我分析原因并思考预防", type: "egen", weight: 2 },
+        { text: "我情绪化地对待", type: "teto", weight: 1 },
+        { text: "我独自反思", type: "egen", weight: 1 }
+      ]
+    }
+  ],
+  'zh-tw': [
+    {
+      question: "認識新朋友時你的風格是什麼？",
+      answers: [
+        { text: "我會主動說話，積極接近", type: "teto", weight: 2 },
+        { text: "我等待別人先接近我", type: "egen", weight: 2 },
+        { text: "當我找到共同話題時才會交談", type: "teto", weight: 1 },
+        { text: "我需要時間來適應", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "心情不好時你如何表達？",
+      answers: [
+        { text: "我會開放地表達並尋求安慰", type: "teto", weight: 2 },
+        { text: "我會自己保留並獨自解決", type: "egen", weight: 2 },
+        { text: "這取決於情況和人", type: "teto", weight: 1 },
+        { text: "我盡量不表現出來", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "計劃事情時你的風格是什麼？",
+      answers: [
+        { text: "提前詳細計劃", type: "egen", weight: 2 },
+        { text: "根據當時的心情決定", type: "teto", weight: 2 },
+        { text: "制定大概的計劃", type: "egen", weight: 1 },
+        { text: "享受自發性", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "別人向你尋求幫助時你如何表現？",
+      answers: [
+        { text: "首先分析我是否能做到", type: "egen", weight: 2 },
+        { text: "立即說'好的'", type: "teto", weight: 2 },
+        { text: "這取決於是誰", type: "egen", weight: 1 },
+        { text: "我很難拒絕", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "你的溝通風格是什麼？",
+      answers: [
+        { text: "直接和清楚", type: "teto", weight: 2 },
+        { text: "體貼和謹慎", type: "egen", weight: 2 },
+        { text: "情感和表達性", type: "teto", weight: 1 },
+        { text: "我聽得比說得多", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "收到批評時你如何反應？",
+      answers: [
+        { text: "我開放地接受並努力改進", type: "teto", weight: 2 },
+        { text: "我深入分析", type: "egen", weight: 2 },
+        { text: "一開始會受傷但然後會反思", type: "teto", weight: 1 },
+        { text: "我需要時間來處理", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "做決定時什麼更重要？",
+      answers: [
+        { text: "直覺和情感", type: "teto", weight: 2 },
+        { text: "邏輯分析", type: "egen", weight: 2 },
+        { text: "他人的意見", type: "egen", weight: 1 },
+        { text: "過去的經驗", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "適應新環境時你的風格是什麼？",
+      answers: [
+        { text: "我快速適應並享受新挑戰", type: "teto", weight: 2 },
+        { text: "我慢慢適應", type: "egen", weight: 2 },
+        { text: "我與周圍的人一起適應", type: "teto", weight: 1 },
+        { text: "我更喜歡穩定", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "你通常如何度過週末？",
+      answers: [
+        { text: "和朋友見面，積極度過時光", type: "teto", weight: 2 },
+        { text: "在家休息，享受個人時間", type: "egen", weight: 2 },
+        { text: "探索新地方或有新體驗", type: "teto", weight: 1 },
+        { text: "專注於喜歡的愛好", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "別人請你幫忙時你如何反應？",
+      answers: [
+        { text: "我先說'好的'然後再考慮", type: "teto", weight: 2 },
+        { text: "我仔細考慮然後回應", type: "egen", weight: 2 },
+        { text: "我很難拒絕", type: "egen", weight: 1 },
+        { text: "我首先考慮自己的情況", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "在團隊項目中你更喜歡什麼角色？",
+      answers: [
+        { text: "展現領導力，帶領整個團隊", type: "teto", weight: 2 },
+        { text: "支持並幫助完成具體任務", type: "egen", weight: 2 },
+        { text: "在成員之間進行協調", type: "teto", weight: 1 },
+        { text: "獨立專注於我的部分", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "犯錯時你通常如何反應？",
+      answers: [
+        { text: "我快速承認並尋找解決方案", type: "teto", weight: 2 },
+        { text: "我分析原因並思考預防", type: "egen", weight: 2 },
+        { text: "我情緒化地對待", type: "teto", weight: 1 },
+        { text: "我獨自反思", type: "egen", weight: 1 }
+      ]
+    }
   ]
 };
 
-export const resultTranslations: Record<'ko' | 'en' | 'es', Record<string, TestResult>> = {
+export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw', Record<string, TestResult>> = {
   ko: {
     teto_male: {
       type: "teto_male",
@@ -479,6 +699,106 @@ export const resultTranslations: Record<'ko' | 'en' | 'es', Record<string, TestR
         "Tienes una personalidad tranquila, estable y confiable.",
         "Valoras las relaciones profundas y das consejos sinceros.",
         "Tu calidez y sabiduría consolidan a muchas personas."
+      ]
+    }
+  },
+  'zh-cn': {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto 男性",
+      emoji: "🔥",
+      description: [
+        "你是一个活跃积极的 Teto 男性！",
+        "你不惧怕新挑战，总是冲在最前面引领团队。",
+        "你享受与人交流，拥有充满活力的性格。",
+        "你的自信和热情鼓舞着他人。",
+        "你天生的力量和领导力是你最大的优势。"
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto 女性",
+      emoji: "✨",
+      description: [
+        "你是一个闪亮迷人的 Teto 女性！",
+        "你拥有天生的魅力和出色的沟通技巧。",
+        "你善于激励他人，创造积极的氛围。",
+        "你的活力和积极性对周围的人产生积极影响。",
+        "你的自信和温暖让人们感到舒适。"
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen 男性",
+      emoji: "😊",
+      description: [
+        "你是一个稳重可靠的 Egen 男性！",
+        "你善于倾听他人，给出深思熟虑的建议。",
+        "你拥有平静可靠的性格，让人信赖。",
+        "你的真诚和忠诚被周围的人高度重视。",
+        "你体贴一致的天性是你最大的优势。"
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen 女性",
+      emoji: "🌸",
+      description: [
+        "你是一个温暖细腻的 Egen 女性！",
+        "你擅长理解和共情他人的情感。",
+        "你拥有平静、稳定、值得信赖的性格。",
+        "你重视深层关系，给出真诚的建议。",
+        "你的温暖和智慧安慰着许多人。"
+      ]
+    }
+  },
+  'zh-tw': {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto 男性",
+      emoji: "🔥",
+      description: [
+        "你是一個活躍積極的 Teto 男性！",
+        "你不懼怕新挑戰，總是衝在最前面引領團隊。",
+        "你享受與人交流，擁有充滿活力的性格。",
+        "你的自信和熱情鼓舞著他人。",
+        "你天生的力量和領導力是你最大的優勢。"
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto 女性",
+      emoji: "✨",
+      description: [
+        "你是一個閃亮迷人的 Teto 女性！",
+        "你擁有天生的魅力和出色的溝通技巧。",
+        "你善於激勵他人，創造積極的氛圍。",
+        "你的活力和積極性對周圍的人產生積極影響。",
+        "你的自信和溫暖讓人們感到舒適。"
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen 男性",
+      emoji: "😊",
+      description: [
+        "你是一個穩重可靠的 Egen 男性！",
+        "你善於傾聽他人，給出深思熟慮的建議。",
+        "你擁有平靜可靠的性格，讓人信賴。",
+        "你的真誠和忠誠被周圍的人高度重視。",
+        "你體貼一致的天性是你最大的優勢。"
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen 女性",
+      emoji: "🌸",
+      description: [
+        "你是一個溫暖細膩的 Egen 女性！",
+        "你擅長理解和共情他人的情感。",
+        "你擁有平靜、穩定、值得信賴的性格。",
+        "你重視深層關係，給出真誠的建議。",
+        "你的溫暖和智慧安慰著許多人。"
       ]
     }
   }
