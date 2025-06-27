@@ -15,7 +15,7 @@ const translations = {
   ko: {
     // Meta
     'meta.title': '타입테스트',
-    'meta.description': '다양한 성격 테스트와 AI 컨텐츠로 당신의 진짜 모습을 발견해보세요.',
+    'meta.description': '심층적인 심리 분석을 통해 당신의 진짜 성격 유형을 발견하세요. 한국 성격 분류 테스트로 테토형과 에겐형 중 어느 쪽에 가까운지 확인해보세요.',
     
     // Site
     'site.title': '타입테스트',
