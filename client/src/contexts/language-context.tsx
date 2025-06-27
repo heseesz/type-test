@@ -15,7 +15,7 @@ const translations = {
   ko: {
     // Meta
     'meta.title': '타입테스트',
-    'meta.description': '심층적인 심리 분석을 통해 당신의 진짜 성격 유형을 발견하세요. 한국 성격 분류 테스트로 테토형과 에겐형 중 어느 쪽에 가까운지 확인해보세요.',
+    'meta.description': '다양한 성격 테스트와 AI 컨텐츠로 당신의 진짜 모습을 발견해보세요.',
     
     // Site
     'site.title': '타입테스트',
@@ -75,7 +75,7 @@ const translations = {
   en: {
     // Meta
     'meta.title': 'TypeTest',
-    'meta.description': 'Discover your true self with various personality tests. Accurate personality type classification through psychological analysis.',
+    'meta.description': 'Discover your true self with various personality tests and AI content.',
     
     // Site
     'site.title': 'TypeTest',
@@ -134,7 +134,7 @@ const translations = {
   },
   es: {
     'meta.title': 'TypeTest',
-    'meta.description': 'Descubre tu verdadero tipo de personalidad a través de análisis psicológico en profundidad. Realiza nuestro test de clasificación de personalidad coreana para saber si eres más Teto o Egen.',
+    'meta.description': 'Descubre tu verdadero yo con diversas pruebas de personalidad y contenido de IA.',
     
     'site.title': 'TypeTest',
     'site.subtitle': 'Descúbrete a través de pruebas psicológicas',
@@ -187,7 +187,7 @@ const translations = {
   },
   'zh-cn': {
     'meta.title': 'TypeTest',
-    'meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
+    'meta.description': '通通过各种性格测试和人工智能内容发现真实的自我。',
     
     'site.title': 'TypeTest',
     'site.subtitle': '通过心理测试发现自己',
@@ -239,7 +239,7 @@ const translations = {
   },
   'zh-tw': {
     'meta.title': 'TypeTest',
-    'meta.description': '透過深入的心理分析發現您的真實性格類型。進行我們的韓國性格分類測試，了解您更偏向於 Teto 還是 Egen 類型。',
+    'meta.description': '透過各種性格測驗和人工智慧內容發現真實的自我。',
     
     'site.title': 'TypeTest',
     'site.subtitle': '透過心理測試發現自己',
@@ -291,7 +291,7 @@ const translations = {
   },
   ja: {
     'meta.title': 'TypeTest',
-    'meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
+    'meta.description': 'さまざまな性格テストとAIコンテンツであなたの本当の外観を発見してください。',
     
     'site.title': 'TypeTest',
     'site.subtitle': '心理テストで自分を発見',
