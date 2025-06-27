@@ -150,7 +150,7 @@ const translations = {
     'tests.comingSoon.description': 'Pronto se añadirá nuevo contenido',
     'tests.comingSoon.button': 'Próximamente',
     
-    'welcome.title': 'Test de Personalidad Teto-Egen',
+    'welcome.title': 'Test de Personalidad\nTeto-Egen',
     'welcome.subtitle': '¡Descubre tu verdadero tipo de personalidad!',
     'welcome.selectGender': 'Selecciona tu género',
     'welcome.male': 'Masculino',
@@ -304,7 +304,7 @@ const translations = {
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen性格テスト',
     'tests.tetoEgen.meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
     'tests.comingSoon.title': 'コンテンツ準備中',
-    'tests.comingSoon.description': 'まもなく新しいコンテンツが追加される予定です',
+    'tests.comingSoon.description': 'まもなく新しいコンテンツが\n追加される予定です',
     'tests.comingSoon.button': '近日公開',
     
     // Welcome Screen
