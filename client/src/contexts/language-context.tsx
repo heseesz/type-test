@@ -94,7 +94,7 @@ const translations = {
   },
   es: {
     'welcome.title': 'Test de Personalidad Teto-Egen',
-    'welcome.subtitle': 'Descubre tu verdadero tipo de personalidad a través de un análisis psicológico profundo',
+    'welcome.subtitle': '¡Descubre tu verdadero tipo de personalidad!',
     'welcome.selectGender': 'Selecciona tu género',
     'welcome.male': 'Masculino',
     'welcome.female': 'Femenino',
@@ -129,7 +129,7 @@ const translations = {
   'zh-cn': {
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格测试',
-    'welcome.subtitle': '通过深入的心理分析发现你的真实性格类型',
+    'welcome.subtitle': '发现你的性格类型！',
     'welcome.selectGender': '请选择你的性别',
     'welcome.male': '男性',
     'welcome.female': '女性',
@@ -162,7 +162,7 @@ const translations = {
   'zh-tw': {
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格測試',
-    'welcome.subtitle': '透過深入的心理分析發現你的真實性格類型',
+    'welcome.subtitle': '發現你的人格類型！',
     'welcome.selectGender': '請選擇你的性別',
     'welcome.male': '男性',
     'welcome.female': '女性',
@@ -195,7 +195,7 @@ const translations = {
   ja: {
     // Welcome Screen
     'welcome.title': 'Teto-Egen性格テスト',
-    'welcome.subtitle': '深層心理分析であなたの真の性格タイプを発見しよう',
+    'welcome.subtitle': 'あなたの性格タイプを発見しましょう！',
     'welcome.selectGender': '性別を選択してください',
     'welcome.male': '男性',
     'welcome.female': '女性',
