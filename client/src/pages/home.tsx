@@ -22,7 +22,7 @@ export default function Home() {
           <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 flex flex-col">
             <CardHeader className="text-center pb-4">
               <div className="text-4xl mb-4">🔥✨</div>
-              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
                 {t('tests.tetoEgen.title')}
               </CardTitle>
             </CardHeader>
@@ -41,7 +41,7 @@ export default function Home() {
           <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 opacity-60 flex flex-col">
             <CardHeader className="text-center pb-4">
               <div className="text-4xl mb-4">🧠💡</div>
-              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
                 {t('tests.comingSoon.title')}
               </CardTitle>
             </CardHeader>
@@ -58,7 +58,7 @@ export default function Home() {
           <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 opacity-60 flex flex-col">
             <CardHeader className="text-center pb-4">
               <div className="text-4xl mb-4">❤️🌟</div>
-              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200">
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
                 {t('tests.comingSoon.title')}
               </CardTitle>
             </CardHeader>
