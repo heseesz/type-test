@@ -1,6 +1,6 @@
 import { Question, TestResult } from './test-types';
 
-export const questionsTranslations: Record<'ko' | 'en', Question[]> = {
+export const questionsTranslations: Record<'ko' | 'en' | 'es', Question[]> = {
   ko: [
     {
       question: "새로운 사람들과 만날 때 어떤 스타일인가요?",
@@ -220,10 +220,120 @@ export const questionsTranslations: Record<'ko' | 'en', Question[]> = {
         { text: "Familiar and comfortable environment", type: "egen", weight: 1 }
       ]
     }
+  ],
+  es: [
+    {
+      question: "¿Cuál es tu estilo al conocer personas nuevas?",
+      answers: [
+        { text: "Hablo primero y me acerco activamente", type: "teto", weight: 2 },
+        { text: "Espero a que otros se acerquen a mí", type: "egen", weight: 2 },
+        { text: "Hablo cuando encuentro temas en común", type: "teto", weight: 1 },
+        { text: "Necesito tiempo para sentirme cómodo", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo expresas tu estado de ánimo cuando estás triste?",
+      answers: [
+        { text: "Lo expreso abiertamente y busco consuelo", type: "teto", weight: 2 },
+        { text: "Lo guardo para mí y lo resuelvo solo", type: "egen", weight: 2 },
+        { text: "Depende de la situación y las personas", type: "teto", weight: 1 },
+        { text: "Trato de no mostrarlo externamente", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cuál es tu estilo al planificar algo?",
+      answers: [
+        { text: "Planificar detalladamente con anticipación", type: "egen", weight: 2 },
+        { text: "Decidir según el estado de ánimo del momento", type: "teto", weight: 2 },
+        { text: "Hacer un plan aproximado", type: "egen", weight: 1 },
+        { text: "Disfrutar de la espontaneidad", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo te comportas cuando alguien te pide un favor?",
+      answers: [
+        { text: "Analizo primero si puedo hacerlo", type: "egen", weight: 2 },
+        { text: "Digo 'sí' inmediatamente", type: "teto", weight: 2 },
+        { text: "Depende de quién sea la persona", type: "egen", weight: 1 },
+        { text: "Me cuesta negarme", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cuál es tu estilo de comunicación?",
+      answers: [
+        { text: "Directo y claro", type: "teto", weight: 2 },
+        { text: "Considerado y cuidadoso", type: "egen", weight: 2 },
+        { text: "Emocional y expresivo", type: "teto", weight: 1 },
+        { text: "Escucho más de lo que hablo", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo reaccionas cuando recibas críticas?",
+      answers: [
+        { text: "Las acepto abiertamente y trato de mejorar", type: "teto", weight: 2 },
+        { text: "Las analizo profundamente", type: "egen", weight: 2 },
+        { text: "Inicialmente me siento herido pero luego reflexiono", type: "teto", weight: 1 },
+        { text: "Me tomo tiempo para procesarlas", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Qué es más importante al tomar decisiones?",
+      answers: [
+        { text: "Intuición y emociones", type: "teto", weight: 2 },
+        { text: "Análisis lógico", type: "egen", weight: 2 },
+        { text: "Opiniones de otras personas", type: "egen", weight: 1 },
+        { text: "Experiencias pasadas", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cuál es tu estilo para adaptarte a nuevos entornos?",
+      answers: [
+        { text: "Me adapto rápidamente y disfruto nuevos desafíos", type: "teto", weight: 2 },
+        { text: "Tomo tiempo y me adapto lentamente", type: "egen", weight: 2 },
+        { text: "Me adapto junto con las personas a mi alrededor", type: "teto", weight: 1 },
+        { text: "Prefiero la estabilidad", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo sueles pasar los fines de semana?",
+      answers: [
+        { text: "Encuentro amigos y paso tiempo activo", type: "teto", weight: 2 },
+        { text: "Descanso en casa y disfruto tiempo personal", type: "egen", weight: 2 },
+        { text: "Exploro nuevos lugares o tengo nuevas experiencias", type: "teto", weight: 1 },
+        { text: "Me enfoco en pasatiempos favoritos", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo reaccionas cuando alguien te pide un favor?",
+      answers: [
+        { text: "Digo 'sí' primero y pienso después", type: "teto", weight: 2 },
+        { text: "Pienso cuidadosamente y luego respondo", type: "egen", weight: 2 },
+        { text: "Me resulta difícil negarme", type: "egen", weight: 1 },
+        { text: "Considero mi propia situación primero", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Qué rol prefieres en proyectos de equipo?",
+      answers: [
+        { text: "Mostrar liderazgo y liderar todo el equipo", type: "teto", weight: 2 },
+        { text: "Apoyar y ayudar con tareas específicas", type: "egen", weight: 2 },
+        { text: "Mediar y coordinar entre miembros", type: "teto", weight: 1 },
+        { text: "Enfocarme en mi parte de forma independiente", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "¿Cómo sueles reaccionar cuando cometes un error?",
+      answers: [
+        { text: "Lo admito rápidamente y busco soluciones", type: "teto", weight: 2 },
+        { text: "Analizo la causa y pienso en la prevención", type: "egen", weight: 2 },
+        { text: "Lo tomo emocionalmente", type: "teto", weight: 1 },
+        { text: "Reflexiono sobre ello a solas", type: "egen", weight: 1 }
+      ]
+    }
   ]
 };
 
-export const resultTranslations: Record<'ko' | 'en', Record<string, TestResult>> = {
+export const resultTranslations: Record<'ko' | 'en' | 'es', Record<string, TestResult>> = {
   ko: {
     teto_male: {
       type: "teto_male",
@@ -319,6 +429,56 @@ export const resultTranslations: Record<'ko' | 'en', Record<string, TestResult>>
         "You have a calm, stable, and trustworthy personality.",
         "You value deep relationships and give sincere advice.",
         "Your warmth and wisdom comfort many people."
+      ]
+    }
+  },
+  es: {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto Masculino",
+      emoji: "🔥",
+      description: [
+        "¡Eres un Teto Masculino activo y enérgico!",
+        "No temes a nuevos desafíos y lideras desde el frente.",
+        "Disfrutas comunicarte con las personas y tienes una personalidad llena de energía.",
+        "Tu confianza y pasión inspiran a otros.",
+        "Tu fuerza natural y liderazgo son tus mayores fortalezas."
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto Femenina",
+      emoji: "✨",
+      description: [
+        "¡Eres una Teto Femenina brillante y carismática!",
+        "Tienes un encanto natural y habilidades excelentes de comunicación.",
+        "Eres buena motivando a las personas y creando atmósferas positivas.",
+        "Tu energía y positividad impactan positivamente en las personas que te rodean.",
+        "Tu confianza y calidez hacen que las personas se sientan cómodas."
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen Masculino",
+      emoji: "😊",
+      description: [
+        "¡Eres un Egen Masculino estable y confiable!",
+        "Eres bueno escuchando a otros y brindando consejos reflexivos.",
+        "Tienes una personalidad tranquila y confiable que inspira confianza.",
+        "Tu sinceridad y lealtad son altamente valoradas por quienes te rodean.",
+        "Tu naturaleza considerada y consistente es tu mayor fortaleza."
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen Femenina",
+      emoji: "🌸",
+      description: [
+        "¡Eres una Egen Femenina cálida y delicada!",
+        "Sobresales en entender y empatizar con las emociones de otros.",
+        "Tienes una personalidad tranquila, estable y confiable.",
+        "Valoras las relaciones profundas y das consejos sinceros.",
+        "Tu calidez y sabiduría consolidan a muchas personas."
       ]
     }
   }

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en';
+export type Language = 'ko' | 'en' | 'es';
 
 interface LanguageContextType {
   language: Language;
@@ -87,6 +87,32 @@ const translations = {
     
     // Theme
     'theme.toggle': 'Toggle theme'
+  },
+  es: {
+    'welcome.title': 'Test de Personalidad Teto-Egen',
+    'welcome.subtitle': 'Descubre tu verdadero tipo de personalidad a través de un análisis psicológico profundo',
+    'welcome.selectGender': 'Selecciona tu género',
+    'welcome.male': 'Masculino',
+    'welcome.female': 'Femenino',
+    'test.progress': 'Pregunta {current} de {total}',
+    'test.previous': 'Anterior',
+    'test.next': 'Siguiente',
+    'test.home': 'Inicio',
+    'result.title': 'Tu Resultado',
+    'result.personality': 'Tu Tipo de Personalidad',
+    'result.score': 'Puntuación',
+    'result.share': 'Compartir Resultado',
+    'result.shareTitle': '¡Acabo de completar el Test de Personalidad Teto-Egen!',
+    'result.shareText': 'Mi resultado: {result}. ¡Haz el test tú también!',
+    'result.restart': 'Hacer Prueba de Nuevo',
+    'result.copySuccess': 'Enlace copiado al portapapeles',
+    'result.copyError': 'Error al copiar enlace',
+    'result.teto': 'Teto',
+    'result.egen': 'Egen',
+    'result.male': 'Masculino',
+    'result.female': 'Femenino',
+    'result.vs': 'vs',
+    'theme.toggle': 'Cambiar tema'
   }
 };
 
@@ -94,6 +120,9 @@ function detectBrowserLanguage(): Language {
   const browserLang = navigator.language.toLowerCase();
   if (browserLang.startsWith('ko')) {
     return 'ko';
+  }
+  if (browserLang.startsWith('es')) {
+    return 'es';
   }
   return 'en'; // Default to English
 }
