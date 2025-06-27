@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TestResult } from "@/lib/test-types";
-import { Share2, Copy } from "lucide-react";
+import { Share2, Copy, Home } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/language-context";
+import { Link } from "wouter";
 
 interface ResultScreenProps {
   result: TestResult;
@@ -103,6 +104,19 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
           </div>
         </CardContent>
       </Card>
+      
+      {/* Back to Main Button */}
+      <div className="flex justify-center mt-8">
+        <Link href="/">
+          <Button
+            variant="outline"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
+          >
+            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+            {t('test.backToMain')}
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

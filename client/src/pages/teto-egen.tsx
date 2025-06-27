@@ -180,17 +180,7 @@ export default function TetoEgen() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl mx-auto">
         {testState.screen === 'welcome' && (
-          <>
-            <WelcomeScreen onGenderSelect={handleGenderSelect} />
-            <div className="text-center mt-8">
-              <a 
-                href="/" 
-                className="inline-flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
-              >
-                {t('test.backToMain')}
-              </a>
-            </div>
-          </>
+          <WelcomeScreen onGenderSelect={handleGenderSelect} />
         )}
 
         {testState.screen === 'test' && (
@@ -206,22 +196,12 @@ export default function TetoEgen() {
         )}
 
         {testState.screen === 'result' && testState.finalResult && (
-          <>
-            <ResultScreen
-              result={testResults[testState.finalResult]}
-              tetoScore={testState.tetoScore}
-              egenScore={testState.egenScore}
-              onRestart={handleRestart}
-            />
-            <div className="text-center mt-8">
-              <a 
-                href="/" 
-                className="inline-flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
-              >
-                {t('test.backToMain')}
-              </a>
-            </div>
-          </>
+          <ResultScreen
+            result={testResults[testState.finalResult]}
+            tetoScore={testState.tetoScore}
+            egenScore={testState.egenScore}
+            onRestart={handleRestart}
+          />
         )}
       </div>
     </div>
