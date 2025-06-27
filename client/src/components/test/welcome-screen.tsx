@@ -16,7 +16,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
   return (
     <div className="w-full max-w-2xl mx-auto text-center space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 whitespace-pre-line">
           {t('welcome.title')}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
