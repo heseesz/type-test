@@ -4,6 +4,7 @@ import { TestScreen } from '@/components/test/test-screen';
 import { ResultScreen } from '@/components/test/result-screen';
 import { questions, testResults } from '@/lib/test-data';
 import { Gender, TestState } from '@/lib/test-types';
+import { shuffleQuestions, getOriginalAnswerIndex } from '@/lib/shuffle-utils';
 
 export default function Home() {
   const [testState, setTestState] = useState<TestState>({
@@ -12,16 +13,21 @@ export default function Home() {
     currentQuestion: 0,
     answers: [],
     tetoScore: 0,
-    egenScore: 0
+    egenScore: 0,
+    shuffledQuestions: [],
+    shuffledAnswers: []
   });
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
   const handleGenderSelect = (gender: Gender) => {
+    const { shuffledQuestions, shuffledAnswers } = shuffleQuestions(questions);
     setTestState(prev => ({
       ...prev,
       gender,
-      screen: 'test'
+      screen: 'test',
+      shuffledQuestions,
+      shuffledAnswers
     }));
   };
 
@@ -36,7 +42,7 @@ export default function Home() {
     const newAnswers = [...testState.answers];
     newAnswers[testState.currentQuestion] = selectedAnswer;
 
-    if (testState.currentQuestion < questions.length - 1) {
+    if (testState.currentQuestion < testState.shuffledQuestions.length - 1) {
       // Move to next question
       setTestState(prev => ({
         ...prev,
@@ -53,9 +59,14 @@ export default function Home() {
       let tetoScore = 0;
       let egenScore = 0;
 
-      newAnswers.forEach((answerIndex, questionIndex) => {
-        const question = questions[questionIndex];
-        const answer = question.answers[answerIndex];
+      newAnswers.forEach((shuffledAnswerIndex, questionIndex) => {
+        const shuffledQuestion = testState.shuffledQuestions[questionIndex];
+        const originalAnswerIndex = getOriginalAnswerIndex(
+          questionIndex, 
+          shuffledAnswerIndex, 
+          testState.shuffledAnswers
+        );
+        const answer = shuffledQuestion.answers[originalAnswerIndex];
         
         if (answer.type === 'teto') {
           tetoScore += answer.weight;
@@ -96,7 +107,9 @@ export default function Home() {
       currentQuestion: 0,
       answers: [],
       tetoScore: 0,
-      egenScore: 0
+      egenScore: 0,
+      shuffledQuestions: [],
+      shuffledAnswers: []
     });
     setSelectedAnswer(null);
   };
@@ -127,6 +140,8 @@ export default function Home() {
           onAnswerSelect={handleAnswerSelect}
           onNext={handleNext}
           onPrevious={handlePrevious}
+          shuffledQuestions={testState.shuffledQuestions}
+          shuffledAnswers={testState.shuffledAnswers}
         />
       )}
       

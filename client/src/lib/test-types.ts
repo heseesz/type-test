@@ -27,4 +27,6 @@ export interface TestState {
   answers: number[];
   tetoScore: number;
   egenScore: number;
+  shuffledQuestions: Question[];
+  shuffledAnswers: number[][];
 }

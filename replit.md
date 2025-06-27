@@ -36,7 +36,8 @@ This is a Korean personality test application that determines whether users alig
 3. **ResultScreen**: Personality type results with detailed descriptions and score breakdown
 
 ### Test Logic
-- **Questions**: 7 personality assessment questions stored in `test-data.ts`
+- **Questions**: 12 personality assessment questions stored in `test-data.ts`
+- **Random Ordering**: Questions and answer choices are shuffled for each test session using Fisher-Yates algorithm
 - **Scoring**: Weighted scoring system for Teto vs Egen personality types
 - **Results**: Gender-specific result variations with custom descriptions and emojis
 
@@ -109,6 +110,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Added randomized question and answer ordering using Fisher-Yates shuffle algorithm
 - June 27, 2025. Added dark mode support with system preference detection and manual toggle
 - June 26, 2025. Initial setup
 
