@@ -24,8 +24,12 @@ function App() {
       <ThemeProvider>
         <TooltipProvider>
           <Toaster />
-          <div className="flex gap-2 fixed top-4 right-4 z-50">
+          {/* Language Toggle - Top Left */}
+          <div className="fixed top-4 left-4 z-50">
             <LanguageToggle />
+          </div>
+          {/* Theme Toggle - Top Right */}
+          <div className="fixed top-4 right-4 z-50">
             <ThemeToggle />
           </div>
           <Router />
