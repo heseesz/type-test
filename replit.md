@@ -32,13 +32,15 @@ This is a Korean personality test application that determines whether users alig
 
 ### Test Flow Components
 1. **WelcomeScreen**: Gender selection interface with animated buttons
-2. **TestScreen**: Question presentation with progress tracking and answer selection
-3. **ResultScreen**: Personality type results with detailed descriptions and score breakdown
+2. **TestScreen**: Question presentation with progress tracking, answer selection, and home navigation
+3. **ResultScreen**: Personality type results with detailed descriptions, score breakdown, and social sharing
 
 ### Test Logic
 - **Questions**: 12 personality assessment questions stored in `test-data.ts`
 - **Random Ordering**: Questions and answer choices are shuffled for each test session using Fisher-Yates algorithm
+- **Navigation**: Home button available during test for returning to welcome screen
 - **Scoring**: Weighted scoring system for Teto vs Egen personality types
+- **Sharing**: Social sharing functionality with Web Share API and clipboard fallback
 - **Results**: Gender-specific result variations with custom descriptions and emojis
 
 ### UI Components
@@ -110,6 +112,8 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Added navigation features (home button during test) and social sharing functionality with Web Share API
+- June 27, 2025. Updated "에겐남" emoji to more positive representation (😊)
 - June 27, 2025. Added randomized question and answer ordering using Fisher-Yates shuffle algorithm
 - June 27, 2025. Added dark mode support with system preference detection and manual toggle
 - June 26, 2025. Initial setup

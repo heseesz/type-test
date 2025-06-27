@@ -114,6 +114,10 @@ export default function Home() {
     setSelectedAnswer(null);
   };
 
+  const handleHome = () => {
+    handleRestart();
+  };
+
   const getResult = () => {
     if (!testState.gender) return testResults.teto_male;
     
@@ -140,6 +144,7 @@ export default function Home() {
           onAnswerSelect={handleAnswerSelect}
           onNext={handleNext}
           onPrevious={handlePrevious}
+          onHome={handleHome}
           shuffledQuestions={testState.shuffledQuestions}
           shuffledAnswers={testState.shuffledAnswers}
         />

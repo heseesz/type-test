@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Question } from "@/lib/test-types";
+import { Home } from "lucide-react";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -9,6 +10,7 @@ interface TestScreenProps {
   onAnswerSelect: (answerIndex: number) => void;
   onNext: () => void;
   onPrevious: () => void;
+  onHome: () => void;
   shuffledQuestions: Question[];
   shuffledAnswers: number[][];
 }
@@ -19,6 +21,7 @@ export function TestScreen({
   onAnswerSelect,
   onNext,
   onPrevious,
+  onHome,
   shuffledQuestions,
   shuffledAnswers
 }: TestScreenProps) {
@@ -74,25 +77,39 @@ export function TestScreen({
       </Card>
 
       {/* Navigation */}
-      <div className="flex justify-between">
-        <Button
-          onClick={onPrevious}
-          variant="outline"
-          className={`px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium ${
-            currentQuestion === 0 ? 'hidden' : ''
-          }`}
-        >
-          이전
-        </Button>
-        <Button
-          onClick={onNext}
-          disabled={selectedAnswer === null}
-          className={`px-6 py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors ml-auto ${
-            selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-        >
-          {currentQuestion === shuffledQuestions.length - 1 ? '결과 보기' : '다음'}
-        </Button>
+      <div className="flex flex-col space-y-4">
+        <div className="flex justify-between">
+          <Button
+            onClick={onPrevious}
+            variant="outline"
+            className={`px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium ${
+              currentQuestion === 0 ? 'hidden' : ''
+            }`}
+          >
+            이전
+          </Button>
+          <Button
+            onClick={onNext}
+            disabled={selectedAnswer === null}
+            className={`px-6 py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors ml-auto ${
+              selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+          >
+            {currentQuestion === shuffledQuestions.length - 1 ? '결과 보기' : '다음'}
+          </Button>
+        </div>
+        
+        {/* Home Button */}
+        <div className="flex justify-center">
+          <Button
+            onClick={onHome}
+            variant="outline"
+            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-sm"
+          >
+            <Home className="w-4 h-4 mr-2" />
+            처음으로
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -102,7 +102,7 @@ export const testResults: Record<string, TestResult> = {
   egen_male: {
     type: "egen_male",
     title: "에겐남",
-    emoji: "🤔",
+    emoji: "😊",
     description: [
       "당신은 신중하고 사려깊은 에겐남입니다!",
       "상황을 차근차근 분석하고 타인의 입장을 잘 이해합니다.",
