@@ -4,7 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { Question } from "@/lib/test-types";
 import { Home } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -26,9 +26,18 @@ export function TestScreen({
   shuffledAnswers
 }: TestScreenProps) {
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
   const question = shuffledQuestions[currentQuestion];
   const answerOrder = shuffledAnswers[currentQuestion];
   const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
+
+  const handleHomeClick = () => {
+    setLocation("/teto-egen");
+  };
+
+  const handleBackToMain = () => {
+    setLocation("/");
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4 sm:px-6">
@@ -93,14 +102,13 @@ export function TestScreen({
           </Button>
           
           {/* 처음으로 버튼 */}
-          <Link href="/teto-egen" className="touch-manipulation">
-            <Button
-              variant="outline"
-              className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
-            >
-              {t('test.home')}
-            </Button>
-          </Link>
+          <Button
+            onClick={handleHomeClick}
+            variant="outline"
+            className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
+          >
+            {t('test.home')}
+          </Button>
           
           <Button
             onClick={onNext}
@@ -115,15 +123,14 @@ export function TestScreen({
         
         {/* Back to Main Button */}
         <div className="flex justify-center">
-          <Link href="/" className="touch-manipulation">
-            <Button
-              variant="outline"
-              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
-            >
-              <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-              {t('test.backToMain')}
-            </Button>
-          </Link>
+          <Button
+            onClick={handleBackToMain}
+            variant="outline"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
+          >
+            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+            {t('test.backToMain')}
+          </Button>
         </div>
       </div>
     </div>

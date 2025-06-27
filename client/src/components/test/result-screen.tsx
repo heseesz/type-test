@@ -4,7 +4,7 @@ import { TestResult } from "@/lib/test-types";
 import { Share2, Copy, Home } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/language-context";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 interface ResultScreenProps {
   result: TestResult;
@@ -16,6 +16,11 @@ interface ResultScreenProps {
 export function ResultScreen({ result, tetoScore, egenScore, onRestart }: ResultScreenProps) {
   const { toast } = useToast();
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
+
+  const handleBackToMain = () => {
+    setLocation("/");
+  };
 
   const handleShare = async () => {
     const shareText = `${t('result.shareTitle')}\n\n${result.emoji} ${result.title}\n\n${t('result.tetoScore')}: ${tetoScore}${t('result.points')}\n${t('result.egenScore')}: ${egenScore}${t('result.points')}\n\n${t('result.shareText')} ${window.location.origin}`;
@@ -107,15 +112,14 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       
       {/* Back to Main Button */}
       <div className="flex justify-center mt-8">
-        <Link href="/" className="touch-manipulation">
-          <Button
-            variant="outline"
-            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
-          >
-            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-            {t('test.backToMain')}
-          </Button>
-        </Link>
+        <Button
+          onClick={handleBackToMain}
+          variant="outline"
+          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
+        >
+          <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+          {t('test.backToMain')}
+        </Button>
       </div>
     </div>
   );
