@@ -49,7 +49,8 @@ This is a Korean personality test application that determines whether users alig
 - Responsive design with mobile-first approach
 - Gradient color scheme with custom Teto/Egen brand colors
 - Dark mode support with system preference detection and manual toggle
-- Theme persistence via localStorage
+- Multi-language support (Korean/English) with automatic browser detection
+- Theme and language persistence via localStorage
 
 ## Data Flow
 
@@ -112,6 +113,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 27, 2025. Implemented complete multi-language support (Korean/English) with automatic browser language detection
 - June 27, 2025. Added navigation features (home button during test) and social sharing functionality with Web Share API
 - June 27, 2025. Updated "에겐남" emoji to more positive representation (😊)
 - June 27, 2025. Added randomized question and answer ordering using Fisher-Yates shuffle algorithm

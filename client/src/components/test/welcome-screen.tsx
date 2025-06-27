@@ -1,26 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gender } from "@/lib/test-types";
+import { useLanguage } from "@/contexts/language-context";
 
 interface WelcomeScreenProps {
   onGenderSelect: (gender: Gender) => void;
 }
 
 export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full max-w-2xl mx-auto text-center space-y-8">
       <div className="space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          테토-에겐 성향 테스트
+          {t('welcome.title')}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
-          당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.
+          {t('welcome.subtitle')}
         </p>
       </div>
       
       <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-gray-200 dark:border-gray-700">
         <CardContent className="p-8 space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">성별을 선택해주세요</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">{t('welcome.selectGender')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Button
@@ -30,7 +33,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
             >
               <div className="flex flex-col items-center space-y-3">
                 <div className="text-4xl">👨</div>
-                <div className="text-xl font-semibold">남자</div>
+                <div className="text-xl font-semibold">{t('welcome.male')}</div>
               </div>
             </Button>
             
@@ -41,7 +44,7 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
             >
               <div className="flex flex-col items-center space-y-3">
                 <div className="text-4xl">👩</div>
-                <div className="text-xl font-semibold">여자</div>
+                <div className="text-xl font-semibold">{t('welcome.female')}</div>
               </div>
             </Button>
           </div>

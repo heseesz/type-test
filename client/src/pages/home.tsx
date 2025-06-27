@@ -2,11 +2,16 @@ import { useState } from 'react';
 import { WelcomeScreen } from '@/components/test/welcome-screen';
 import { TestScreen } from '@/components/test/test-screen';
 import { ResultScreen } from '@/components/test/result-screen';
-import { questions, testResults } from '@/lib/test-data';
 import { Gender, TestState } from '@/lib/test-types';
 import { shuffleQuestions, getOriginalAnswerIndex } from '@/lib/shuffle-utils';
+import { useLanguage } from '@/contexts/language-context';
+import { questionsTranslations, resultTranslations } from '@/lib/translations-data';
 
 export default function Home() {
+  const { language } = useLanguage();
+  const questions = questionsTranslations[language];
+  const testResults = resultTranslations[language];
+  
   const [testState, setTestState] = useState<TestState>({
     screen: 'welcome',
     gender: null,
@@ -21,7 +26,7 @@ export default function Home() {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
   const handleGenderSelect = (gender: Gender) => {
-    const { shuffledQuestions, shuffledAnswers } = shuffleQuestions(questions);
+    const { shuffledQuestions, shuffledAnswers } = shuffleQuestions(questions as any);
     setTestState(prev => ({
       ...prev,
       gender,
@@ -119,11 +124,11 @@ export default function Home() {
   };
 
   const getResult = () => {
-    if (!testState.gender) return testResults.teto_male;
+    if (!testState.gender) return testResults.teto_male as any;
     
     const isTetoType = testState.tetoScore > testState.egenScore;
     const resultKey = `${isTetoType ? 'teto' : 'egen'}_${testState.gender}`;
-    return testResults[resultKey];
+    return testResults[resultKey] as any;
   };
 
   // Set selected answer when navigating to a question that already has an answer

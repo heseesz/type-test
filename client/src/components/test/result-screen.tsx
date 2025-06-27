@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { TestResult } from "@/lib/test-types";
 import { Share2, Copy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/language-context";
 
 interface ResultScreenProps {
   result: TestResult;
@@ -13,14 +14,15 @@ interface ResultScreenProps {
 
 export function ResultScreen({ result, tetoScore, egenScore, onRestart }: ResultScreenProps) {
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleShare = async () => {
-    const shareText = `테토-에겐 성향 테스트 결과\n\n${result.emoji} ${result.title}\n\n테토 성향: ${tetoScore}점\n에겐 성향: ${egenScore}점\n\n당신도 테스트해보세요! ${window.location.origin}`;
+    const shareText = `${t('result.shareTitle')}\n\n${result.emoji} ${result.title}\n\n${t('result.tetoScore')}: ${tetoScore}${t('result.points')}\n${t('result.egenScore')}: ${egenScore}${t('result.points')}\n\n${t('result.shareText')} ${window.location.origin}`;
     
     if (navigator.share) {
       try {
         await navigator.share({
-          title: '테토-에겐 성향 테스트 결과',
+          title: t('result.shareTitle'),
           text: shareText
         });
       } catch (error) {
@@ -36,13 +38,13 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
     try {
       await navigator.clipboard.writeText(text);
       toast({
-        title: "클립보드에 복사됨",
-        description: "결과가 클립보드에 복사되었습니다!",
+        title: t('result.copySuccess'),
+        description: t('result.copySuccessDesc'),
       });
     } catch (error) {
       toast({
-        title: "복사 실패",
-        description: "결과 복사에 실패했습니다.",
+        title: t('result.copyFail'),
+        description: t('result.copyFailDesc'),
         variant: "destructive"
       });
     }
@@ -73,11 +75,11 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
             <div className="flex justify-center space-x-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-teto dark:text-teto">{tetoScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">테토 성향</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('result.tetoScore')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-egen dark:text-egen">{egenScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">에겐 성향</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('result.egenScore')}</div>
               </div>
             </div>
           </div>
@@ -89,14 +91,14 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
               className="w-full bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
             >
               <Share2 className="w-5 h-5 mr-2" />
-              결과 공유하기
+              {t('result.share')}
             </Button>
             
             <Button
               onClick={onRestart}
               className="w-full gradient-teto-egen hover:opacity-90 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
             >
-              다시 테스트하기
+              {t('result.restart')}
             </Button>
           </div>
         </CardContent>

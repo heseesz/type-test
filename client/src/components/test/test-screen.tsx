@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Question } from "@/lib/test-types";
 import { Home } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -25,6 +26,7 @@ export function TestScreen({
   shuffledQuestions,
   shuffledAnswers
 }: TestScreenProps) {
+  const { t } = useLanguage();
   const question = shuffledQuestions[currentQuestion];
   const answerOrder = shuffledAnswers[currentQuestion];
   const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
@@ -34,7 +36,7 @@ export function TestScreen({
       {/* Progress Bar */}
       <div className="mb-6 sm:mb-8">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
+          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('test.progress')}</span>
           <span className="text-sm font-medium text-teto dark:text-teto">{currentQuestion + 1}/{shuffledQuestions.length}</span>
         </div>
         <Progress value={progress} className="w-full h-3" />
@@ -88,7 +90,7 @@ export function TestScreen({
               currentQuestion === 0 ? 'hidden' : ''
             }`}
           >
-            이전
+            {t('test.previous')}
           </Button>
           <Button
             onClick={onNext}
@@ -97,7 +99,7 @@ export function TestScreen({
               selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
-            {currentQuestion === shuffledQuestions.length - 1 ? '결과 보기' : '다음'}
+            {currentQuestion === shuffledQuestions.length - 1 ? t('test.showResult') : t('test.next')}
           </Button>
         </div>
         
@@ -109,7 +111,7 @@ export function TestScreen({
             className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
           >
             <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-            처음으로
+            {t('test.home')}
           </Button>
         </div>
       </div>

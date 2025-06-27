@@ -1,32 +1,14 @@
-import { Question, PersonalityType, Answer, TestResult } from './test-types';
+import { Question, TestResult } from './test-types';
 
-const createAnswer = (text: string, type: PersonalityType, weight: number): Answer => ({
-  text,
-  type,
-  weight
-});
-
-const createTestResult = (
-  type: 'teto_male' | 'egen_male' | 'teto_female' | 'egen_female',
-  title: string,
-  emoji: string,
-  description: string[]
-): TestResult => ({
-  type,
-  title,
-  emoji,
-  description
-});
-
-export const questionsTranslations = {
+export const questionsTranslations: Record<'ko' | 'en', Question[]> = {
   ko: [
     {
       question: "새로운 사람들과 만날 때 어떤 스타일인가요?",
       answers: [
-        createAnswer("먼저 다가가서 대화를 시작한다", "teto", 2),
-        createAnswer("상대방이 먼저 말을 걸 때까지 기다린다", "egen", 2),
-        createAnswer("상황에 따라 다르게 행동한다", "egen", 1),
-        createAnswer("자연스럽게 분위기를 파악한 후 행동한다", "teto", 1)
+        { text: "먼저 다가가서 대화를 시작한다", type: "teto", weight: 2 },
+        { text: "상대방이 먼저 말을 걸 때까지 기다린다", type: "egen", weight: 2 },
+        { text: "상황에 따라 다르게 행동한다", type: "egen", weight: 1 },
+        { text: "자연스럽게 분위기를 파악한 후 행동한다", type: "teto", weight: 1 }
       ]
     },
     {
@@ -241,7 +223,7 @@ export const questionsTranslations = {
   ]
 };
 
-export const resultTranslations = {
+export const resultTranslations: Record<'ko' | 'en', Record<string, TestResult>> = {
   ko: {
     teto_male: {
       type: "teto_male",
