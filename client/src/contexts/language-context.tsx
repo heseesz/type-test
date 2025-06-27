@@ -15,21 +15,21 @@ const translations = {
   ko: {
     // Meta
     'meta.title': '타입테스트',
-    'meta.description': '다양한 성격 테스트로 당신의 진짜 모습을 발견해보세요. 심리 분석을 통한 정확한 성격 유형 분류.',
+    'meta.description': '다양한 성격 테스트와 AI 컨텐츠로 당신의 진짜 모습을 발견해보세요.',
     
     // Site
     'site.title': '타입테스트',
-    'site.subtitle': '나를 알아가는 심리 테스트의 모든 것',
-    'site.footer': '더 많은 테스트가 곧 추가됩니다!',
+    'site.subtitle': '나를 알아가는 모든 컨텐츠',
+    'site.footer': '더 많은 컨텐츠가 곧 추가됩니다!',
     
     // Tests
-    'tests.tetoEgen.title': 'Teto-Egen 성향 테스트',
-    'tests.tetoEgen.description': '당신의 성향을 알아보세요! 테토형과 에겐형 중 어느 쪽에 가까운지 확인',
+    'tests.tetoEgen.title': '테토-에겐 성향 테스트',
+    'tests.tetoEgen.description': '당신의 성향이 테토형과 에겐형 중 어느 쪽에 가까운지 확인하세요.',
     'tests.tetoEgen.start': '테스트 시작하기',
     'tests.tetoEgen.meta.title': '타입테스트: Teto-Egen 성향 테스트',
     'tests.tetoEgen.meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
-    'tests.comingSoon.title': '새로운 테스트',
-    'tests.comingSoon.description': '곧 새로운 심리 테스트가 추가될 예정입니다',
+    'tests.comingSoon.title': '컨텐츠 준비중',
+    'tests.comingSoon.description': '곧 새로운 컨텐츠가 추가될 예정입니다',
     'tests.comingSoon.button': '준비 중',
     
     // Welcome Screen
@@ -45,6 +45,7 @@ const translations = {
     'test.next': '다음',
     'test.showResult': '결과 보기',
     'test.home': '처음으로',
+    'test.backToMain': '← 메인으로 돌아가기',
     
     // Result Screen
     'result.title': '테스트 결과',
@@ -104,6 +105,7 @@ const translations = {
     'test.next': 'Next',
     'test.showResult': 'Show Result',
     'test.home': 'Home',
+    'test.backToMain': '← Back to Main',
     
     // Result Screen
     'result.title': 'Test Result',
@@ -131,9 +133,22 @@ const translations = {
     'theme.toggle': 'Toggle theme'
   },
   es: {
-    // Meta
-    'meta.title': 'Test de Personalidad Teto-Egen',
-    'meta.description': 'Descubre tu verdadero tipo de personalidad a través de un análisis psicológico profundo. Realiza nuestro test de clasificación de personalidad coreano para saber si eres más Teto o Egen.',
+    'meta.title': 'TypeTest',
+    'meta.description': 'Descubre tu verdadero tipo de personalidad a través de análisis psicológico en profundidad. Realiza nuestro test de clasificación de personalidad coreana para saber si eres más Teto o Egen.',
+    
+    'site.title': 'TypeTest',
+    'site.subtitle': 'Descúbrete a través de pruebas psicológicas',
+    'site.footer': '¡Más pruebas próximamente!',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Test de Personalidad Teto-Egen',
+    'tests.tetoEgen.description': '¡Descubre tu tipo de personalidad! Averigua si eres más Teto o Egen',
+    'tests.tetoEgen.start': 'Comenzar Test',
+    'tests.tetoEgen.meta.title': 'TypeTest: Test de Personalidad Teto-Egen',
+    'tests.tetoEgen.meta.description': 'Descubre tu verdadero tipo de personalidad a través de análisis psicológico en profundidad. Realiza nuestro test de clasificación de personalidad coreana para saber si eres más Teto o Egen.',
+    'tests.comingSoon.title': 'Nueva Prueba',
+    'tests.comingSoon.description': 'Próximamente se añadirán nuevas pruebas psicológicas',
+    'tests.comingSoon.button': 'Próximamente',
     
     'welcome.title': 'Test de Personalidad Teto-Egen',
     'welcome.subtitle': '¡Descubre tu verdadero tipo de personalidad!',
@@ -144,6 +159,7 @@ const translations = {
     'test.previous': 'Anterior',
     'test.next': 'Siguiente',
     'test.home': 'Inicio',
+    'test.backToMain': '← Volver al Inicio',
     'result.title': 'Tu Resultado',
     'result.personalityTraits': 'Tus Rasgos de Personalidad',
     'result.yourScore': 'Tu Puntuación',
@@ -169,9 +185,22 @@ const translations = {
     'theme.toggle': 'Cambiar tema'
   },
   'zh-cn': {
-    // Meta
-    'meta.title': 'Teto-Egen 性格测试',
+    'meta.title': 'TypeTest',
     'meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
+    
+    'site.title': 'TypeTest',
+    'site.subtitle': '通过心理测试发现自己',
+    'site.footer': '更多测试即将推出！',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Teto-Egen 性格测试',
+    'tests.tetoEgen.description': '发现您的性格类型！了解您更偏向于 Teto 还是 Egen',
+    'tests.tetoEgen.start': '开始测试',
+    'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen 性格测试',
+    'tests.tetoEgen.meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
+    'tests.comingSoon.title': '新测试',
+    'tests.comingSoon.description': '即将推出新的心理测试',
+    'tests.comingSoon.button': '即将推出',
     
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格测试',
@@ -185,6 +214,7 @@ const translations = {
     'test.previous': '上一题',
     'test.next': '下一题',
     'test.home': '首页',
+    'test.backToMain': '← 返回主页',
     
     // Result Screen
     'result.title': '测试结果',
@@ -206,9 +236,22 @@ const translations = {
     'theme.toggle': '切换主题'
   },
   'zh-tw': {
-    // Meta
-    'meta.title': 'Teto-Egen 性格測試',
+    'meta.title': 'TypeTest',
     'meta.description': '透過深入的心理分析發現您的真實性格類型。進行我們的韓國性格分類測試，了解您更偏向於 Teto 還是 Egen 類型。',
+    
+    'site.title': 'TypeTest',
+    'site.subtitle': '透過心理測試發現自己',
+    'site.footer': '更多測試即將推出！',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Teto-Egen 性格測試',
+    'tests.tetoEgen.description': '發現您的性格類型！了解您更偏向於 Teto 還是 Egen',
+    'tests.tetoEgen.start': '開始測試',
+    'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen 性格測試',
+    'tests.tetoEgen.meta.description': '透過深入的心理分析發現您的真實性格類型。進行我們的韓國性格分類測試，了解您更偏向於 Teto 還是 Egen 類型。',
+    'tests.comingSoon.title': '新測試',
+    'tests.comingSoon.description': '即將推出新的心理測試',
+    'tests.comingSoon.button': '即將推出',
     
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格測試',
@@ -222,6 +265,7 @@ const translations = {
     'test.previous': '上一題',
     'test.next': '下一題',
     'test.home': '首頁',
+    'test.backToMain': '← 返回主頁',
     
     // Result Screen
     'result.title': '測試結果',
@@ -243,9 +287,22 @@ const translations = {
     'theme.toggle': '切換主題'
   },
   ja: {
-    // Meta
-    'meta.title': 'Teto-Egen性格テスト',
+    'meta.title': 'TypeTest',
     'meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
+    
+    'site.title': 'TypeTest',
+    'site.subtitle': '心理テストで自分を発見',
+    'site.footer': 'より多くのテストが近日公開予定！',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Teto-Egen性格テスト',
+    'tests.tetoEgen.description': 'あなたの性格タイプを発見しましょう！TetoタイプかEgenタイプかを確認',
+    'tests.tetoEgen.start': 'テスト開始',
+    'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen性格テスト',
+    'tests.tetoEgen.meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
+    'tests.comingSoon.title': '新しいテスト',
+    'tests.comingSoon.description': '新しい心理テストが近日公開予定',
+    'tests.comingSoon.button': '近日公開',
     
     // Welcome Screen
     'welcome.title': 'Teto-Egen性格テスト',
@@ -260,6 +317,7 @@ const translations = {
     'test.next': '次へ',
     'test.showResult': '結果を見る',
     'test.home': 'ホーム',
+    'test.backToMain': '← メインに戻る',
     
     // Result Screen
     'result.title': 'テスト結果',
