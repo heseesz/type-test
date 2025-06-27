@@ -13,6 +13,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // Translation data
 const translations = {
   ko: {
+    // Meta
+    'meta.title': '테토-에겐 성향 테스트',
+    'meta.description': '당신의 성향을 알아보세요! 간단한 질문을 통해 테토형과 에겐형 중 어느 쪽에 가까운지 확인할 수 있습니다.',
+    
     // Welcome Screen
     'welcome.title': '테토-에겐 성향 테스트',
     'welcome.subtitle': '당신의 성향을 알아보세요!',
@@ -53,6 +57,10 @@ const translations = {
     'theme.toggle': '테마 전환'
   },
   en: {
+    // Meta
+    'meta.title': 'Teto-Egen Personality Test',
+    'meta.description': 'Discover your true personality type through in-depth psychological analysis. Take our Korean personality classification test to find out if you\'re more Teto or Egen.',
+    
     // Welcome Screen
     'welcome.title': 'Teto-Egen Personality Test',
     'welcome.subtitle': 'Discover your personality type!',
@@ -93,6 +101,10 @@ const translations = {
     'theme.toggle': 'Toggle theme'
   },
   es: {
+    // Meta
+    'meta.title': 'Test de Personalidad Teto-Egen',
+    'meta.description': 'Descubre tu verdadero tipo de personalidad a través de un análisis psicológico profundo. Realiza nuestro test de clasificación de personalidad coreano para saber si eres más Teto o Egen.',
+    
     'welcome.title': 'Test de Personalidad Teto-Egen',
     'welcome.subtitle': '¡Descubre tu verdadero tipo de personalidad!',
     'welcome.selectGender': 'Selecciona tu género',
@@ -127,6 +139,10 @@ const translations = {
     'theme.toggle': 'Cambiar tema'
   },
   'zh-cn': {
+    // Meta
+    'meta.title': 'Teto-Egen 性格测试',
+    'meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
+    
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格测试',
     'welcome.subtitle': '发现你的性格类型！',
@@ -160,6 +176,10 @@ const translations = {
     'theme.toggle': '切换主题'
   },
   'zh-tw': {
+    // Meta
+    'meta.title': 'Teto-Egen 性格測試',
+    'meta.description': '透過深入的心理分析發現您的真實性格類型。進行我們的韓國性格分類測試，了解您更偏向於 Teto 還是 Egen 類型。',
+    
     // Welcome Screen
     'welcome.title': 'Teto-Egen 性格測試',
     'welcome.subtitle': '發現你的人格類型！',
@@ -193,6 +213,10 @@ const translations = {
     'theme.toggle': '切換主題'
   },
   ja: {
+    // Meta
+    'meta.title': 'Teto-Egen性格テスト',
+    'meta.description': '深層心理分析を通じてあなたの真の性格タイプを発見しましょう。韓国の性格分類テストを受けて、あなたがTetoタイプかEgenタイプかを確認してください。',
+    
     // Welcome Screen
     'welcome.title': 'Teto-Egen性格テスト',
     'welcome.subtitle': 'あなたの性格タイプを発見しましょう！',
@@ -265,6 +289,20 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['ko']] || key;
   };
+
+  // Update document title and meta description when language changes
+  useEffect(() => {
+    const newTitle = t('meta.title');
+    const newDescription = t('meta.description');
+    
+    document.title = newTitle;
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', newDescription);
+    }
+  }, [language, t]);
 
   useEffect(() => {
     // Set document language attribute
