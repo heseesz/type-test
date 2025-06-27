@@ -91,10 +91,21 @@ export function TestScreen({
           >
             {t('test.previous')}
           </Button>
+          
+          {/* 처음으로 버튼 */}
+          <Link href="/teto-egen">
+            <Button
+              variant="outline"
+              className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base"
+            >
+              {t('test.home')}
+            </Button>
+          </Link>
+          
           <Button
             onClick={onNext}
             disabled={selectedAnswer === null}
-            className={`px-4 sm:px-6 py-2 sm:py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors ml-auto text-sm sm:text-base ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 bg-teto hover:bg-teto-hover text-white rounded-xl font-medium transition-colors text-sm sm:text-base ${
               selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
