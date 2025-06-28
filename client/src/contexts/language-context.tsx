@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja';
+export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja' | 'vi';
 
 interface LanguageContextType {
   language: Language;
@@ -340,6 +340,58 @@ const translations = {
     
     // Theme
     'theme.toggle': 'テーマ切り替え'
+  },
+  vi: {
+    'meta.title': 'TypeTest',
+    'meta.description': 'Khám phá con người thật của bạn với các bài kiểm tra tính cách và nội dung AI đa dạng.',
+    
+    'site.title': 'TypeTest',
+    'site.subtitle': 'Tất cả nội dung để bạn khám phá bản thân',
+    'site.footer': 'Sẽ có thêm nhiều nội dung được bổ sung!',
+    
+    // Tests
+    'tests.tetoEgen.title': 'Bài kiểm tra tính cách Teto-Egen',
+    'tests.tetoEgen.description': 'Khám phá xem tính cách của bạn\ngiống với Teto hay Egen hơn',
+    'tests.tetoEgen.start': 'Bắt đầu kiểm tra',
+    'tests.tetoEgen.meta.title': 'TypeTest: Bài kiểm tra tính cách Teto-Egen',
+    'tests.tetoEgen.meta.description': 'Khám phá kiểu tính cách thật của bạn thông qua phân tích tâm lý sâu sắc. Thực hiện bài kiểm tra phân loại tính cách Hàn Quốc của chúng tôi để tìm hiểu bạn thiên về Teto hay Egen.',
+    'tests.comingSoon.title': 'Đang chuẩn bị nội dung',
+    'tests.comingSoon.description': 'Nội dung mới sẽ được thêm sớm',
+    'tests.comingSoon.button': 'Sắp ra mắt',
+    
+    // Welcome Screen
+    'welcome.title': 'Bài kiểm tra tính cách\nTeto-Egen',
+    'welcome.subtitle': 'Khám phá kiểu tính cách của bạn!',
+    'welcome.selectGender': 'Vui lòng chọn giới tính của bạn',
+    'welcome.male': 'Nam',
+    'welcome.female': 'Nữ',
+    
+    // Test Screen
+    'test.progress': 'Câu hỏi {current} / {total}',
+    'test.previous': 'Trước',
+    'test.next': 'Tiếp theo',
+    'test.showResult': 'Xem kết quả',
+    'test.home': 'Trang chủ',
+    'test.backToMain': 'Quay lại TypeTest',
+    
+    // Result Screen
+    'result.title': 'Kết quả kiểm tra',
+    'result.personalityTraits': 'Đặc điểm tính cách của bạn',
+    'result.yourScore': 'Điểm số của bạn',
+    'result.tetoScore': 'Xu hướng Teto',
+    'result.egenScore': 'Xu hướng Egen',
+    'result.points': 'điểm',
+    'result.share': 'Chia sẻ kết quả',
+    'result.restart': 'Làm lại bài kiểm tra',
+    'result.shareTitle': 'Tôi đã hoàn thành bài kiểm tra tính cách Teto-Egen!',
+    'result.shareText': 'Kết quả của tôi: {result}. Bạn cũng hãy thử làm bài kiểm tra!',
+    'result.copySuccess': 'Đã sao chép vào clipboard',
+    'result.copySuccessDesc': 'Kết quả đã được sao chép vào clipboard!',
+    'result.copyFail': 'Sao chép thất bại',
+    'result.copyFailDesc': 'Không thể sao chép kết quả.',
+    
+    // Theme
+    'theme.toggle': 'Chuyển đổi chủ đề'
   }
 };
 
@@ -359,6 +411,9 @@ function detectBrowserLanguage(): Language {
   }
   if (browserLang.startsWith('ja')) {
     return 'ja';
+  }
+  if (browserLang.startsWith('vi')) {
+    return 'vi';
   }
   return 'en'; // Default to English
 }

@@ -339,5 +339,54 @@ export const resultTranslations = {
         "Your warmth and wisdom comfort many people."
       ]
     }
+  },
+  vi: {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto Nam",
+      emoji: "🔥",
+      description: [
+        "Bạn là một Teto Nam năng động và chủ động!",
+        "Bạn không ngại những thử thách mới và luôn dẫn đầu.",
+        "Bạn thích giao tiếp với mọi người và có tính cách năng lượng.",
+        "Bạn có khả năng lãnh đạo mạnh mẽ và tự tin thể hiện ý kiến.",
+        "Mặc dù đôi khi cần thận trọng, sự quyết đoán là điểm mạnh lớn của bạn."
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen Nam",
+      emoji: "😊",
+      description: [
+        "Bạn là một Egen Nam chu đáo và thấu hiểu!",
+        "Bạn phân tích tình huống từng bước và hiểu rõ quan điểm của người khác.",
+        "Bạn coi trọng sự hòa hợp và theo đuổi các mối quan hệ ổn định.",
+        "Suy nghĩ sâu sắc và sự chu đáo là điểm mạnh lớn với những người xung quanh bạn."
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto Nữ",
+      emoji: "✨",
+      description: [
+        "Bạn là một Teto Nữ rực rỡ và quyến rũ!",
+        "Bạn truyền năng lượng cho mọi người xung quanh với sức sống tích cực.",
+        "Bạn thể hiện suy nghĩ một cách trung thực và thích những thử thách.",
+        "Bạn xuất sắc trong việc đưa ra những ý tưởng sáng tạo và đổi mới.",
+        "Năng lượng tươi sáng của bạn tỏa sáng trong mọi tình huống."
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen Nữ",
+      emoji: "🌸",
+      description: [
+        "Bạn là một Egen Nữ ấm áp và tinh tế!",
+        "Bạn xuất sắc trong việc hiểu và đồng cảm với cảm xúc của người khác.",
+        "Bạn có tính cách bình tĩnh, ổn định và đáng tin cậy.",
+        "Bạn coi trọng các mối quan hệ sâu sắc và đưa ra lời khuyên chân thành.",
+        "Sự ấm áp và trí tuệ của bạn an ủi nhiều người."
+      ]
+    }
   }
 };

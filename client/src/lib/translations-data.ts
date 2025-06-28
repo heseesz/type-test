@@ -1,6 +1,6 @@
 import { Question, TestResult } from './test-types';
 
-export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja', Question[]> = {
+export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja' | 'vi', Question[]> = {
   ko: [
     {
       question: "새로운 사람들과 만날 때 어떤 스타일인가요?",
@@ -660,10 +660,120 @@ export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw
         { text: "一人で反省する", type: "egen", weight: 1 }
       ]
     }
+  ],
+  vi: [
+    {
+      question: "Phong cách của bạn khi gặp gỡ người mới như thế nào?",
+      answers: [
+        { text: "Chủ động tiếp cận và bắt đầu cuộc trò chuyện", type: "teto", weight: 2 },
+        { text: "Đợi người khác chủ động nói chuyện trước", type: "egen", weight: 2 },
+        { text: "Hành động khác nhau tùy theo tình huống", type: "egen", weight: 1 },
+        { text: "Tự nhiên đánh giá bầu không khí rồi hành động", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "Bạn thường đóng vai trò gì trong các buổi hẹn với bạn bè?",
+      answers: [
+        { text: "Quyết định địa điểm, thời gian và lập kế hoạch", type: "teto", weight: 2 },
+        { text: "Nghe và làm theo ý kiến của người khác", type: "egen", weight: 2 },
+        { text: "Đóng vai trò người tạo không khí vui vẻ", type: "teto", weight: 1 },
+        { text: "Tham gia một cách yên lặng và thích thú", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Bạn thường giải tỏa căng thẳng như thế nào?",
+      answers: [
+        { text: "Gặp gỡ bạn bè và nói chuyện", type: "teto", weight: 2 },
+        { text: "Dành thời gian một mình", type: "egen", weight: 2 },
+        { text: "Tập thể dục hoặc hoạt động sở thích", type: "teto", weight: 1 },
+        { text: "Nghe nhạc hoặc đọc sách", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Điều gì quan trọng hơn khi bạn đưa ra quyết định?",
+      answers: [
+        { text: "Cảm xúc và trực giác", type: "teto", weight: 2 },
+        { text: "Phân tích logic", type: "egen", weight: 2 },
+        { text: "Ý kiến của người khác", type: "egen", weight: 1 },
+        { text: "Kinh nghiệm trong quá khứ", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "Bạn thể hiện cảm xúc như thế nào?",
+      answers: [
+        { text: "Thể hiện một cách cởi mở và trực tiếp", type: "teto", weight: 2 },
+        { text: "Kiểm soát và thể hiện một cách tinh tế", type: "egen", weight: 2 },
+        { text: "Thể hiện theo tình huống", type: "teto", weight: 1 },
+        { text: "Ít thể hiện ra ngoài", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Thái độ của bạn với những thay đổi bất ngờ?",
+      answers: [
+        { text: "Hứng thú và thích thú với những thay đổi", type: "teto", weight: 2 },
+        { text: "Cảm thấy căng thẳng và cần thời gian để thích nghi", type: "egen", weight: 2 },
+        { text: "Tích cực tìm cách thích ứng", type: "teto", weight: 1 },
+        { text: "Thích sự ổn định hơn", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Cách bạn tiếp cận các vấn đề khó khăn?",
+      answers: [
+        { text: "Xử lý ngay lập tức và quyết đoán", type: "teto", weight: 2 },
+        { text: "Suy nghĩ cẩn thận từng bước", type: "egen", weight: 2 },
+        { text: "Thảo luận với người khác để tìm giải pháp", type: "teto", weight: 1 },
+        { text: "Dành thời gian để phân tích thấu đáo", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Phong cách giao tiếp của bạn trong nhóm?",
+      answers: [
+        { text: "Tích cực phát biểu và dẫn dắt cuộc trò chuyện", type: "teto", weight: 2 },
+        { text: "Chủ yếu lắng nghe và đưa ra ý kiến khi cần", type: "egen", weight: 2 },
+        { text: "Cân bằng giữa nói và nghe", type: "teto", weight: 1 },
+        { text: "Thích lắng nghe hơn là nói", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Phản ứng của bạn khi bị chỉ trích?",
+      answers: [
+        { text: "Chấp nhận cởi mở và cố gắng cải thiện", type: "teto", weight: 2 },
+        { text: "Phân tích sâu sắc", type: "egen", weight: 2 },
+        { text: "Ban đầu cảm thấy tổn thương nhưng sau đó suy ngẫm", type: "teto", weight: 1 },
+        { text: "Cần thời gian để xử lý", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Điều gì quan trọng khi bạn đưa ra quyết định?",
+      answers: [
+        { text: "Trực giác và cảm xúc", type: "teto", weight: 2 },
+        { text: "Phân tích logic", type: "egen", weight: 2 },
+        { text: "Ý kiến của người khác", type: "egen", weight: 1 },
+        { text: "Kinh nghiệm quá khứ", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "Phong cách thích ứng với môi trường mới?",
+      answers: [
+        { text: "Thích ứng nhanh chóng và thích thú với thử thách mới", type: "teto", weight: 2 },
+        { text: "Thích ứng từ từ", type: "egen", weight: 2 },
+        { text: "Thích ứng cùng với mọi người xung quanh", type: "teto", weight: 1 },
+        { text: "Thích sự ổn định", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "Bạn thường dành cuối tuần như thế nào?",
+      answers: [
+        { text: "Gặp gỡ bạn bè và hoạt động tích cực", type: "teto", weight: 2 },
+        { text: "Nghỉ ngơi ở nhà và tận hưởng thời gian cá nhân", type: "egen", weight: 2 },
+        { text: "Khám phá những địa điểm mới hoặc trải nghiệm mới", type: "teto", weight: 1 },
+        { text: "Tập trung vào sở thích yêu thích", type: "egen", weight: 1 }
+      ]
+    }
   ]
 };
 
-export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja', Record<string, TestResult>> = {
+export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja' | 'vi', Record<string, TestResult>> = {
   ko: {
     teto_male: {
       type: "teto_male",
@@ -959,6 +1069,55 @@ export const resultTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' |
         "落ち着きがあり安定した信頼できる性格を持っています。",
         "深い関係を大切にし、真心のこもったアドバイスをします。",
         "あなたの温かさと知恵は多くの人を慰めています。"
+      ]
+    }
+  },
+  vi: {
+    teto_male: {
+      type: "teto_male",
+      title: "Teto Nam",
+      emoji: "🔥",
+      description: [
+        "Bạn là một Teto Nam năng động và chủ động!",
+        "Bạn không ngại những thử thách mới và luôn dẫn đầu.",
+        "Bạn thích giao tiếp với mọi người và có tính cách năng lượng.",
+        "Bạn có khả năng lãnh đạo mạnh mẽ và tự tin thể hiện ý kiến.",
+        "Mặc dù đôi khi cần thận trọng, sự quyết đoán là điểm mạnh lớn của bạn."
+      ]
+    },
+    egen_male: {
+      type: "egen_male",
+      title: "Egen Nam",
+      emoji: "😊",
+      description: [
+        "Bạn là một Egen Nam chu đáo và thấu hiểu!",
+        "Bạn phân tích tình huống từng bước và hiểu rõ quan điểm của người khác.",
+        "Bạn coi trọng sự hòa hợp và theo đuổi các mối quan hệ ổn định.",
+        "Suy nghĩ sâu sắc và sự chu đáo là điểm mạnh lớn với những người xung quanh bạn."
+      ]
+    },
+    teto_female: {
+      type: "teto_female",
+      title: "Teto Nữ",
+      emoji: "✨",
+      description: [
+        "Bạn là một Teto Nữ rực rỡ và quyến rũ!",
+        "Bạn truyền năng lượng cho mọi người xung quanh với sức sống tích cực.",
+        "Bạn thể hiện suy nghĩ một cách trung thực và thích những thử thách.",
+        "Bạn xuất sắc trong việc đưa ra những ý tưởng sáng tạo và đổi mới.",
+        "Năng lượng tươi sáng của bạn tỏa sáng trong mọi tình huống."
+      ]
+    },
+    egen_female: {
+      type: "egen_female",
+      title: "Egen Nữ",
+      emoji: "🌸",
+      description: [
+        "Bạn là một Egen Nữ ấm áp và tinh tế!",
+        "Bạn xuất sắc trong việc hiểu và đồng cảm với cảm xúc của người khác.",
+        "Bạn có tính cách bình tĩnh, ổn định và đáng tin cậy.",
+        "Bạn coi trọng các mối quan hệ sâu sắc và đưa ra lời khuyên chân thành.",
+        "Sự ấm áp và trí tuệ của bạn an ủi nhiều người."
       ]
     }
   }
