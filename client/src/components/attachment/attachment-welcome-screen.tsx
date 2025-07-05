@@ -32,7 +32,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
               </h2>
               <div className="text-gray-600 dark:text-gray-400 space-y-3 text-left">
                 <p>
-                  • 총 <strong>12개의 질문</strong>으로 구성되어 있습니다.
+                  • 총 <strong>36개의 질문</strong>으로 구성되어 있습니다.
                 </p>
                 <p>
                   • 각 질문에 대해 자신의 생각과 가장 가까운 답을 선택해주세요.
@@ -44,7 +44,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
                   • 테스트 결과는 <strong>안정형, 불안형, 회피형, 두려움-회피형</strong> 중 하나로 나타납니다.
                 </p>
                 <p>
-                  • 테스트 소요 시간: 약 <strong>3-5분</strong>
+                  • 테스트 소요 시간: 약 <strong>8-12분</strong>
                 </p>
               </div>
 
