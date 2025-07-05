@@ -135,6 +135,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- July 5, 2025. Added Adult Attachment Style Test with complete Korean/English/Japanese language support, 36 authentic research-based questions, four attachment types (Secure, Anxious, Avoidant, Fearful-Avoidant), real-time language switching during tests, and updated sitemap.xml with new /attachment-style route
 - June 30, 2025. Added multilingual Contact Us feature with popup support across all 7 languages, providing typetest.site@gmail.com as contact email
 - June 30, 2025. Added SEO optimization files: Created sitemap.xml with multilingual hreflang tags for both homepage and teto-egen test page, included robots.txt for efficient search engine crawling, configured for Google Search Console submission with proper priority and change frequency settings
 - June 30, 2025. Updated privacy policy with comprehensive content: Added detailed information about Replit hosting, Google AdSense, Google Analytics usage, cookie policy, and contact information for privacy officer (typetest.site@gmail.com), ensuring full compliance with privacy regulations and AdSense requirements
