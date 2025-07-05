@@ -45,6 +45,14 @@ export function AttachmentTestScreen({
       resultsButton: "View Results",
       homeButton: "Back to TypeTest Home",
       progressText: (current: number, total: number) => `${current + 1} / ${total}`
+    },
+    ja: {
+      previousButton: "前へ",
+      startOverButton: "最初から",
+      nextButton: "次へ",
+      resultsButton: "結果を見る",
+      homeButton: "TypeTestホームに戻る",
+      progressText: (current: number, total: number) => `${current + 1} / ${total}`
     }
   };
 

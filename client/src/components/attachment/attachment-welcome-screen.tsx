@@ -38,6 +38,18 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
       duration: "Estimated time: 8-12 minutes",
       startButton: "Start Test",
       homeButton: "Back to TypeTest Home"
+    },
+    ja: {
+      title: "成人愛着スタイルテスト",
+      subtitle: "あなたの愛着スタイルを発見しましょう！",
+      guideTitle: "テストの説明",
+      questions: "このテストは36の質問で構成されています。",
+      instruction: "各質問について、あなたの考えに最も近い答えを選択してください。",
+      honest: "正解や不正解はありませんので、正直にお答えください。",
+      results: "結果は4つのタイプのうちの1つになります：安定型、不安型、回避型、恐れ回避型。",
+      duration: "所要時間：約8-12分",
+      startButton: "テスト開始",
+      homeButton: "TypeTestホームに戻る"
     }
   };
 

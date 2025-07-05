@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AttachmentWelcomeScreen } from '@/components/attachment/attachment-welcome-screen';
 import { AttachmentTestScreen } from '@/components/attachment/attachment-test-screen';
 import { AttachmentResultScreen } from '@/components/attachment/attachment-result-screen';
-import { attachmentQuestions, attachmentResults, attachmentQuestionsEn, attachmentResultsEn } from '@/lib/attachment-data';
+import { attachmentQuestions, attachmentResults, attachmentQuestionsEn, attachmentResultsEn, attachmentQuestionsJa, attachmentResultsJa } from '@/lib/attachment-data';
 import { AttachmentTestState, AttachmentType } from '@/lib/attachment-types';
 import { shuffleArray } from '@/lib/shuffle-utils';
 import { useLanguage } from '@/contexts/language-context';
@@ -11,8 +11,12 @@ export default function AttachmentStyle() {
   const { language } = useLanguage();
   
   // Get the appropriate questions and results based on language
-  const currentQuestions = language === 'en' ? attachmentQuestionsEn : attachmentQuestions;
-  const currentResults = language === 'en' ? attachmentResultsEn : attachmentResults;
+  const currentQuestions = language === 'en' ? attachmentQuestionsEn : 
+                          language === 'ja' ? attachmentQuestionsJa : 
+                          attachmentQuestions;
+  const currentResults = language === 'en' ? attachmentResultsEn : 
+                        language === 'ja' ? attachmentResultsJa : 
+                        attachmentResults;
   
   const [testState, setTestState] = useState<AttachmentTestState>({
     screen: 'welcome',

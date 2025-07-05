@@ -1510,3 +1510,508 @@ export const attachmentResultsEs: Record<string, AttachmentResult> = {
     ]
   }
 };
+
+// Japanese version
+export const attachmentQuestionsJa: AttachmentQuestion[] = [
+  // Avoidance items (1-18)
+  {
+    id: 1,
+    question: "私は親密な感情的関係を持たなくても快適です。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 2,
+    question: "自立と自給自足は私にとって非常に重要です。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 3,
+    question: "他人に依存したり、他人が私に依存したりするのは好きではありません。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 4,
+    question: "他人が私に非常に近づこうとすると不快に感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 5,
+    question: "私は自分に対してポジティブに感じています。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: -2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 6,
+    question: "親密になりたいが、相手に頼ることは難しいと感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 7,
+    question: "完全に感情的に親密になりたいが、相手が私とのような親密さを望んでいないのではないかと心配になります。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 8,
+    question: "私は恋愛関係なしでも大丈夫です。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 9,
+    question: "私は他人に自分の感情を見せない方が良いと思います。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 10,
+    question: "私にとってパートナーに頼ることは簡単ではありません。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 11,
+    question: "私はパートナーに自分のニーズを表現するのに困難を感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 12,
+    question: "私はパートナーと感情について話すことを避けます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 13,
+    question: "私は親密な恋愛関係なしでも快適に感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 14,
+    question: "私は自分の問題を自分で解決することを好みます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 15,
+    question: "感情的な親密さは私を不快にさせます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 16,
+    question: "私はパートナーに愛情を示すのに苦労します。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 17,
+    question: "私はパートナーに対して脆弱になることを難しく感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 18,
+    question: "私は関係において個人的なスペースを非常に大切にします。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "同意しない", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "全く同意する", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  // Anxiety items (19-36)
+  {
+    id: 19,
+    question: "私はパートナーに見捨てられることを心配しています。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 20,
+    question: "私は恋愛関係において多くの親密さを必要とします。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 21,
+    question: "私はパートナーが私を愛している程度が、私がパートナーを愛している程度より少ないのではないかと恐れています。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 22,
+    question: "パートナーが利用できない時、私は動揺したり怒ったりします。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 23,
+    question: "私はパートナーの愛を失うことを心配しています。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 24,
+    question: "私はパートナーと非常に親密になりたがりますが、これが時々相手を遠ざけてしまいます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 25,
+    question: "恋愛関係にない時、私は少し迷子のように感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 26,
+    question: "私は親密さへの欲求がパートナーを圧倒するのではないかと心配しています。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 27,
+    question: "私の親密さへの欲求は時々人々を怖がらせます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 28,
+    question: "パートナーが必要な時に利用できない時、私はフラストレーションを感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 29,
+    question: "パートナーが離れていると不安になります。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 30,
+    question: "私はパートナーが私を愛していることを示してもらう必要があります。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 31,
+    question: "パートナーが私のしたことを承認しない時、私は自分自身に対してとても悪く感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 32,
+    question: "私はしばしばパートナーが本当に私を心配してくれているかどうか疑問に思います。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 33,
+    question: "恋愛関係にある時でも孤独を感じます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 34,
+    question: "私はパートナーが私を離れることを滅多に心配しません。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: 2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: -2 }
+    ]
+  },
+  {
+    id: 35,
+    question: "私のパートナーは私を自分自身について疑わせます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 36,
+    question: "私は恋愛関係なしでもうまく機能できます。",
+    answers: [
+      { text: "全く同意しない", avoidanceScore: 0, anxietyScore: 2 },
+      { text: "同意しない", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "どちらでもない", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "同意する", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "全く同意する", avoidanceScore: 0, anxietyScore: -2 }
+    ]
+  }
+];
+
+export const attachmentResultsJa: Record<string, AttachmentResult> = {
+  secure: {
+    type: 'secure',
+    title: '安定型愛着',
+    emoji: '😊',
+    description: [
+      'あなたは安定型愛着スタイルを持っています。親密さと独立性の両方に快適さを感じます。',
+      '他者を信頼し、自分が愛される価値があると信じています。',
+      'ニーズを効果的に伝え、パートナーのニーズに対しても支持的に応答します。'
+    ],
+    characteristics: [
+      '親密さと親近感に快適さを感じる',
+      '高い自尊心と他者への肯定的な見方',
+      '関係における効果的なコミュニケーション',
+      'サポートを求め、提供することができる',
+      '建設的に対立を処理する',
+      '関係内で独立性を維持する'
+    ],
+    advice: [
+      '健康的な関係パターンを育み続けてください',
+      '異なる愛着スタイルを持つパートナーをサポートしてください',
+      'オープンで正直なコミュニケーションを維持してください',
+      'より安全でないパートナーに対して忍耐と理解を実践してください',
+      'あなたの安全な基盤を使って他者がより安全に感じるよう助けてください'
+    ]
+  },
+  anxious: {
+    type: 'anxious',
+    title: '不安型愛着',
+    emoji: '😰',
+    description: [
+      'あなたは不安型愛着スタイルを持っています。親密な関係を求めますが、パートナーの気持ちを心配します。',
+      '頻繁な安心を求め、見捨てられることを恐れる可能性があります。',
+      'パートナーの気分や行動に非常に敏感になる傾向があります。'
+    ],
+    characteristics: [
+      '親密な関係への強い欲求',
+      '見捨てられることや拒絶への恐れ',
+      'パートナーからの頻繁な安心を求める',
+      'パートナーの気分の変化に非常に敏感',
+      '関係において過度に依存的になる可能性',
+      '関係の安全性について心配する傾向'
+    ],
+    advice: [
+      '感情の自己調整とリラクゼーション技術を練習してください',
+      '自己価値と個人的な自信を築いてください',
+      '直接的で明確なコミュニケーションを学んでください',
+      '関係の安定性を信頼することを学んでください',
+      '愛着パターンを探るためのセラピーを検討してください'
+    ]
+  },
+  avoidant: {
+    type: 'avoidant',
+    title: '回避型愛着',
+    emoji: '🛡️',
+    description: [
+      'あなたは回避型愛着スタイルを持っています。独立性と自給自足を重視します。',
+      '高レベルの感情的親密さに不快感を感じる可能性があります。',
+      '関係において一定の感情的距離を保つ傾向があります。'
+    ],
+    characteristics: [
+      '独立性の強い重視',
+      '脆弱な感情を表現することの困難',
+      '関係の重要性を最小化する傾向',
+      '自給自足への好み',
+      '感情的な親密さからの距離',
+      '他者への依存に対する不快感'
+    ],
+    advice: [
+      '感情を表現し、脆弱性を示すことを練習してください',
+      '親密さが健康的な関係に不可欠であることを認識してください',
+      'パートナーのサポートを求めることを学んでください',
+      '関係における相互依存の価値を探求してください',
+      '感情的なつながりを深めるためにセラピーを検討してください'
+    ]
+  },
+  fearful: {
+    type: 'fearful',
+    title: '恐れ回避型愛着',
+    emoji: '😟',
+    description: [
+      'あなたは恐れ回避型愛着スタイルを持っています。親密さを望みながらも恐れています。',
+      '傷つけられることへの恐れと親密さへの欲求の間で引き裂かれています。',
+      '関係において不安定で予測不可能なパターンを示す可能性があります。'
+    ],
+    characteristics: [
+      '親密さへの欲求と恐れの混在',
+      '関係における予測不可能な行動',
+      '高い感情的反応性',
+      '自己価値の問題',
+      '傷つけられることへの恐れ',
+      '矛盾した関係の欲求'
+    ],
+    advice: [
+      '感情調整スキルと自己認識を向上させてください',
+      '安全で支持的な関係を築くことに焦点を当ててください',
+      '過去のトラウマや愛着の傷を癒すために専門的な助けを求めてください',
+      'マインドフルネスとストレス軽減技術を練習してください',
+      '一貫性と予測可能性のあるルーチンを確立してください'
+    ]
+  }
+};

@@ -45,6 +45,17 @@ export function AttachmentResultScreen({
       restartButton: "Take Test Again",
       homeButton: "Back to TypeTest Home"
     },
+    ja: {
+      descriptionTitle: "愛着スタイルの説明",
+      characteristicsTitle: "主な特徴",
+      adviceTitle: "関係改善のアドバイス",
+      scoreTitle: "あなたのスコア",
+      avoidanceLabel: "回避スコア",
+      anxietyLabel: "不安スコア",
+      shareButton: "結果を共有",
+      restartButton: "再度テストする",
+      homeButton: "TypeTestホームに戻る"
+    },
     es: {
       descriptionTitle: "Descripción del Estilo de Apego",
       characteristicsTitle: "Características Principales",
