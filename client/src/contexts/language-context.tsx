@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw' | 'ja' | 'vi';
+export type Language = 'ko' | 'en' | 'ja';
 
 interface LanguageContextType {
   language: Language;
@@ -409,20 +409,8 @@ function detectBrowserLanguage(): Language {
   if (browserLang.startsWith('ko')) {
     return 'ko';
   }
-  if (browserLang.startsWith('es')) {
-    return 'es';
-  }
-  if (browserLang.startsWith('zh-cn') || browserLang === 'zh' || browserLang === 'zh-hans') {
-    return 'zh-cn';
-  }
-  if (browserLang.startsWith('zh-tw') || browserLang === 'zh-hant') {
-    return 'zh-tw';
-  }
   if (browserLang.startsWith('ja')) {
     return 'ja';
-  }
-  if (browserLang.startsWith('vi')) {
-    return 'vi';
   }
   return 'en'; // Default to English
 }
