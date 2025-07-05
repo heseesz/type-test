@@ -17,7 +17,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
   const content = {
     ko: {
       title: "성인 애착 유형 테스트",
-      subtitle: "나의 애착 유형을 알아보고 관계 패턴을 이해해보세요",
+      subtitle: "나의 애착 유형을 알아보세요!",
       guideTitle: "테스트 안내",
       questions: "총 36개의 질문으로 구성되어 있습니다.",
       instruction: "각 질문에 대해 자신의 생각과 가장 가까운 답을 선택해주세요.",
@@ -29,7 +29,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
     },
     en: {
       title: "Adult Attachment Style Test",
-      subtitle: "Discover your attachment style and understand your relationship patterns",
+      subtitle: "Discover your attachment style!",
       guideTitle: "Test Instructions",
       questions: "This test consists of 36 questions.",
       instruction: "For each question, select the answer that best reflects your thoughts.",
