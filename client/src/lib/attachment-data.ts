@@ -1,5 +1,408 @@
 import { AttachmentQuestion, AttachmentResult } from './attachment-types';
 
+// English version
+export const attachmentQuestionsEn: AttachmentQuestion[] = [
+  // Avoidance items (1-18)
+  {
+    id: 1,
+    question: "I am comfortable not having close emotional relationships.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 2,
+    question: "Independence and self-sufficiency are very important to me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 3,
+    question: "I don't like depending on others or having others depend on me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 4,
+    question: "I feel uncomfortable when others try to get very close to me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 5,
+    question: "I am not comfortable opening up to others.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 6,
+    question: "I try to avoid getting too close to my partner.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 7,
+    question: "I find myself reluctant when my partner wants to become intimate.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 8,
+    question: "I want to get close to my partner, but I find myself pulling back.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 9,
+    question: "I get nervous when others get too close to me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 10,
+    question: "I find it difficult to depend on others.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 11,
+    question: "I prefer to distance myself rather than show my emotions during conflicts.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 12,
+    question: "I am happy and satisfied enough by myself.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 13,
+    question: "I rarely talk about my weaknesses or difficulties with others.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 14,
+    question: "Others' emotional demands often feel excessive to me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 15,
+    question: "I value freedom and independence highly in relationships.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 16,
+    question: "I feel uncomfortable depending on someone emotionally.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 17,
+    question: "I try to avoid getting deeply involved in my partner's problems.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 18,
+    question: "I dislike it when my personal space is invaded in intimate relationships.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+
+  // Anxiety items (19-36)
+  {
+    id: 19,
+    question: "I worry about being abandoned.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 20,
+    question: "I worry a lot about my relationships with others.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 21,
+    question: "I worry that others don't care about me as much as I care about them.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 22,
+    question: "I worry about losing people who are close to me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 23,
+    question: "I worry about being left alone.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 24,
+    question: "I need frequent reassurance that I am loved by my partner.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 25,
+    question: "I often expect my partner to reciprocate the same level of affection I show.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 26,
+    question: "My desire to merge with my partner sometimes scares people away.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 27,
+    question: "My excessive desire for intimacy sometimes frightens people away.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 28,
+    question: "Sometimes I demand more affection and commitment from others.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 29,
+    question: "I react very sensitively to changes in my partner's mood or behavior.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 30,
+    question: "I feel anxious when my partner's interest in me decreases.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 31,
+    question: "I often doubt whether my partner truly understands me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 32,
+    question: "I tend to get easily hurt or angry over small issues in relationships.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 33,
+    question: "I tend to cling too much to relationships because I fear my partner will leave.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 34,
+    question: "I need frequent confirmation that my partner loves me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 35,
+    question: "I often express my insecure emotions to my partner.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 36,
+    question: "I often feel that my partner doesn't put enough time and effort into me.",
+    answers: [
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "Disagree", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Strongly agree", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  }
+];
+
 export const attachmentQuestions: AttachmentQuestion[] = [
   // 회피 문항 (1-18)
   {
@@ -401,6 +804,113 @@ export const attachmentQuestions: AttachmentQuestion[] = [
     ]
   }
 ];
+
+// English results
+export const attachmentResultsEn: Record<string, AttachmentResult> = {
+  secure: {
+    type: 'secure',
+    title: 'Secure Attachment',
+    emoji: '😊',
+    description: [
+      'You have a secure attachment style. You feel comfortable with intimacy and independence.',
+      'You trust others and believe you are worthy of love.',
+      'You communicate your needs effectively and respond supportively to your partner\'s needs.'
+    ],
+    characteristics: [
+      'Comfortable with intimacy and closeness',
+      'High self-esteem and positive view of others',
+      'Effective communication in relationships',
+      'Able to seek and provide support',
+      'Handles conflict constructively',
+      'Maintains independence within relationships'
+    ],
+    advice: [
+      'Continue nurturing your healthy relationship patterns',
+      'Support partners who may have different attachment styles',
+      'Maintain open and honest communication',
+      'Practice patience and understanding with less secure partners',
+      'Use your secure base to help others feel more secure'
+    ]
+  },
+  anxious: {
+    type: 'anxious',
+    title: 'Anxious Attachment',
+    emoji: '😰',
+    description: [
+      'You have an anxious attachment style. You desire close relationships but worry about your partner\'s feelings for you.',
+      'You may seek frequent reassurance and fear abandonment.',
+      'You tend to be highly sensitive to your partner\'s moods and behaviors.'
+    ],
+    characteristics: [
+      'Strong desire for close relationships',
+      'Fear of abandonment and rejection',
+      'Seeks frequent reassurance from partner',
+      'Highly sensitive to partner\'s mood changes',
+      'May become overly dependent in relationships',
+      'Tends to worry about relationship security'
+    ],
+    advice: [
+      'Practice self-soothing techniques to manage anxiety',
+      'Develop a stronger sense of self-worth',
+      'Communicate your needs directly rather than seeking constant reassurance',
+      'Work on building trust in your relationships',
+      'Consider therapy to explore the roots of your attachment anxiety',
+      'Practice mindfulness to stay present rather than worrying about the future'
+    ]
+  },
+  avoidant: {
+    type: 'avoidant',
+    title: 'Avoidant Attachment',
+    emoji: '🚪',
+    description: [
+      'You have an avoidant attachment style. You value independence and may find intimate relationships challenging.',
+      'You prefer to rely on yourself and may feel uncomfortable with too much closeness.',
+      'You tend to suppress emotions and maintain emotional distance from others.'
+    ],
+    characteristics: [
+      'Highly values independence and self-reliance',
+      'Uncomfortable with too much intimacy',
+      'Tends to suppress or avoid emotional expression',
+      'May have difficulty trusting others completely',
+      'Prefers to handle problems alone',
+      'May withdraw during conflicts or stress'
+    ],
+    advice: [
+      'Practice opening up gradually to trusted partners',
+      'Work on identifying and expressing your emotions',
+      'Allow yourself to depend on others in small ways',
+      'Recognize that vulnerability can strengthen relationships',
+      'Consider therapy to explore your comfort with intimacy',
+      'Practice staying present during emotional conversations'
+    ]
+  },
+  fearful: {
+    type: 'fearful',
+    title: 'Fearful-Avoidant Attachment',
+    emoji: '😕',
+    description: [
+      'You have a fearful-avoidant attachment style. You want close relationships but are afraid of getting hurt.',
+      'You may feel conflicted between wanting intimacy and fearing rejection.',
+      'Your relationships may feel unpredictable as you alternate between closeness and distance.'
+    ],
+    characteristics: [
+      'Desires close relationships but fears getting hurt',
+      'May have an unpredictable relationship pattern',
+      'Alternates between seeking and avoiding intimacy',
+      'May have negative views of both self and others',
+      'Struggles with trust and emotional regulation',
+      'May push partners away when they get too close'
+    ],
+    advice: [
+      'Work on building a secure sense of self-worth',
+      'Practice emotional regulation techniques',
+      'Communicate your fears and needs to your partner',
+      'Consider professional therapy to address past relationship trauma',
+      'Take small steps toward trusting others',
+      'Practice staying in relationships during difficult moments rather than withdrawing'
+    ]
+  }
+};
 
 export const attachmentResults: Record<string, AttachmentResult> = {
   secure: {

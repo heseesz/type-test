@@ -2,26 +2,35 @@ import { useState } from 'react';
 import { AttachmentWelcomeScreen } from '@/components/attachment/attachment-welcome-screen';
 import { AttachmentTestScreen } from '@/components/attachment/attachment-test-screen';
 import { AttachmentResultScreen } from '@/components/attachment/attachment-result-screen';
-import { attachmentQuestions, attachmentResults } from '@/lib/attachment-data';
+import { attachmentQuestions, attachmentResults, attachmentQuestionsEn, attachmentResultsEn } from '@/lib/attachment-data';
 import { AttachmentTestState, AttachmentType } from '@/lib/attachment-types';
 import { shuffleArray } from '@/lib/shuffle-utils';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function AttachmentStyle() {
+  const { language } = useLanguage();
+  
+  // Get the appropriate questions and results based on language
+  const currentQuestions = language === 'en' ? attachmentQuestionsEn : attachmentQuestions;
+  const currentResults = language === 'en' ? attachmentResultsEn : attachmentResults;
+  
   const [testState, setTestState] = useState<AttachmentTestState>({
     screen: 'welcome',
     currentQuestion: 0,
     answers: [],
     avoidanceScore: 0,
-    anxietyScore: 0
+    anxietyScore: 0,
+    shuffledQuestions: [],
+    questionOrder: []
   });
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
   const handleStart = () => {
     // Create shuffled question order
-    const questionIndices = Array.from({ length: attachmentQuestions.length }, (_, i) => i);
+    const questionIndices = Array.from({ length: currentQuestions.length }, (_, i) => i);
     const shuffledOrder = shuffleArray(questionIndices);
-    const shuffledQuestions = shuffledOrder.map(index => attachmentQuestions[index]);
+    const shuffledQuestions = shuffledOrder.map(index => currentQuestions[index]);
 
     setTestState(prev => ({
       ...prev,
@@ -123,7 +132,9 @@ export default function AttachmentStyle() {
       currentQuestion: 0,
       answers: [],
       avoidanceScore: 0,
-      anxietyScore: 0
+      anxietyScore: 0,
+      shuffledQuestions: [],
+      questionOrder: []
     });
     setSelectedAnswer(null);
   };
@@ -147,7 +158,7 @@ export default function AttachmentStyle() {
   }
 
   if (testState.screen === 'result' && testState.finalResult) {
-    const result = attachmentResults[testState.finalResult];
+    const result = currentResults[testState.finalResult];
     return (
       <AttachmentResultScreen
         result={result}

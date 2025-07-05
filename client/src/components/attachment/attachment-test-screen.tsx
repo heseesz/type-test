@@ -6,6 +6,7 @@ import { Home } from 'lucide-react';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
+import { useLanguage } from '@/contexts/language-context';
 
 interface AttachmentTestScreenProps {
   currentQuestion: number;
@@ -26,6 +27,28 @@ export function AttachmentTestScreen({
   onRestart,
   questions
 }: AttachmentTestScreenProps) {
+  const { language } = useLanguage();
+
+  const labels = {
+    ko: {
+      previousButton: "이전",
+      startOverButton: "처음으로",
+      nextButton: "다음",
+      resultsButton: "결과 보기",
+      homeButton: "타입테스트 홈으로 돌아가기",
+      progressText: (current: number, total: number) => `${current + 1} / ${total}`
+    },
+    en: {
+      previousButton: "Previous",
+      startOverButton: "Start Over",
+      nextButton: "Next",
+      resultsButton: "View Results",
+      homeButton: "Back to TypeTest Home",
+      progressText: (current: number, total: number) => `${current + 1} / ${total}`
+    }
+  };
+
+  const currentLabels = labels[language as keyof typeof labels] || labels.ko;
   const progress = ((currentQuestion + 1) / questions.length) * 100;
   const question = questions[currentQuestion];
 
@@ -39,8 +62,8 @@ export function AttachmentTestScreen({
         {/* Progress Bar */}
         <div className="mb-6 sm:mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
-            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">{currentQuestion + 1}/{questions.length}</span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{language === 'en' ? 'Progress' : '진행률'}</span>
+            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">{currentLabels.progressText(currentQuestion, questions.length)}</span>
           </div>
           <Progress value={progress} className="w-full h-3" />
         </div>
@@ -92,7 +115,7 @@ export function AttachmentTestScreen({
                 currentQuestion === 0 ? 'hidden' : ''
               }`}
             >
-              이전
+              {currentLabels.previousButton}
             </Button>
             
             {/* 처음으로 버튼 */}
@@ -101,7 +124,7 @@ export function AttachmentTestScreen({
               variant="outline"
               className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
             >
-              처음으로
+              {currentLabels.startOverButton}
             </Button>
             
             <Button
@@ -111,7 +134,7 @@ export function AttachmentTestScreen({
                 selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {currentQuestion === questions.length - 1 ? '결과 보기' : '다음'}
+              {currentQuestion === questions.length - 1 ? currentLabels.resultsButton : currentLabels.nextButton}
             </Button>
           </div>
           
@@ -123,7 +146,7 @@ export function AttachmentTestScreen({
               className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
             >
               <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-              타입테스트 홈으로 돌아가기
+              {currentLabels.homeButton}
             </Button>
           </div>
           

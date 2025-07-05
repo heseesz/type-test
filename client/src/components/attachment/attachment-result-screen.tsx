@@ -5,6 +5,7 @@ import { Share2, Home } from 'lucide-react';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
+import { useLanguage } from '@/contexts/language-context';
 
 interface AttachmentResultScreenProps {
   result: AttachmentResult;
@@ -19,6 +20,34 @@ export function AttachmentResultScreen({
   anxietyScore, 
   onRestart 
 }: AttachmentResultScreenProps) {
+  const { language } = useLanguage();
+
+  const labels = {
+    ko: {
+      descriptionTitle: "애착 유형 설명",
+      characteristicsTitle: "주요 특성",
+      adviceTitle: "관계 개선 조언",
+      scoreTitle: "당신의 점수",
+      avoidanceLabel: "회피 점수",
+      anxietyLabel: "불안 점수",
+      shareButton: "결과 공유하기",
+      restartButton: "다시 테스트하기",
+      homeButton: "타입테스트 홈으로 돌아가기"
+    },
+    en: {
+      descriptionTitle: "Attachment Style Description",
+      characteristicsTitle: "Key Characteristics",
+      adviceTitle: "Relationship Improvement Advice",
+      scoreTitle: "Your Scores",
+      avoidanceLabel: "Avoidance Score",
+      anxietyLabel: "Anxiety Score",
+      shareButton: "Share Results",
+      restartButton: "Take Test Again",
+      homeButton: "Back to TypeTest Home"
+    }
+  };
+
+  const currentLabels = labels[language as keyof typeof labels] || labels.ko;
   
   const handleShare = async () => {
     const shareText = `나의 애착 유형은 "${result.title}" 입니다! 🔗💝\n\n나도 애착 유형 테스트하기: ${window.location.origin}/attachment-style`;
@@ -63,7 +92,7 @@ export function AttachmentResultScreen({
               {/* Description */}
               <div>
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                  애착 유형 설명
+                  {currentLabels.descriptionTitle}
                 </h2>
                 <div className="space-y-3">
                   {result.description.map((desc, index) => (
@@ -77,7 +106,7 @@ export function AttachmentResultScreen({
               {/* Characteristics */}
               <div>
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                  주요 특성
+                  {currentLabels.characteristicsTitle}
                 </h2>
                 <ul className="space-y-2">
                   {result.characteristics.map((characteristic, index) => (
@@ -92,7 +121,7 @@ export function AttachmentResultScreen({
               {/* Advice */}
               <div>
                 <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                  관계 개선 조언
+                  {currentLabels.adviceTitle}
                 </h2>
                 <ul className="space-y-2">
                   {result.advice.map((advice, index) => (
@@ -106,15 +135,15 @@ export function AttachmentResultScreen({
             </div>
 
             <div className="bg-gradient-to-r from-pink-50 via-red-50 to-purple-50 dark:from-pink-900/20 dark:via-red-900/20 dark:to-purple-900/20 rounded-xl p-6 mt-8">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">당신의 점수</h3>
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">{currentLabels.scoreTitle}</h3>
               <div className="flex justify-center space-x-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">{avoidanceScore}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">회피 점수</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{currentLabels.avoidanceLabel}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-red-600 dark:text-red-400">{anxietyScore}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">불안 점수</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{currentLabels.anxietyLabel}</div>
                 </div>
               </div>
             </div>
@@ -126,14 +155,14 @@ export function AttachmentResultScreen({
                 className="w-full bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation"
               >
                 <Share2 className="w-5 h-5 mr-2" />
-                결과 공유하기
+                {currentLabels.shareButton}
               </Button>
               
               <Button
                 onClick={onRestart}
                 className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
               >
-                다시 테스트하기
+                {currentLabels.restartButton}
               </Button>
             </div>
           </CardContent>
@@ -147,7 +176,7 @@ export function AttachmentResultScreen({
             className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
           >
             <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-            타입테스트 홈으로 돌아가기
+            {currentLabels.homeButton}
           </Button>
         </div>
         
