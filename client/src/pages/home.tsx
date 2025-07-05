@@ -49,16 +49,16 @@ export default function Home() {
             <CardHeader className="text-center pb-4">
               <div className="text-4xl mb-4">💝🔗</div>
               <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
-                성인 애착 유형 테스트
+                {t('tests.attachmentStyle.title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4 flex-1 flex flex-col justify-between">
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
-                나의 애착 유형을 알아보고{'\n'}관계 패턴을 이해해보세요
+                {t('tests.attachmentStyle.description')}
               </p>
               <Link href="/attachment-style">
                 <Button className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white">
-                  테스트 시작하기
+                  {t('tests.attachmentStyle.start')}
                 </Button>
               </Link>
             </CardContent>

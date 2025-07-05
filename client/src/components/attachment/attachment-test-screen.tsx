@@ -40,7 +40,7 @@ export function AttachmentTestScreen({
     },
     en: {
       previousButton: "Previous",
-      startOverButton: "Start Over",
+      startOverButton: "Home",
       nextButton: "Next",
       resultsButton: "View Results",
       homeButton: "Back to TypeTest Home",
