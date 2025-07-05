@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useLanguage } from '@/contexts/language-context';
 
 export function ContactUs() {
-  const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
 
   const contactContent = {
     ko: {
-      title: 'Contact Us',
+      title: '문의하기',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -51,7 +50,7 @@ export function ContactUs() {
       )
     },
     es: {
-      title: 'Contact Us',
+      title: 'Contáctenos',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -72,7 +71,7 @@ export function ContactUs() {
       )
     },
     'zh-cn': {
-      title: 'Contact Us',
+      title: '联系我们',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -93,7 +92,7 @@ export function ContactUs() {
       )
     },
     'zh-tw': {
-      title: 'Contact Us',
+      title: '聯絡我們',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -114,7 +113,7 @@ export function ContactUs() {
       )
     },
     ja: {
-      title: 'Contact Us',
+      title: 'お問い合わせ',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -135,7 +134,7 @@ export function ContactUs() {
       )
     },
     vi: {
-      title: 'Contact Us',
+      title: 'Liên hệ với chúng tôi',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -160,29 +159,28 @@ export function ContactUs() {
   const currentContent = contactContent[language];
 
   return (
-    <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-0 h-auto transition-colors"
-      >
-        {currentContent.title}
-      </button>
-
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
-            <DialogTitle className="text-lg font-bold">{currentContent.title}</DialogTitle>
-            <DialogDescription className="sr-only">
-              {currentContent.title}
-            </DialogDescription>
-          </DialogHeader>
-          <ScrollArea className="max-h-[60vh] pr-4">
-            <div className="space-y-6 text-sm">
-              {currentContent.content}
-            </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
-    </>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button 
+          variant="link" 
+          className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-0 h-auto"
+        >
+          {currentContent.title}
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[500px]">
+        <DialogHeader>
+          <DialogTitle className="text-lg font-bold">{currentContent.title}</DialogTitle>
+          <DialogDescription className="sr-only">
+            {currentContent.title}
+          </DialogDescription>
+        </DialogHeader>
+        <ScrollArea className="max-h-[60vh] pr-4">
+          <div className="space-y-6 text-sm">
+            {currentContent.content}
+          </div>
+        </ScrollArea>
+      </DialogContent>
+    </Dialog>
   );
 }
