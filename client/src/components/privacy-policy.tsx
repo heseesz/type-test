@@ -13,7 +13,7 @@ import { useLanguage } from "@/contexts/language-context";
 export function PrivacyPolicy() {
   const { language } = useLanguage();
   
-  const buttonText = language === 'ko' ? '개인정보처리방침' : 'Privacy Policy';
+  const buttonText = language === 'ko' ? 'Privacy Policy' : 'Privacy Policy';
   
   return (
     <Dialog>
