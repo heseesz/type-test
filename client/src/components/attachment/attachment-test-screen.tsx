@@ -31,34 +31,7 @@ export function AttachmentTestScreen({
   const { language, t } = useLanguage();
   const [, setLocation] = useLocation();
 
-  const labels = {
-    ko: {
-      previousButton: "이전",
-      startOverButton: "처음으로",
-      nextButton: "다음",
-      resultsButton: "결과 보기",
-      homeButton: "타입테스트 홈으로 돌아가기",
-      progressText: (current: number, total: number) => `${current + 1} / ${total}`
-    },
-    en: {
-      previousButton: "Previous",
-      startOverButton: "Start Over",
-      nextButton: "Next",
-      resultsButton: "View Results",
-      homeButton: "Back to TypeTest Home",
-      progressText: (current: number, total: number) => `${current + 1} / ${total}`
-    },
-    ja: {
-      previousButton: "前へ",
-      startOverButton: "最初から",
-      nextButton: "次へ",
-      resultsButton: "結果を見る",
-      homeButton: "TypeTestホームに戻る",
-      progressText: (current: number, total: number) => `${current + 1} / ${total}`
-    }
-  };
 
-  const currentLabels = labels[language as keyof typeof labels] || labels.ko;
   const progress = ((currentQuestion + 1) / questions.length) * 100;
   const question = questions[currentQuestion];
 
@@ -72,8 +45,8 @@ export function AttachmentTestScreen({
         {/* Progress Bar */}
         <div className="mb-6 sm:mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{language === 'en' ? 'Progress' : '진행률'}</span>
-            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">{currentLabels.progressText(currentQuestion, questions.length)}</span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('test.progress')}</span>
+            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">{currentQuestion + 1} / {questions.length}</span>
           </div>
           <Progress value={progress} className="w-full h-3" />
         </div>
@@ -125,7 +98,7 @@ export function AttachmentTestScreen({
                 currentQuestion === 0 ? 'hidden' : ''
               }`}
             >
-              {currentLabels.previousButton}
+              {t('test.previous')}
             </Button>
             
             {/* 처음으로 버튼 */}
@@ -134,7 +107,7 @@ export function AttachmentTestScreen({
               variant="outline"
               className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
             >
-              {currentLabels.startOverButton}
+              {t('test.home')}
             </Button>
             
             <Button
@@ -144,7 +117,7 @@ export function AttachmentTestScreen({
                 selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {currentQuestion === questions.length - 1 ? currentLabels.resultsButton : currentLabels.nextButton}
+              {currentQuestion === questions.length - 1 ? t('test.showResult') : t('test.next')}
             </Button>
           </div>
           
