@@ -5,6 +5,7 @@ import { Share2, Copy, Home } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/language-context";
 import { Link, useLocation } from "wouter";
+import { PrivacyPolicy } from "@/components/privacy-policy";
 
 interface ResultScreenProps {
   result: TestResult;
@@ -120,6 +121,11 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
           <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
           {t('test.backToMain')}
         </Button>
+      </div>
+      
+      {/* Privacy Policy */}
+      <div className="flex justify-center mt-6">
+        <PrivacyPolicy />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Question } from "@/lib/test-types";
 import { Home } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { Link, useLocation } from "wouter";
+import { PrivacyPolicy } from "@/components/privacy-policy";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -133,6 +134,11 @@ export function TestScreen({
             <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             {t('test.backToMain')}
           </Button>
+        </div>
+        
+        {/* Privacy Policy */}
+        <div className="flex justify-center mt-6">
+          <PrivacyPolicy />
         </div>
       </div>
     </div>

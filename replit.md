@@ -135,6 +135,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 30, 2025. Added comprehensive privacy policy implementation: Created PrivacyPolicy component with Korean privacy policy text and modal popup, integrated privacy policy links on all pages (home, welcome screen, test screen, result screen) at the bottom center, implemented full privacy policy compliance for AdSense requirements
 - June 27, 2025. Optimized mobile UX: Added top padding (pt-20 on mobile) to prevent overlap with navigation controls, enhanced button touch targets with min-height and touch-manipulation CSS, improved responsive design for better mobile interaction
 - June 27, 2025. Fixed social media sharing meta tags with Open Graph and Twitter Card support for proper link previews
 - June 27, 2025. Implemented dynamic meta tag system using useMetaTags hook for page-specific SEO optimization

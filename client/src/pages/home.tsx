@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/language-context";
 import { useMetaTags } from "@/hooks/use-meta-tags";
+import { PrivacyPolicy } from "@/components/privacy-policy";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -77,10 +78,13 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 space-y-4">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             {t('site.footer')}
           </p>
+          <div className="flex justify-center">
+            <PrivacyPolicy />
+          </div>
         </div>
       </div>
     </div>
