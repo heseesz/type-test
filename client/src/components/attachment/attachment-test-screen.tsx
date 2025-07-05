@@ -40,10 +40,18 @@ export function AttachmentTestScreen({
     },
     en: {
       previousButton: "Previous",
-      startOverButton: "Home",
+      startOverButton: "Start Over",
       nextButton: "Next",
       resultsButton: "View Results",
       homeButton: "Back to TypeTest Home",
+      progressText: (current: number, total: number) => `${current + 1} / ${total}`
+    },
+    es: {
+      previousButton: "Anterior",
+      startOverButton: "Reiniciar",
+      nextButton: "Siguiente",
+      resultsButton: "Ver Resultados",
+      homeButton: "Volver al Inicio de TypeTest",
       progressText: (current: number, total: number) => `${current + 1} / ${total}`
     }
   };

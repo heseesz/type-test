@@ -38,6 +38,18 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
       duration: "Estimated time: 8-12 minutes",
       startButton: "Start Test",
       homeButton: "Back to TypeTest Home"
+    },
+    es: {
+      title: "Test de Estilo de Apego Adulto",
+      subtitle: "¡Descubre tu estilo de apego!",
+      guideTitle: "Instrucciones del Test",
+      questions: "Este test consta de 36 preguntas.",
+      instruction: "Para cada pregunta, selecciona la respuesta que mejor refleje tus pensamientos.",
+      honest: "No hay respuestas correctas o incorrectas, así que responde con honestidad.",
+      results: "Tu resultado será uno de cuatro tipos: Seguro, Ansioso, Evitativo, o Temeroso-Evitativo.",
+      duration: "Tiempo estimado: 8-12 minutos",
+      startButton: "Comenzar Test",
+      homeButton: "Volver al Inicio de TypeTest"
     }
   };
 

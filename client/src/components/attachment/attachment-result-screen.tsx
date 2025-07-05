@@ -44,6 +44,17 @@ export function AttachmentResultScreen({
       shareButton: "Share Results",
       restartButton: "Take Test Again",
       homeButton: "Back to TypeTest Home"
+    },
+    es: {
+      descriptionTitle: "Descripción del Estilo de Apego",
+      characteristicsTitle: "Características Principales",
+      adviceTitle: "Consejos para Mejorar las Relaciones",
+      scoreTitle: "Tus Puntuaciones",
+      avoidanceLabel: "Puntuación de Evitación",
+      anxietyLabel: "Puntuación de Ansiedad",
+      shareButton: "Compartir Resultados",
+      restartButton: "Realizar Test Nuevamente",
+      homeButton: "Volver al Inicio de TypeTest"
     }
   };
 

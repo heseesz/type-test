@@ -1009,3 +1009,504 @@ export const attachmentResults: Record<string, AttachmentResult> = {
     ]
   }
 };
+
+// Spanish version
+export const attachmentQuestionsEs: AttachmentQuestion[] = [
+  // Avoidance items (1-18)
+  {
+    id: 1,
+    question: "Me siento cómodo/a sin tener relaciones emocionales cercanas.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 2,
+    question: "La independencia y la autosuficiencia son muy importantes para mí.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 3,
+    question: "No me gusta depender de otros o que otros dependan de mí.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 4,
+    question: "Me siento incómodo/a cuando otros intentan acercarse mucho a mí.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 5,
+    question: "Prefiero mantener cierta distancia emocional con los demás.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 6,
+    question: "Me cuesta trabajo confiar plenamente en mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 7,
+    question: "Raramente me abro por completo a mis parejas románticas.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 8,
+    question: "Me pongo nervioso/a cuando mi pareja quiere acercarse demasiado.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 9,
+    question: "Creo que es mejor no mostrar mis sentimientos a los demás.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 10,
+    question: "No es fácil para mí depender de mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 11,
+    question: "Tengo dificultades para expresar mis necesidades a mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 12,
+    question: "Evito hablar sobre mis sentimientos con mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 13,
+    question: "Me siento cómodo/a sin relaciones románticas cercanas.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 14,
+    question: "Prefiero resolver mis problemas por mí mismo/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 15,
+    question: "La intimidad emocional me hace sentir incómodo/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 16,
+    question: "Me cuesta trabajo mostrar afecto a mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 17,
+    question: "Encuentro difícil ser vulnerable con mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  {
+    id: 18,
+    question: "Valoro mucho mi espacio personal en las relaciones.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: -2, anxietyScore: 0 },
+      { text: "En desacuerdo", avoidanceScore: -1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 2, anxietyScore: 0 }
+    ]
+  },
+  // Anxiety items (19-36)
+  {
+    id: 19,
+    question: "Me preocupa que mi pareja me abandone.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 20,
+    question: "Necesito mucha cercanía en mis relaciones románticas.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 21,
+    question: "Temo que mi pareja no me quiera tanto como yo la quiero.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 22,
+    question: "Cuando mi pareja no está disponible, me siento molesto/a o enojado/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 23,
+    question: "Me preocupa perder el amor de mi pareja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 24,
+    question: "Quiero estar muy cerca de mi pareja y esto a veces la aleja.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 25,
+    question: "Cuando no estoy en una relación romántica, me siento algo perdido/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 26,
+    question: "Me preocupa que mi pareja se sienta agobiada por mi necesidad de cercanía.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 27,
+    question: "Mi deseo de intimidad a veces asusta a la gente.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 28,
+    question: "Me siento frustrado/a cuando mi pareja no está disponible cuando la necesito.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 29,
+    question: "Me pongo ansioso/a cuando mi pareja está lejos de mí.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 30,
+    question: "Necesito que mi pareja me demuestre que me ama.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 31,
+    question: "Cuando mi pareja desaprueba algo que he hecho, me siento muy mal conmigo mismo/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 32,
+    question: "A menudo me pregunto si mi pareja realmente se preocupa por mí.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 33,
+    question: "Me siento solo/a incluso cuando estoy en una relación romántica.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 34,
+    question: "Raramente me preocupa que mi pareja me deje.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: 2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: -2 }
+    ]
+  },
+  {
+    id: 35,
+    question: "Mi pareja me hace dudar de mí mismo/a.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: -2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: 2 }
+    ]
+  },
+  {
+    id: 36,
+    question: "Puedo funcionar bien sin una relación romántica.",
+    answers: [
+      { text: "Totalmente en desacuerdo", avoidanceScore: 0, anxietyScore: 2 },
+      { text: "En desacuerdo", avoidanceScore: 0, anxietyScore: 1 },
+      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "De acuerdo", avoidanceScore: 0, anxietyScore: -1 },
+      { text: "Totalmente de acuerdo", avoidanceScore: 0, anxietyScore: -2 }
+    ]
+  }
+];
+
+export const attachmentResultsEs: Record<string, AttachmentResult> = {
+  secure: {
+    type: 'secure',
+    title: 'Apego Seguro',
+    emoji: '🌟',
+    description: [
+      'Tienes un estilo de apego seguro, lo que significa que te sientes cómodo/a con la intimidad y la independencia.',
+      'Confías en que las relaciones pueden ser duraderas y satisfactorias.',
+      'Tienes una visión positiva tanto de ti mismo/a como de los demás en las relaciones.'
+    ],
+    characteristics: [
+      'Buena comunicación emocional',
+      'Equilibrio entre intimidad e independencia',
+      'Confianza en las relaciones',
+      'Expresión saludable de necesidades',
+      'Capacidad de resolver conflictos de manera constructiva'
+    ],
+    advice: [
+      'Continúa fomentando la comunicación abierta en tus relaciones.',
+      'Mantén el equilibrio entre dar y recibir apoyo.',
+      'Sé un ejemplo positivo para otros en las relaciones.',
+      'Sigue desarrollando tu inteligencia emocional.',
+      'Ayuda a otros a desarrollar relaciones más seguras.'
+    ]
+  },
+  anxious: {
+    type: 'anxious',
+    title: 'Apego Ansioso',
+    emoji: '💕',
+    description: [
+      'Tienes un estilo de apego ansioso, lo que significa que valoras mucho la cercanía en las relaciones.',
+      'Puedes experimentar ansiedad por la pérdida o el abandono en las relaciones.',
+      'Tiendes a buscar confirmación y tranquilidad de tu pareja con frecuencia.'
+    ],
+    characteristics: [
+      'Fuerte necesidad de cercanía emocional',
+      'Preocupación por el abandono',
+      'Búsqueda de confirmación constante',
+      'Sensibilidad a los cambios en la relación',
+      'Tendencia a idealizar las relaciones'
+    ],
+    advice: [
+      'Practica la autorregulación emocional y técnicas de calma.',
+      'Desarrolla tu autoestima y confianza personal.',
+      'Comunica tus necesidades de manera directa y clara.',
+      'Aprende a confiar en la estabilidad de tus relaciones.',
+      'Considera la terapia para explorar patrones de apego.'
+    ]
+  },
+  avoidant: {
+    type: 'avoidant',
+    title: 'Apego Evitativo',
+    emoji: '🛡️',
+    description: [
+      'Tienes un estilo de apego evitativo, lo que significa que valoras mucho la independencia y la autosuficiencia.',
+      'Puedes sentirte incómodo/a con niveles altos de intimidad emocional.',
+      'Tiendes a mantener cierta distancia emocional en las relaciones.'
+    ],
+    characteristics: [
+      'Fuerte valoración de la independencia',
+      'Dificultad para expresar emociones vulnerables',
+      'Tendencia a minimizar la importancia de las relaciones',
+      'Preferencia por la autosuficiencia',
+      'Resistencia a depender de otros'
+    ],
+    advice: [
+      'Practica la apertura emocional gradualmente.',
+      'Reconoce el valor de la intimidad y la conexión.',
+      'Trabaja en expresar tus necesidades y sentimientos.',
+      'Permite que otros te apoyen cuando lo necesites.',
+      'Considera la terapia para explorar tus patrones de apego.'
+    ]
+  },
+  fearful: {
+    type: 'fearful',
+    title: 'Apego Temeroso-Evitativo',
+    emoji: '🌊',
+    description: [
+      'Tienes un estilo de apego temeroso-evitativo, lo que significa que experimentas sentimientos mixtos sobre la cercanía.',
+      'Puedes desear intimidad pero al mismo tiempo temerla.',
+      'Tus relaciones pueden caracterizarse por patrones de acercamiento y alejamiento.'
+    ],
+    characteristics: [
+      'Ambivalencia hacia la intimidad',
+      'Miedo tanto al abandono como a la cercanía',
+      'Patrones impredecibles en las relaciones',
+      'Dificultad para regular las emociones',
+      'Confusión sobre las propias necesidades relacionales'
+    ],
+    advice: [
+      'Desarrolla una comprensión más clara de tus necesidades emocionales.',
+      'Practica la comunicación consistente y honesta.',
+      'Busca terapia profesional para trabajar en patrones de apego.',
+      'Aprende técnicas de regulación emocional.',
+      'Rodéate de personas que ofrezcan relaciones seguras y estables.'
+    ]
+  }
+};
