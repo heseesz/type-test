@@ -8,7 +8,7 @@ export function ContactUs() {
 
   const contactContent = {
     ko: {
-      title: '문의하기',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -50,7 +50,7 @@ export function ContactUs() {
       )
     },
     es: {
-      title: 'Contáctenos',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -71,7 +71,7 @@ export function ContactUs() {
       )
     },
     'zh-cn': {
-      title: '联系我们',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -92,7 +92,7 @@ export function ContactUs() {
       )
     },
     'zh-tw': {
-      title: '聯絡我們',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -113,7 +113,7 @@ export function ContactUs() {
       )
     },
     ja: {
-      title: 'お問い合わせ',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -134,7 +134,7 @@ export function ContactUs() {
       )
     },
     vi: {
-      title: 'Liên hệ với chúng tôi',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
