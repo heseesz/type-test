@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { AttachmentResult } from '@/lib/attachment-types';
-import { Link } from 'wouter';
-import { Share2 } from 'lucide-react';
+import { Share2, Home } from 'lucide-react';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
@@ -43,114 +43,120 @@ export function AttachmentResultScreen({
     }
   };
 
+  const handleBackToMain = () => {
+    window.location.href = '/';
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
-      <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-          <div className="text-center mb-8">
-            <div className="text-6xl mb-4">{result.emoji}</div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              {result.title}
-            </h1>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-6">
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <span className="text-gray-600 dark:text-gray-400">회피 점수:</span>
-                  <span className="font-semibold text-gray-800 dark:text-gray-200 ml-2">
-                    {avoidanceScore}
-                  </span>
+      <div className="w-full max-w-4xl mx-auto space-y-6">
+        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-xl">
+          <CardContent className="p-8">
+            <div className="text-center mb-8">
+              <div className="text-6xl mb-4">{result.emoji}</div>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                {result.title}
+              </h1>
+            </div>
+
+            <div className="space-y-8">
+              {/* Description */}
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  애착 유형 설명
+                </h2>
+                <div className="space-y-3">
+                  {result.description.map((desc, index) => (
+                    <p key={index} className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {desc}
+                    </p>
+                  ))}
                 </div>
-                <div>
-                  <span className="text-gray-600 dark:text-gray-400">불안 점수:</span>
-                  <span className="font-semibold text-gray-800 dark:text-gray-200 ml-2">
-                    {anxietyScore}
-                  </span>
+              </div>
+
+              {/* Characteristics */}
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  주요 특성
+                </h2>
+                <ul className="space-y-2">
+                  {result.characteristics.map((characteristic, index) => (
+                    <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
+                      <span className="text-pink-500 mr-2">•</span>
+                      {characteristic}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Advice */}
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  관계 개선 조언
+                </h2>
+                <ul className="space-y-2">
+                  {result.advice.map((advice, index) => (
+                    <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
+                      <span className="text-green-500 mr-2">✓</span>
+                      {advice}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-pink-50 via-red-50 to-purple-50 dark:from-pink-900/20 dark:via-red-900/20 dark:to-purple-900/20 rounded-xl p-6 mt-8">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">당신의 점수</h3>
+              <div className="flex justify-center space-x-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">{avoidanceScore}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">회피 점수</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-red-600 dark:text-red-400">{anxietyScore}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">불안 점수</div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="space-y-8">
-            {/* Description */}
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                애착 유형 설명
-              </h2>
-              <div className="space-y-3">
-                {result.description.map((desc, index) => (
-                  <p key={index} className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {desc}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            {/* Characteristics */}
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                주요 특성
-              </h2>
-              <ul className="space-y-2">
-                {result.characteristics.map((characteristic, index) => (
-                  <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
-                    <span className="text-pink-500 mr-2">•</span>
-                    {characteristic}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Advice */}
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                관계 개선 조언
-              </h2>
-              <ul className="space-y-2">
-                {result.advice.map((advice, index) => (
-                  <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
-                    <span className="text-green-500 mr-2">✓</span>
-                    {advice}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-8 space-y-4">
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col space-y-3">
               <Button
-                onClick={onRestart}
+                onClick={handleShare}
                 variant="outline"
-                className="flex-1"
+                className="w-full bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation"
               >
-                다시 테스트하기
+                <Share2 className="w-5 h-5 mr-2" />
+                결과 공유하기
               </Button>
               
               <Button
-                onClick={handleShare}
-                className="flex-1 bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white"
+                onClick={onRestart}
+                className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
               >
-                <Share2 className="w-4 h-4 mr-2" />
-                결과 공유하기
+                다시 테스트하기
               </Button>
             </div>
-
-            <Link href="/">
-              <Button 
-                variant="ghost" 
-                className="w-full text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-              >
-                타입테스트 홈으로 돌아가기
-              </Button>
-            </Link>
-          </div>
+          </CardContent>
+        </Card>
+        
+        {/* Back to Main Button */}
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={handleBackToMain}
+            variant="outline"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
+          >
+            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+            타입테스트 홈으로 돌아가기
+          </Button>
         </div>
-
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400 space-x-2">
+        
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-6">
           <AboutUs />
-          <span>|</span>
+          <span className="text-gray-300 dark:text-gray-600">|</span>
           <PrivacyPolicy />
-          <span>|</span>
+          <span className="text-gray-300 dark:text-gray-600">|</span>
           <ContactUs />
         </div>
       </div>

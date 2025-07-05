@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'wouter';
+import { Home } from 'lucide-react';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
@@ -22,9 +24,9 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-          <div className="space-y-6">
-            <div className="text-center">
+        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-xl">
+          <CardContent className="p-8">
+            <div className="text-center space-y-6">
               <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
                 테스트 안내
               </h2>
@@ -45,33 +47,36 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
                   • 테스트 소요 시간: 약 <strong>3-5분</strong>
                 </p>
               </div>
-            </div>
 
-            <div className="flex flex-col space-y-4">
               <Button 
                 onClick={onStart}
                 className="w-full py-3 text-lg bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-lg font-medium"
               >
                 테스트 시작하기
               </Button>
-              
-              <Link href="/">
-                <Button 
-                  variant="outline" 
-                  className="w-full py-3 text-lg border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
-                >
-                  타입테스트 홈으로 돌아가기
-                </Button>
-              </Link>
             </div>
-          </div>
+          </CardContent>
+        </Card>
+        
+        {/* Back to Main Button */}
+        <div className="flex justify-center mt-8">
+          <Link href="/">
+            <Button
+              variant="outline"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm"
+            >
+              <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+              타입테스트 홈으로 돌아가기
+            </Button>
+          </Link>
         </div>
-
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400 space-x-2">
+        
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-6">
           <AboutUs />
-          <span>|</span>
+          <span className="text-gray-300 dark:text-gray-600">|</span>
           <PrivacyPolicy />
-          <span>|</span>
+          <span className="text-gray-300 dark:text-gray-600">|</span>
           <ContactUs />
         </div>
       </div>
