@@ -8,8 +8,13 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useLanguage } from "@/contexts/language-context";
 
 export function PrivacyPolicy() {
+  const { language } = useLanguage();
+  
+  const buttonText = language === 'ko' ? '개인정보처리방침' : 'Privacy Policy';
+  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -17,7 +22,7 @@ export function PrivacyPolicy() {
           variant="link" 
           className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-0 h-auto"
         >
-          개인정보처리방침
+          {buttonText}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh]">
