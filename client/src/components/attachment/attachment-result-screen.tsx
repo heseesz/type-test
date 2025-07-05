@@ -119,7 +119,7 @@ export function AttachmentResultScreen({
               </div>
             </div>
 
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-3 mt-8">
               <Button
                 onClick={handleShare}
                 variant="outline"
