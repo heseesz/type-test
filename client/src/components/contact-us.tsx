@@ -9,7 +9,7 @@ export function ContactUs() {
 
   const contactContent = {
     ko: {
-      title: '문의하기',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -51,7 +51,7 @@ export function ContactUs() {
       )
     },
     es: {
-      title: 'Contáctenos',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -72,7 +72,7 @@ export function ContactUs() {
       )
     },
     'zh-cn': {
-      title: '联系我们',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -93,7 +93,7 @@ export function ContactUs() {
       )
     },
     'zh-tw': {
-      title: '聯絡我們',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -114,7 +114,7 @@ export function ContactUs() {
       )
     },
     ja: {
-      title: 'お問い合わせ',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -135,7 +135,7 @@ export function ContactUs() {
       )
     },
     vi: {
-      title: 'Liên hệ với chúng tôi',
+      title: 'Contact Us',
       content: (
         <div className="space-y-4">
           <p className="leading-relaxed">
@@ -163,7 +163,7 @@ export function ContactUs() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+        className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-0 h-auto transition-colors"
       >
         {currentContent.title}
       </button>
