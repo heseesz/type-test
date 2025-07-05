@@ -28,4 +28,6 @@ export interface AttachmentTestState {
   avoidanceScore: number;
   anxietyScore: number;
   finalResult?: AttachmentType;
+  shuffledQuestions: AttachmentQuestion[];
+  questionOrder: number[];
 }

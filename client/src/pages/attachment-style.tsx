@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { AttachmentWelcomeScreen } from '@/components/attachment/attachment-welcome-screen';
 import { AttachmentTestScreen } from '@/components/attachment/attachment-test-screen';
 import { AttachmentResultScreen } from '@/components/attachment/attachment-result-screen';
-import { AttachmentTestState, AttachmentType } from '@/lib/attachment-types';
 import { attachmentQuestions, attachmentResults } from '@/lib/attachment-data';
+import { AttachmentTestState, AttachmentType } from '@/lib/attachment-types';
+import { shuffleArray } from '@/lib/shuffle-utils';
 
 export default function AttachmentStyle() {
   const [testState, setTestState] = useState<AttachmentTestState>({
@@ -17,7 +18,17 @@ export default function AttachmentStyle() {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
   const handleStart = () => {
-    setTestState(prev => ({ ...prev, screen: 'test' }));
+    // Create shuffled question order
+    const questionIndices = Array.from({ length: attachmentQuestions.length }, (_, i) => i);
+    const shuffledOrder = shuffleArray(questionIndices);
+    const shuffledQuestions = shuffledOrder.map(index => attachmentQuestions[index]);
+
+    setTestState(prev => ({
+      ...prev,
+      screen: 'test',
+      shuffledQuestions,
+      questionOrder: shuffledOrder
+    }));
   };
 
   const handleAnswerSelect = (answerIndex: number) => {
@@ -39,33 +50,38 @@ export default function AttachmentStyle() {
   const handleNext = () => {
     if (selectedAnswer === null) return;
 
-    const currentQuestion = attachmentQuestions[testState.currentQuestion];
+    const currentQuestion = testState.shuffledQuestions[testState.currentQuestion];
     const selectedAnswerData = currentQuestion.answers[selectedAnswer];
 
-    const newAnswers = [...testState.answers, selectedAnswer];
+    // Update scores
     const newAvoidanceScore = testState.avoidanceScore + selectedAnswerData.avoidanceScore;
     const newAnxietyScore = testState.anxietyScore + selectedAnswerData.anxietyScore;
 
-    if (testState.currentQuestion === attachmentQuestions.length - 1) {
-      // Test completed
+    // Update answers array
+    const newAnswers = [...testState.answers, selectedAnswer];
+
+    // Check if this is the last question
+    if (testState.currentQuestion === testState.shuffledQuestions.length - 1) {
+      // Calculate final result
       const finalResult = calculateAttachmentType(newAvoidanceScore, newAnxietyScore);
-      setTestState({
+
+      setTestState(prev => ({
+        ...prev,
         screen: 'result',
-        currentQuestion: testState.currentQuestion + 1,
         answers: newAnswers,
         avoidanceScore: newAvoidanceScore,
         anxietyScore: newAnxietyScore,
         finalResult
-      });
+      }));
     } else {
-      // Next question
-      setTestState({
-        ...testState,
-        currentQuestion: testState.currentQuestion + 1,
+      // Move to next question
+      setTestState(prev => ({
+        ...prev,
+        currentQuestion: prev.currentQuestion + 1,
         answers: newAnswers,
         avoidanceScore: newAvoidanceScore,
         anxietyScore: newAnxietyScore
-      });
+      }));
     }
 
     setSelectedAnswer(null);
@@ -77,16 +93,16 @@ export default function AttachmentStyle() {
     // Remove the last answer and recalculate scores
     const newAnswers = testState.answers.slice(0, -1);
     const prevQuestionIndex = testState.currentQuestion - 1;
-    
+
     // Recalculate scores
     let newAvoidanceScore = 0;
     let newAnxietyScore = 0;
-    
+
     newAnswers.forEach((answerIndex, questionIndex) => {
-      const question = attachmentQuestions[questionIndex];
-      const answer = question.answers[answerIndex];
-      newAvoidanceScore += answer.avoidanceScore;
-      newAnxietyScore += answer.anxietyScore;
+        const question = testState.shuffledQuestions[questionIndex];
+        const answer = question.answers[answerIndex];
+        newAvoidanceScore += answer.avoidanceScore;
+        newAnxietyScore += answer.anxietyScore;
     });
 
     setTestState({
@@ -125,7 +141,7 @@ export default function AttachmentStyle() {
         onNext={handleNext}
         onPrevious={handlePrevious}
         onRestart={handleRestart}
-        questions={attachmentQuestions}
+        questions={testState.shuffledQuestions}
       />
     );
   }
