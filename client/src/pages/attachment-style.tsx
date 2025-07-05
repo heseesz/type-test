@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AttachmentWelcomeScreen } from '@/components/attachment/attachment-welcome-screen';
 import { AttachmentTestScreen } from '@/components/attachment/attachment-test-screen';
 import { AttachmentResultScreen } from '@/components/attachment/attachment-result-screen';
@@ -29,6 +29,17 @@ export default function AttachmentStyle() {
   });
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+
+  // Update questions when language changes during test
+  useEffect(() => {
+    if (testState.screen === 'test' && testState.questionOrder.length > 0) {
+      const updatedShuffledQuestions = testState.questionOrder.map(index => currentQuestions[index]);
+      setTestState(prev => ({
+        ...prev,
+        shuffledQuestions: updatedShuffledQuestions
+      }));
+    }
+  }, [language, currentQuestions, testState.questionOrder, testState.screen]);
 
   const handleStart = () => {
     // Create shuffled question order

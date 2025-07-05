@@ -95,6 +95,8 @@ export function AttachmentResultScreen({
   };
 
   const handleBackToMain = () => {
+    // Store current language in localStorage before navigation
+    localStorage.setItem('selectedLanguage', language);
     window.location.href = '/';
   };
 

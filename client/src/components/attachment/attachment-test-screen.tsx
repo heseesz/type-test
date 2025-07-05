@@ -61,6 +61,8 @@ export function AttachmentTestScreen({
   const question = questions[currentQuestion];
 
   const handleBackToMain = () => {
+    // Store current language in localStorage before navigation
+    localStorage.setItem('selectedLanguage', language);
     window.location.href = '/';
   };
 
