@@ -7,6 +7,7 @@ import { Home } from "lucide-react";
 import { Link } from "wouter";
 import { PrivacyPolicy } from "@/components/privacy-policy";
 import { AboutUs } from "@/components/about-us";
+import { ContactUs } from "@/components/contact-us";
 
 interface WelcomeScreenProps {
   onGenderSelect: (gender: Gender) => void;
@@ -77,6 +78,8 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         <AboutUs />
         <span className="text-gray-300 dark:text-gray-600">|</span>
         <PrivacyPolicy />
+        <span className="text-gray-300 dark:text-gray-600">|</span>
+        <ContactUs />
       </div>
     </div>
   );

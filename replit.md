@@ -135,6 +135,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 30, 2025. Added multilingual Contact Us feature with popup support across all 7 languages, providing typetest.site@gmail.com as contact email
 - June 30, 2025. Added SEO optimization files: Created sitemap.xml with multilingual hreflang tags for both homepage and teto-egen test page, included robots.txt for efficient search engine crawling, configured for Google Search Console submission with proper priority and change frequency settings
 - June 30, 2025. Updated privacy policy with comprehensive content: Added detailed information about Replit hosting, Google AdSense, Google Analytics usage, cookie policy, and contact information for privacy officer (typetest.site@gmail.com), ensuring full compliance with privacy regulations and AdSense requirements
 - June 30, 2025. Added About Us component with multilingual support: Created AboutUs component supporting all 7 languages (Korean, English, Spanish, Chinese Simplified/Traditional, Japanese, Vietnamese), added "About Us | Privacy Policy" footer links to all pages with proper styling and modal popups

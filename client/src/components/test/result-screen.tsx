@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { Link, useLocation } from "wouter";
 import { PrivacyPolicy } from "@/components/privacy-policy";
 import { AboutUs } from "@/components/about-us";
+import { ContactUs } from "@/components/contact-us";
 
 interface ResultScreenProps {
   result: TestResult;
@@ -129,6 +130,8 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
         <AboutUs />
         <span className="text-gray-300 dark:text-gray-600">|</span>
         <PrivacyPolicy />
+        <span className="text-gray-300 dark:text-gray-600">|</span>
+        <ContactUs />
       </div>
     </div>
   );

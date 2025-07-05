@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { useMetaTags } from "@/hooks/use-meta-tags";
 import { PrivacyPolicy } from "@/components/privacy-policy";
 import { AboutUs } from "@/components/about-us";
+import { ContactUs } from "@/components/contact-us";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -87,6 +88,8 @@ export default function Home() {
             <AboutUs />
             <span className="text-gray-300 dark:text-gray-600">|</span>
             <PrivacyPolicy />
+            <span className="text-gray-300 dark:text-gray-600">|</span>
+            <ContactUs />
           </div>
         </div>
       </div>
