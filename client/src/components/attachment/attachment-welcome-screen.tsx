@@ -56,7 +56,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
       <div className="w-full max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <div className="text-6xl mb-6">💝</div>
