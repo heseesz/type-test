@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import Home from "@/pages/home";
 import TetoEgen from "@/pages/teto-egen";
+import AttachmentTest from "@/pages/attachment-test";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/teto-egen" component={TetoEgen} />
+      <Route path="/attachment-test" component={AttachmentTest} />
       <Route component={NotFound} />
     </Switch>
   );
