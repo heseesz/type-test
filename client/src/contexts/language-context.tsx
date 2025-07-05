@@ -327,7 +327,7 @@ const translations = {
     'welcome.female': '女性',
     
     // Test Screen
-    'test.progress': '質問 {current} / {total}',
+    'test.progress': '進行率',
     'test.previous': '前へ',
     'test.next': '次へ',
     'test.showResult': '結果を見る',
