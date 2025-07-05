@@ -37,16 +37,12 @@ export function AttachmentTestScreen({
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
       <div className="w-full max-w-3xl mx-auto space-y-6">
         {/* Progress Bar */}
-        <div className="text-center">
+        <div className="mb-6 sm:mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              질문 {currentQuestion + 1} / {questions.length}
-            </span>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              {Math.round(progress)}%
-            </span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">진행률</span>
+            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">{currentQuestion + 1}/{questions.length}</span>
           </div>
-          <Progress value={progress} className="w-full" />
+          <Progress value={progress} className="w-full h-3" />
         </div>
 
         {/* Question Card */}
