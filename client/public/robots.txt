@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://typetest.replit.app/sitemap.xml
+Sitemap: https://type-test.site/sitemap.xml
 
 # Disallow unnecessary paths
 Disallow: /src/
