@@ -135,6 +135,9 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- June 30, 2025. Added SEO optimization files: Created sitemap.xml with multilingual hreflang tags for both homepage and teto-egen test page, included robots.txt for efficient search engine crawling, configured for Google Search Console submission with proper priority and change frequency settings
+- June 30, 2025. Updated privacy policy with comprehensive content: Added detailed information about Replit hosting, Google AdSense, Google Analytics usage, cookie policy, and contact information for privacy officer (typetest.site@gmail.com), ensuring full compliance with privacy regulations and AdSense requirements
+- June 30, 2025. Added About Us component with multilingual support: Created AboutUs component supporting all 7 languages (Korean, English, Spanish, Chinese Simplified/Traditional, Japanese, Vietnamese), added "About Us | Privacy Policy" footer links to all pages with proper styling and modal popups
 - June 30, 2025. Added comprehensive privacy policy implementation: Created PrivacyPolicy component with Korean privacy policy text and modal popup, integrated privacy policy links on all pages (home, welcome screen, test screen, result screen) at the bottom center, implemented full privacy policy compliance for AdSense requirements
 - June 27, 2025. Optimized mobile UX: Added top padding (pt-20 on mobile) to prevent overlap with navigation controls, enhanced button touch targets with min-height and touch-manipulation CSS, improved responsive design for better mobile interaction
 - June 27, 2025. Fixed social media sharing meta tags with Open Graph and Twitter Card support for proper link previews

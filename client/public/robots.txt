@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://typetest.replit.app/sitemap.xml
+
+# Disallow unnecessary paths
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.js
+Disallow: /*.css
+Disallow: /*.map
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /favicon.svg
