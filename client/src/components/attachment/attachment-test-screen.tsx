@@ -90,35 +90,41 @@ export function AttachmentTestScreen({
 
         {/* Navigation */}
         <div className="flex flex-col space-y-3 sm:space-y-4">
-          <div className="flex justify-between gap-3">
-            <Button
-              onClick={onPrevious}
-              variant="outline"
-              className={`px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation ${
-                currentQuestion === 0 ? 'hidden' : ''
-              }`}
-            >
-              {t('test.previous')}
-            </Button>
+          <div className="grid grid-cols-3 gap-3">
+            <div className="flex justify-start">
+              <Button
+                onClick={onPrevious}
+                variant="outline"
+                className={`px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation ${
+                  currentQuestion === 0 ? 'invisible' : ''
+                }`}
+              >
+                {t('test.previous')}
+              </Button>
+            </div>
             
-            {/* 처음으로 버튼 */}
-            <Button
-              onClick={onRestart}
-              variant="outline"
-              className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] min-w-[80px] sm:min-w-[90px] touch-manipulation"
-            >
-              {t('test.home')}
-            </Button>
+            {/* 처음으로 버튼 - 중앙 */}
+            <div className="flex justify-center">
+              <Button
+                onClick={onRestart}
+                variant="outline"
+                className="px-3 sm:px-4 py-2 sm:py-3 bg-yellow-50 dark:bg-yellow-900/20 hover:bg-yellow-100 dark:hover:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-600 rounded-xl font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
+              >
+                {t('test.home')}
+              </Button>
+            </div>
             
-            <Button
-              onClick={onNext}
-              disabled={selectedAnswer === null}
-              className={`px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-xl font-medium transition-colors text-sm sm:text-base min-h-[44px] touch-manipulation ${
-                selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              {currentQuestion === questions.length - 1 ? t('test.showResult') : t('test.next')}
-            </Button>
+            <div className="flex justify-end">
+              <Button
+                onClick={onNext}
+                disabled={selectedAnswer === null}
+                className={`px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-xl font-medium transition-colors text-sm sm:text-base min-h-[44px] touch-manipulation ${
+                  selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                {currentQuestion === questions.length - 1 ? t('test.showResult') : t('test.next')}
+              </Button>
+            </div>
           </div>
           
           {/* Back to Main Button */}
