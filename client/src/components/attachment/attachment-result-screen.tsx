@@ -6,6 +6,7 @@ import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
 import { useLanguage } from '@/contexts/language-context';
+import { useLocation } from 'wouter';
 
 interface AttachmentResultScreenProps {
   result: AttachmentResult;
@@ -21,6 +22,7 @@ export function AttachmentResultScreen({
   onRestart 
 }: AttachmentResultScreenProps) {
   const { language, t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const labels = {
     ko: {
@@ -95,9 +97,7 @@ export function AttachmentResultScreen({
   };
 
   const handleBackToMain = () => {
-    // Store current language in localStorage before navigation
-    localStorage.setItem('selectedLanguage', language);
-    window.location.href = '/';
+    setLocation("/");
   };
 
   return (

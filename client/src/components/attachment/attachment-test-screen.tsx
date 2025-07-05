@@ -7,6 +7,7 @@ import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
 import { useLanguage } from '@/contexts/language-context';
+import { useLocation } from 'wouter';
 
 interface AttachmentTestScreenProps {
   currentQuestion: number;
@@ -28,6 +29,7 @@ export function AttachmentTestScreen({
   questions
 }: AttachmentTestScreenProps) {
   const { language, t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const labels = {
     ko: {
@@ -61,9 +63,7 @@ export function AttachmentTestScreen({
   const question = questions[currentQuestion];
 
   const handleBackToMain = () => {
-    // Store current language in localStorage before navigation
-    localStorage.setItem('selectedLanguage', language);
-    window.location.href = '/';
+    setLocation("/");
   };
 
   return (
