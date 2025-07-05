@@ -6,6 +6,7 @@ import { Home } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { Link, useLocation } from "wouter";
 import { PrivacyPolicy } from "@/components/privacy-policy";
+import { AboutUs } from "@/components/about-us";
 
 interface TestScreenProps {
   currentQuestion: number;
@@ -136,8 +137,10 @@ export function TestScreen({
           </Button>
         </div>
         
-        {/* Privacy Policy */}
-        <div className="flex justify-center mt-6">
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <AboutUs />
+          <span className="text-gray-300 dark:text-gray-600">|</span>
           <PrivacyPolicy />
         </div>
       </div>

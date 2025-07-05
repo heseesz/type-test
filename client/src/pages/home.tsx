@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/language-context";
 import { useMetaTags } from "@/hooks/use-meta-tags";
 import { PrivacyPolicy } from "@/components/privacy-policy";
+import { AboutUs } from "@/components/about-us";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -82,7 +83,9 @@ export default function Home() {
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             {t('site.footer')}
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center gap-4">
+            <AboutUs />
+            <span className="text-gray-300 dark:text-gray-600">|</span>
             <PrivacyPolicy />
           </div>
         </div>

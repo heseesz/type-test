@@ -6,6 +6,7 @@ import { InfoPopup } from "@/components/info-popup";
 import { Home } from "lucide-react";
 import { Link } from "wouter";
 import { PrivacyPolicy } from "@/components/privacy-policy";
+import { AboutUs } from "@/components/about-us";
 
 interface WelcomeScreenProps {
   onGenderSelect: (gender: Gender) => void;
@@ -71,8 +72,10 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         </Link>
       </div>
       
-      {/* Privacy Policy */}
-      <div className="flex justify-center mt-6">
+      {/* Footer Links */}
+      <div className="flex justify-center items-center gap-4 mt-6">
+        <AboutUs />
+        <span className="text-gray-300 dark:text-gray-600">|</span>
         <PrivacyPolicy />
       </div>
     </div>
