@@ -74,14 +74,47 @@ export function AttachmentResultScreen({
   const currentLabels = labels[language as keyof typeof labels] || labels.ko;
   
   const handleShare = async () => {
-    const shareText = `나의 애착 유형은 "${result.title}" 입니다! 🔗💝\n\n나도 애착 유형 테스트하기: ${window.location.origin}/attachment-style`;
+    let shareText = '';
+    let shareTitle = '';
+    
+    if (language === 'en') {
+      shareText = `Adult Attachment Style Test Results
+
+${result.emoji} ${result.title}
+
+Avoidance Score: ${avoidanceScore} points
+Anxiety Score: ${anxietyScore} points
+
+Take the test yourself! https://type-test.site/attachment-style`;
+      shareTitle = 'Adult Attachment Style Test Results';
+    } else if (language === 'ja') {
+      shareText = `成人愛着タイプテスト結果
+
+${result.emoji} ${result.title}
+
+回避スコア: ${avoidanceScore}点
+不安スコア: ${anxietyScore}点
+
+あなたもテストしてみませんか！ https://type-test.site/attachment-style`;
+      shareTitle = '成人愛着タイプテスト結果';
+    } else {
+      shareText = `성인 애착 유형 테스트 결과
+
+${result.emoji} ${result.title}
+
+회피 점수: ${avoidanceScore}점
+불안 점수: ${anxietyScore}점
+
+당신도 테스트해보세요! https://type-test.site/attachment-style`;
+      shareTitle = '성인 애착 유형 테스트 결과';
+    }
     
     if (navigator.share) {
       try {
         await navigator.share({
-          title: '성인 애착 유형 테스트 결과',
+          title: shareTitle,
           text: shareText,
-          url: window.location.href
+          url: 'https://type-test.site/attachment-style'
         });
       } catch (err) {
         console.log('공유 취소됨');
