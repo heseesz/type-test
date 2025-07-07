@@ -23,17 +23,53 @@ export function NarcissismResultScreen({
   const { toast } = useToast();
 
   const handleShare = async () => {
+    const { language } = useLanguage();
+    let shareText = '';
+    let shareTitle = '';
+    
+    if (language === 'en') {
+      shareText = `Narcissism Tendency Test Results
+
+${result.emoji} ${result.title}
+
+Grandiose Narcissism: ${grandioseScore} points
+Vulnerable Narcissism: ${vulnerableScore} points
+
+Take the test yourself! https://type-test.site/narcissism`;
+      shareTitle = 'Narcissism Tendency Test Results';
+    } else if (language === 'ja') {
+      shareText = `ナルシシズム傾向テスト結果
+
+${result.emoji} ${result.title}
+
+誇大型ナルシシズム傾向: ${grandioseScore}点
+脆弱型ナルシシズム傾向: ${vulnerableScore}点
+
+あなたもテストしてみませんか！ https://type-test.site/narcissism`;
+      shareTitle = 'ナルシシズム傾向テスト結果';
+    } else {
+      shareText = `나르시시즘 성향 테스트 결과
+
+${result.emoji} ${result.title}
+
+과대형 나르시시즘 성향: ${grandioseScore}점
+취약형 나르시시즘 성향: ${vulnerableScore}점
+
+당신도 테스트해보세요! https://type-test.site/narcissism`;
+      shareTitle = '나르시시즘 성향 테스트 결과';
+    }
+
     const shareData = {
-      title: t('result.shareTitle'),
-      text: t('result.shareText'),
-      url: window.location.href
+      title: shareTitle,
+      text: shareText,
+      url: 'https://type-test.site/narcissism'
     };
 
     try {
       if (navigator.share) {
         await navigator.share(shareData);
       } else {
-        await navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+        await navigator.clipboard.writeText(shareText);
         toast({
           title: t('result.copySuccess'),
           description: t('result.copySuccessDesc'),
