@@ -19,6 +19,7 @@ export interface NarcissismResult {
   description: string[];
   characteristics: string[];
   advice: string[];
+  shareText?: string;
 }
 
 export interface NarcissismTestState {
