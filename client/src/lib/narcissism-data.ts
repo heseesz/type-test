@@ -3,7 +3,7 @@ import { NarcissismQuestion, NarcissismResult } from './narcissism-types';
 export const narcissismQuestionsKo: NarcissismQuestion[] = [
   {
     id: 1,
-    question: "어떤 모임에 가면, 제가 없으면 분위기가 덜 활기찰 것이라고 느낄 때가 있습니다.",
+    question: "어떤 모임에 가면, 내가 없으면 분위기가 덜 활기찰 것이라고 느낄 때가 있다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -14,7 +14,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 2,
-    question: "새로운 사람들과 대화할 때, 그들이 저에게 깊은 인상을 받는 경우가 많다고 생각합니다.",
+    question: "새로운 사람들과 대화할 때, 그들이 나에게 깊은 인상을 받는 경우가 많다고 생각한다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -25,7 +25,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 3,
-    question: "저는 제 능력에 대해 확신을 가지고 있으며, 대부분의 경우 제가 옳다고 생각합니다.",
+    question: "나는 내 능력에 대해 확신을 가지고 있으며, 대부분의 경우 내가 옳다고 생각한다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -36,7 +36,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 4,
-    question: "다른 사람들이 저의 뛰어난 점을 알아보지 못하면 다소 답답함을 느낍니다.",
+    question: "다른 사람들이 나의 뛰어난 점을 알아보지 못하면 다소 답답함을 느낀다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -47,7 +47,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 5,
-    question: "저는 중요한 결정을 내릴 때, 다른 사람들의 의견보다는 저의 직관을 더 신뢰하는 편입니다.",
+    question: "나는 중요한 결정을 내릴 때, 다른 사람들의 의견보다는 나의 직관을 더 신뢰하는 편이다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -58,7 +58,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 6,
-    question: "때때로 다른 사람들의 능력이 저보다 한참 부족하다고 느낄 때가 있습니다.",
+    question: "때때로 다른 사람들의 능력이 나보다 한참 부족하다고 느낄 때가 있다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -69,7 +69,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 7,
-    question: "저는 다른 사람들의 감정을 잘 파악하지만, 때로는 그것을 저의 목표 달성에 활용할 수도 있다고 생각합니다.",
+    question: "나는 다른 사람들의 감정을 잘 파악하지만, 때로는 그것을 나의 목표 달성에 활용할 수도 있다고 생각한다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -80,7 +80,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 8,
-    question: "저는 제 성취에 대해 당연히 인정을 받아야 한다고 생각합니다.",
+    question: "나는 내 성취에 대해 당연히 인정을 받아야 한다고 생각한다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -91,7 +91,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 9,
-    question: "주변 사람들이 저에게 더 많은 관심을 기울여야 한다고 느낄 때가 있습니다.",
+    question: "주변 사람들이 나에게 더 많은 관심을 기울여야 한다고 느낄 때가 있다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -102,7 +102,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 10,
-    question: "저는 어떤 분야에서든 최고가 될 만한 재능을 가지고 있다고 믿습니다.",
+    question: "나는 어떤 분야에서든 최고가 될 만한 재능을 가지고 있다고 믿습니다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 0 },
@@ -113,7 +113,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 11,
-    question: "저는 다른 사람들의 작은 비판에도 쉽게 상처받는 편입니다.",
+    question: "나는 다른 사람들의 작은 비판에도 쉽게 상처받는 편입니다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -124,7 +124,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 12,
-    question: "사람들이 저를 어떻게 생각하는지에 대해 깊이 신경 쓰는 편입니다.",
+    question: "사람들이 나를 어떻게 생각하는지에 대해 깊이 신경 쓰는 편입니다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -135,7 +135,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 13,
-    question: "제가 충분히 존중받지 못한다고 느낄 때, 분노를 조절하기 어려울 때가 있습니다.",
+    question: "내가 충분히 존중받지 못한다고 느낄 때, 분노를 조절하기 어려울 때가 있다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -146,7 +146,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 14,
-    question: "다른 사람들이 저보다 더 성공하는 것을 보면 질투심을 느끼곤 합니다.",
+    question: "다른 사람들이 나보다 더 성공하는 것을 보면 질투심을 느끼곤 합니다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -157,7 +157,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 15,
-    question: "저는 종종 제가 오해받거나 불공평하게 대우받는다고 느낍니다.",
+    question: "나는 종종 내가 오해받거나 불공평하게 대우받는다고 느낀다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -168,7 +168,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 16,
-    question: "사람들이 저에게 충분한 관심을 주지 않으면 소외감을 느낍니다.",
+    question: "사람들이 나에게 충분한 관심을 주지 않으면 소외감을 느낀다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -179,7 +179,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 17,
-    question: "저는 저의 약점을 다른 사람들에게 숨기려고 노력하는 편입니다.",
+    question: "나는 나의 약점을 다른 사람들에게 숨기려고 노력하는 편이다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -190,7 +190,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 18,
-    question: "다른 사람들에게 인정받기 위해 때때로 저의 필요를 희생하기도 합니다.",
+    question: "다른 사람들에게 인정받기 위해 때때로 나의 필요를 희생하기도 한다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -201,7 +201,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 19,
-    question: "제가 무시당했다고 느끼면, 그 사람에게 보복하고 싶은 충동을 느낄 때가 있습니다.",
+    question: "내가 무시당했다고 느끼면, 그 사람에게 보복하고 싶은 충동을 느낄 때가 있다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 1, vulnerableScore: 1 },
@@ -212,7 +212,7 @@ export const narcissismQuestionsKo: NarcissismQuestion[] = [
   },
   {
     id: 20,
-    question: "저는 사람들이 저에게 감사하지 않는다고 느낄 때 실망감이 큽니다.",
+    question: "나는 사람들이 나에게 감사하지 않는다고 느낄 때 실망감이 크다.",
     answers: [
       { text: "전혀 그렇지 않다", grandioseScore: 0, vulnerableScore: 0 },
       { text: "그렇지 않다", grandioseScore: 0, vulnerableScore: 1 },
@@ -249,7 +249,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   grandiose: {
     type: 'grandiose',
-    title: '과대형 성향',
+    title: '과대형 나르시시즘',
     emoji: '👑',
     description: [
       '당신은 과대형 나르시시즘 성향을 보입니다.',
@@ -272,7 +272,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   vulnerable: {
     type: 'vulnerable',
-    title: '취약형 성향',
+    title: '취약형 나르시시즘',
     emoji: '🥺',
     description: [
       '당신은 취약형 나르시시즘 성향을 보입니다.',
@@ -295,7 +295,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   mixed: {
     type: 'mixed',
-    title: '혼합형 성향',
+    title: '혼합형 나르시시즘',
     emoji: '🤔',
     description: [
       '당신은 과대형과 취약형의 특성을 모두 보입니다.',

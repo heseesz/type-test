@@ -43,7 +43,7 @@ const translations = {
     
     // Welcome Screen
     'welcome.title': '테토-에겐 성향 테스트',
-    'welcome.subtitle': '당신의 성향을 알아보세요!',
+    'welcome.subtitle': '당신의 테토-에겐 성향을 알아보세요!',
     'welcome.selectGender': '성별을 선택해주세요',
     'welcome.male': '남자',
     'welcome.female': '여자',

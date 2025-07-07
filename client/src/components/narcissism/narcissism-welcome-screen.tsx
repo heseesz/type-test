@@ -22,7 +22,7 @@ export function NarcissismWelcomeScreen({ onStart }: NarcissismWelcomeScreenProp
       questions: "총 20개의 질문으로 구성되어 있습니다.",
       instruction: "각 질문에 대해 자신의 생각과 가장 가까운 답을 선택해주세요.",
       honest: "정답이 없으니 솔직하게 답변해주세요.",
-      results: "테스트 결과는 건강형, 과대형, 취약형, 혼합형 중 하나로 나타납니다.",
+      results: "테스트 결과는 건강, 과대형 나르시시즘, 취약형 나르시시즘, 혼합형 나르시시즘 중 하나로 나타납니다.",
       duration: "테스트 소요 시간: 약 5-8분",
       startButton: "테스트 시작하기",
       homeButton: "타입테스트 홈으로 돌아가기"
