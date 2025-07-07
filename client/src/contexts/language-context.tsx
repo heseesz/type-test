@@ -407,24 +407,13 @@ const translations = {
   }
 };
 
-function detectBrowserLanguage(): Language {
-  const browserLang = navigator.language.toLowerCase();
-  if (browserLang.startsWith('ko')) {
-    return 'ko';
-  }
-  if (browserLang.startsWith('ja')) {
-    return 'ja';
-  }
-  return 'en'; // Default to English
-}
-
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    if (saved && (saved === 'ko' || saved === 'en')) {
+    if (saved && (saved === 'ko' || saved === 'en' || saved === 'ja')) {
       return saved as Language;
     }
-    return detectBrowserLanguage();
+    return 'ko'; // Default to Korean
   });
 
   const setLanguage = (newLanguage: Language) => {
