@@ -4,7 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/language-context';
 import { NarcissismResult } from '@/lib/narcissism-types';
 import { useToast } from '@/hooks/use-toast';
-import { Share2, RotateCcw } from 'lucide-react';
+import { Share2, RotateCcw, Home } from 'lucide-react';
+import { Link, useLocation } from 'wouter';
+import { PrivacyPolicy } from '@/components/privacy-policy';
+import { AboutUs } from '@/components/about-us';
+import { ContactUs } from '@/components/contact-us';
 
 interface NarcissismResultScreenProps {
   result: NarcissismResult;
@@ -19,11 +23,15 @@ export function NarcissismResultScreen({
   vulnerableScore, 
   onRestart 
 }: NarcissismResultScreenProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
+
+  const handleBackToMain = () => {
+    setLocation('/');
+  };
 
   const handleShare = async () => {
-    const { language } = useLanguage();
     let shareText = '';
     let shareTitle = '';
     
@@ -188,6 +196,27 @@ ${result.emoji} ${result.title}
             <RotateCcw className="w-4 h-4 mr-2" />
             {t('result.restart')}
           </Button>
+        </div>
+
+        {/* Back to Main Button */}
+        <div className="flex justify-center mt-6">
+          <Button
+            onClick={handleBackToMain}
+            variant="outline"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 rounded-lg font-medium text-xs sm:text-sm min-h-[40px] touch-manipulation"
+          >
+            <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+            {t('test.backToMain')}
+          </Button>
+        </div>
+
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <AboutUs />
+          <span className="text-gray-300 dark:text-gray-600">|</span>
+          <PrivacyPolicy />
+          <span className="text-gray-300 dark:text-gray-600">|</span>
+          <ContactUs />
         </div>
 
         {/* Disclaimer */}
