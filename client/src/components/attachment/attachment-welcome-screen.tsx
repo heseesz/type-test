@@ -22,7 +22,7 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
       questions: "총 36개의 질문으로 구성되어 있습니다.",
       instruction: "각 질문에 대해 자신의 생각과 가장 가까운 답을 선택해주세요.",
       honest: "정답이 없으니 솔직하게 답변해주세요.",
-      results: "테스트 결과는 안정형, 불안형, 회피형, 두려움-회피형 중 하나로 나타납니다.",
+      results: "테스트 결과는 안정형, 불안-집착형, 회피-거부형, 회피-공포형 중 하나로 나타납니다.",
       duration: "테스트 소요 시간: 약 8-12분",
       startButton: "테스트 시작하기",
       homeButton: "타입테스트 홈으로 돌아가기"
