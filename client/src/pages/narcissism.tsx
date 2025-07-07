@@ -161,37 +161,37 @@ export default function NarcissismTest() {
     });
   };
 
-  if (testState.screen === 'welcome') {
-    return <NarcissismWelcomeScreen onStart={handleStart} />;
-  }
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
+      {testState.screen === 'welcome' && (
+        <NarcissismWelcomeScreen onStart={handleStart} />
+      )}
 
-  if (testState.screen === 'test') {
-    return (
-      <NarcissismTestScreen
-        currentQuestion={testState.currentQuestion}
-        selectedAnswer={testState.answers[testState.currentQuestion] ?? null}
-        onAnswerSelect={handleAnswerSelect}
-        onNext={handleNext}
-        onPrevious={handlePrevious}
-        onRestart={handleRestart}
-        questions={testState.shuffledQuestions}
-      />
-    );
-  }
+      {testState.screen === 'test' && (
+        <NarcissismTestScreen
+          currentQuestion={testState.currentQuestion}
+          selectedAnswer={testState.answers[testState.currentQuestion] ?? null}
+          onAnswerSelect={handleAnswerSelect}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+          onRestart={handleRestart}
+          questions={testState.shuffledQuestions}
+        />
+      )}
 
-  if (testState.screen === 'result' && testState.finalResult) {
-    const results = getResults();
-    const result = results[testState.finalResult];
-    
-    return (
-      <NarcissismResultScreen
-        result={result}
-        grandioseScore={testState.grandioseScore}
-        vulnerableScore={testState.vulnerableScore}
-        onRestart={handleRestart}
-      />
-    );
-  }
-
-  return null;
+      {testState.screen === 'result' && testState.finalResult && (() => {
+        const results = getResults();
+        const result = results[testState.finalResult];
+        
+        return (
+          <NarcissismResultScreen
+            result={result}
+            grandioseScore={testState.grandioseScore}
+            vulnerableScore={testState.vulnerableScore}
+            onRestart={handleRestart}
+          />
+        );
+      })()}
+    </div>
+  );
 }
