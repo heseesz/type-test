@@ -112,20 +112,6 @@ ${result.emoji} ${result.title}
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/20 dark:via-pink-900/20 dark:to-blue-900/20 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">나르시시즘 성향 점수</h3>
-            <div className="flex justify-center space-x-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{grandioseScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">과대형 점수</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">{vulnerableScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">취약형 점수</div>
-              </div>
-            </div>
-          </div>
-
           {/* 주요 특징 */}
           <div className="bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-xl p-6 text-left">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">주요 특징</h3>
@@ -149,6 +135,20 @@ ${result.emoji} ${result.title}
                   <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{advice}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/20 dark:via-pink-900/20 dark:to-blue-900/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">나르시시즘 성향 점수</h3>
+            <div className="flex justify-center space-x-8">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{grandioseScore}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">과대형 점수</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">{vulnerableScore}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">취약형 점수</div>
+              </div>
             </div>
           </div>
 
