@@ -250,7 +250,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   grandiose: {
     type: 'grandiose',
-    title: '과대형 성향',
+    title: '과대형 나르시시즘',
     emoji: '👑',
     description: [
       '당신은 과대형 나르시시즘 성향을 보입니다.',
@@ -274,7 +274,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   vulnerable: {
     type: 'vulnerable',
-    title: '취약형 성향',
+    title: '취약형 나르시시즘',
     emoji: '🥺',
     description: [
       '당신은 취약형 나르시시즘 성향을 보입니다.',
@@ -298,7 +298,7 @@ export const narcissismResultsKo: Record<string, NarcissismResult> = {
   },
   mixed: {
     type: 'mixed',
-    title: '혼합형 성향',
+    title: '혼합형 나르시시즘',
     emoji: '🤔',
     description: [
       '당신은 과대형과 취약형의 특성을 모두 보입니다.',
