@@ -7,22 +7,22 @@ export const attachmentQuestionsEn: AttachmentQuestion[] = [
     id: 1,
     question: "I am comfortable not having close emotional relationships.",
     answers: [
-      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
-      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
-      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
-      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
-      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 2, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 3, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 4, anxietyScore: 0 }
     ]
   },
   {
     id: 2,
     question: "Independence and self-sufficiency are very important to me.",
     answers: [
-      { text: "Strongly disagree", avoidanceScore: -2, anxietyScore: 0 },
-      { text: "Disagree", avoidanceScore: -1, anxietyScore: 0 },
-      { text: "Neutral", avoidanceScore: 0, anxietyScore: 0 },
-      { text: "Agree", avoidanceScore: 1, anxietyScore: 0 },
-      { text: "Strongly agree", avoidanceScore: 2, anxietyScore: 0 }
+      { text: "Strongly disagree", avoidanceScore: 0, anxietyScore: 0 },
+      { text: "Disagree", avoidanceScore: 1, anxietyScore: 0 },
+      { text: "Neutral", avoidanceScore: 2, anxietyScore: 0 },
+      { text: "Agree", avoidanceScore: 3, anxietyScore: 0 },
+      { text: "Strongly agree", avoidanceScore: 4, anxietyScore: 0 }
     ]
   },
   {
