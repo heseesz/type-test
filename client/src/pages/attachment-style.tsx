@@ -60,10 +60,12 @@ export default function AttachmentStyle() {
   };
 
   const calculateAttachmentType = (avoidanceScore: number, anxietyScore: number): AttachmentType => {
-    // With 0-4 scale and 36 questions, total possible score is 144
-    // Using median (72) as threshold for high/low classification
-    const avoidanceThreshold = 72;
-    const anxietyThreshold = 72;
+    // With 0-4 scale: 
+    // - Avoidance items (18 questions): max score = 18 × 4 = 72 points
+    // - Anxiety items (18 questions): max score = 18 × 4 = 72 points
+    // Using median (36) as threshold for each dimension
+    const avoidanceThreshold = 36;
+    const anxietyThreshold = 36;
     
     if (avoidanceScore < avoidanceThreshold && anxietyScore < anxietyThreshold) {
       return 'secure';
