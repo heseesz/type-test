@@ -64,20 +64,22 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 opacity-60 flex flex-col">
+          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 flex flex-col">
             <CardHeader className="text-center pb-4">
-              <div className="text-4xl mb-4">❤️🌟</div>
+              <div className="text-4xl mb-4">🧠👑</div>
               <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
-                {t('tests.comingSoon.title')}
+                {t('tests.narcissism.title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4 flex-1 flex flex-col justify-between">
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
-                {t('tests.comingSoon.description')}
+                {t('tests.narcissism.description')}
               </p>
-              <Button disabled className="w-full">
-                {t('tests.comingSoon.button')}
-              </Button>
+              <Link href="/narcissism">
+                <Button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white">
+                  {t('tests.narcissism.start')}
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
