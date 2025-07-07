@@ -915,10 +915,10 @@ export const attachmentResultsEn: Record<string, AttachmentResult> = {
 export const attachmentResults: Record<string, AttachmentResult> = {
   secure: {
     type: 'secure',
-    title: '안정 애착형',
+    title: '안정형',
     emoji: '🤗',
     description: [
-      '안정 애착형은 자신과 타인에 대해 긍정적인 인식을 가지고 있습니다.',
+      '안정형은 자신과 타인에 대해 긍정적인 인식을 가지고 있습니다.',
       '친밀한 관계에서 편안함을 느끼며, 동시에 적절한 독립성을 유지할 수 있습니다.',
       '갈등 상황에서도 건설적으로 문제를 해결하려고 노력합니다.'
     ],
@@ -938,10 +938,10 @@ export const attachmentResults: Record<string, AttachmentResult> = {
   },
   anxious: {
     type: 'anxious',
-    title: '불안 애착형',
+    title: '불안-집착형',
     emoji: '😰',
     description: [
-      '불안 애착형은 자신에 대해서는 부정적이지만 타인에 대해서는 긍정적인 인식을 가집니다.',
+      '불안-집착형은 자신에 대해서는 부정적이지만 타인에 대해서는 긍정적인 인식을 가집니다.',
       '관계에서 높은 친밀감을 추구하며, 상대방의 관심과 사랑을 끊임없이 확인하려 합니다.',
       '버림받을 것에 대한 두려움이 크고, 관계에서 불안감을 자주 느낍니다.'
     ],
@@ -962,10 +962,10 @@ export const attachmentResults: Record<string, AttachmentResult> = {
   },
   avoidant: {
     type: 'avoidant',
-    title: '회피 애착형',
-    emoji: '🚪',
+    title: '회피-거부형',
+    emoji: '🤨',
     description: [
-      '회피 애착형은 자신에 대해서는 긍정적이지만 타인에 대해서는 부정적인 인식을 가집니다.',
+      '회피-거부형은 자신에 대해서는 긍정적이지만 타인에 대해서는 부정적인 인식을 가집니다.',
       '독립성과 자기 충족감을 매우 중요하게 여기며, 타인에게 의존하는 것을 불편해합니다.',
       '친밀한 관계에서 거리를 두려 하고, 감정적 표현을 억제하는 경향이 있습니다.'
     ],
@@ -986,10 +986,10 @@ export const attachmentResults: Record<string, AttachmentResult> = {
   },
   fearful: {
     type: 'fearful',
-    title: '두려움-회피 애착형',
+    title: '회피-공포형',
     emoji: '😔',
     description: [
-      '두려움-회피 애착형은 자신과 타인 모두에 대해 부정적인 인식을 가집니다.',
+      '회피-공포형은 자신과 타인 모두에 대해 부정적인 인식을 가집니다.',
       '친밀한 관계를 원하지만 동시에 두려워하며, 일관되지 않은 행동을 보입니다.',
       '상처받을 것에 대한 두려움 때문에 관계에서 혼란스럽고 예측하기 어려운 패턴을 보입니다.'
     ],
