@@ -60,11 +60,16 @@ export default function AttachmentStyle() {
   };
 
   const calculateAttachmentType = (avoidanceScore: number, anxietyScore: number): AttachmentType => {
-    if (avoidanceScore <= 0 && anxietyScore <= 0) {
+    // With 0-4 scale and 36 questions, total possible score is 144
+    // Using median (72) as threshold for high/low classification
+    const avoidanceThreshold = 72;
+    const anxietyThreshold = 72;
+    
+    if (avoidanceScore < avoidanceThreshold && anxietyScore < anxietyThreshold) {
       return 'secure';
-    } else if (avoidanceScore <= 0 && anxietyScore > 0) {
+    } else if (avoidanceScore < avoidanceThreshold && anxietyScore >= anxietyThreshold) {
       return 'anxious';
-    } else if (avoidanceScore > 0 && anxietyScore <= 0) {
+    } else if (avoidanceScore >= avoidanceThreshold && anxietyScore < anxietyThreshold) {
       return 'avoidant';
     } else {
       return 'fearful';
