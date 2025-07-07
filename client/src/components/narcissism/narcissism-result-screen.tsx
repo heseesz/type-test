@@ -25,7 +25,7 @@ export function NarcissismResultScreen({
   const handleShare = async () => {
     const shareData = {
       title: t('result.shareTitle'),
-      text: result.shareText || t('result.shareText'),
+      text: t('result.shareText'),
       url: window.location.href
     };
 
