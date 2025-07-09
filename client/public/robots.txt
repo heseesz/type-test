@@ -1,16 +1,24 @@
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://type-test.site/sitemap.xml
+# Important pages to crawl
+Allow: /attachment-style
+Allow: /narcissism
+Allow: /teto-egen
 
 # Disallow unnecessary paths
 Disallow: /src/
 Disallow: /node_modules/
-Disallow: /*.js
-Disallow: /*.css
-Disallow: /*.map
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /server/
+Disallow: /shared/
 
 # Allow important files
 Allow: /favicon.ico
 Allow: /favicon.svg
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://type-test.site/sitemap.xml
