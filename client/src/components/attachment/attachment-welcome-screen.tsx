@@ -1,18 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'wouter';
-import { Home, ChevronRight } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { AboutUs } from '@/components/about-us';
 import { ContactUs } from '@/components/contact-us';
 import { useLanguage } from '@/contexts/language-context';
-import { 
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator 
-} from '@/components/ui/breadcrumb';
 
 interface AttachmentWelcomeScreenProps {
   onStart: () => void;
@@ -65,26 +58,6 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4 pt-20 md:pt-4">
       <div className="w-full max-w-3xl mx-auto">
-        {/* Breadcrumb Navigation */}
-        <div className="mb-8">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/" className="text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300">
-                    {t('breadcrumb.home')}
-                  </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <ChevronRight className="h-4 w-4" />
-              </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <span className="text-gray-500 dark:text-gray-400">{currentContent.title}</span>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
         <div className="text-center mb-12">
           <div className="text-6xl mb-6">💝</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
