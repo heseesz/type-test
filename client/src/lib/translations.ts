@@ -243,6 +243,33 @@ export const questionsTranslations = {
 
 export const resultTranslations = {
   ko: {
+    test: {
+      backToMain: '메인으로 돌아가기',
+      start: '테스트 시작',
+      retry: '다시 테스트',
+      shareResult: '결과 공유하기',
+      shareText: '나의 테스트 결과를 확인해보세요!',
+      question: '질문',
+      of: '/',
+      previous: '이전',
+      next: '다음',
+      submit: '제출'
+    },
+    breadcrumb: {
+      home: '홈',
+      tests: '테스트'
+    },
+    faq: {
+      title: '자주 묻는 질문',
+      question1: '테스트는 무료인가요?',
+      answer1: '네, 모든 테스트는 완전히 무료로 제공됩니다. 회원가입이나 결제 없이 누구나 이용할 수 있습니다.',
+      question2: '테스트 결과는 얼마나 정확한가요?',
+      answer2: '우리의 테스트는 심리학 연구를 바탕으로 제작되었지만, 전문적인 심리 상담을 대체할 수는 없습니다. 참고용으로만 활용해주세요.',
+      question3: '개인정보는 안전한가요?',
+      answer3: '테스트 결과와 개인정보는 안전하게 보호됩니다. 자세한 내용은 개인정보처리방침을 확인해주세요.',
+      question4: '다른 언어로도 테스트할 수 있나요?',
+      answer4: '한국어, 영어, 일본어로 테스트를 제공합니다. 우측 상단의 언어 선택 버튼을 클릭해주세요.'
+    },
     teto_male: {
       type: "teto_male",
       title: "테토남",
@@ -292,6 +319,33 @@ export const resultTranslations = {
     }
   },
   en: {
+    test: {
+      backToMain: 'Back to Main',
+      start: 'Start Test',
+      retry: 'Retry Test',
+      shareResult: 'Share Result',
+      shareText: 'Check out my test result!',
+      question: 'Question',
+      of: 'of',
+      previous: 'Previous',
+      next: 'Next',
+      submit: 'Submit'
+    },
+    breadcrumb: {
+      home: 'Home',
+      tests: 'Tests'
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      question1: 'Are the tests free?',
+      answer1: 'Yes, all tests are completely free. Anyone can use them without registration or payment.',
+      question2: 'How accurate are the test results?',
+      answer2: 'Our tests are based on psychological research, but they cannot replace professional psychological counseling. Please use them for reference only.',
+      question3: 'Is my personal information safe?',
+      answer3: 'Test results and personal information are securely protected. Please check our Privacy Policy for details.',
+      question4: 'Can I take tests in other languages?',
+      answer4: 'We offer tests in Korean, English, and Japanese. Please click the language selection button in the top right corner.'
+    },
     teto_male: {
       type: "teto_male",
       title: "Teto Male",
@@ -341,6 +395,33 @@ export const resultTranslations = {
     }
   },
   vi: {
+    test: {
+      backToMain: 'Back to Main',
+      start: 'Start Test',
+      retry: 'Retry Test',
+      shareResult: 'Share Result',
+      shareText: 'Check out my test result!',
+      question: 'Question',
+      of: 'of',
+      previous: 'Previous',
+      next: 'Next',
+      submit: 'Submit'
+    },
+    breadcrumb: {
+      home: 'Home',
+      tests: 'Tests'
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      question1: 'Are the tests free?',
+      answer1: 'Yes, all tests are completely free. Anyone can use them without registration or payment.',
+      question2: 'How accurate are the test results?',
+      answer2: 'Our tests are based on psychological research, but they cannot replace professional psychological counseling. Please use them for reference only.',
+      question3: 'Is my personal information safe?',
+      answer3: 'Test results and personal information are securely protected. Please check our Privacy Policy for details.',
+      question4: 'Can I take tests in other languages?',
+      answer4: 'We offer tests in Korean, English, and Japanese. Please click the language selection button in the top right corner.'
+    },
     teto_male: {
       type: "teto_male",
       title: "Teto Nam",
@@ -387,6 +468,35 @@ export const resultTranslations = {
         "Bạn coi trọng các mối quan hệ sâu sắc và đưa ra lời khuyên chân thành.",
         "Sự ấm áp và trí tuệ của bạn an ủi nhiều người."
       ]
+    }
+  },
+  ja: {
+    test: {
+      backToMain: 'メインに戻る',
+      start: 'テスト開始',
+      retry: 'テスト再試行',
+      shareResult: '結果をシェア',
+      shareText: '私のテスト結果をチェックしてください！',
+      question: '質問',
+      of: '/',
+      previous: '前へ',
+      next: '次へ',
+      submit: '送信'
+    },
+    breadcrumb: {
+      home: 'ホーム',
+      tests: 'テスト'
+    },
+    faq: {
+      title: 'よくある質問',
+      question1: 'テストは無料ですか？',
+      answer1: 'はい、すべてのテストは完全に無料で提供されています。登録や支払いなしで誰でも利用できます。',
+      question2: 'テスト結果はどの程度正確ですか？',
+      answer2: '私たちのテストは心理学研究に基づいて作られていますが、専門的な心理カウンセリングの代替にはなりません。参考としてのみご活用ください。',
+      question3: '個人情報は安全ですか？',
+      answer3: 'テスト結果と個人情報は安全に保護されています。詳細はプライバシーポリシーをご確認ください。',
+      question4: '他の言語でもテストできますか？',
+      answer4: '韓国語、英語、日本語でテストを提供しています。右上の言語選択ボタンをクリックしてください。'
     }
   }
 };

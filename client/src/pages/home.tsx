@@ -9,7 +9,7 @@ import { ContactUs } from "@/components/contact-us";
 
 export default function Home() {
   const { t } = useLanguage();
-  
+
   // Set meta tags for home page
   useMetaTags('meta.title', 'meta.description');
 
@@ -84,18 +84,111 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="text-center mt-12 space-y-4">
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            {t('site.footer')}
-          </p>
-          <div className="flex justify-center items-center gap-4">
-            <AboutUs />
-            <span className="text-gray-300 dark:text-gray-600">|</span>
-            <PrivacyPolicy />
-            <span className="text-gray-300 dark:text-gray-600">|</span>
-            <ContactUs />
+        {/* FAQ Section */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">
+            {t('faq.title')}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                  {t('faq.question1')}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t('faq.answer1')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                  {t('faq.question2')}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t('faq.answer2')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                  {t('faq.question3')}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t('faq.answer3')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                  {t('faq.question4')}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t('faq.answer4')}
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
+
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-12">
+          <AboutUs />
+          <span className="text-gray-300 dark:text-gray-600">|</span>
+          <PrivacyPolicy />
+          <span className="text-gray-300 dark:text-gray-600">|</span>
+          <ContactUs />
+        </div>
+
+        {/* FAQ Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": t('faq.question1'),
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('faq.answer1')
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": t('faq.question2'),
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('faq.answer2')
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": t('faq.question3'),
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('faq.answer3')
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": t('faq.question4'),
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": t('faq.answer4')
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </div>
     </div>
   );
