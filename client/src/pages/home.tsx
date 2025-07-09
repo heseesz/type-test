@@ -84,57 +84,7 @@ export default function Home() {
           </Card>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mt-16 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">
-            {t('faq.title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                  {t('faq.question1')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {t('faq.answer1')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                  {t('faq.question2')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {t('faq.answer2')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                  {t('faq.question3')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {t('faq.answer3')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                  {t('faq.question4')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {t('faq.answer4')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        
 
         {/* Footer Links */}
         <div className="flex justify-center items-center gap-4 mt-12">
