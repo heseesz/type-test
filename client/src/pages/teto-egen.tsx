@@ -3,7 +3,7 @@ import { WelcomeScreen } from '@/components/test/welcome-screen';
 import { TestScreen } from '@/components/test/test-screen';
 import { ResultScreen } from '@/components/test/result-screen';
 import { Gender, TestState } from '@/lib/test-types';
-import { shuffleQuestions, getOriginalAnswerIndex } from '@/lib/shuffle-utils';
+import { shuffleQuestions, getOriginalAnswerIndex, shuffleArray } from '@/lib/shuffle-utils';
 import { useLanguage } from '@/contexts/language-context';
 import { useMetaTags } from '@/hooks/use-meta-tags';
 import { questionsTranslations, resultTranslations } from '@/lib/translations-data';
@@ -44,7 +44,7 @@ export default function TetoEgen() {
   // Initialize shuffled questions when component mounts
   useEffect(() => {
     if (testState.screen === 'welcome') {
-      const shuffledQuestions = shuffle(questions);
+      const shuffledQuestions = shuffleArray(questions);
       setTestState(prev => ({
         ...prev,
         shuffledQuestions,
