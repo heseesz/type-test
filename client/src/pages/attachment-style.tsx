@@ -6,9 +6,24 @@ import { attachmentQuestions, attachmentResults, attachmentQuestionsEn, attachme
 import { AttachmentTestState, AttachmentType } from '@/lib/attachment-types';
 import { shuffleArray } from '@/lib/shuffle-utils';
 import { useLanguage } from '@/contexts/language-context';
+import { useMetaTags } from '@/hooks/use-meta-tags';
 
 export default function AttachmentStyle() {
   const { language } = useLanguage();
+  
+  // Set meta tags for attachment style page
+  const metaConfig = {
+    title: language === 'en' ? 'TypeTest: Adult Attachment Style Test' : 
+           language === 'ja' ? 'タイプテスト: 成人愛着スタイルテスト' : 
+           '타입테스트: 성인 애착 유형 테스트',
+    description: language === 'en' ? 'Discover your attachment style through 36 research-based questions. Find out if you are secure, anxious, avoidant, or fearful-avoidant.' :
+                language === 'ja' ? '36の研究ベースの質問を通じて、あなたの愛着スタイルを発見しましょう。安定型、不安型、回避型、恐れ回避型のいずれかを見つけましょう。' :
+                '36개의 연구 기반 질문을 통해 당신의 애착 유형을 알아보세요. 안정형, 불안형, 회피형, 두려움-회피형 중 어느 유형인지 확인해보세요.',
+    canonical: 'https://type-test.site/attachment-style',
+    ogImage: 'https://type-test.site/favicon.svg'
+  };
+  
+  useMetaTags(metaConfig);
   
   // Get the appropriate questions and results based on language
   const currentQuestions = language === 'en' ? attachmentQuestionsEn : 

@@ -1,50 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Homepage -->
   <url>
     <loc>https://type-test.site/</loc>
-    <lastmod>2025-01-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://type-test.site/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://type-test.site/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://type-test.site/" />
   </url>
   
-  <!-- Teto-Egen Test Page -->
+  <!-- Teto-Egen Test -->
   <url>
     <loc>https://type-test.site/teto-egen</loc>
-    <lastmod>2025-01-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://type-test.site/teto-egen" />
     <xhtml:link rel="alternate" hreflang="en" href="https://type-test.site/teto-egen" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://type-test.site/teto-egen" />
   </url>
   
-  <!-- Adult Attachment Style Test Page -->
+  <!-- Attachment Style Test -->
   <url>
     <loc>https://type-test.site/attachment-style</loc>
-    <lastmod>2025-01-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://type-test.site/attachment-style" />
     <xhtml:link rel="alternate" hreflang="en" href="https://type-test.site/attachment-style" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://type-test.site/attachment-style" />
   </url>
   
-  <!-- Narcissism Tendency Test Page -->
+  <!-- Narcissism Test -->
   <url>
     <loc>https://type-test.site/narcissism</loc>
-    <lastmod>2025-01-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://type-test.site/narcissism" />
     <xhtml:link rel="alternate" hreflang="en" href="https://type-test.site/narcissism" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://type-test.site/narcissism" />
   </url>
-
 </urlset>

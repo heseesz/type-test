@@ -19,6 +19,7 @@ Disallow: /shared/
 Allow: /favicon.ico
 Allow: /favicon.svg
 Allow: /sitemap.xml
+Allow: /ads.txt
 
 # Sitemap
 Sitemap: https://type-test.site/sitemap.xml

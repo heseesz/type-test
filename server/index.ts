@@ -6,6 +6,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// HTTPS redirect middleware (only in production)
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(301, `https://${req.header('host')}${req.url}`);
+  } else {
+    next();
+  }
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;

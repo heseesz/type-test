@@ -1,64 +1,105 @@
 import { useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/language-context';
 
-export function useMetaTags(titleKey: string, descriptionKey: string) {
-  const { t, language } = useLanguage();
+interface MetaTagsConfig {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  keywords?: string;
+}
 
+export function useMetaTags(config: MetaTagsConfig) {
+  const [location] = useLocation();
+  const { language } = useLanguage();
+  
   useEffect(() => {
-    const title = t(titleKey);
-    const description = t(descriptionKey);
-    
-    // Update document title
-    document.title = title;
-    
-    // Update document language
-    document.documentElement.lang = language;
+    // Update title
+    document.title = config.title;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      // Create meta description if it doesn't exist
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
+      metaDescription.setAttribute('content', config.description);
     }
     
-    // Update Open Graph meta tags for social sharing
-    const updateOrCreateMetaTag = (property: string, content: string) => {
-      let metaTag = document.querySelector(`meta[property="${property}"]`);
-      if (metaTag) {
-        metaTag.setAttribute('content', content);
-      } else {
-        metaTag = document.createElement('meta');
-        metaTag.setAttribute('property', property);
-        metaTag.setAttribute('content', content);
-        document.head.appendChild(metaTag);
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', config.canonical);
+    
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', config.title);
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', config.description);
+    }
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', config.canonical);
+    }
+    
+    if (config.ogImage) {
+      const ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage) {
+        ogImage.setAttribute('content', config.ogImage);
       }
-    };
+    }
     
-    updateOrCreateMetaTag('og:title', title);
-    updateOrCreateMetaTag('og:description', description);
-    updateOrCreateMetaTag('og:type', 'website');
-    updateOrCreateMetaTag('og:url', window.location.href);
+    // Update Twitter Card tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute('content', config.title);
+    }
     
-    // Update Twitter Card meta tags
-    const updateOrCreateTwitterTag = (name: string, content: string) => {
-      let metaTag = document.querySelector(`meta[name="${name}"]`);
-      if (metaTag) {
-        metaTag.setAttribute('content', content);
-      } else {
-        metaTag = document.createElement('meta');
-        metaTag.setAttribute('name', name);
-        metaTag.setAttribute('content', content);
-        document.head.appendChild(metaTag);
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute('content', config.description);
+    }
+    
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', config.canonical);
+    }
+    
+    if (config.ogImage) {
+      const twitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImage) {
+        twitterImage.setAttribute('content', config.ogImage);
       }
-    };
+    }
     
-    updateOrCreateTwitterTag('twitter:card', 'summary');
-    updateOrCreateTwitterTag('twitter:title', title);
-    updateOrCreateTwitterTag('twitter:description', description);
-  }, [t, language, titleKey, descriptionKey]);
+    // Update keywords if provided
+    if (config.keywords) {
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', config.keywords);
+      }
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.setAttribute('lang', language);
+    
+    // Update Open Graph locale
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) {
+      const localeMap: { [key: string]: string } = {
+        'ko': 'ko_KR',
+        'en': 'en_US',
+        'ja': 'ja_JP'
+      };
+      ogLocale.setAttribute('content', localeMap[language] || 'ko_KR');
+    }
+    
+  }, [config, language]);
 }

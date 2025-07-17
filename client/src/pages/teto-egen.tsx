@@ -14,7 +14,18 @@ export default function TetoEgen() {
   const testResults = resultTranslations[language];
   
   // Set meta tags for teto-egen page
-  useMetaTags('tests.tetoEgen.meta.title', 'tests.tetoEgen.meta.description');
+  const metaConfig = {
+    title: language === 'en' ? 'TypeTest: Teto-Egen Personality Test' : 
+           language === 'ja' ? 'タイプテスト: テト-エゲン性格テスト' : 
+           '타입테스트: 테토-에겐 성향 테스트',
+    description: language === 'en' ? 'Discover your Teto-Egen personality type through 12 carefully crafted questions. Find out if you are more Teto or Egen oriented.' :
+                language === 'ja' ? '12の厳選された質問を通じて、あなたのテト-エゲン性格タイプを発見しましょう。テト型かエゲン型かを見つけましょう。' :
+                '12개의 엄선된 질문을 통해 당신의 테토-에겐 성격 유형을 알아보세요. 테토형과 에겐형 중 어느 쪽인지 확인해보세요.',
+    canonical: 'https://type-test.site/teto-egen',
+    ogImage: 'https://type-test.site/favicon.svg'
+  };
+  
+  useMetaTags(metaConfig);
   
   const [testState, setTestState] = useState<TestState>({
     screen: 'welcome',
@@ -30,32 +41,17 @@ export default function TetoEgen() {
 
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
-  // Update document title and meta description for Teto-Egen test
+  // Initialize shuffled questions when component mounts
   useEffect(() => {
-    const tetoEgenTitle = t('tests.tetoEgen.meta.title');
-    const tetoEgenDescription = t('tests.tetoEgen.meta.description');
-    
-    document.title = tetoEgenTitle;
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', tetoEgenDescription);
+    if (testState.screen === 'welcome') {
+      const shuffledQuestions = shuffle(questions);
+      setTestState(prev => ({
+        ...prev,
+        shuffledQuestions,
+        questionOrder: shuffledQuestions.map(q => questions.indexOf(q))
+      }));
     }
-
-    // Cleanup: restore main site meta when component unmounts
-    return () => {
-      const mainTitle = t('meta.title');
-      const mainDescription = t('meta.description');
-      
-      document.title = mainTitle;
-      
-      const metaDescriptionCleanup = document.querySelector('meta[name="description"]');
-      if (metaDescriptionCleanup) {
-        metaDescriptionCleanup.setAttribute('content', mainDescription);
-      }
-    };
-  }, [language, t]);
+  }, [questions]);
 
   // Update questions when language changes during test while preserving shuffle order
   useEffect(() => {

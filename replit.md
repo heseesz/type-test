@@ -135,6 +135,7 @@ TestState {
 - `NODE_ENV`: Environment configuration (development/production)
 
 ## Changelog
+- January 17, 2025. Implemented comprehensive SEO improvements for Google Search Console: Created dynamic meta tags system with useMetaTags hook for all pages, added canonical URLs, removed problematic SearchAction from structured data, added HTTP to HTTPS redirect middleware for production, updated sitemap.xml with proper multilingual hreflang tags, and optimized robots.txt for better crawling
 - July 7, 2025. Added Narcissism Tendency Test with complete Korean/English/Japanese language support, 20 research-based questions measuring grandiose and vulnerable narcissism types, four result types (Healthy, Grandiose, Vulnerable, Mixed), comprehensive scoring system, and updated sitemap.xml with new /narcissism route
 - July 7, 2025. Removed browser language auto-detection and set default language to Korean: Users now always start with Korean language instead of browser language detection, can still manually change language via dropdown
 - July 5, 2025. Added Adult Attachment Style Test with complete Korean/English/Japanese language support, 36 authentic research-based questions, four attachment types (Secure, Anxious, Avoidant, Fearful-Avoidant), real-time language switching during tests, and updated sitemap.xml with new /attachment-style route

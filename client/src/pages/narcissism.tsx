@@ -20,9 +20,21 @@ import {
 import { shuffleArray } from '@/lib/shuffle-utils';
 
 export default function NarcissismTest() {
-  useMetaTags('tests.narcissism.meta.title', 'tests.narcissism.meta.description');
-  
   const { language } = useLanguage();
+  
+  // Set meta tags for narcissism page
+  const metaConfig = {
+    title: language === 'en' ? 'TypeTest: Narcissism Tendency Test' : 
+           language === 'ja' ? 'タイプテスト: ナルシシズム傾向テスト' : 
+           '타입테스트: 나르시시즘 성향 테스트',
+    description: language === 'en' ? 'Assess your narcissistic tendencies through 20 research-based questions. Discover your grandiose and vulnerable narcissism levels.' :
+                language === 'ja' ? '20の研究ベースの質問を通じて、あなたのナルシシズム傾向を評価します。誇大型と脆弱型のナルシシズムレベルを発見しましょう。' :
+                '20개의 연구 기반 질문을 통해 당신의 나르시시즘 성향을 평가하세요. 과대형과 취약형 나르시시즘 수준을 알아보세요.',
+    canonical: 'https://type-test.site/narcissism',
+    ogImage: 'https://type-test.site/favicon.svg'
+  };
+  
+  useMetaTags(metaConfig);
   
   const [testState, setTestState] = useState<NarcissismTestState>({
     screen: 'welcome',
