@@ -17,9 +17,12 @@ export function ContactUs() {
           <p className="leading-relaxed">
             저희는 여러분의 소중한 의견에 귀 기울이며, 사이트 이용에 불편함이 없도록 최선을 다하겠습니다.
           </p>
+          <p className="leading-relaxed">
+            또한, 저희 타입테스트는 사용자들에게 더욱 풍부하고 가치 있는 경험을 제공하기 위해 노력하고 있습니다. 만약 저희 사이트의 방문자들에게 도움이 될 만한 <strong>양질의 광고를 제공하거나 흥미로운 협업 기회를 제안</strong>하고 싶으시다면, 아래 이메일로 연락해주세요.
+          </p>
           <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
             <p className="font-semibold text-blue-900 dark:text-blue-100">
-              문의 메일: typetest.site@gmail.com
+              운영 메일: typetest.site@gmail.com
             </p>
           </div>
           <p className="leading-relaxed text-sm text-gray-600 dark:text-gray-400">
@@ -37,6 +40,9 @@ export function ContactUs() {
           </p>
           <p className="leading-relaxed">
             We listen to your valuable opinions and will do our best to make your site use as convenient as possible.
+          </p>
+          <p className="leading-relaxed">
+           Also, TypeTest strives to provide users with a richer and more valuable experience. If you would like to <strong>offer quality advertisements or suggest interesting collaboration opportunities</strong> to help visitors to our site, please contact us in the email below.
           </p>
           <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
             <p className="font-semibold text-blue-900 dark:text-blue-100">
@@ -121,6 +127,9 @@ export function ContactUs() {
           </p>
           <p className="leading-relaxed">
             私たちはあなたの大切な意見に耳を傾け、サイトの利用に不便がないように最善を尽くします。
+          </p>
+          <p className="leading-relaxed">
+            また、TypeTestは、ユーザーにより豊かで価値のある経験を提供するために取り組んでいます。 もし、当サイトの訪問者に役立つような<strong>良質の広告を提供したり、興味深いコラボレーションの機会</strong>を提案したい場合は、下記のEメールにご連絡ください。
           </p>
           <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
             <p className="font-semibold text-blue-900 dark:text-blue-100">
