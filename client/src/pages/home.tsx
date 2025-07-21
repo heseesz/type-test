@@ -71,11 +71,11 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.tetoEgen.description')}
               </p>
-              <Link href="/teto-egen">
+              <a href="/teto-egen">
                 <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
                   {t('tests.tetoEgen.start')}
                 </Button>
-              </Link>
+              </a>
             </CardContent>
           </Card>
 
@@ -90,11 +90,11 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.attachmentStyle.description')}
               </p>
-              <Link href="/attachment-style">
+              <a href="/attachment-style">
                 <Button className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white">
                   {t('tests.attachmentStyle.start')}
                 </Button>
-              </Link>
+              </a>
             </CardContent>
           </Card>
 
@@ -109,11 +109,11 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
                 {t('tests.narcissism.description')}
               </p>
-              <Link href="/narcissism">
+              <a href="/narcissism">
                 <Button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white">
                   {t('tests.narcissism.start')}
                 </Button>
-              </Link>
+              </a>
             </CardContent>
           </Card>
         </div>

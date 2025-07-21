@@ -130,7 +130,11 @@ ${result.emoji} ${result.title}
   };
 
   const handleBackToMain = () => {
-    setLocation("/");
+    window.location.href = "/";
+  };
+
+  const handleRestart = () => {
+    window.location.reload();
   };
 
   return (
@@ -216,7 +220,7 @@ ${result.emoji} ${result.title}
               </Button>
               
               <Button
-                onClick={onRestart}
+                onClick={handleRestart}
                 className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
               >
                 {currentLabels.restartButton}

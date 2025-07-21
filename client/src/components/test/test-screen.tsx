@@ -41,7 +41,7 @@ export function TestScreen({
   };
 
   const handleBackToMain = () => {
-    setLocation("/");
+    window.location.href = "/";
   };
 
   return (

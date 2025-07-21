@@ -27,7 +27,11 @@ export function NarcissismResultScreen({
   const [, setLocation] = useLocation();
 
   const handleBackToMain = () => {
-    setLocation('/');
+    window.location.href = '/';
+  };
+
+  const handleRestart = () => {
+    window.location.reload();
   };
 
   const handleShare = async () => {
@@ -170,7 +174,7 @@ ${result.emoji} ${result.title}
             </Button>
             
             <Button
-              onClick={onRestart}
+              onClick={handleRestart}
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
             >
               다시 테스트하기

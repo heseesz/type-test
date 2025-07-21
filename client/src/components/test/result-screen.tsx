@@ -22,7 +22,11 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
   const [, setLocation] = useLocation();
 
   const handleBackToMain = () => {
-    setLocation("/");
+    window.location.href = "/";
+  };
+
+  const handleRestart = () => {
+    window.location.reload();
   };
 
   const handleShare = async () => {
@@ -104,7 +108,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
             </Button>
             
             <Button
-              onClick={onRestart}
+              onClick={handleRestart}
               className="w-full gradient-teto-egen hover:opacity-90 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
             >
               {t('result.restart')}
