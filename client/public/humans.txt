@@ -1,0 +1,16 @@
+/* TEAM */
+    Developer: TypeTest Team
+    Contact: typetest.site@gmail.com
+    Location: Seoul, South Korea
+
+/* SITE */
+    Last update: 2025/01/21
+    Language: Korean, English, Japanese
+    Doctype: HTML5
+    IDE: VS Code, Replit
+
+/* COMPONENTS */
+    Framework: React + TypeScript
+    CSS: Tailwind CSS
+    Icons: Lucide React
+    Fonts: Noto Sans KR

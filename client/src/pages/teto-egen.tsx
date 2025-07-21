@@ -14,15 +14,41 @@ export default function TetoEgen() {
   const testResults = resultTranslations[language];
   
   // Set meta tags for teto-egen page
+  const description = language === 'en' ? 'Take the free Teto-Egen personality test with 12 scientific questions. Discover if you are Teto-type (energetic) or Egen-type (calm). Get instant results with detailed analysis!' :
+                     language === 'ja' ? '12の科学的な質問で無料のテト-エゲン性格テストを受けましょう。テト型（エネルギッシュ）かエゲン型（穏やか）かを発見し、詳細な分析と即座の結果を得られます！' :
+                     '12개의 과학적 질문으로 무료 테토-에겐 성격 테스트를 받아보세요. 테토형(활발한)인지 에겐형(차분한)인지 발견하고 즉시 상세한 분석 결과를 확인하세요!';
+
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest: Teto-Egen Personality Test' : 
-           language === 'ja' ? 'タイプテスト: テト-エゲン性格テスト' : 
-           '타입테스트: 테토-에겐 성향 테스트',
-    description: language === 'en' ? 'Discover your Teto-Egen personality type through 12 carefully crafted questions. Find out if you are more Teto or Egen oriented.' :
-                language === 'ja' ? '12の厳選された質問を通じて、あなたのテト-エゲン性格タイプを発見しましょう。テト型かエゲン型かを見つけましょう。' :
-                '12개의 엄선된 질문을 통해 당신의 테토-에겐 성격 유형을 알아보세요. 테토형과 에겐형 중 어느 쪽인지 확인해보세요.',
+    title: language === 'en' ? 'Free Teto-Egen Personality Test | 12 Questions | TypeTest' : 
+           language === 'ja' ? '無料テト-エゲン性格テスト | 12質問 | タイプテスト' : 
+           '무료 테토-에겐 성격 테스트 | 12문항 | 타입테스트',
+    description,
     canonical: 'https://type-test.site/teto-egen',
-    ogImage: 'https://type-test.site/favicon.svg'
+    keywords: language === 'en' ? 'Teto Egen personality test, free personality test, Korean personality test, energetic vs calm personality, personality analysis' :
+              language === 'ja' ? 'テトエゲン性格テスト、無料性格テスト、韓国性格テスト、エネルギッシュvs穏やか性格、性格分析' :
+              '테토에겐 성격테스트, 무료 성격테스트, 한국 성격테스트, 활발함vs차분함 성격, 성격분석',
+    ogImage: 'https://type-test.site/favicon.svg',
+    type: 'article' as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": language === 'en' ? 'Teto-Egen Personality Test' : 
+             language === 'ja' ? 'テト-エゲン性格テスト' : 
+             '테토-에겐 성격 테스트',
+      "description": description,
+      "url": "https://type-test.site/teto-egen",
+      "author": {
+        "@type": "Organization",
+        "name": "TypeTest"
+      },
+      "datePublished": "2024-06-26",
+      "dateModified": "2025-01-21",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/ShareAction",
+        "userInteractionCount": "15000"
+      }
+    }
   };
   
   useMetaTags(metaConfig);

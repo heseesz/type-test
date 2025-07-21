@@ -1,0 +1,8 @@
+Contact: mailto:typetest.site@gmail.com
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: ko, en, ja
+Canonical: https://type-test.site/.well-known/security.txt
+
+# Security Policy
+# If you discover a security vulnerability, please report it to us.
+# We appreciate your help in keeping our users safe.

@@ -1,0 +1,20 @@
+{
+  "name": "타입테스트 - 무료 성격 심리 테스트",
+  "short_name": "TypeTest",
+  "description": "무료 심리 테스트로 당신의 진짜 성격을 발견하세요",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait",
+  "categories": ["education", "lifestyle", "health"],
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

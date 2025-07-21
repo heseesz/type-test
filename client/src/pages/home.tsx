@@ -11,18 +11,38 @@ export default function Home() {
   const { t, language } = useLanguage();
 
   // Set meta tags for home page
+  const description = language === 'en' ? 'Take free personality tests to discover your true self. Professional attachment style tests, narcissism assessments, and Teto-Egen personality analysis. Start your psychological journey today!' :
+                     language === 'ja' ? '無料の性格テストで本当の自分を発見しましょう。専門的な愛着スタイルテスト、ナルシシズム評価、テト-エゲン性格分析。今すぐ心理的な旅を始めましょう！' :
+                     '무료 성격 테스트로 진짜 나를 발견하세요. 전문적인 애착 유형 테스트, 나르시시즘 평가, 테토-에겐 성격 분석. 지금 바로 심리적 여정을 시작하세요!';
+
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest - Personality Psychology Tests' : 
-           language === 'ja' ? 'タイプテスト - 性格心理テスト' : 
-           '타입테스트 - 성격 심리 분석 테스트',
-    description: language === 'en' ? 'Discover your true self with various personality tests. We offer attachment styles, narcissism tests, Teto-Egen personality tests, and more psychological assessments.' :
-                language === 'ja' ? '様々な性格テストで本当の自分を発見しましょう。愛着スタイル、ナルシシズムテスト、テト-エゲン性格テストなど、多様な心理テストを提供しています。' :
-                '다양한 성격 테스트로 자신의 진짜 모습을 발견하세요. 애착 유형, 나르시시즘 테스트, 테토-에겐 성향 테스트 등 다양한 심리 테스트를 제공합니다.',
+    title: language === 'en' ? 'TypeTest - Free Personality Psychology Tests | MBTI Alternative' : 
+           language === 'ja' ? 'タイプテスト - 無料性格心理テスト | MBTI代替' : 
+           '타입테스트 - 무료 성격 심리 테스트 | MBTI 대안',
+    description,
     canonical: 'https://type-test.site/',
-    keywords: language === 'en' ? 'personality test, psychology test, attachment style, narcissism test, MBTI, free test, personality analysis, psychology analysis' :
-              language === 'ja' ? '性格テスト、心理テスト、愛着スタイル、ナルシシズムテスト、MBTI、無料テスト、性格分析、心理分析' :
-              '성격테스트, 심리테스트, 애착유형, 나르시시즘, MBTI, 무료테스트, 성격분석, 심리분석',
-    ogImage: 'https://type-test.site/favicon.svg'
+    keywords: language === 'en' ? 'free personality test, psychology test, attachment style test, narcissism test, MBTI alternative, personality analysis, psychological assessment, free mental health test' :
+              language === 'ja' ? '無料性格テスト、心理テスト、愛着スタイルテスト、ナルシシズムテスト、MBTI代替、性格分析、心理的評価、無料メンタルヘルステスト' :
+              '무료 성격테스트, 심리테스트, 애착유형 테스트, 나르시시즘 테스트, MBTI 대안, 성격분석, 심리 평가, 무료 정신건강 테스트',
+    ogImage: 'https://type-test.site/favicon.svg',
+    type: 'website' as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": language === 'en' ? 'TypeTest - Free Personality Tests' : 
+             language === 'ja' ? 'タイプテスト - 無料性格テスト' : 
+             '타입테스트 - 무료 성격 테스트',
+      "url": "https://type-test.site",
+      "description": description,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://type-test.site/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
   };
   
   useMetaTags(metaConfig);

@@ -23,15 +23,41 @@ export default function NarcissismTest() {
   const { language } = useLanguage();
   
   // Set meta tags for narcissism page
+  const description = language === 'en' ? 'Free Narcissism Tendency Test with 20 scientific questions. Assess your grandiose and vulnerable narcissism levels. Get professional psychological analysis instantly!' :
+                     language === 'ja' ? '20の科学的質問による無料ナルシシズム傾向テスト。誇大型と脆弱型のナルシシズムレベルを評価し、専門的な心理分析を即座に得られます！' :
+                     '20개의 과학적 질문으로 하는 무료 나르시시즘 성향 테스트. 과대형과 취약형 나르시시즘 수준을 평가하고 전문적인 심리 분석을 즉시 확인하세요!';
+
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest: Narcissism Tendency Test' : 
-           language === 'ja' ? 'タイプテスト: ナルシシズム傾向テスト' : 
-           '타입테스트: 나르시시즘 성향 테스트',
-    description: language === 'en' ? 'Assess your narcissistic tendencies through 20 research-based questions. Discover your grandiose and vulnerable narcissism levels.' :
-                language === 'ja' ? '20の研究ベースの質問を通じて、あなたのナルシシズム傾向を評価します。誇大型と脆弱型のナルシシズムレベルを発見しましょう。' :
-                '20개의 연구 기반 질문을 통해 당신의 나르시시즘 성향을 평가하세요. 과대형과 취약형 나르시시즘 수준을 알아보세요.',
+    title: language === 'en' ? 'Free Narcissism Tendency Test | 20 Questions | TypeTest' : 
+           language === 'ja' ? '無料ナルシシズム傾向テスト | 20質問 | タイプテスト' : 
+           '무료 나르시시즘 성향 테스트 | 20문항 | 타입테스트',
+    description,
     canonical: 'https://type-test.site/narcissism',
-    ogImage: 'https://type-test.site/favicon.svg'
+    keywords: language === 'en' ? 'narcissism test, narcissistic personality, grandiose narcissism, vulnerable narcissism, personality disorder test, psychology assessment' :
+              language === 'ja' ? 'ナルシシズムテスト、ナルシシスト性格、誇大型ナルシシズム、脆弱型ナルシシズム、性格障害テスト、心理評価' :
+              '나르시시즘 테스트, 나르시시스트 성격, 과대형 나르시시즘, 취약형 나르시시즘, 성격장애 테스트, 심리 평가',
+    ogImage: 'https://type-test.site/favicon.svg',
+    type: 'article' as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": language === 'en' ? 'Narcissism Tendency Test' : 
+             language === 'ja' ? 'ナルシシズム傾向テスト' : 
+             '나르시시즘 성향 테스트',
+      "description": description,
+      "url": "https://type-test.site/narcissism",
+      "author": {
+        "@type": "Organization",
+        "name": "TypeTest"
+      },
+      "datePublished": "2024-07-07",
+      "dateModified": "2025-01-21",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/ShareAction",
+        "userInteractionCount": "8500"
+      }
+    }
   };
   
   useMetaTags(metaConfig);

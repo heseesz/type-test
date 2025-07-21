@@ -7,6 +7,16 @@ Allow: /attachment-style
 Allow: /narcissism
 Allow: /teto-egen
 
+# Allow important files
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /sitemap.xml
+Allow: /ads.txt
+Allow: /manifest.json
+Allow: /browserconfig.xml
+Allow: /humans.txt
+Allow: /.well-known/
+
 # Disallow unnecessary paths
 Disallow: /src/
 Disallow: /node_modules/
@@ -14,12 +24,31 @@ Disallow: /dist/
 Disallow: /.git/
 Disallow: /server/
 Disallow: /shared/
+Disallow: /_next/
+Disallow: /api/internal/
 
-# Allow important files
-Allow: /favicon.ico
-Allow: /favicon.svg
-Allow: /sitemap.xml
-Allow: /ads.txt
+# Crawl-delay for general crawlers
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Disallow aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
 
 # Sitemap
 Sitemap: https://type-test.site/sitemap.xml

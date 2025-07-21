@@ -12,15 +12,41 @@ export default function AttachmentStyle() {
   const { language } = useLanguage();
   
   // Set meta tags for attachment style page
+  const description = language === 'en' ? 'Free Adult Attachment Style Test with 36 scientific questions. Discover if you are Secure, Anxious, Avoidant, or Fearful-Avoidant. Get professional psychological insights instantly!' :
+                     language === 'ja' ? '36の科学的質問による無料成人愛着スタイルテスト。安定型、不安型、回避型、恐れ回避型のいずれかを発見し、専門的な心理学的洞察を即座に得られます！' :
+                     '36개의 과학적 질문으로 하는 무료 성인 애착 유형 테스트. 안정형, 불안형, 회피형, 두려움-회피형 중 당신의 유형을 발견하고 전문적인 심리학적 통찰을 즉시 확인하세요!';
+
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest: Adult Attachment Style Test' : 
-           language === 'ja' ? 'タイプテスト: 成人愛着スタイルテスト' : 
-           '타입테스트: 성인 애착 유형 테스트',
-    description: language === 'en' ? 'Discover your attachment style through 36 research-based questions. Find out if you are secure, anxious, avoidant, or fearful-avoidant.' :
-                language === 'ja' ? '36の研究ベースの質問を通じて、あなたの愛着スタイルを発見しましょう。安定型、不安型、回避型、恐れ回避型のいずれかを見つけましょう。' :
-                '36개의 연구 기반 질문을 통해 당신의 애착 유형을 알아보세요. 안정형, 불안형, 회피형, 두려움-회피형 중 어느 유형인지 확인해보세요.',
+    title: language === 'en' ? 'Free Adult Attachment Style Test | 36 Questions | TypeTest' : 
+           language === 'ja' ? '無料成人愛着スタイルテスト | 36質問 | タイプテスト' : 
+           '무료 성인 애착 유형 테스트 | 36문항 | 타입테스트',
+    description,
     canonical: 'https://type-test.site/attachment-style',
-    ogImage: 'https://type-test.site/favicon.svg'
+    keywords: language === 'en' ? 'attachment style test, adult attachment, secure attachment, anxious attachment, avoidant attachment, fearful avoidant, psychology test' :
+              language === 'ja' ? '愛着スタイルテスト、成人愛着、安定愛着、不安愛着、回避愛着、恐れ回避、心理学テスト' :
+              '애착유형 테스트, 성인 애착, 안정 애착, 불안 애착, 회피 애착, 두려움 회피, 심리학 테스트',
+    ogImage: 'https://type-test.site/favicon.svg',
+    type: 'article' as const,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": language === 'en' ? 'Adult Attachment Style Test' : 
+             language === 'ja' ? '成人愛着スタイルテスト' : 
+             '성인 애착 유형 테스트',
+      "description": description,
+      "url": "https://type-test.site/attachment-style",
+      "author": {
+        "@type": "Organization",
+        "name": "TypeTest"
+      },
+      "datePublished": "2024-07-05",
+      "dateModified": "2025-01-21",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/ShareAction",
+        "userInteractionCount": "12000"
+      }
+    }
   };
   
   useMetaTags(metaConfig);

@@ -8,6 +8,8 @@ interface MetaTagsConfig {
   canonical: string;
   ogImage?: string;
   keywords?: string;
+  type?: 'website' | 'article' | 'application';
+  structuredData?: any;
 }
 
 export function useMetaTags(config: MetaTagsConfig) {
@@ -99,6 +101,28 @@ export function useMetaTags(config: MetaTagsConfig) {
         'ja': 'ja_JP'
       };
       ogLocale.setAttribute('content', localeMap[language] || 'ko_KR');
+    }
+    
+    // Update Open Graph type
+    const ogType = document.querySelector('meta[property="og:type"]');
+    if (ogType && config.type) {
+      ogType.setAttribute('content', config.type);
+    }
+    
+    // Add structured data if provided
+    if (config.structuredData) {
+      // Remove existing structured data
+      const existingScript = document.querySelector('script[type="application/ld+json"][data-meta-tags]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      
+      // Add new structured data
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-meta-tags', 'true');
+      script.textContent = JSON.stringify(config.structuredData);
+      document.head.appendChild(script);
     }
     
   }, [config, language]);
