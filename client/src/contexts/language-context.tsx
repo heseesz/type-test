@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'ko' | 'en' | 'ja';
+export type Language = 'ko' | 'en' | 'ja' | 'zh-cn';
 
 interface LanguageContextType {
   language: Language;
@@ -220,6 +220,15 @@ const translations = {
     'tests.tetoEgen.start': '开始测试',
     'tests.tetoEgen.meta.title': 'TypeTest：Teto-Egen 性格测试',
     'tests.tetoEgen.meta.description': '通过深入的心理分析发现您的真实性格类型。进行我们的韩国性格分类测试，了解您更偏向于 Teto 还是 Egen 类型。',
+    'tests.attachmentStyle.title': '成人依恋类型测试',
+    'tests.attachmentStyle.description': '了解您的依恋类型\n并理解关系模式',
+    'tests.attachmentStyle.start': '开始测试',
+    'tests.narcissism.title': '自恋倾向测试',
+    'tests.narcissism.description': '了解您的自恋倾向\n培养健康的自尊心',
+    'tests.narcissism.start': '开始测试',
+    'tests.narcissism.info': '由20个问题组成，测量夸大型和脆弱型自恋。',
+    'tests.narcissism.meta.title': 'TypeTest：自恋倾向测试',
+    'tests.narcissism.meta.description': '了解您的自恋倾向！区分夸大型和脆弱型自恋，了解您的特征。',
     'tests.comingSoon.title': '准备内容',
     'tests.comingSoon.description': '新内容即将添加',
     'tests.comingSoon.button': '即将推出',
@@ -232,7 +241,7 @@ const translations = {
     'welcome.female': '女性',
     
     // Test Screen
-    'test.progress': '第 {current} 题，共 {total} 题',
+    'test.progress': '进度',
     'test.previous': '上一题',
     'test.next': '下一题',
     'test.showResult': '查看结果',
@@ -248,12 +257,18 @@ const translations = {
     'result.points': '分',
     'result.share': '分享结果',
     'result.restart': '重新测试',
-    'result.shareTitle': '我完成了 Teto-Egen 性格测试！',
-    'result.shareText': '我的结果：{result}。你也来测试一下吧！',
+    'result.shareTitle': 'Teto-Egen 性格测试结果',
+    'result.shareText': '你也来测试一下吧！',
     'result.copySuccess': '已复制到剪贴板',
     'result.copySuccessDesc': '结果已复制到剪贴板！',
     'result.copyFail': '复制失败',
     'result.copyFailDesc': '无法复制结果。',
+    
+    // Personality Types
+    'personality.teto_male': 'Teto男',
+    'personality.egen_male': 'Egen男',
+    'personality.teto_female': 'Teto女',
+    'personality.egen_female': 'Egen女',
     
     // Theme
     'theme.toggle': '切换主题'
@@ -428,7 +443,7 @@ const translations = {
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    if (saved && (saved === 'ko' || saved === 'en' || saved === 'ja')) {
+    if (saved && (saved === 'ko' || saved === 'en' || saved === 'ja' || saved === 'zh-cn')) {
       return saved as Language;
     }
     return 'ko'; // Default to Korean

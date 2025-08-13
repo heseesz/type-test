@@ -333,99 +333,101 @@ export const questionsTranslations: Record<'ko' | 'en' | 'es' | 'zh-cn' | 'zh-tw
   ],
   'zh-cn': [
     {
-      question: "认识新朋友时你的风格是什么？",
+      question: "遇到新朋友时你的风格是什么？",
       answers: [
-        { text: "我会主动说话，积极接近", type: "teto", weight: 2 },
-        { text: "我等待别人先接近我", type: "egen", weight: 2 },
-        { text: "当我找到共同话题时才会交谈", type: "teto", weight: 1 },
-        { text: "我需要时间来适应", type: "egen", weight: 1 }
+        { text: "主动接近并开始对话", type: "teto", weight: 2 },
+        { text: "等待对方先开口", type: "egen", weight: 2 },
+        { text: "根据情况采取不同行动", type: "egen", weight: 1 },
+        { text: "先自然了解气氛再行动", type: "teto", weight: 1 }
       ]
     },
     {
-      question: "心情不好时你如何表达？",
+      question: "与朋友聚会时你主要承担什么角色？",
       answers: [
-        { text: "我会开放地表达并寻求安慰", type: "teto", weight: 2 },
-        { text: "我会自己保留并独自解决", type: "egen", weight: 2 },
-        { text: "这取决于情况和人", type: "teto", weight: 1 },
-        { text: "我尽量不表现出来", type: "egen", weight: 1 }
+        { text: "安排地点时间并制定计划", type: "teto", weight: 2 },
+        { text: "听取别人意见并跟随", type: "egen", weight: 2 },
+        { text: "充当氛围制造者", type: "teto", weight: 1 },
+        { text: "安静参与并享受", type: "egen", weight: 1 }
       ]
     },
     {
-      question: "计划事情时你的风格是什么？",
+      question: "压力大时你主要如何缓解？",
       answers: [
-        { text: "提前详细计划", type: "egen", weight: 2 },
-        { text: "根据当时的心情决定", type: "teto", weight: 2 },
-        { text: "制定大概的计划", type: "egen", weight: 1 },
-        { text: "享受自发性", type: "teto", weight: 1 }
+        { text: "与朋友见面聊天", type: "teto", weight: 2 },
+        { text: "独自度过时光", type: "egen", weight: 2 },
+        { text: "运动或做兴趣爱好", type: "teto", weight: 1 },
+        { text: "听音乐或读书", type: "egen", weight: 1 }
       ]
     },
     {
-      question: "别人向你寻求帮助时你如何表现？",
+      question: "做决定时你更重视什么？",
       answers: [
-        { text: "首先分析我是否能做到", type: "egen", weight: 2 },
-        { text: "立即说'好的'", type: "teto", weight: 2 },
-        { text: "这取决于是谁", type: "egen", weight: 1 },
-        { text: "我很难拒绝", type: "teto", weight: 1 }
-      ]
-    },
-    {
-      question: "你的沟通风格是什么？",
-      answers: [
-        { text: "直接和清楚", type: "teto", weight: 2 },
-        { text: "体贴和谨慎", type: "egen", weight: 2 },
-        { text: "情感和表达性", type: "teto", weight: 1 },
-        { text: "我听得比说得多", type: "egen", weight: 1 }
-      ]
-    },
-    {
-      question: "收到批评时你如何反应？",
-      answers: [
-        { text: "我开放地接受并努力改进", type: "teto", weight: 2 },
-        { text: "我深入分析", type: "egen", weight: 2 },
-        { text: "一开始会受伤但然后会反思", type: "teto", weight: 1 },
-        { text: "我需要时间来处理", type: "egen", weight: 1 }
-      ]
-    },
-    {
-      question: "做决定时什么更重要？",
-      answers: [
-        { text: "直觉和情感", type: "teto", weight: 2 },
+        { text: "直觉和感情", type: "teto", weight: 2 },
         { text: "逻辑分析", type: "egen", weight: 2 },
-        { text: "他人的意见", type: "egen", weight: 1 },
-        { text: "过去的经验", type: "teto", weight: 1 }
+        { text: "别人的意见", type: "egen", weight: 1 },
+        { text: "过往经验", type: "teto", weight: 1 }
       ]
     },
     {
-      question: "适应新环境时你的风格是什么？",
+      question: "适应新环境时你的风格是？",
       answers: [
-        { text: "我快速适应并享受新挑战", type: "teto", weight: 2 },
-        { text: "我慢慢适应", type: "egen", weight: 2 },
-        { text: "我与周围的人一起适应", type: "teto", weight: 1 },
-        { text: "我更喜欢稳定", type: "egen", weight: 1 }
+        { text: "快速适应并享受新挑战", type: "teto", weight: 2 },
+        { text: "花时间慢慢适应", type: "egen", weight: 2 },
+        { text: "与周围的人一起适应", type: "teto", weight: 1 },
+        { text: "更喜欢稳定的环境", type: "egen", weight: 1 }
       ]
     },
     {
-      question: "你通常如何度过周末？",
+      question: "冲突情况下你主要如何行动？",
       answers: [
-        { text: "和朋友见面，积极度过时光", type: "teto", weight: 2 },
-        { text: "在家休息，享受个人时间", type: "egen", weight: 2 },
-        { text: "探索新地方或有新体验", type: "teto", weight: 1 },
-        { text: "专注于喜欢的爱好", type: "egen", weight: 1 }
+        { text: "直接解决问题", type: "teto", weight: 2 },
+        { text: "避免冲突或充当调解者", type: "egen", weight: 2 },
+        { text: "情绪化地反应", type: "teto", weight: 1 },
+        { text: "花时间冷静思考", type: "egen", weight: 1 }
       ]
     },
     {
-      question: "别人请你帮忙时你如何反应？",
+      question: "周末你主要如何度过时间？",
       answers: [
-        { text: "我先说'好的'然后再考虑", type: "teto", weight: 2 },
-        { text: "我仔细考虑然后回应", type: "egen", weight: 2 },
-        { text: "我很难拒绝", type: "egen", weight: 1 },
-        { text: "我首先考虑自己的情况", type: "teto", weight: 1 }
+        { text: "与朋友见面度过活跃时光", type: "teto", weight: 2 },
+        { text: "在家休息享受个人时间", type: "egen", weight: 2 },
+        { text: "探索新地方或体验新事物", type: "teto", weight: 1 },
+        { text: "专注于喜欢的兴趣爱好", type: "egen", weight: 1 }
       ]
     },
     {
-      question: "在团队项目中你更喜欢什么角色？",
+      question: "别人请你帮忙时你的反应是？",
       answers: [
-        { text: "展现领导力，带领整个团队", type: "teto", weight: 2 },
+        { text: "先说'好的'然后再考虑", type: "teto", weight: 2 },
+        { text: "仔细考虑后再回答", type: "egen", weight: 2 },
+        { text: "很难拒绝", type: "egen", weight: 1 },
+        { text: "首先考虑自己的情况", type: "teto", weight: 1 }
+      ]
+    },
+    {
+      question: "团队项目中你更喜欢什么角色？",
+      answers: [
+        { text: "发挥领导力带领整个团队", type: "teto", weight: 2 },
+        { text: "支持并帮助完成具体任务", type: "egen", weight: 2 },
+        { text: "在成员间进行协调", type: "teto", weight: 1 },
+        { text: "独立专注于自己的部分", type: "egen", weight: 1 }
+      ]
+    },
+    {
+      question: "犯错时你通常如何反应？",
+      answers: [
+        { text: "快速承认并寻找解决方案", type: "teto", weight: 2 },
+        { text: "分析原因并思考预防", type: "egen", weight: 2 },
+        { text: "情绪化地对待", type: "teto", weight: 1 },
+        { text: "独自反思", type: "egen", weight: 1 }
+      ]
+    }
+  ],
+  'zh-tw': [
+    {
+      question: "認識新朋友時你的風格是什麼？",
+      answers: [
+        { text: "我會主動說話，積極接近", type: "teto", weight: 2 },
         { text: "支持并帮助完成具体任务", type: "egen", weight: 2 },
         { text: "在成员之间进行协调", type: "teto", weight: 1 },
         { text: "独立专注于我的部分", type: "egen", weight: 1 }
