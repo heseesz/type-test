@@ -68,6 +68,17 @@ export function AttachmentResultScreen({
       shareButton: "Compartir Resultados",
       restartButton: "Realizar Test Nuevamente",
       homeButton: "Volver al Inicio de TypeTest"
+    },
+    'zh-cn': {
+      descriptionTitle: "依恋风格描述",
+      characteristicsTitle: "主要特征",
+      adviceTitle: "关系改善建议",
+      scoreTitle: "您的得分",
+      avoidanceLabel: "回避得分",
+      anxietyLabel: "焦虑得分",
+      shareButton: "分享结果",
+      restartButton: "重新测试",
+      homeButton: "返回TypeTest首页"
     }
   };
 
@@ -97,6 +108,16 @@ ${result.emoji} ${result.title}
 
 あなたもテストしてみませんか！ https://type-test.site/attachment-style`;
       shareTitle = '成人愛着タイプテスト結果';
+    } else if (language === 'zh-cn') {
+      shareText = `成人依恋风格测试结果
+
+${result.emoji} ${result.title}
+
+回避得分: ${avoidanceScore}分
+焦虑得分: ${anxietyScore}分
+
+您也来测试一下吧！ https://type-test.site/attachment-style`;
+      shareTitle = '成人依恋风格测试结果';
     } else {
       shareText = `성인 애착 유형 테스트 결과
 

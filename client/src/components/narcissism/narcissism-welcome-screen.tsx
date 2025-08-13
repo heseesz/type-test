@@ -50,6 +50,18 @@ export function NarcissismWelcomeScreen({ onStart }: NarcissismWelcomeScreenProp
       duration: "所要時間：約5-8分",
       startButton: "テストを開始",
       homeButton: "TypeTestホームに戻る"
+    },
+    'zh-cn': {
+      title: "自恋倾向测试",
+      subtitle: "发现您的自恋倾向！",
+      guideTitle: "测试说明",
+      questions: "本测试共有20个问题。",
+      instruction: "对于每个问题，请选择最符合您想法的答案。",
+      honest: "没有对错之分，请诚实回答。",
+      results: "结果将是四种类型之一：健康型、过大型、脆弱型或混合型。",
+      duration: "预计用时：5-8分钟",
+      startButton: "开始测试",
+      homeButton: "返回TypeTest首页"
     }
   };
 

@@ -26,6 +26,43 @@ export function NarcissismResultScreen({
   const { toast } = useToast();
   const [, setLocation] = useLocation();
 
+  const labels = {
+    ko: {
+      descriptionTitle: "특성 설명",
+      characteristicsTitle: "주요 특징",
+      adviceTitle: "개선 방향",
+      scoreTitle: "나르시시즘 성향 점수",
+      grandioseScore: "과대형 점수",
+      vulnerableScore: "취약형 점수"
+    },
+    en: {
+      descriptionTitle: "Description",
+      characteristicsTitle: "Key Characteristics",
+      adviceTitle: "Improvement Direction",
+      scoreTitle: "Narcissism Tendency Scores",
+      grandioseScore: "Grandiose Score",
+      vulnerableScore: "Vulnerable Score"
+    },
+    ja: {
+      descriptionTitle: "特性の説明",
+      characteristicsTitle: "主な特徴",
+      adviceTitle: "改善の方向",
+      scoreTitle: "ナルシシズム傾向スコア",
+      grandioseScore: "誇大型スコア",
+      vulnerableScore: "脆弱型スコア"
+    },
+    'zh-cn': {
+      descriptionTitle: "特征描述",
+      characteristicsTitle: "主要特征",
+      adviceTitle: "改善方向",
+      scoreTitle: "自恋倾向得分",
+      grandioseScore: "过大型得分",
+      vulnerableScore: "脆弱型得分"
+    }
+  };
+
+  const currentLabels = labels[language as keyof typeof labels] || labels.ko;
+
   const handleBackToMain = () => {
     window.location.href = '/';
   };
@@ -58,6 +95,16 @@ ${result.emoji} ${result.title}
 
 あなたもテストしてみませんか！ https://type-test.site/narcissism`;
       shareTitle = 'ナルシシズム傾向テスト結果';
+    } else if (language === 'zh-cn') {
+      shareText = `自恋倾向测试结果
+
+${result.emoji} ${result.title}
+
+过大型自恋倾向: ${grandioseScore}分
+脆弱型自恋倾向: ${vulnerableScore}分
+
+您也来测试一下吧！ https://type-test.site/narcissism`;
+      shareTitle = '自恋倾向测试结果';
     } else {
       shareText = `나르시시즘 성향 테스트 결과
 
@@ -108,7 +155,7 @@ ${result.emoji} ${result.title}
           </div>
           
           <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 text-left space-y-4">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">특성 설명</h3>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{currentLabels.descriptionTitle}</h3>
             <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-3">
               {result.description.map((desc, index) => (
                 <p key={index}>{desc}</p>
@@ -116,9 +163,9 @@ ${result.emoji} ${result.title}
             </div>
           </div>
 
-          {/* 주요 특징 */}
+          {/* Key Characteristics */}
           <div className="bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-xl p-6 text-left">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">주요 특징</h3>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{currentLabels.characteristicsTitle}</h3>
             <div className="space-y-2">
               {result.characteristics.map((characteristic, index) => (
                 <div key={index} className="flex items-center space-x-2">
@@ -129,9 +176,9 @@ ${result.emoji} ${result.title}
             </div>
           </div>
 
-          {/* 개선 방향 */}
+          {/* Improvement Direction */}
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-blue-200 dark:border-blue-700 rounded-xl p-6 text-left">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">개선 방향</h3>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{currentLabels.adviceTitle}</h3>
             <div className="space-y-3">
               {result.advice.map((advice, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -143,15 +190,15 @@ ${result.emoji} ${result.title}
           </div>
 
           <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-blue-50 dark:from-purple-900/20 dark:via-pink-900/20 dark:to-blue-900/20 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">나르시시즘 성향 점수</h3>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">{currentLabels.scoreTitle}</h3>
             <div className="flex justify-center space-x-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{grandioseScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">과대형 점수</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{currentLabels.grandioseScore}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">{vulnerableScore}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">취약형 점수</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{currentLabels.vulnerableScore}</div>
               </div>
             </div>
           </div>

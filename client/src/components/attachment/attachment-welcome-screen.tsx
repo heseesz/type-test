@@ -50,6 +50,18 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
       duration: "所要時間：約8-12分",
       startButton: "テスト開始",
       homeButton: "TypeTestホームに戻る"
+    },
+    'zh-cn': {
+      title: "成人依恋风格测试",
+      subtitle: "发现您的依恋风格！",
+      guideTitle: "测试说明",
+      questions: "本测试共有36个问题。",
+      instruction: "对于每个问题，请选择最符合您想法的答案。",
+      honest: "没有对错之分，请诚实回答。",
+      results: "结果将是四种类型之一：安全型、焦虑型、回避型或恐惧回避型。",
+      duration: "预计用时：8-12分钟",
+      startButton: "开始测试",
+      homeButton: "返回TypeTest首页"
     }
   };
 
