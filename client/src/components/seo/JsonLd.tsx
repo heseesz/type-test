@@ -21,16 +21,19 @@ export function WebsiteJsonLd() {
     "@type": "WebSite",
     "name": language === 'en' ? 'TypeTest - Free Personality Tests' : 
            language === 'ja' ? 'タイプテスト - 無料性格テスト' : 
+           language === 'zh-cn' ? 'TypeTest - 免费性格测试' :
            '타입테스트 - 무료 성격 테스트',
     "alternateName": ["TypeTest", "Type Test", "타입테스트"],
     "url": "https://type-test.site",
     "description": language === 'en' ? 'Free personality tests including attachment styles, narcissism assessment, and Teto-Egen personality analysis. Discover your psychological profile today!' :
                   language === 'ja' ? '愛着スタイル、ナルシシズム評価、テト-エゲン性格分析を含む無料性格テスト。今すぐあなたの心理プロファイルを発見しましょう！' :
+                  language === 'zh-cn' ? '包含依恋风格、自恋评估和Teto-Egen性格分析的免费性格测试。今天就发现您的心理档案吧！' :
                   '애착 유형, 나르시시즘 평가, 테토-에겐 성격 분석을 포함한 무료 성격 테스트. 지금 당신의 심리 프로필을 발견하세요!',
     "inLanguage": [
       { "@type": "Language", "name": "Korean", "alternateName": "ko" },
       { "@type": "Language", "name": "English", "alternateName": "en" },
-      { "@type": "Language", "name": "Japanese", "alternateName": "ja" }
+      { "@type": "Language", "name": "Japanese", "alternateName": "ja" },
+      { "@type": "Language", "name": "Chinese Simplified", "alternateName": "zh-cn" }
     ],
     "audience": {
       "@type": "Audience",
@@ -51,7 +54,7 @@ export function WebsiteJsonLd() {
         "@type": "ContactPoint",
         "email": "typetest.site@gmail.com",
         "contactType": "Customer Service",
-        "availableLanguage": ["ko", "en", "ja"]
+        "availableLanguage": ["ko", "en", "ja", "zh-cn"]
       }
     },
     "mainEntity": [
