@@ -33,7 +33,10 @@ export function NarcissismResultScreen({
       adviceTitle: "개선 방향",
       scoreTitle: "나르시시즘 성향 점수",
       grandioseScore: "과대형 점수",
-      vulnerableScore: "취약형 점수"
+      vulnerableScore: "취약형 점수",
+      disclaimer: "이 테스트는 심리학적 참고 자료로만 사용되며, 전문적인 진단을 대체하지 않습니다.",
+      shareButton: "결과 공유하기",
+      restartButton: "다시 테스트하기"
     },
     en: {
       descriptionTitle: "Description",
@@ -41,7 +44,10 @@ export function NarcissismResultScreen({
       adviceTitle: "Improvement Direction",
       scoreTitle: "Narcissism Tendency Scores",
       grandioseScore: "Grandiose Score",
-      vulnerableScore: "Vulnerable Score"
+      vulnerableScore: "Vulnerable Score",
+      disclaimer: "This test is for psychological reference only and does not replace professional diagnosis.",
+      shareButton: "Share Results",
+      restartButton: "Take Test Again"
     },
     ja: {
       descriptionTitle: "特性の説明",
@@ -49,7 +55,10 @@ export function NarcissismResultScreen({
       adviceTitle: "改善の方向",
       scoreTitle: "ナルシシズム傾向スコア",
       grandioseScore: "誇大型スコア",
-      vulnerableScore: "脆弱型スコア"
+      vulnerableScore: "脆弱型スコア",
+      disclaimer: "このテストは心理学的参考資料としてのみ使用され、専門的な診断に代わるものではありません。",
+      shareButton: "結果を共有",
+      restartButton: "再度テストする"
     },
     'zh-cn': {
       descriptionTitle: "特征描述",
@@ -57,7 +66,10 @@ export function NarcissismResultScreen({
       adviceTitle: "改善方向",
       scoreTitle: "自恋倾向得分",
       grandioseScore: "过大型得分",
-      vulnerableScore: "脆弱型得分"
+      vulnerableScore: "脆弱型得分",
+      disclaimer: "此测试仅供心理学参考，不能替代专业诊断。",
+      shareButton: "分享结果",
+      restartButton: "重新测试"
     }
   };
 
@@ -206,7 +218,7 @@ ${result.emoji} ${result.title}
           {/* Disclaimer */}
           <div className="text-center">
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              이 테스트는 심리학적 참고 자료로만 사용되며, 전문적인 진단을 대체하지 않습니다.
+              {currentLabels.disclaimer}
             </p>
           </div>
 
@@ -217,14 +229,14 @@ ${result.emoji} ${result.title}
               className="w-full bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/40 border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation"
             >
               <Share2 className="w-5 h-5 mr-2" />
-              결과 공유하기
+              {currentLabels.shareButton}
             </Button>
             
             <Button
               onClick={handleRestart}
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-h-[52px] touch-manipulation"
             >
-              다시 테스트하기
+              {currentLabels.restartButton}
             </Button>
           </div>
         </CardContent>
