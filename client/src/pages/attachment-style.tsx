@@ -13,15 +13,15 @@ export default function AttachmentStyle() {
   const { language } = useLanguage();
   
   // Set meta tags for attachment style page
-  const description = language === 'en' ? 'Free Adult Attachment Style Test with 36 scientific questions. Discover if you are Secure, Anxious, Avoidant, or Fearful-Avoidant. Get professional psychological insights instantly!' :
-                     language === 'ja' ? '36の科学的質問による無料成人愛着スタイルテスト。安定型、不安型、回避型、恐れ回避型のいずれかを発見し、専門的な心理学的洞察を即座に得られます！' :
-                     language === 'zh-cn' ? '通过36个科学问题进行的免费成人依恋风格测试。发现您是安全型、焦虑型、回避型还是恐惧回避型。立即获得专业心理学见解！' :
+  const description = language === 'en' ? 'Discover your attachment style through 36 questions. Are you Secure, Anxious, Avoidant, or Fearful-Avoidant? Take the free psychology-based attachment test.' :
+                     language === 'ja' ? '36の質問であなたの愛着スタイルを診断。安定型、不安型、回避型、混乱型のうち、あなたはどのタイプ？心理学に基づく無料愛着テスト。' :
+                     language === 'zh-cn' ? '通过36个问题了解你的依恋风格。安全型、焦虑型、回避型、混乱型，你是哪种类型？基于心理学的免费依恋测试。' :
                      '36개 질문으로 알아보는 당신의 애착 스타일. 안정형, 불안형, 회피형, 혼란형 중 나는 어떤 유형일까? 심리학 기반 무료 애착 유형 테스트.';
 
   const metaConfig = {
-    title: language === 'en' ? 'Free Adult Attachment Style Test | 36 Questions | TypeTest' : 
-           language === 'ja' ? '無料成人愛着スタイルテスト | 36質問 | タイプテスト' : 
-           language === 'zh-cn' ? '免费成人依恋风格测试 | 36题 | TypeTest' :
+    title: language === 'en' ? 'Adult Attachment Style Test - TypeTest' : 
+           language === 'ja' ? '成人愛着スタイルテスト - タイプテスト' : 
+           language === 'zh-cn' ? '成人依恋风格测试 - TypeTest' :
            '성인 애착 유형 테스트 - 타입테스트',
     description,
     canonical: 'https://type-test.site/attachment-style',
