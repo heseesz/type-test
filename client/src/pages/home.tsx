@@ -11,15 +11,15 @@ export default function Home() {
   const { t, language } = useLanguage();
 
   // Set meta tags for home page
-  const description = language === 'en' ? 'Take free personality tests to discover your true self. Professional attachment style tests, narcissism assessments, and Teto-Egen personality analysis. Start your psychological journey today!' :
-                     language === 'ja' ? '無料の性格テストで本当の自分を発見しましょう。専門的な愛着スタイルテスト、ナルシシズム評価、テト-エゲン性格分析。今すぐ心理的な旅を始めましょう！' :
-                     language === 'zh-cn' ? '通过免费性格测试发现真正的自己。专业依恋风格测试、自恋评估和Teto-Egen性格分析。今天就开始您的心理之旅吧！' :
+  const description = language === 'en' ? 'Discover your true personality with free psychology tests. Attachment style, narcissism tendency, and Teto-Egen personality tests based on scientific analysis.' :
+                     language === 'ja' ? '無料の心理テストであなたの本当の性格を発見しましょう。愛着スタイル、ナルシシズム傾向、テト-エゲン性格テストなど、科学的根拠に基づく心理分析を無料で体験できます。' :
+                     language === 'zh-cn' ? '通过免费心理测试发现你的真实性格。依恋类型、自恋倾向、Teto-Egen性格测试等，基于科学的心理分析免费体验。' :
                      '무료 심리 테스트로 당신의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘 성향, 테토-에겐 성격 테스트 등 과학적 기반 심리 분석을 무료로 체험하세요.';
 
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest - Free Personality Psychology Tests | MBTI Alternative' : 
-           language === 'ja' ? 'タイプテスト - 無料性格心理テスト | MBTI代替' : 
-           language === 'zh-cn' ? 'TypeTest - 免费性格心理测试 | MBTI替代' :
+    title: language === 'en' ? 'TypeTest - Personality Psychology Tests' : 
+           language === 'ja' ? 'タイプテスト - 性格心理テスト' : 
+           language === 'zh-cn' ? 'TypeTest - 性格心理测试' :
            '타입테스트 - 성격 심리 테스트',
     description,
     canonical: 'https://type-test.site/',

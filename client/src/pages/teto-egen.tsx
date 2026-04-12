@@ -14,15 +14,15 @@ export default function TetoEgen() {
   const testResults = resultTranslations[language];
   
   // Set meta tags for teto-egen page
-  const description = language === 'en' ? 'Take the free Teto-Egen personality test with 12 scientific questions. Discover if you are Teto-type (energetic) or Egen-type (calm). Get instant results with detailed analysis!' :
-                     language === 'ja' ? '12の科学的な質問で無料のテト-エゲン性格テストを受けましょう。テト型（エネルギッシュ）かエゲン型（穏やか）かを発見し、詳細な分析と即座の結果を得られます！' :
-                     language === 'zh-cn' ? '通过12个科学问题进行免费Teto-Egen性格测试。发现您是Teto型（活跃）还是Egen型（平静）。立即获得详细分析结果！' :
+  const description = language === 'en' ? 'Discover if you are the emotional Teto-type or the rational Egen-type through 12 questions. Take the free personality test now.' :
+                     language === 'ja' ? '12の質問であなたがテト型（感性的）かエゲン型（理性的）かを診断。無料性格テストで今すぐ確認しましょう。' :
+                     language === 'zh-cn' ? '通过12个问题了解你是感性的Teto型还是理性的Egen型。免费性格测试，立即确认。' :
                      '12개 질문으로 알아보는 테토형 vs 에겐형 성격 유형. 당신은 감성적인 테토형일까, 이성적인 에겐형일까? 무료 성격 테스트로 확인해보세요.';
 
   const metaConfig = {
-    title: language === 'en' ? 'Free Teto-Egen Personality Test | 12 Questions | TypeTest' : 
-           language === 'ja' ? '無料テト-エゲン性格テスト | 12質問 | タイプテスト' : 
-           language === 'zh-cn' ? '免费Teto-Egen性格测试 | 12题 | TypeTest' :
+    title: language === 'en' ? 'Teto-Egen Personality Test - TypeTest' : 
+           language === 'ja' ? 'テト-エゲン性格テスト - タイプテスト' : 
+           language === 'zh-cn' ? 'Teto-Egen性格测试 - TypeTest' :
            '테토-에겐 성격 테스트 - 타입테스트',
     description,
     canonical: 'https://type-test.site/teto-egen',
