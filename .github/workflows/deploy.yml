@@ -30,11 +30,22 @@ jobs:
           node-version: 20
           cache: "npm"
 
+      - name: Cache Puppeteer browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
+
+      - name: Pre-render routes for SEO
+        run: npm run prerender
 
       - name: Copy index.html to 404.html for SPA routing
         run: cp dist/index.html dist/404.html
