@@ -14,13 +14,13 @@ export default function Home() {
   const description = language === 'en' ? 'Take free personality tests to discover your true self. Professional attachment style tests, narcissism assessments, and Teto-Egen personality analysis. Start your psychological journey today!' :
                      language === 'ja' ? '無料の性格テストで本当の自分を発見しましょう。専門的な愛着スタイルテスト、ナルシシズム評価、テト-エゲン性格分析。今すぐ心理的な旅を始めましょう！' :
                      language === 'zh-cn' ? '通过免费性格测试发现真正的自己。专业依恋风格测试、自恋评估和Teto-Egen性格分析。今天就开始您的心理之旅吧！' :
-                     '무료 성격 테스트로 진짜 나를 발견하세요. 전문적인 애착 유형 테스트, 나르시시즘 평가, 테토-에겐 성격 분석. 지금 바로 심리적 여정을 시작하세요!';
+                     '무료 심리 테스트로 당신의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘 성향, 테토-에겐 성격 테스트 등 과학적 기반 심리 분석을 무료로 체험하세요.';
 
   const metaConfig = {
     title: language === 'en' ? 'TypeTest - Free Personality Psychology Tests | MBTI Alternative' : 
            language === 'ja' ? 'タイプテスト - 無料性格心理テスト | MBTI代替' : 
            language === 'zh-cn' ? 'TypeTest - 免费性格心理测试 | MBTI替代' :
-           '타입테스트 - 무료 성격 심리 테스트 | MBTI 대안',
+           '타입테스트 - 성격 심리 테스트',
     description,
     canonical: 'https://type-test.site/',
     keywords: language === 'en' ? 'free personality test, psychology test, attachment style test, narcissism test, MBTI alternative, personality analysis, psychological assessment, free mental health test' :

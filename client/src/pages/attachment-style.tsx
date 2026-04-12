@@ -16,13 +16,13 @@ export default function AttachmentStyle() {
   const description = language === 'en' ? 'Free Adult Attachment Style Test with 36 scientific questions. Discover if you are Secure, Anxious, Avoidant, or Fearful-Avoidant. Get professional psychological insights instantly!' :
                      language === 'ja' ? '36の科学的質問による無料成人愛着スタイルテスト。安定型、不安型、回避型、恐れ回避型のいずれかを発見し、専門的な心理学的洞察を即座に得られます！' :
                      language === 'zh-cn' ? '通过36个科学问题进行的免费成人依恋风格测试。发现您是安全型、焦虑型、回避型还是恐惧回避型。立即获得专业心理学见解！' :
-                     '36개의 과학적 질문으로 하는 무료 성인 애착 유형 테스트. 안정형, 불안형, 회피형, 두려움-회피형 중 당신의 유형을 발견하고 전문적인 심리학적 통찰을 즉시 확인하세요!';
+                     '36개 질문으로 알아보는 당신의 애착 스타일. 안정형, 불안형, 회피형, 혼란형 중 나는 어떤 유형일까? 심리학 기반 무료 애착 유형 테스트.';
 
   const metaConfig = {
     title: language === 'en' ? 'Free Adult Attachment Style Test | 36 Questions | TypeTest' : 
            language === 'ja' ? '無料成人愛着スタイルテスト | 36質問 | タイプテスト' : 
            language === 'zh-cn' ? '免费成人依恋风格测试 | 36题 | TypeTest' :
-           '무료 성인 애착 유형 테스트 | 36문항 | 타입테스트',
+           '성인 애착 유형 테스트 - 타입테스트',
     description,
     canonical: 'https://type-test.site/attachment-style',
     keywords: language === 'en' ? 'attachment style test, adult attachment, secure attachment, anxious attachment, avoidant attachment, fearful avoidant, psychology test' :
