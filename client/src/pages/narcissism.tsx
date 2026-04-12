@@ -27,13 +27,13 @@ export default function NarcissismTest() {
   const description = language === 'en' ? 'Free Narcissism Tendency Test with 20 scientific questions. Assess your grandiose and vulnerable narcissism levels. Get professional psychological analysis instantly!' :
                      language === 'ja' ? '20の科学的質問による無料ナルシシズム傾向テスト。誇大型と脆弱型のナルシシズムレベルを評価し、専門的な心理分析を即座に得られます！' :
                      language === 'zh-cn' ? '通过20个科学问题进行的免费自恋倾向测试。评估您的过大型和脆弱型自恋水平。立即获得专业心理分析！' :
-                     '20개의 과학적 질문으로 하는 무료 나르시시즘 성향 테스트. 과대형과 취약형 나르시시즘 수준을 평가하고 전문적인 심리 분석을 즉시 확인하세요!';
+                     '20개 질문으로 알아보는 나르시시즘 성향 분석. 건강한 자기애와 병적 나르시시즘의 경계는? 무료 심리 테스트로 확인하세요.';
 
   const metaConfig = {
     title: language === 'en' ? 'Free Narcissism Tendency Test | 20 Questions | TypeTest' : 
            language === 'ja' ? '無料ナルシシズム傾向テスト | 20質問 | タイプテスト' : 
            language === 'zh-cn' ? '免费自恋倾向测试 | 20题 | TypeTest' :
-           '무료 나르시시즘 성향 테스트 | 20문항 | 타입테스트',
+           '나르시시즘 성향 테스트 - 타입테스트',
     description,
     canonical: 'https://type-test.site/narcissism',
     keywords: language === 'en' ? 'narcissism test, narcissistic personality, grandiose narcissism, vulnerable narcissism, personality disorder test, psychology assessment' :

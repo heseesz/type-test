@@ -17,13 +17,13 @@ export default function TetoEgen() {
   const description = language === 'en' ? 'Take the free Teto-Egen personality test with 12 scientific questions. Discover if you are Teto-type (energetic) or Egen-type (calm). Get instant results with detailed analysis!' :
                      language === 'ja' ? '12の科学的な質問で無料のテト-エゲン性格テストを受けましょう。テト型（エネルギッシュ）かエゲン型（穏やか）かを発見し、詳細な分析と即座の結果を得られます！' :
                      language === 'zh-cn' ? '通过12个科学问题进行免费Teto-Egen性格测试。发现您是Teto型（活跃）还是Egen型（平静）。立即获得详细分析结果！' :
-                     '12개의 과학적 질문으로 무료 테토-에겐 성격 테스트를 받아보세요. 테토형(활발한)인지 에겐형(차분한)인지 발견하고 즉시 상세한 분석 결과를 확인하세요!';
+                     '12개 질문으로 알아보는 테토형 vs 에겐형 성격 유형. 당신은 감성적인 테토형일까, 이성적인 에겐형일까? 무료 성격 테스트로 확인해보세요.';
 
   const metaConfig = {
     title: language === 'en' ? 'Free Teto-Egen Personality Test | 12 Questions | TypeTest' : 
            language === 'ja' ? '無料テト-エゲン性格テスト | 12質問 | タイプテスト' : 
            language === 'zh-cn' ? '免费Teto-Egen性格测试 | 12题 | TypeTest' :
-           '무료 테토-에겐 성격 테스트 | 12문항 | 타입테스트',
+           '테토-에겐 성격 테스트 - 타입테스트',
     description,
     canonical: 'https://type-test.site/teto-egen',
     keywords: language === 'en' ? 'Teto Egen personality test, free personality test, Korean personality test, energetic vs calm personality, personality analysis' :
