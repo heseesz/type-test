@@ -120,6 +120,25 @@ export default function Home() {
               </a>
             </CardContent>
           </Card>
+
+          <Card className="bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-200 dark:border-gray-700 flex flex-col">
+            <CardHeader className="text-center pb-4">
+              <div className="text-4xl mb-4">🔞🌶️</div>
+              <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-200 whitespace-pre-line">
+                {t('tests.balanceGame.title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4 flex-1 flex flex-col justify-between">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed min-h-[3rem] flex items-center justify-center whitespace-pre-line">
+                {t('tests.balanceGame.description')}
+              </p>
+              <a href="/balance-game">
+                <Button className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 hover:opacity-90 text-white font-bold">
+                  {t('tests.balanceGame.start')}
+                </Button>
+              </a>
+            </CardContent>
+          </Card>
         </div>
 
         

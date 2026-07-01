@@ -79,7 +79,12 @@ const translations = {
     'personality.egen_female': '에겐녀',
     
     // Theme
-    'theme.toggle': '테마 전환'
+    'theme.toggle': '테마 전환',
+    
+    // Balance Game
+    'tests.balanceGame.title': '연인/썸/친구용 밸런스 게임',
+    'tests.balanceGame.description': '친구, 썸, 연인과 함께 즐기는 가볍고 아슬아슬한 밸런스 게임!\n당신의 선택을 기록하고 서로의 생각과 비교해 보세요. (19금 주의 🔞)',
+    'tests.balanceGame.start': '시작하기'
   },
   en: {
     // Meta
@@ -148,7 +153,12 @@ const translations = {
     'personality.egen_female': 'Egen Female',
     
     // Theme
-    'theme.toggle': 'Toggle theme'
+    'theme.toggle': 'Toggle theme',
+    
+    // Balance Game
+    'tests.balanceGame.title': 'Couple/Flirt/Friend\nBalance Game',
+    'tests.balanceGame.description': 'A light and thrilling balance game to play with friends, crushes, or lovers! Record your choices and compare thoughts. (18+ warning 🔞)',
+    'tests.balanceGame.start': 'Start Game'
   },
   es: {
     'meta.title': 'TypeTest',
@@ -204,7 +214,12 @@ const translations = {
     'result.male': 'Masculino',
     'result.female': 'Femenino',
     'result.vs': 'vs',
-    'theme.toggle': 'Cambiar tema'
+    'theme.toggle': 'Cambiar tema',
+    
+    // Balance Game
+    'tests.balanceGame.title': 'Juego de Equilibrio\npara Parejas/Amigos',
+    'tests.balanceGame.description': '¡Un juego de equilibrio ligero y emocionante para jugar con amigos, enamorados o parejas! Registra tus elecciones y compara pensamientos. (Advertencia 🔞)',
+    'tests.balanceGame.start': 'Iniciar Juego'
   },
   'zh-cn': {
     'meta.title': 'TypeTest',
@@ -271,7 +286,12 @@ const translations = {
     'personality.egen_female': 'Egen女',
     
     // Theme
-    'theme.toggle': '切换主题'
+    'theme.toggle': '切换主题',
+    
+    // Balance Game
+    'tests.balanceGame.title': '情侣/暧昧/朋友\n平衡游戏',
+    'tests.balanceGame.description': '与朋友、暧昧对象或恋人一起玩的轻松又刺激的平衡游戏！记录你的选择，了解彼此的想法。（18禁注意 🔞）',
+    'tests.balanceGame.start': '开始游戏'
   },
   'zh-tw': {
     'meta.title': 'TypeTest',
@@ -323,7 +343,12 @@ const translations = {
     'result.copyFailDesc': '無法複製結果。',
     
     // Theme
-    'theme.toggle': '切換主題'
+    'theme.toggle': '切換主題',
+    
+    // Balance Game
+    'tests.balanceGame.title': '情侶/曖昧/朋友\n平衡遊戲',
+    'tests.balanceGame.description': '與朋友、曖昧對象或戀人一起玩的輕鬆又刺激的平衡遊戲！記錄你的選擇，了解彼此的想法。（18禁注意 🔞）',
+    'tests.balanceGame.start': '開始遊戲'
   },
   ja: {
     'meta.title': 'TypeTest',
@@ -384,7 +409,12 @@ const translations = {
     'result.copyFailDesc': '結果をコピーできませんでした。',
     
     // Theme
-    'theme.toggle': 'テーマ切り替え'
+    'theme.toggle': 'テーマ切り替え',
+    
+    // Balance Game
+    'tests.balanceGame.title': '恋人/サシ/友達用\nバランスゲーム',
+    'tests.balanceGame.description': '友達、気になる人、恋人と一緒に楽しむスリリングなバランスゲーム！あなたの選択を記録し、お互いの考えを合わせてみましょう。（19禁注意 🔞）',
+    'tests.balanceGame.start': 'ゲーム開始'
   },
   vi: {
     'meta.title': 'TypeTest',
@@ -436,7 +466,12 @@ const translations = {
     'result.copyFailDesc': 'Không thể sao chép kết quả.',
     
     // Theme
-    'theme.toggle': 'Chuyển đổi chủ đề'
+    'theme.toggle': 'Chuyển đổi chủ đề',
+    
+    // Balance Game
+    'tests.balanceGame.title': 'Trò chơi Cân bằng\nCặp đôi/Bạn bè',
+    'tests.balanceGame.description': 'Một trò chơi cân bằng nhẹ nhàng và ly kỳ để chơi với bạn bè, người thương hoặc người yêu! Ghi lại lựa chọn của bạn và so sánh suy nghĩ. (Cảnh báo 18+ 🔞)',
+    'tests.balanceGame.start': 'Bắt đầu'
   }
 };
 
