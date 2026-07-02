@@ -26,7 +26,8 @@ import {
   CheckCircle,
   Eye,
   Frown,
-  Activity
+  Activity,
+  Home
 } from 'lucide-react';
 
 interface AnswerRecord {
@@ -236,17 +237,17 @@ export default function BalanceGame() {
         };
       case 'spicy':
         return {
-          bg: 'bg-gradient-to-br from-red-950 via-stone-900 to-black text-rose-100 dark:from-red-950 dark:via-stone-950 dark:to-black',
+          bg: 'bg-gradient-to-br from-red-50 via-rose-50 to-rose-100 dark:from-red-950 dark:via-red-950/40 dark:to-stone-900',
           accent: 'text-red-500',
           accentBg: 'bg-red-600',
           accentHover: 'hover:bg-red-700',
-          border: 'border-red-900',
-          btnA: 'bg-zinc-900/80 border-red-900/60 hover:bg-red-950/40 hover:border-red-500 text-red-50 dark:text-red-100 transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)]',
-          btnB: 'bg-zinc-900/80 border-red-900/60 hover:bg-red-950/40 hover:border-red-500 text-red-50 dark:text-red-100 transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)]',
-          tabActive: 'bg-red-600 text-white shadow-lg shadow-red-900/50 border border-red-500',
-          progressBar: 'bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.7)]',
-          badge: 'bg-red-950/80 text-red-400 border border-red-900',
-          title: 'text-red-500 font-extrabold tracking-wider animate-pulse'
+          border: 'border-red-200 dark:border-red-900',
+          btnA: 'bg-white dark:bg-zinc-800 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-100 shadow-[0_0_15px_rgba(220,38,38,0.05)]',
+          btnB: 'bg-white dark:bg-zinc-800 hover:bg-orange-50 dark:hover:bg-orange-950/20 border-orange-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-100 shadow-[0_0_15px_rgba(249,115,22,0.05)]',
+          tabActive: 'bg-red-600 text-white shadow-md',
+          progressBar: 'bg-red-600',
+          badge: 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300',
+          title: 'text-red-600 dark:text-red-400'
         };
     }
   };
@@ -433,6 +434,17 @@ export default function BalanceGame() {
                   </div>
                 </CardContent>
               </Card>
+              <div className="flex justify-center mt-6">
+                <a href="/">
+                  <Button 
+                    variant="outline" 
+                    className="bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center gap-2 px-6 py-5 rounded-xl font-bold"
+                  >
+                    <Home className="w-4.5 h-4.5" />
+                    {t('test.backToMain')}
+                  </Button>
+                </a>
+              </div>
             </motion.div>
           )}
 
@@ -471,12 +483,8 @@ export default function BalanceGame() {
                 })}
               </div>
 
-              {/* Progress and Question Counter */}
               <div className="space-y-2">
-                <div className="flex justify-between items-center text-sm font-semibold text-zinc-600 dark:text-zinc-300">
-                  <span>
-                    {language === 'ko' ? '답변한 누적 질문' : 'Total Answered'}: {history.length}
-                  </span>
+                <div className="flex justify-end items-center text-sm font-semibold text-zinc-600 dark:text-zinc-300">
                   <span>
                     {difficulty === 'mild' && `${indices.mild + 1} / 30`}
                     {difficulty === 'medium' && `${indices.medium + 1} / 20`}
@@ -552,17 +560,7 @@ export default function BalanceGame() {
               </div>
 
               {/* Bottom control (Quick Skip/Results) */}
-              <div className="flex justify-between items-center pt-4">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={initializeGame}
-                  className="border-zinc-200 dark:border-zinc-800 text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
-                >
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  {language === 'ko' ? '처음부터 다시' : 'Reset Game'}
-                </Button>
-                
+              <div className="flex justify-end items-center pt-4">
                 <Button 
                   onClick={() => setScreen('result')} 
                   className={`${theme.accentBg} ${theme.accentHover} text-white font-bold shadow-md`}
