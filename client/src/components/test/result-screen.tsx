@@ -19,7 +19,7 @@ interface ResultScreenProps {
 
 export function ResultScreen({ result, tetoScore, egenScore, onRestart }: ResultScreenProps) {
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [, setLocation] = useLocation();
 
   const handleBackToMain = () => {
@@ -31,13 +31,61 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
   };
 
   const handleShare = async () => {
-    const shareText = `${t('result.shareTitle')}\n\n${result.emoji} ${result.title}\n\n${t('result.tetoScore')}: ${tetoScore}${t('result.points')}\n${t('result.egenScore')}: ${egenScore}${t('result.points')}\n\n${t('result.shareText')} ${window.location.origin}`;
+    let shareText = '';
+    let shareTitle = '';
     
+    if (language === 'en') {
+      shareTitle = 'Teto-Egen Personality Test Results - TypeTest';
+      shareText = `🌟 Teto-Egen Personality Test Results 🌟\n\n`;
+      shareText += `My Personality Type:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 My Scores\n`;
+      shareText += `• Teto Score: ${tetoScore} points (Emotional)\n`;
+      shareText += `• Egen Score: ${egenScore} points (Rational)\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 Find out if you are Teto or Egen!\n`;
+      shareText += `👇 Try it now for free!\n`;
+      shareText += `🔗 https://type-test.site/teto-egen`;
+    } else if (language === 'ja') {
+      shareTitle = 'テト-エゲン性格テスト結果 - タイプテスト';
+      shareText = `🌟 テト-エゲン性格テスト結果 🌟\n\n`;
+      shareText += `私の性格タイプ:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 スコア結果\n`;
+      shareText += `• テトスコア: ${tetoScore}点 (感性)\n`;
+      shareText += `• エゲンスコア: ${egenScore}点 (理性)\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 あなたはテト（感性）ですか、エゲン（理性）ですか？\n`;
+      shareText += `👇 無料でテストを開始\n`;
+      shareText += `🔗 https://type-test.site/teto-egen`;
+    } else if (language === 'zh-cn') {
+      shareTitle = 'Teto-Egen性格测试结果 - TypeTest';
+      shareText = `🌟 Teto-Egen性格测试结果 🌟\n\n`;
+      shareText += `我的性格类型:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 我的得分\n`;
+      shareText += `• Teto得分: ${tetoScore}分 (感性)\n`;
+      shareText += `• Egen得分: ${egenScore}分 (理性)\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 你是感性的Teto还是理性的Egen？\n`;
+      shareText += `👇 立即免费测试\n`;
+      shareText += `🔗 https://type-test.site/teto-egen`;
+    } else {
+      shareTitle = '테토-에겐 성격 테스트 결과 - 타입테스트';
+      shareText = `🌟 테토-에겐 성격 테스트 결과 🌟\n\n`;
+      shareText += `나의 성격 유형:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 나의 성향 점수\n`;
+      shareText += `• 테토 점수: ${tetoScore}점 (감성형)\n`;
+      shareText += `• 에겐 점수: ${egenScore}점 (이성형)\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 당신의 이성과 감성의 비율은 어떻게 될까요?\n`;
+      shareText += `👇 지금 무료로 확인해 보세요!\n`;
+      shareText += `🔗 https://type-test.site/teto-egen`;
+    }
+
     if (navigator.share) {
       try {
         await navigator.share({
-          title: t('result.shareTitle'),
-          text: shareText
+          title: shareTitle,
+          text: shareText,
+          url: 'https://type-test.site/teto-egen'
         });
       } catch (error) {
         handleCopyToClipboard(shareText);
