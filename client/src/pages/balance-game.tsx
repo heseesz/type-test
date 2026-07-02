@@ -238,9 +238,34 @@ export default function BalanceGame() {
     }
   };
 
-  const handleNext = () => {
+  const handleSkip = () => {
     if (isViewingHistory) {
       setCurrentHistoryIndex(currentHistoryIndex + 1);
+      return;
+    }
+
+    // Skip the current question by incrementing indices for the current difficulty
+    const nextIndices = { ...indices, [difficulty]: indices[difficulty] + 1 };
+    setIndices(nextIndices);
+
+    // Check if current difficulty is completed
+    const activeQuestions = getShuffledQuestions(difficulty);
+    const isOutOfQuestions = nextIndices[difficulty] >= activeQuestions.length;
+
+    if (isOutOfQuestions) {
+      if (difficulty === 'mild') {
+        setDifficulty('medium');
+        toast({
+          title: language === 'ko' ? "순한 맛 완료!" : "Mild Taste Completed!",
+          description: language === 'ko' ? "중간 맛으로 자동 전환됩니다." : "Automatically transitioning to Medium Taste."
+        });
+      } else if (difficulty === 'medium') {
+        setPrevDifficulty(difficulty);
+        setShowSpicyWarningModal(true);
+      } else {
+        // Spicy is completed, go to results
+        setScreen('result');
+      }
     }
   };
 
@@ -615,26 +640,26 @@ export default function BalanceGame() {
                     {t('test.home')}
                   </Button>
 
-                  {/* Right: Next / Results */}
-                  {isViewingHistory ? (
-                    <Button
-                      onClick={handleNext}
-                      className="flex-1 py-5 bg-purple-100 hover:bg-purple-200 text-purple-800 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-400 dark:border-purple-900/60 font-bold rounded-xl"
-                    >
-                      {t('test.next')}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  ) : (
-                    <Button
-                      onClick={() => setScreen('result')}
-                      disabled={history.length === 0}
-                      className="flex-1 py-5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow-md"
-                    >
-                      {language === 'ko' ? '결과 보기' : 'View Results'}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  )}
+                  {/* Right: Next / Skip */}
+                  <Button
+                    onClick={handleSkip}
+                    className="flex-1 py-5 bg-purple-100 hover:bg-purple-200 text-purple-800 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-400 dark:border-purple-900/60 font-bold rounded-xl"
+                  >
+                    {t('test.next')}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
                 </div>
+
+                {/* Show Results Button - Long and full width above the Home button */}
+                {history.length > 0 && (
+                  <Button
+                    onClick={() => setScreen('result')}
+                    className="w-full py-5 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2"
+                  >
+                    {language === 'ko' ? '결과 보기' : 'View Results'}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                )}
 
                 {/* Back to TypeTest Main Home */}
                 <Link href="/" className="w-full">
