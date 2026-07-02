@@ -72,23 +72,44 @@ export default function BalanceGame() {
   const [showSpicyWarningModal, setShowSpicyWarningModal] = useState(false);
 
   // Set meta tags for SEO and sharing
-  const titleText = language === 'en' ? 'Couple/Flirt/Friend Balance Game - TypeTest' :
-                    language === 'ja' ? '恋人/サシ/友達用バランスゲーム - タイプテスト' :
-                    language === 'zh-cn' ? '情侣/暧昧/朋友平衡游戏 - TypeTest' :
-                    '연인/썸/친구용 밸런스 게임 - 타입테스트';
+  const titleText = language === 'en' ? 'Balance Game - TypeTest' :
+                    language === 'ja' ? 'バランスゲーム - タイプテスト' :
+                    language === 'zh-cn' ? '平衡游戏 - TypeTest' :
+                    '밸런스 게임 - 타입테스트';
 
-  const descriptionText = language === 'en' ? 'A light and thrilling balance game to play with friends, crushes, or lovers! Record your choices and compare thoughts.' :
-                           language === 'ja' ? '友達、気になる人、恋人と一緒に楽しむスリリングなバランスゲーム！あなたの選択を記録し、お互いの考えを合わせてみましょう。' :
-                           language === 'zh-cn' ? '与朋友、暧昧对象或恋人一起玩的轻松又刺激的平衡游戏！记录你的选择，了解彼此的想法。' :
-                           '친구, 썸, 연인과 함께 즐기는 가볍고 아슬아슬한 밸런스 게임! 당신의 선택을 기록하고 서로의 생각과 비교해 보세요.';
+  const descriptionText = language === 'en' ? 'A light and thrilling balance game to play with friends, crushes, or lovers! Choose between two options across multiple difficulties and compare thoughts.' :
+                           language === 'ja' ? '友達、気になる人、恋人と一緒に楽しむスリリングなバランスゲーム！様々な難易度の二択から選び、お互いの考えを合わせてみましょう。' :
+                           language === 'zh-cn' ? '与朋友、暧昧对象或恋人一起玩的轻松又刺激的平衡游戏！在多种难度下的两个选项中做出选择，了解彼此的想法。' :
+                           '친구, 썸, 연인과 함께 즐기는 가볍고 아슬아슬한 밸런스 게임! 다양한 난이도의 질문에 답하며 서로의 생각과 가치관을 비교해 보세요.';
 
   useMetaTags({
     title: titleText,
     description: descriptionText,
     canonical: 'https://type-test.site/balance-game',
-    keywords: 'balance game, couple game, icebreaker questions, flirt questions, 19+ balance game, 밸런스 게임, 19금 밸런스 게임, 커플 질문, 연인 질문, 썸 질문',
+    keywords: 'balance game, couple game, icebreaker questions, flirt questions, 19+ balance game, 밸런스 게임, 19금 밸런스 게임, 커플 밸런스게임, 밸런스게임 질문, 썸 질문, 가치관 테스트',
     ogImage: 'https://type-test.site/favicon.svg',
-    type: 'website'
+    type: 'website',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": language === 'en' ? 'Balance Game' :
+             language === 'ja' ? 'バランスゲーム' :
+             language === 'zh-cn' ? '平衡游戏' :
+             '밸런스 게임',
+      "description": descriptionText,
+      "url": "https://type-test.site/balance-game",
+      "author": {
+        "@type": "Organization",
+        "name": "TypeTest"
+      },
+      "datePublished": "2024-07-01",
+      "dateModified": "2025-01-21",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/ShareAction",
+        "userInteractionCount": "12000"
+      }
+    }
   });
 
   // Initialize and shuffle questions when game starts/restarts
