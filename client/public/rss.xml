@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>타입테스트 - 성격 심리 테스트</title>
+    <link>https://type-test.co.kr/</link>
+    <description>무료 심리 테스트로 당신의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘 성향, 테토-에겐 성격 테스트, 밸런스 게임 등 과학적 기반 심리 분석 제공.</description>
+    <language>ko</language>
+    <lastBuildDate>Thu, 02 Jul 2026 02:26:00 GMT</lastBuildDate>
+    <atom:link href="https://type-test.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>타입테스트 - 무료 성격 심리 테스트 플랫폼</title>
+      <link>https://type-test.co.kr/</link>
+      <description>무료 심리 테스트로 당신의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘 성향, 테토-에겐 성격 테스트 등 과학적 기반 심리 분석을 제공합니다.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://type-test.co.kr/</guid>
+    </item>
+    
+    <item>
+      <title>밸런스 게임 - 타입테스트</title>
+      <link>https://type-test.co.kr/balance-game</link>
+      <description>친구, 연인, 썸남썸녀와 함께 즐기는 매운맛/순한맛 밸런스 게임! 다양한 난이도의 선택지에서 가치관을 비교해 보세요.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://type-test.co.kr/balance-game</guid>
+    </item>
+    
+    <item>
+      <title>성인 애착 유형 테스트 - 타입테스트</title>
+      <link>https://type-test.co.kr/attachment-style</link>
+      <description>36개 질문으로 알아보는 당신의 애착 스타일. 안정형, 불안형, 회피형, 혼란형 애착 스타일 무료 심리학 검사.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://type-test.co.kr/attachment-style</guid>
+    </item>
+    
+    <item>
+      <title>나르시시즘 성향 테스트 - 타입테스트</title>
+      <link>https://type-test.co.kr/narcissism</link>
+      <description>20개 질문으로 알아보는 나르시시즘 성향 분석 테스트. 나의 과대성향과 취약성향을 분석합니다.</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://type-test.co.kr/narcissism</guid>
+    </item>
+    
+    <item>
+      <title>테토-에겐 성격 테스트 - 타입테스트</title>
+      <link>https://type-test.co.kr/teto-egen</link>
+      <description>12개 질문으로 알아보는 테토형 vs 에겐형 성격 유형. 당신은 감성형인가요, 이성형인가요?</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://type-test.co.kr/teto-egen</guid>
+    </item>
+  </channel>
+</rss>
