@@ -77,7 +77,7 @@ export function NarcissismResultScreen({
   const currentLabels = labels[language as keyof typeof labels] || labels.ko;
 
   const handleBackToMain = () => {
-    window.location.href = '/';
+    setLocation('/');
   };
 
   const handleRestart = () => {

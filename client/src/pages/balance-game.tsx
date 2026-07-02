@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import { useMetaTags } from '@/hooks/use-meta-tags';
+import { Link } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -463,7 +464,7 @@ export default function BalanceGame() {
                 </CardContent>
               </Card>
               <div className="flex justify-center mt-6">
-                <a href="/">
+                <Link href="/">
                   <Button 
                     variant="outline" 
                     className="bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center gap-2 px-6 py-5 rounded-xl font-bold"
@@ -471,7 +472,7 @@ export default function BalanceGame() {
                     <Home className="w-4.5 h-4.5" />
                     {t('test.backToMain')}
                   </Button>
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
@@ -615,7 +616,7 @@ export default function BalanceGame() {
                 </div>
 
                 {/* Back to TypeTest Main Home */}
-                <a href="/" className="w-full">
+                <Link href="/" className="w-full">
                   <Button 
                     variant="outline" 
                     className="w-full py-5 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center justify-center gap-2 rounded-xl font-bold"
@@ -623,7 +624,7 @@ export default function BalanceGame() {
                     <Home className="w-4 h-4" />
                     {t('test.backToMain')}
                   </Button>
-                </a>
+                </Link>
               </div>
 
             </motion.div>
@@ -737,7 +738,7 @@ export default function BalanceGame() {
                 </CardContent>
               </Card>
               <div className="flex justify-center mt-6">
-                <a href="/" className="w-full max-w-xs animate-fade-in">
+                <Link href="/" className="w-full max-w-xs animate-fade-in">
                   <Button 
                     variant="outline" 
                     className="w-full py-5 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center justify-center gap-2 rounded-xl font-bold"
@@ -745,7 +746,7 @@ export default function BalanceGame() {
                     <Home className="w-4 h-4" />
                     {t('test.backToMain')}
                   </Button>
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
