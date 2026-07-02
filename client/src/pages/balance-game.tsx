@@ -63,6 +63,8 @@ export default function BalanceGame() {
 
   // History of answers
   const [history, setHistory] = useState<AnswerRecord[]>([]);
+  // Active history pointer (0 to history.length)
+  const [currentHistoryIndex, setCurrentHistoryIndex] = useState(0);
 
   // Modals visibility
   const [showTransitionModal, setShowTransitionModal] = useState(false);
@@ -95,6 +97,7 @@ export default function BalanceGame() {
     setShuffledSpicy(shuffleArray([...balanceGameQuestions.spicy]));
     setIndices({ mild: 0, medium: 0, spicy: 0 });
     setHistory([]);
+    setCurrentHistoryIndex(0);
     setScreen('welcome');
     setDifficulty('mild');
     setPrevDifficulty('mild');
@@ -115,13 +118,20 @@ export default function BalanceGame() {
     }
   };
 
-  const currentQuestions = getShuffledQuestions(difficulty);
-  const currentIndex = indices[difficulty];
-  const currentQuestion = currentQuestions[currentIndex];
+  const isViewingHistory = currentHistoryIndex < history.length;
+  const activeDifficultyForUI = isViewingHistory ? history[currentHistoryIndex].difficulty : difficulty;
+
+  const currentQuestions = getShuffledQuestions(activeDifficultyForUI);
+  const currentIndex = isViewingHistory ? -1 : indices[difficulty];
+  const currentQuestion = isViewingHistory 
+    ? history[currentHistoryIndex].originalQuestion
+    : currentQuestions[currentIndex];
 
   // Handler for difficulty switch (via top tabs)
   const handleDifficultyChange = (newDifficulty: Difficulty) => {
-    if (newDifficulty === difficulty) return;
+    if (newDifficulty === activeDifficultyForUI) return;
+
+    setCurrentHistoryIndex(history.length);
 
     if (newDifficulty === 'spicy') {
       setPrevDifficulty(difficulty);
@@ -147,46 +157,68 @@ export default function BalanceGame() {
   const handleSelectOption = (option: 'A' | 'B') => {
     if (!currentQuestion) return;
 
+    const activeDiff = isViewingHistory ? history[currentHistoryIndex].difficulty : difficulty;
+
     const record: AnswerRecord = {
       questionId: currentQuestion.id,
-      difficulty: difficulty,
+      difficulty: activeDiff,
       selected: option,
       originalQuestion: currentQuestion
     };
 
-    const newHistory = [...history, record];
-    setHistory(newHistory);
+    if (isViewingHistory) {
+      const newHistory = [...history];
+      newHistory[currentHistoryIndex] = record;
+      setHistory(newHistory);
+      setCurrentHistoryIndex(currentHistoryIndex + 1);
+    } else {
+      const newHistory = [...history, record];
+      setHistory(newHistory);
+      setCurrentHistoryIndex(newHistory.length);
 
-    // Increment current index
-    const nextIndices = { ...indices, [difficulty]: indices[difficulty] + 1 };
-    setIndices(nextIndices);
+      // Increment current index
+      const nextIndices = { ...indices, [difficulty]: indices[difficulty] + 1 };
+      setIndices(nextIndices);
 
-    // Check if current difficulty is completed
-    const activeQuestions = getShuffledQuestions(difficulty);
-    const isOutOfQuestions = nextIndices[difficulty] >= activeQuestions.length;
+      // Check if current difficulty is completed
+      const activeQuestions = getShuffledQuestions(difficulty);
+      const isOutOfQuestions = nextIndices[difficulty] >= activeQuestions.length;
 
-    // Check if we hit 10 questions milestone in history
-    if (newHistory.length % 10 === 0) {
-      setShowTransitionModal(true);
-    } else if (isOutOfQuestions) {
-      // If we are out of questions in current level
-      if (difficulty === 'mild') {
-        setDifficulty('medium');
-        toast({
-          title: language === 'ko' ? "순한 맛 완료!" : "Mild Taste Completed!",
-          description: language === 'ko' ? "중간 맛으로 자동 전환됩니다." : "Automatically transitioning to Medium Taste."
-        });
-      } else if (difficulty === 'medium') {
-        setPrevDifficulty('medium');
-        setShowSpicyWarningModal(true);
-        toast({
-          title: language === 'ko' ? "중간 맛 완료!" : "Medium Taste Completed!",
-          description: language === 'ko' ? "매운 맛 경고를 확인하세요." : "Please review the Spicy Taste warning."
-        });
-      } else {
-        // Spicy is finished
-        setScreen('result');
+      // Check if we hit 10 questions milestone in history
+      if (newHistory.length % 10 === 0) {
+        setShowTransitionModal(true);
+      } else if (isOutOfQuestions) {
+        // If we are out of questions in current level
+        if (difficulty === 'mild') {
+          setDifficulty('medium');
+          toast({
+            title: language === 'ko' ? "순한 맛 완료!" : "Mild Taste Completed!",
+            description: language === 'ko' ? "중간 맛으로 자동 전환됩니다." : "Automatically transitioning to Medium Taste."
+          });
+        } else if (difficulty === 'medium') {
+          setPrevDifficulty('medium');
+          setShowSpicyWarningModal(true);
+          toast({
+            title: language === 'ko' ? "중간 맛 완료!" : "Medium Taste Completed!",
+            description: language === 'ko' ? "매운 맛 경고를 확인하세요." : "Please review the Spicy Taste warning."
+          });
+        } else {
+          // Spicy is finished
+          setScreen('result');
+        }
       }
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentHistoryIndex > 0) {
+      setCurrentHistoryIndex(currentHistoryIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (isViewingHistory) {
+      setCurrentHistoryIndex(currentHistoryIndex + 1);
     }
   };
 
@@ -252,7 +284,7 @@ export default function BalanceGame() {
     }
   };
 
-  const theme = getThemeConfig(difficulty);
+  const theme = getThemeConfig(activeDifficultyForUI);
 
   // Helper to render choice text localized
   const getChoiceTexts = (q: BalanceQuestion) => {
@@ -307,8 +339,8 @@ export default function BalanceGame() {
 
       <div className="w-full max-w-2xl mx-auto z-10 relative">
         
-        {/* Back button (Only Welcome screen hides it) */}
-        {screen !== 'welcome' && (
+        {/* Back button (Only results screen shows it) */}
+        {screen === 'result' && (
           <Button 
             variant="ghost" 
             size="sm" 
@@ -462,7 +494,7 @@ export default function BalanceGame() {
               {/* Top Taste Tabs/Selector */}
               <div className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur p-1 rounded-xl flex gap-1 border border-zinc-200/50 dark:border-zinc-800/50">
                 {(['mild', 'medium', 'spicy'] as Difficulty[]).map((d) => {
-                  const isActive = difficulty === d;
+                  const isActive = activeDifficultyForUI === d;
                   const label = d === 'mild' ? (language === 'ko' ? '순한 맛' : 'Mild') :
                                 d === 'medium' ? (language === 'ko' ? '중간 맛' : 'Medium') :
                                 (language === 'ko' ? '매운 맛' : 'Spicy');
@@ -492,7 +524,11 @@ export default function BalanceGame() {
                     <motion.div
                       whileHover={{ scale: 1.03, y: -4 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`cursor-pointer p-6 rounded-2xl border-2 flex flex-col justify-center items-center text-center min-h-[220px] transition-all duration-300 ${theme.btnA}`}
+                      className={`cursor-pointer p-6 rounded-2xl border-2 flex flex-col justify-center items-center text-center min-h-[220px] transition-all duration-300 ${
+                        isViewingHistory && history[currentHistoryIndex].selected === 'A'
+                          ? `${theme.btnA} ring-4 ring-offset-2 ring-pink-500/50 border-pink-500 dark:ring-offset-zinc-900 bg-pink-50/30 dark:bg-pink-950/20`
+                          : theme.btnA
+                      }`}
                       onClick={() => handleSelectOption('A')}
                     >
                       <div className="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center font-black text-pink-600 dark:text-pink-400 text-xl mb-4 shadow-inner">
@@ -507,7 +543,11 @@ export default function BalanceGame() {
                     <motion.div
                       whileHover={{ scale: 1.03, y: -4 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`cursor-pointer p-6 rounded-2xl border-2 flex flex-col justify-center items-center text-center min-h-[220px] transition-all duration-300 ${theme.btnB}`}
+                      className={`cursor-pointer p-6 rounded-2xl border-2 flex flex-col justify-center items-center text-center min-h-[220px] transition-all duration-300 ${
+                        isViewingHistory && history[currentHistoryIndex].selected === 'B'
+                          ? `${theme.btnB} ring-4 ring-offset-2 ring-orange-500/50 border-orange-500 dark:ring-offset-zinc-900 bg-orange-50/30 dark:bg-orange-950/20`
+                          : theme.btnB
+                      }`}
                       onClick={() => handleSelectOption('B')}
                     >
                       <div className="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center font-black text-orange-600 dark:text-orange-400 text-xl mb-4 shadow-inner">
@@ -535,16 +575,59 @@ export default function BalanceGame() {
                 )}
               </div>
 
-              {/* Bottom control (Quick Skip/Results) */}
-              <div className="flex justify-end items-center pt-4">
-                <Button 
-                  onClick={() => setScreen('result')} 
-                  className={`${theme.accentBg} ${theme.accentHover} text-white font-bold shadow-md`}
-                  disabled={history.length === 0}
-                >
-                  {language === 'ko' ? '선택 완료 / 결과 보기' : 'Complete / View Results'}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+              {/* Bottom navigation and home controls (unified layout matching other tests) */}
+              <div className="flex flex-col items-center gap-4 pt-6">
+                <div className="flex justify-between items-center w-full gap-4">
+                  {/* Left: Previous */}
+                  <Button
+                    variant="outline"
+                    onClick={handlePrevious}
+                    disabled={currentHistoryIndex === 0}
+                    className="flex-1 py-5 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-xl"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    {t('test.previous')}
+                  </Button>
+
+                  {/* Center: To Welcome screen */}
+                  <Button
+                    onClick={initializeGame}
+                    className="flex-1 py-5 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 border border-yellow-200 dark:bg-yellow-950/40 dark:text-yellow-400 dark:border-yellow-900/60 font-bold rounded-xl"
+                  >
+                    {t('test.home')}
+                  </Button>
+
+                  {/* Right: Next / Results */}
+                  {isViewingHistory ? (
+                    <Button
+                      onClick={handleNext}
+                      className="flex-1 py-5 bg-purple-100 hover:bg-purple-200 text-purple-800 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-400 dark:border-purple-900/60 font-bold rounded-xl"
+                    >
+                      {t('test.next')}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => setScreen('result')}
+                      disabled={history.length === 0}
+                      className="flex-1 py-5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow-md"
+                    >
+                      {language === 'ko' ? '결과 보기' : 'View Results'}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  )}
+                </div>
+
+                {/* Back to TypeTest Main Home */}
+                <a href="/" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    className="w-full py-5 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center justify-center gap-2 rounded-xl font-bold"
+                  >
+                    <Home className="w-4 h-4" />
+                    {t('test.backToMain')}
+                  </Button>
+                </a>
               </div>
 
             </motion.div>
