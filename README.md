@@ -1,69 +1,76 @@
-# 타입테스트 (TypeTest)
+# 🌟 타입테스트 (TypeTest)
 
-무료 성격 및 심리 테스트 플랫폼으로, 사용자가 다양한 과학적 기반 심리 분석 콘텐츠를 체험할 수 있도록 설계된 웹 서비스입니다.
+**TypeTest**는 사용자가 과학적 기반의 다양한 심리 및 성격 분석 콘텐츠를 매끄럽고 몰입감 있게 체험할 수 있도록 설계된 **무료 심리 테스트 웹 서비스**입니다. 
 
-## 프로젝트 개요
+깔끔하고 현대적인 글래스모피즘(Glassmorphism) UI와 부드러운 화면 전환 애니메이션을 자랑하며, 다국어 지원 및 정적 프리렌더링 기술을 결합하여 뛰어난 검색엔진 노출(SEO) 성능을 갖추고 있습니다.
 
-이 프로젝트는 독자의 인지 부하를 최소화하는 직관적인 UI/UX를 제공하며, 검색엔진 최적화(SEO)와 체계적인 데이터 구조화를 통해 실제 트래픽을 유도하고 비즈니스 흐름을 검증할 수 있도록 구축되었습니다.
+---
 
-## 주요 기능 및 역량
+## 🚀 주요 서비스 기능
 
-### 1. 사용자 중심의 콘텐츠 설계
+### 1. 다양한 심리 및 성격 테스트 콘텐츠
+*   **밸런스 게임 (New!):** 친구, 연인, 썸남썸녀와 즐길 수 있는 이색 선택형 게임으로, 순한맛 / 중간맛 / 매운맛(19+ 경고 모달 포함) 등 단계별 질문을 제공합니다. (질문 건너뛰기 기능 탑재)
+*   **성인 애착 유형 테스트:** 36개의 공인 심리학 질문을 통해 안정형, 불안형, 회피형, 혼란형 애착 스타일을 과학적으로 분석합니다.
+*   **나르시시즘 성향 테스트:** 20개 문항을 기반으로 과대형(Grandiose) 및 취약형(Vulnerable) 자기애 성향 수치를 측정합니다.
+*   **테토-에겐 성격 테스트:** 12개의 직관적인 선택지를 통해 감성 지향형(Teto)과 이성 지향형(Egen) 비율을 시각화합니다.
 
-* 테토-에겐 성향 테스트, 성인 애착 유형 테스트, 나르시시즘 성향 테스트 등 논리적이고 체계적인 심리 분석 콘텐츠 기획 및 가이드라인 구축
+### 2. 프리미엄 UI/UX 및 SPA 전환 인터랙션
+*   **Framer Motion 애니메이션:** 페이지 진입 및 테스트 단계 전환(Welcome ➔ Test ➔ Result) 시 부드러운 슬라이드 및 페이드 인터랙션을 제공합니다.
+*   **모던 카드 디자인:** 미려한 그라데이션 포인트, 백드롭 블러(Backdrop blur), 호버/탭 마이크로 인터랙션 카드를 장착하여 몰입감을 높였습니다.
+*   **Smooth SPA Routing:** `wouter` 라이브러리를 기반으로 메인 이동 및 페이지 전환 시 브라우저 풀 리로드가 없는 고성능 SPA 환경을 제공합니다.
 
+### 3. 고도화된 검색엔진 최적화 (SEO) & 소셜 공유
+*   **정적 프리렌더링 (Prerendering):** 빌드 시 Puppeteer를 이용해 각 SPA 주소별 정적 파일(`dist/<route>/index.html`)을 생성하여, GitHub Pages와 같은 정적 호스팅 환경에서도 Google 및 네이버 봇이 404 에러 없이 페이지 내용을 완벽하게 수집합니다.
+*   **구조화 데이터 (JSON-LD Schema):** Schema.org 규격의 `Quiz` 및 `WebSite` 마크업을 동적으로 주입하여 검색 결과 리치 스니펫 경쟁력을 확보했습니다.
+*   **Naver 검색 규격 최적화:** 메인 설명문 및 Open Graph 설명문의 길이를 80자 이내로 엄격하게 최적화하여 네이버 웹마스터 도구 가이드라인을 완전 충족합니다.
+*   **인덱싱 유도 자산:** 다국어 대체 주소(`hreflang`)를 포함한 `sitemap.xml`, 크롤러 접근 대역을 명시한 `robots.txt` 및 최신 피드 수집용 `rss.xml`을 자동으로 빌드/제공합니다.
+*   **세련된 결과 공유 템플릿:** 이모지와 구체적인 점수 요약이 담긴 공유 템플릿을 제공하며, 모바일 브라우저의 Web Share API와 클립보드 복사를 지원합니다.
 
-* 다국어(한국어, 영어, 일본어) 지원 환경을 고려한 텍스트 설계로 보편적이고 명확한 의도 전달
+---
 
+## 🛠️ 기술 스택 및 개발 환경
 
+*   **Frontend:** React (v18), TypeScript, Tailwind CSS, Vite, Framer Motion, Wouter (Routing), Lucide-react (Icons)
+*   **Backend/Prerender:** Node.js, Express, Puppeteer (Static HTML pre-renderer)
+*   **Deployment:** GitHub Pages (Static Hosting), GitHub Actions CI/CD
+*   **Analytics:** Google Analytics 4 (GA4), Google AdSense
 
-### 2. 검색엔진 최적화(SEO) 및 웹 표준 준수
+---
 
-* Open Graph 및 Twitter Card 메타 태그 최적화로 외부 플랫폼 공유 시 가시성 확보
+## 📂 프로젝트 구조
 
+```text
+├── client/
+│   ├── public/             # robots.txt, sitemap.xml, rss.xml, 파비콘 등 정적 에셋
+│   ├── src/
+│   │   ├── components/     # Welcome, Test, Result 등 테스트 관련 핵심 모듈러 컴포넌트
+│   │   ├── contexts/       # 다국어(Language Context) 및 전역 상태 관리
+│   │   ├── hooks/          # useMetaTags(동적 SEO), useToast 등 커스텀 훅
+│   │   ├── lib/            # 심리테스트 번역 리소스 및 질문 원시 데이터
+│   │   └── pages/          # 메인 페이지 및 개별 테스트 랜딩/컨테이너 페이지
+│   └── index.html          # 메인 HTML 템플릿 (네이버/빙 소유권 메타 태그 포함)
+├── scripts/
+│   └── prerender.mjs       # 빌드 후 각 라우트를 정적 HTML 파일로 굽는 프리렌더링 스크립트
+├── server/                 # 로컬 목업 서버 리소스
+└── shared/                 # 스키마 공통 모델
+```
 
-* Schema.org 기반의 구조화 데이터(Structured Data) 모델링을 통한 검색 결과 스니펫 최적화 및 유기적 트래픽 유도
+---
 
+## 💻 실행 및 빌드 방법
 
-* Canonical URL 정의 및 크롤러 봇 정책 수립을 통한 체계적인 인덱싱 관리
+### 1. 패키지 설치
+```bash
+npm install
+```
 
+### 2. 로컬 개발 서버 실행
+```bash
+npm run dev
+```
 
-
-### 3. 데이터 및 비즈니스 구조 이해
-
-* Google Analytics 4(GA4)를 통한 사용자 행동 분석 및 유입 데이터 리터러시 확보
-
-
-* Google AdSense 파이프라인 연동을 통한 트래픽 기반의 비즈니스 수익 모델 검증 및 운영
-
-
-
-## 기술 스택 및 환경
-
-* 프론트엔드: React, TypeScript, Tailwind CSS, Vite
-
-
-* 백엔드 및 데이터베이스: Node.js, Storage 모듈, Drizzle ORM
-
-
-* 형상 관리 및 배포: GitHub, CI/CD 배포 워크플로우 구성
-
-
-
-## 디렉토리 구조
-
-* client: UI 컴포넌트, 페이지 라우팅 및 다국어 컨텍스트가 포함된 프론트엔드 영역
-
-
-* src/components: 대고객용 가이드와 인터페이스가 직관적으로 설계된 개별 컴포넌트
-
-
-* src/lib: 심리 테스트 원시 데이터 분석 및 언어별 번역 데이터 처리 로직
-
-
-
-
-* server: 라우팅 및 데이터 적재를 위한 스토리지 엔진 영역
-
-
-* shared: 클라이언트와 서버 간의 일관된 데이터 통신을 위한 스키마 정의
+### 3. 배포용 빌드 및 정적 프리렌더링 실행
+```bash
+# Vite 빌드 후 scripts/prerender.mjs가 자동 실행되어 정적 HTML 빌드 결과를 dist/ 에 생성합니다.
+npm run build
+```
