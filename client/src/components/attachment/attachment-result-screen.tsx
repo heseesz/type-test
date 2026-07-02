@@ -124,7 +124,7 @@ export function AttachmentResultScreen({
   };
 
   const handleBackToMain = () => {
-    window.location.href = "/";
+    setLocation("/");
   };
 
   const handleRestart = () => {

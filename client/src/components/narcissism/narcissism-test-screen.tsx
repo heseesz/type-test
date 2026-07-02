@@ -39,7 +39,7 @@ export function NarcissismTestScreen({
   };
 
   const handleBackToMain = () => {
-    window.location.href = '/';
+    setLocation('/');
   };
 
   return (

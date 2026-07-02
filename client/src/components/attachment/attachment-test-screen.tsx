@@ -35,7 +35,7 @@ export function AttachmentTestScreen({
   const question = questions[currentQuestion];
 
   const handleBackToMain = () => {
-    window.location.href = "/";
+    setLocation("/");
   };
 
   return (

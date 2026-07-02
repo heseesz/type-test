@@ -23,7 +23,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
   const [, setLocation] = useLocation();
 
   const handleBackToMain = () => {
-    window.location.href = "/";
+    setLocation("/");
   };
 
   const handleRestart = () => {
