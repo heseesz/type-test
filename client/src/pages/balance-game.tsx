@@ -343,11 +343,11 @@ export default function BalanceGame() {
                       <span>{language === 'ko' ? '어른들을 위한 밸런스 게임' : '19+ Couple & Friend Balance Game'}</span>
                     </div>
                     
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 leading-tight break-keep">
                       {t('tests.balanceGame.title')}
                     </h1>
                     
-                    <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto whitespace-pre-line text-base leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto whitespace-pre-line text-base leading-relaxed break-keep">
                       {t('tests.balanceGame.description')}
                     </p>
                   </div>
@@ -597,7 +597,7 @@ export default function BalanceGame() {
                   <CardTitle className="text-3xl font-black text-zinc-900 dark:text-white">
                     {language === 'ko' ? '내 선택 돌아보기' : 'My Choice Review'}
                   </CardTitle>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 break-keep">
                     {language === 'ko' 
                       ? '게임 동안 내가 고른 선택들을 한눈에 모아보세요.' 
                       : 'Take a look at the choices you made during the game.'}
@@ -606,26 +606,6 @@ export default function BalanceGame() {
 
                 <CardContent className="p-6 space-y-6">
                   
-                  {/* Summary card stats */}
-                  <div className="grid grid-cols-3 gap-2 text-center bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800/60">
-                    <div>
-                      <div className="text-2xl font-black text-zinc-900 dark:text-white">{history.length}</div>
-                      <div className="text-[10px] text-zinc-500 uppercase font-semibold">{language === 'ko' ? '총 선택' : 'Total'}</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-black text-pink-500">
-                        {history.filter(h => h.selected === 'A').length}
-                      </div>
-                      <div className="text-[10px] text-zinc-500 uppercase font-semibold">{language === 'ko' ? 'A 선택' : 'Picked A'}</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-black text-orange-500">
-                        {history.filter(h => h.selected === 'B').length}
-                      </div>
-                      <div className="text-[10px] text-zinc-500 uppercase font-semibold">{language === 'ko' ? 'B 선택' : 'Picked B'}</div>
-                    </div>
-                  </div>
-
                   {/* Choice items list */}
                   <div className="space-y-4 max-h-[380px] overflow-y-auto pr-1">
                     {history.map((record, index) => {
