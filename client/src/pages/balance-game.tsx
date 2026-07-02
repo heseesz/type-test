@@ -364,10 +364,6 @@ export default function BalanceGame() {
               transition={{ duration: 0.5 }}
             >
               <Card className="bg-white/80 dark:bg-zinc-900/90 backdrop-blur border-zinc-200 dark:border-zinc-800 shadow-2xl relative overflow-hidden">
-                {/* 19+ Warning Ribbon */}
-                <div className="absolute top-0 right-0 bg-red-600 text-white font-extrabold text-xs px-4 py-1.5 rotate-45 translate-x-8 translate-y-3 shadow-md z-20 flex items-center gap-1">
-                  19禁 <Flame className="w-3.5 h-3.5 fill-white" />
-                </div>
 
                 <CardContent className="p-8 text-center space-y-8">
                   <div className="space-y-4">
@@ -740,6 +736,17 @@ export default function BalanceGame() {
 
                 </CardContent>
               </Card>
+              <div className="flex justify-center mt-6">
+                <a href="/" className="w-full max-w-xs animate-fade-in">
+                  <Button 
+                    variant="outline" 
+                    className="w-full py-5 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white shadow-sm flex items-center justify-center gap-2 rounded-xl font-bold"
+                  >
+                    <Home className="w-4 h-4" />
+                    {t('test.backToMain')}
+                  </Button>
+                </a>
+              </div>
             </motion.div>
           )}
 
