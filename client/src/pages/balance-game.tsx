@@ -483,30 +483,6 @@ export default function BalanceGame() {
                 })}
               </div>
 
-              <div className="space-y-2">
-                <div className="flex justify-end items-center text-sm font-semibold text-zinc-600 dark:text-zinc-300">
-                  <span>
-                    {difficulty === 'mild' && `${indices.mild + 1} / 30`}
-                    {difficulty === 'medium' && `${indices.medium + 1} / 20`}
-                    {difficulty === 'spicy' && `${indices.spicy + 1} / 20`}
-                  </span>
-                </div>
-                
-                {/* Progress bar */}
-                <div className="h-2 w-full bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
-                  <div 
-                    className={`h-full ${theme.progressBar} transition-all duration-500`}
-                    style={{ 
-                      width: `${
-                        difficulty === 'mild' ? (indices.mild / 30) * 100 :
-                        difficulty === 'medium' ? (indices.medium / 20) * 100 :
-                        (indices.spicy / 20) * 100
-                      }%` 
-                    }}
-                  />
-                </div>
-              </div>
-
               {/* Balance Cards Display */}
               <div className="space-y-4">
                 {currentQuestion ? (
