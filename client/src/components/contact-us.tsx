@@ -165,7 +165,7 @@ export function ContactUs() {
     }
   };
 
-  const currentContent = contactContent[language];
+  const currentContent = contactContent[language as keyof typeof contactContent] || contactContent.en;
 
   return (
     <Dialog>
