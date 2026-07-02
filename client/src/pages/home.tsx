@@ -16,7 +16,7 @@ export default function Home() {
   const description = language === 'en' ? 'Discover your true personality with free psychology tests. Attachment style, narcissism tendency, and Teto-Egen personality tests based on scientific analysis.' :
                       language === 'ja' ? '無料の心理テストであなたの本当の性格を発見しましょう。愛着スタイル、ナルシシズム傾向、テト-エゲン性格テストなど、科学적根拠に基づく心理分析を無料で体験できます。' :
                       language === 'zh-cn' ? '通过免费心理测试发现你的真实性格。依恋类型、自恋倾向、Teto-Egen性格测试等，基于科学的心理分析免费体验。' :
-                      '무료 심리 테스트로 당신의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘 성향, 테토-에겐 성격 테스트 등 과학적 기반 심리 분석을 무료로 체험하세요.';
+                      '무료 심리 테스트로 나의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘, 테토에겐, 밸런스 게임 등 과학적인 심리 분석을 제공합니다.';
 
   const metaConfig = {
     title: language === 'en' ? 'TypeTest - Personality Psychology Tests' : 
