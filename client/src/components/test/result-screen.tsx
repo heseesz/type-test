@@ -126,7 +126,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
               <Button
                 onClick={handleShare}
                 variant="outline"
-                className="w-full bg-white dark:bg-zinc-855 hover:bg-zinc-50 dark:hover:bg-zinc-800 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-200 py-6 text-base font-bold rounded-xl shadow-sm flex items-center justify-center gap-2"
+                className="w-full bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-200 py-6 text-base font-bold rounded-xl shadow-sm flex items-center justify-center gap-2"
               >
                 <Share2 className="w-5 h-5" />
                 {t('result.share')}
