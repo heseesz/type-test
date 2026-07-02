@@ -93,7 +93,7 @@ export function TestScreen({
                         className={`w-full text-left p-4 sm:p-5 md:p-6 h-auto justify-start transition-all duration-300 rounded-xl min-h-[56px] touch-manipulation border-2 ${
                           selectedAnswer === displayIndex
                             ? 'bg-indigo-50/50 dark:bg-indigo-950/20 border-indigo-500 dark:border-indigo-400 text-indigo-700 dark:text-indigo-300 shadow-md ring-2 ring-indigo-500/20 font-bold'
-                            : 'bg-white dark:bg-zinc-800 hover:bg-indigo-50/20 dark:hover:bg-indigo-950/10 border-zinc-200 dark:border-zinc-850 hover:border-indigo-300 dark:hover:border-indigo-905 text-zinc-700 dark:text-zinc-300'
+                            : 'bg-white dark:bg-zinc-800 hover:bg-indigo-50/20 dark:hover:bg-indigo-950/10 border-zinc-200 dark:border-zinc-850 hover:border-indigo-300 dark:hover:border-indigo-900 text-zinc-700 dark:text-zinc-300'
                         }`}
                       >
                         <div className="flex items-center space-x-4 w-full">
