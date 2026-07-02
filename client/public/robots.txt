@@ -1,4 +1,3 @@
-
 User-agent: *
 Allow: /
 
@@ -6,6 +5,7 @@ Allow: /
 Allow: /attachment-style
 Allow: /narcissism
 Allow: /teto-egen
+Allow: /balance-game
 
 # Allow important files
 Allow: /favicon.ico
