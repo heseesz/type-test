@@ -90,17 +90,49 @@ export function AttachmentResultScreen({
     let shareTitle = '';
     
     if (language === 'en') {
-      shareText = `Adult Attachment Style Test Results\n\n${result.emoji} ${result.title}\n\nAvoidance Score: ${avoidanceScore} points\nAnxiety Score: ${anxietyScore} points\n\nTake the test yourself! https://type-test.site/attachment-style`;
-      shareTitle = 'Adult Attachment Style Test Results';
+      shareTitle = 'Adult Attachment Style Test Results - TypeTest';
+      shareText = `🌟 Adult Attachment Style Test Results 🌟\n\n`;
+      shareText += `My Attachment Type:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 My Scores\n`;
+      shareText += `• Avoidance Score: ${avoidanceScore} points\n`;
+      shareText += `• Anxiety Score: ${anxietyScore} points\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 Discover your true attachment type!\n`;
+      shareText += `👇 Try it now for free!\n`;
+      shareText += `🔗 https://type-test.site/attachment-style`;
     } else if (language === 'ja') {
-      shareText = `成人愛着タイプテスト結果\n\n${result.emoji} ${result.title}\n\n回避スコア: ${avoidanceScore}点\n不安スコア: ${anxietyScore}点\n\nあなたもテストしてみませんか！ https://type-test.site/attachment-style`;
-      shareTitle = '成人愛着タイプテスト結果';
+      shareTitle = '成人愛着タイプテスト結果 - タイプテスト';
+      shareText = `🌟 成人愛着タイプテスト結果 🌟\n\n`;
+      shareText += `私の愛着タイプ:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 スコア結果\n`;
+      shareText += `• 回避スコア: ${avoidanceScore}点\n`;
+      shareText += `• 不安スコア: ${anxietyScore}点\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 あなたの愛着タイプを診断してみましょう！\n`;
+      shareText += `👇 無料でテストを開始\n`;
+      shareText += `🔗 https://type-test.site/attachment-style`;
     } else if (language === 'zh-cn') {
-      shareText = `成人依恋风格测试结果\n\n${result.emoji} ${result.title}\n\n回避得分: ${avoidanceScore}分\n焦虑得分: ${anxietyScore}分\n\n您也来测试一下吧！ https://type-test.site/attachment-style`;
-      shareTitle = '成人依恋风格测试结果';
+      shareTitle = '成人依恋风格测试结果 - TypeTest';
+      shareText = `🌟 成人依恋风格测试结果 🌟\n\n`;
+      shareText += `我的依恋风格:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 我的得分\n`;
+      shareText += `• 回避得分: ${avoidanceScore}分\n`;
+      shareText += `• 焦虑得分: ${anxietyScore}分\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 了解你的依恋类型！\n`;
+      shareText += `👇 立即免费测试\n`;
+      shareText += `🔗 https://type-test.site/attachment-style`;
     } else {
-      shareText = `성인 애착 유형 테스트 결과\n\n${result.emoji} ${result.title}\n\n회피 점수: ${avoidanceScore}점\n불안 점수: ${anxietyScore}점\n\n당신도 테스트해보세요! https://type-test.site/attachment-style`;
-      shareTitle = '성인 애착 유형 테스트 결과';
+      shareTitle = '성인 애착 유형 테스트 결과 - 타입테스트';
+      shareText = `🌟 성인 애착 유형 테스트 결과 🌟\n\n`;
+      shareText += `나의 애착 유형:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 나의 성향 점수\n`;
+      shareText += `• 회피 점수: ${avoidanceScore}점\n`;
+      shareText += `• 불안 점수: ${anxietyScore}점\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 나의 숨겨진 진짜 애착 유형이 궁금하다면?\n`;
+      shareText += `👇 지금 무료로 분석해 보세요!\n`;
+      shareText += `🔗 https://type-test.site/attachment-style`;
     }
     
     if (navigator.share) {

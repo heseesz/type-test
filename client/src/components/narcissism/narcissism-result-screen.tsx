@@ -89,17 +89,49 @@ export function NarcissismResultScreen({
     let shareTitle = '';
     
     if (language === 'en') {
-      shareText = `Narcissism Tendency Test Results\n\n${result.emoji} ${result.title}\n\nGrandiose Narcissism: ${grandioseScore} points\nVulnerable Narcissism: ${vulnerableScore} points\n\nTake the test yourself! https://type-test.site/narcissism`;
-      shareTitle = 'Narcissism Tendency Test Results';
+      shareTitle = 'Narcissism Tendency Test Results - TypeTest';
+      shareText = `🌟 Narcissism Tendency Test Results 🌟\n\n`;
+      shareText += `My Narcissism Type:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 My Scores\n`;
+      shareText += `• Grandiose Score: ${grandioseScore} points\n`;
+      shareText += `• Vulnerable Score: ${vulnerableScore} points\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 Check your narcissistic tendency!\n`;
+      shareText += `👇 Try it now for free!\n`;
+      shareText += `🔗 https://type-test.site/narcissism`;
     } else if (language === 'ja') {
-      shareText = `ナルシシズム傾向テスト結果\n\n${result.emoji} ${result.title}\n\n誇大型ナルシシズム傾向: ${grandioseScore}点\n脆弱型ナルシシズム傾向: ${vulnerableScore}点\n\nあなた도テストしてみませんか！ https://type-test.site/narcissism`;
-      shareTitle = 'ナルシシズム傾向テスト結果';
+      shareTitle = 'ナルシシズム傾向テスト結果 - タイプテスト';
+      shareText = `🌟 ナルシシズム傾向テスト結果 🌟\n\n`;
+      shareText += `私のナルシシズムタイプ:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 スコア結果\n`;
+      shareText += `• 誇大型スコア: ${grandioseScore}点\n`;
+      shareText += `• 脆弱型スコア: ${vulnerableScore}点\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 あなたの自己愛レベルを調べてみましょう！\n`;
+      shareText += `👇 無料でテストを開始\n`;
+      shareText += `🔗 https://type-test.site/narcissism`;
     } else if (language === 'zh-cn') {
-      shareText = `自恋倾向测试结果\n\n${result.emoji} ${result.title}\n\n过大型自恋倾向: ${grandioseScore}分\n脆弱型自恋倾向: ${vulnerableScore}分\n\n您也来测试一下吧！ https://type-test.site/narcissism`;
-      shareTitle = '自恋倾向测试结果';
+      shareTitle = '自恋倾向测试结果 - TypeTest';
+      shareText = `🌟 自恋倾向测试结果 🌟\n\n`;
+      shareText += `我的自恋类型:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 我的得分\n`;
+      shareText += `• 过大型得分: ${grandioseScore}分\n`;
+      shareText += `• 脆弱型得分: ${vulnerableScore}分\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 了解你的自恋指数！\n`;
+      shareText += `👇 立即免费测试\n`;
+      shareText += `🔗 https://type-test.site/narcissism`;
     } else {
-      shareText = `나르시시즘 성향 테스트 결과\n\n${result.emoji} ${result.title}\n\n과대형 나르시시즘 성향: ${grandioseScore}점\n취약형 나르시시즘 성향: ${vulnerableScore}점\n\n당신도 테스트해보세요! https://type-test.site/narcissism`;
-      shareTitle = '나르시시즘 성향 테스트 결과';
+      shareTitle = '나르시시즘 성향 테스트 결과 - 타입테스트';
+      shareText = `🌟 나르시시즘 성향 테스트 결과 🌟\n\n`;
+      shareText += `나의 나르시시즘 유형:\n👉 [${result.emoji} ${result.title}]\n\n`;
+      shareText += `📊 나의 성향 점수\n`;
+      shareText += `• 과대형 점수: ${grandioseScore}점\n`;
+      shareText += `• 취약형 점수: ${vulnerableScore}점\n\n`;
+      shareText += `──────────────────\n`;
+      shareText += `🔎 나는 자존감이 높은 걸까, 나르시시스트일까?\n`;
+      shareText += `👇 지금 무료로 테스트하기\n`;
+      shareText += `🔗 https://type-test.site/narcissism`;
     }
 
     const shareData = {

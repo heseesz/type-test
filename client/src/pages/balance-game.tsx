@@ -341,40 +341,81 @@ export default function BalanceGame() {
     return { optionA: q.optionA, optionB: q.optionB };
   };
 
-  // Share result to clipboard
-  const handleShare = () => {
-    let text = `🔥 TypeTest - ${t('tests.balanceGame.title')} 🔥\n\n`;
-    
+  // Share result to clipboard or native share
+  const handleShare = async () => {
+    let text = '';
+    let title = '';
+
     if (language === 'ko') {
-      text += `제가 선택한 밸런스 게임 질문 회고 결과입니다!\n`;
-      text += `총 ${history.length}개의 질문에 답했습니다.\n\n`;
+      title = '밸런스 게임 선택 결과 - 타입테스트';
+      text = `🌟 밸런스 게임 선택 결과 🌟\n\n`;
+      text = text + `제가 직접 고른 밸런스 게임 질문 선택 결과입니다!\n`;
+      text = text + `(총 ${history.length}개의 질문 답변 완료)\n\n`;
+      text = text + `──────────────────\n`;
     } else {
-      text += `Here are my choices from the Balance Game!\n`;
-      text += `Answered ${history.length} questions in total.\n\n`;
+      title = 'Balance Game Results - TypeTest';
+      text = `🌟 Balance Game Results 🌟\n\n`;
+      text = text + `Here are the choices I made in the Balance Game!\n`;
+      text = text + `(Answered ${history.length} questions in total)\n\n`;
+      text = text + `──────────────────\n`;
     }
 
-    history.forEach((h, idx) => {
+    const maxShow = 5;
+    const historyToShare = history.slice(0, maxShow);
+    historyToShare.forEach((h, idx) => {
       const texts = getChoiceTexts(h.originalQuestion);
       const selectedText = h.selected === 'A' ? texts.optionA : texts.optionB;
-      const diffLabel = h.difficulty === 'mild' ? '순한맛/Mild' :
-                        h.difficulty === 'medium' ? '중간맛/Medium' : '매운맛/Spicy';
-      text += `Q${idx + 1}. [${diffLabel}] 선택: ${selectedText}\n`;
+      const diffLabel = language === 'ko' 
+        ? (h.difficulty === 'mild' ? '순한맛' : h.difficulty === 'medium' ? '중간맛' : '매운맛')
+        : (h.difficulty === 'mild' ? 'Mild' : h.difficulty === 'medium' ? 'Medium' : 'Spicy');
+      text = text + `Q${idx + 1}. [${diffLabel}] 선택: ${selectedText}\n`;
     });
 
-    text += `\n👉 테스트 해보기: https://type-test.site/balance-game`;
+    if (history.length > maxShow) {
+      if (language === 'ko') {
+        text = text + `...외 ${history.length - maxShow}개의 선택\n`;
+      } else {
+        text = text + `...and ${history.length - maxShow} more choices\n`;
+      }
+    }
 
-    navigator.clipboard.writeText(text).then(() => {
-      toast({
-        title: language === 'ko' ? "결과가 복사되었습니다!" : "Results copied!",
-        description: language === 'ko' ? "클립보드에 복사된 결과를 공유해보세요." : "Share the copied text with your friends."
-      });
-    }).catch(() => {
-      toast({
-        variant: "destructive",
-        title: language === 'ko' ? "복사 실패" : "Copy failed",
-        description: language === 'ko' ? "결과를 수동으로 복사해주세요." : "Please copy the results manually."
-      });
-    });
+    if (language === 'ko') {
+      text = text + `──────────────────\n`;
+      text = text + `🔎 당신의 아슬아슬한 선택은 무엇인가요?\n`;
+      text = text + `👇 지금 무료로 테스트하기\n`;
+      text = text + `🔗 https://type-test.site/balance-game`;
+    } else {
+      text = text + `──────────────────\n`;
+      text = text + `🔎 What would your choices be?\n`;
+      text = text + `👇 Try it now for free!\n`;
+      text = text + `🔗 https://type-test.site/balance-game`;
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title,
+          text: text,
+          url: 'https://type-test.site/balance-game'
+        });
+      } catch (err) {
+        // Ignored share cancel
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(text);
+        toast({
+          title: language === 'ko' ? "결과가 복사되었습니다!" : "Results copied!",
+          description: language === 'ko' ? "클립보드에 복사된 결과를 공유해보세요." : "Share the copied text with your friends."
+        });
+      } catch (err) {
+        toast({
+          variant: "destructive",
+          title: language === 'ko' ? "복사 실패" : "Copy failed",
+          description: language === 'ko' ? "결과를 수동으로 복사해주세요." : "Please copy the results manually."
+        });
+      }
+    }
   };
 
   return (
