@@ -31,7 +31,7 @@ const PORT = 4174;
 const BASE_URL = `http://localhost:${PORT}`;
 
 // Routes that must have their own pre-rendered index.html
-const ROUTES = ['/', '/teto-egen', '/attachment-style', '/narcissism'];
+const ROUTES = ['/', '/teto-egen', '/attachment-style', '/narcissism', '/balance-game'];
 
 // Domains that are safe to block during pre-rendering (analytics / ads)
 // so we don't accidentally timeout waiting for 3rd-party requests.
