@@ -83,7 +83,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': '19금 밸런스 게임',
-    'tests.balanceGame.description': '친구, 연인과 함께 즐기는 매운 맛 밸런스 게임! (19금 주의 🔞)',
+    'tests.balanceGame.description': '친구, 연인과 함께 즐기는 매운 맛 밸런스 게임!\n(19금 주의 🔞)',
     'tests.balanceGame.start': '시작하기'
   },
   en: {
@@ -157,7 +157,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': '19+ Balance Game',
-    'tests.balanceGame.description': 'A spicy balance game to enjoy with friends and lovers! (18+ warning 🔞)',
+    'tests.balanceGame.description': 'A spicy balance game to enjoy with friends and lovers!\n(18+ warning 🔞)',
     'tests.balanceGame.start': 'Start Game'
   },
   es: {
@@ -218,7 +218,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': 'Juego de Equilibrio 18+',
-    'tests.balanceGame.description': '¡Un juego de equilibrio picante para disfrutar con amigos y parejas! (Advertencia 18+ 🔞)',
+    'tests.balanceGame.description': '¡Un juego de equilibrio picante para disfrutar con amigos y parejas!\n(Advertencia 18+ 🔞)',
     'tests.balanceGame.start': 'Iniciar Juego'
   },
   'zh-cn': {
@@ -290,7 +290,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': '19禁平衡游戏',
-    'tests.balanceGame.description': '与朋友、恋人一起玩的辣味平衡游戏！（18禁注意 🔞）',
+    'tests.balanceGame.description': '与朋友、恋人一起玩的辣味平衡游戏！\n（18禁注意 🔞）',
     'tests.balanceGame.start': '开始游戏'
   },
   'zh-tw': {
@@ -347,7 +347,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': '19禁平衡遊戲',
-    'tests.balanceGame.description': '與朋友、戀人一起玩的辣味平衡遊戲！（18禁注意 🔞）',
+    'tests.balanceGame.description': '與朋友、戀人一起玩的辣味平衡遊戲！\n（18禁注意 🔞）',
     'tests.balanceGame.start': '開始遊戲'
   },
   ja: {
@@ -413,7 +413,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': '19禁バランスゲーム',
-    'tests.balanceGame.description': '友達や恋人と一緒に楽しむ激辛バランスゲーム！（19禁注意 🔞）',
+    'tests.balanceGame.description': '友達や恋人と一緒に楽しむ激辛バランスゲーム！\n（19禁注意 🔞）',
     'tests.balanceGame.start': 'ゲーム開始'
   },
   vi: {
@@ -470,7 +470,7 @@ const translations = {
     
     // Balance Game
     'tests.balanceGame.title': 'Trò chơi Cân bằng 18+',
-    'tests.balanceGame.description': 'Trò chơi cân bằng cay cú để thưởng thức cùng bạn bè và người yêu! (Cảnh báo 18+ 🔞)',
+    'tests.balanceGame.description': 'Trò chơi cân bằng cay cú để thưởng thức cùng bạn bè và người yêu!\n(Cảnh báo 18+ 🔞)',
     'tests.balanceGame.start': 'Bắt đầu'
   }
 };
