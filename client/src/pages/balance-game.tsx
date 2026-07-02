@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/language-context';
 import { useMetaTags } from '@/hooks/use-meta-tags';
 import { Link } from 'wouter';
+import { PrivacyPolicy } from "@/components/privacy-policy";
+import { AboutUs } from "@/components/about-us";
+import { ContactUs } from "@/components/contact-us";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -839,6 +842,15 @@ export default function BalanceGame() {
           )}
 
         </AnimatePresence>
+
+        {/* Footer Links */}
+        <div className="flex justify-center items-center gap-4 mt-12 text-sm pb-6">
+          <AboutUs />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <PrivacyPolicy />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <ContactUs />
+        </div>
       </div>
 
       {/* 1. 10-QUESTIONS INTERMISSION MODAL */}
