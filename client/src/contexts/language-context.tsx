@@ -23,7 +23,7 @@ const translations = {
     'seo.balanceGame.desc': '연인, 썸남썸녀, 혹은 친한 친구들과 함께 즐길 수 있는 궁극의 밸런스 게임입니다. 일상적인 연애 가치관을 알아보는 \'순한 맛\'부터, 숨겨진 본성과 은밀한 취향을 파헤치는 \'중간 맛\', 그리고 아찔한 수위의 \'매운 맛\'까지 다양한 난이도의 질문들이 준비되어 있습니다.\n\n서로의 선택을 비교하며 깊은 대화를 나누고, 때로는 열띠게 논쟁하며 서로에 대해 더 깊이 알아가는 시간을 가져보세요.\n\n단순한 킬링타임용 게임을 넘어, 평소에는 묻기 힘들었던 서로의 진짜 속마음과 연애 스타일, 스킨십 성향 등을 자연스럽게 알아볼 수 있는 완벽한 심리적 아이스브레이킹 도구가 되어줄 것입니다. 과연 당신과 상대방의 밸런스 일치율은 얼마나 될지, 지금 바로 시작해서 서로의 한계를 테스트해 보세요!',
     'seo.attachment.desc': '존 볼비(John Bowlby)와 메리 애인스워스(Mary Ainsworth)의 발달 심리학적 이론에 기반한 성인 애착 유형 테스트는, 당신이 타인과 관계를 맺고 사랑을 주고받는 방식을 심층적으로 분석합니다.\n\n우리 모두는 어린 시절의 경험과 과거의 인간관계를 통해 자신만의 고유한 애착 패턴을 무의식적으로 형성하게 됩니다. 이 테스트를 통해 당신이 \'안정형\', \'불안-집착형\', \'회피-거부형\', \'회피-공포형\' 중 어디에 해당하는지 객관적으로 진단해 보세요.\n\n나의 애착 유형을 정확히 파악하는 것은 반복되는 연애의 갈등 원인을 찾고, 더 건강하고 안정적인 대인관계를 구축하는 첫걸음이 됩니다. 나와 상대방의 다름을 논리적으로 이해하고, 내면의 기저에 깔린 불안을 해소하여 성숙한 사랑을 가꾸어 나갈 수 있도록 돕는 심리학적 가이드를 지금 바로 확인해 보세요.',
     'seo.narcissism.desc': '자기애적 성향(Narcissism)은 단순히 자신을 뽐내는 것을 넘어선, 매우 복잡하고 입체적인 심리적 특성입니다. 심리학에서 말하는 나르시시즘은 건강한 자존감의 척도가 되기도 하지만, 때로는 타인과의 관계를 단절시키는 원인이 되기도 합니다.\n\n본 테스트는 당신의 내면에 숨겨진 자기애의 크기와 형태를 다각도로 측정하여 제공합니다. 타인의 인정과 찬사에 대한 욕구, 대인관계에서의 공감 능력 수준, 무의식적인 특권 의식, 그리고 내면 깊은 곳에 자리 잡은 방어적 취약성까지 꼼꼼하게 분석해 드립니다.\n\n자신이 건강한 형태의 과대형 나르시시스트인지, 아니면 외부의 평가에 상처받기 쉬운 취약형 나르시시스트인지 파악해 보세요. 스스로의 성향을 정면으로 마주하는 것은 자기 객관화를 통해 더 나은 관계를 맺기 위한 훌륭한 자기계발의 기회가 될 것입니다.',
-    'seo.tetoEgen.desc': '테토-에겐 성향 테스트는 연애와 대인관계에서 나타나는 당신의 독특한 행동 패턴과 포지션을 재미있고 예리하게 분석해 주는 인터넷 밈 심리 진단 콘텐츠입니다.\n\n관계를 주도하고 적극적으로 이끌어가는 성향인지, 아니면 상대방의 리드에 부드럽게 맞춰주며 안정감을 제공하는 성향인지 간단히 파악해 봅니다. 당신이 무의식적으로 발산하는 매력 포인트는 무엇이며, 스트레스 상황이나 연인과의 갈등이 발생했을 때 어떤 방식으로 소통하고 대처하는지 등 다채로운 문항을 통해 당신의 캐릭터를 정의해 드립니다.\n\n친구들이나 연인과 함께 결과를 공유하며 서로의 유형이 어떻게 상호작용하고, 어떤 시너지를 낼 수 있는지 비교해 보세요. 나도 몰랐던 나의 모습과 연애 세포를 자극하는 분석 결과를 통해, 관계의 주도권과 긍정적인 소통 방식을 새롭게 돌아볼 수 있는 흥미로운 경험을 선사합니다.',
+    'seo.tetoEgen.desc': '테토-에겐 성향 테스트는 연애와 대인관계에서 나타나는 당신의 독특한 행동 패턴과 포지션을 재미있고 예리하게 분석해 주는 인터넷 밈 심리 진단 콘텐츠입니다.\n\n관계를 주도하고 적극적으로 이끌어가는 성향인지, 아니면 상대방의 리드에 부드럽게 맞춰주며 안정감을 제공하는 성향인지 간단히 파악해 봅니다. 당신이 무의식적으로 발산하는 매력 포인트는 무엇이며, 스트레스 상황이나 연인과의 갈등이 발생했을 때 어떤 방식으로 소통하고 대처하는지 등 다채로운 문항을 통해 당신의 캐릭터를 정의해 드립니다.\n\n친구들이나 연인과 함께 결과를 공유하며 서로의 유형이 어떻게 상호작용하고, 어떤 시너지를 낼 수 있는지 비교해 보세요. 관계의 주도권과 긍정적인 소통 방식을 새롭게 돌아볼 수 있는 흥미로운 경험을 선사합니다.',
     
     // Site
     'site.title': '타입테스트',
@@ -254,7 +254,7 @@ const translations = {
     'seo.home.intro': '欢迎来到 TypeTest！\n\n这是一个综合性的心理测试平台，基于各种心理学理论和有趣的价值观问题，帮助您探索自己和他人隐藏的性格倾向。\n\n与朋友、恋人分享测试结果，加深对彼此的理解，开启轻松有趣的对话吧。',
     'seo.balanceGame.desc': '专为情侣、暧昧对象或密友打造的终极平衡游戏。包含多种难度的提问，从探讨日常恋爱观的“温和味”，到挖掘隐藏本性与隐秘喜好的“中辣味”，再到令人心跳加速的“重辣味”。\n\n对比彼此的选择，展开深度对话，甚至来一场趣味辩论，借此更深入地了解对方。\n\n这不仅仅是一款消磨时间的娱乐游戏，更是一个完美的心理破冰工具，让你们自然而然地了解平时难以开口的真心话、恋爱风格及亲密关系倾向。立即开始，测试你们的契合度与极限吧！',
     'seo.attachment.desc': '成人依恋类型测试基于约翰·博比（John Bowlby）和玛丽·安斯沃斯（Mary Ainsworth)的发达心理学理论，深度分析您与他人建立关系以及给予和接受爱的方式。\n\n我们每个人都会根据童年经历和过往的人际关系，在无意识中形成自己独特的依恋模式。通过本测试，客观地诊断您属于“安全型”、“焦虑型”、“回避型”还是“恐惧型”。\n\n准确了解自己的依恋类型，是找到反复出现的恋爱冲突原因、建立更健康稳定人际关系的第一步。欢迎立即查看心理学指南，理解彼此的差异，消除内心的焦虑，培育成熟的爱。',
-    'seo.narcissism.desc': '自恋倾向（Narcissism）是一个非常复杂且立体的心理特征，远不止是单纯的自我展现。在心理学中，自恋可以是健康自尊的尺度，但有时也会成为阻碍人际关系的因素。\n\n本测试从多个维度测量您内心深处隐藏的自恋程度与形式。我们将仔细分析您对他人认可与赞美的渴望、人际交往中的共感水平、无意识的特权意识，以及内心深处的防御性脆弱。\n\n了解自己是属于健康形式的夸大型自恋者，还是容易受外界评价伤害的脆弱型自恋者。直面自己的倾向，是通过自我客观化来发挥更好领导力、与他人和谐沟通的绝佳自我提升机会。',
+    'seo.narcissism.desc': '自恋倾向（Narcissism）是一个非常复杂且立体的心理特征，远不止是单纯的自我展现。在心理学中，自恋可以是健康自尊的尺度，但有时也会成为阻碍人际关系的因素。\n\n本测试从多个维度测量您内心深处隐藏 of 的自恋程度与形式。我们将仔细分析您对他人认可与赞美的渴望、人际交往中的共感水平、无意识的特权意识，以及内心深处的防御性脆弱。\n\n了解自己是属于健康形式的夸大型自恋者，还是容易受外界评价伤害的脆弱型自恋者。直面自己的倾向，是通过自我客观化来发挥更好领导力、与他人和谐沟通的绝佳自我提升机会。',
     'seo.tetoEgen.desc': 'Teto-Egen 性格测试是一款趣味与深度兼具的心理诊断内容，分析您在恋爱和人际关系中独特的行为模式与角色定位。\n\n简单了解您是倾向于主导并积极引领关系，还是更喜欢温柔地配合对方的引领并提供安全感。\n\n与朋友或恋人分享结果，对比不同类型之间如何相互作用、能产生怎样的化学反应。为您提供一个重新审视关系主导权和积极沟通方式的有趣体验。',
 
     'site.title': 'TypeTest',
@@ -281,7 +281,7 @@ const translations = {
     'tests.comingSoon.button': '即将推出',
     
     // Welcome Screen
-    'welcome.title': 'Teto-Egen 性格测试',
+    'welcome.title': 'Teto-Egen性格测试',
     'welcome.subtitle': '发现你的性格类型！',
     'welcome.selectGender': '请选择你的性别',
     'welcome.male': '男性',
@@ -304,7 +304,7 @@ const translations = {
     'result.points': '分',
     'result.share': '分享结果',
     'result.restart': '重新测试',
-    'result.shareTitle': 'Teto-Egen 性格测试结果',
+    'result.shareTitle': 'Teto-Egen性格测试结果',
     'result.shareText': '你也来测试一下吧！',
     'result.copySuccess': '已复制到剪贴板',
     'result.copySuccessDesc': '结果已复制到剪贴板！',
@@ -332,9 +332,9 @@ const translations = {
     // SEO Intro Text
     'seo.viewDetails': '詳細情報を見る',
     'seo.home.intro': 'TypeTestへようこそ！\n\nここは、さまざまな心理学理論と興味深い価値観の質問に基づいて、自分と相手の隠れた傾向を探る総合心理テストプラットフォームです。\n\n友人や恋人とテスト結果を共有し、お互いをより深く理解し、楽しい会話を交わしてみてください。',
-    'seo.balanceGame.desc': '恋人や気になる人、または親しい友人と一緒に楽しめる究極のバランスゲームです。日常的な恋愛の価値観を探る「マイルド味」から、隠された本性と秘密の好みを暴く「ミディアム味」、そして刺激的なレベルの「スパイシー味」まで、様々な難易度の質問が用意されています。\n\nお互いの選択を比較しながら深い会話を交わし、時には熱く議論しながら、お互いについてより深く知る時間を持ってみましょう。\n\n単なる暇つぶしゲームを超えて、普段は聞きにくいお互いの本音や恋愛スタイル、スキンシップの傾向などを自然に知ることができる、完璧な心理的アイスブレイクツールになります。今すぐ始めて、お互いの限界をテストしてみましょう！',
-    'seo.attachment.desc': 'ジョン・ボウルビィ（John Bowlby）とメアリー・エインスワース（Mary Ainsworth）の発達心理学理論に基づく成人愛着スタイルテストは、あなたが他者と関係を築き、愛を与え受け取る方法を詳細に分析します。\n\n私たちはみな、幼少期の経験や過去の人間関係を通じて、自分だけの独自の愛着パターンを無意識に形成しています。このテストを通じて、あなたが「安定型」「不安型」「回避型」「恐れ・回避型」のどれに該当するかを客観的に診断してみましょう。\n\n自分の愛着スタイルを正確に把握することは、繰り返される恋愛の葛藤の原因を見つけ、より健康で安定した対人関係を築くための第一歩となります。お互いの違いを論理的に理解し、内面にある不安を解消して成熟した愛を育むための心理学ガイドを今すぐ確認してください。',
-    'seo.narcissism.desc': '自己愛的な傾向（ナルシシズム）は、単に自分を自慢することを超えた、非常に複雑で多面的な心理的特性です。心理学におけるナルシシズムは、健康的な自尊心の指標となることもありますが、時には他者との関係を損なう原因にもなります。\n\n本テストは、あなたの内面に隠された自己愛の大きさと形を多角的に測定します。他者からの承認や称賛への欲求、人間関係における共感レベル、無意識の特権意識、および内面の奥深くにある防御的な脆弱性まで細かく分析します。\n\n自分が健康的な誇大型ナルシシストなのか、それとも外部의評価に傷つきやすい脆弱型ナルシシストなのかを把握してみましょう。自身の傾向と向き合うことは、自己客観化を通じてより良いリーダーシップを発揮し、他者と調和してコミュニケーションをとるための素晴らしい自己啓発の機会となるでしょう。',
+    'seo.balanceGame.desc': '恋人や気になる人、または親しい友人と一緒に楽しめる究極のバランスゲームです。日常的な恋愛の価値観を探る「マイルド味」から、隠された本性と秘密の好みを暴く「ミディアム味」から、刺激的なレベルの「スパイシー味」まで、様々な難易度の質問が用意されています。\n\nお互いの選択を比較しながら深い会話を交わし、時には熱く議論しながら、お互いについてより深く知る時間を持ってみましょう。\n\n単なる暇つぶしゲームを超えて、普段は聞きにくいお互いの本音や恋愛スタイル、スキンシップの傾向などを自然に知ることができる、完璧な心理的アイスブレイクツールになります。今すぐ始めて、お互いの限界をテストしてみましょう！',
+    'seo.attachment.desc': 'ジョン・ボウルビィ（John Bowlby）とメアリー・エインスワース（Mary Ainsworth）の発達心理学理論に基づく成人愛着スタイルテストは、あなたが他者と関係を築き、愛を与え受け取る方法を詳細に分析します。\n\n私たちはみな、幼少期の経験や過去の人間関係を通じて、自分だけの独自の愛着パターンを無意識に形成しています。このテストを通じて、あなたが「安定型」「不安型」「回避型」「恐れ・回避型」のどれに該当するかを客観的に診断してみましょう。\n\n自分の愛着スタイルを正確に把握することは、繰り返される恋愛의葛藤の原因を見つけ、より健康で安定した対人関係を築くための第一歩となります。お互いの違いを論理的に理解し、内面にある不安を解消して成熟した愛を育むための心理学ガイドを今すぐ確認してください。',
+    'seo.narcissism.desc': '自己愛的な傾向（ナルシシズム）は、単に自分を自慢することを超えた、非常に複雑で多面的な心理的特性です。心理学におけるナルシシズムは、健康的な自尊心の指標となることもありますが、時には他者との関係を損なう原因にもなります。\n\n本テストは、あなたの内面に隠された自己愛の大きさと形を多角的に測定します。他者からの承認や称賛への欲求、人間関係における共感レベル、無意識の特権意識、および内面の奥深くにある防御的な脆弱性まで細かく分析します。\n\n自分が健康的な誇大型ナルシシストなのか、それとも外部の評価に傷つきやすい脆弱型ナルシシストなのかを把握してみましょう。自身の傾向と向き合うことは、自己客観化を通じてより良いリーダーシップを発揮し、他者と調和してコミュニケーションをとるための素晴らしい自己啓発の機会となるでしょう。',
     'seo.tetoEgen.desc': 'テト-エゲン傾向テストは、恋愛や対人関係におけるあなたの独特な行動パターンとポジションを、楽しく鋭く分析する心理診断コンテンツです。\n\n関係を主導して積極的に引っ張る傾向なのか、それとも相手のリードに柔軟に合わせて安心感を提供する傾向なのかを簡単に把握します。\n\n友人や恋人と結果を共有し、お互いのタイプがどのように相互作用し、どのようなシナジーを生み出せるか比較してみてください。関係の主動権やポジティブなコミュニケーション方法を新たに見つめ直す、興味深い体験をお届けします。',
 
     'site.title': 'TypeTest',
@@ -353,7 +353,7 @@ const translations = {
     'tests.narcissism.title': 'ナルシシズム傾向テスト',
     'tests.narcissism.description': '自分のナルシシズム傾向を把握し、\n健康的な自尊心を\n育てましょう',
     'tests.narcissism.start': 'テスト開始',
-    'tests.narcissism.info': '誇大型と脆弱型ナルシシズムを測定する20の質問で構成されています。',
+    'tests.narcissism.info': '誇大型と脆弱型ナルシシズムを測定する20의 질문으로 구성되어 있습니다。',
     'tests.narcissism.meta.title': 'TypeTest: ナルシシズム傾向テスト',
     'tests.narcissism.meta.description': 'ナルシシズム傾向を確認しましょう！誇大型と脆弱型ナルシシズムを区別して自分の特性を把握できます。',
     'tests.comingSoon.title': 'コンテンツ準備中',
@@ -409,7 +409,7 @@ const translations = {
     'seo.balanceGame.desc': 'Trò chơi cân bằng tối thượng để thưởng thức cùng đối tác, người thương hoặc bạn thân của bạn. Trò chơi có các câu hỏi ở nhiều mức độ khó khác nhau, từ \'Vị dịu nhẹ\' cho các giá trị hẹn hò thông thường, đến \'Vị trung bình\' cho những bản chất ẩn giấu và \'Vị cay nồng\' cho các mức độ thân mật trưởng thành.\n\nSo sánh các lựa chọn của nhau, trò chuyện sâu sắc và đôi khi tham gia vào các cuộc tranh luận vui vẻ để hiểu nhau hơn.\n\nVượt qua một trò chơi giết thời gian đơn giản, đây sẽ là công cụ phá băng tâm lý hoàn hảo để tiết lộ một cách tự nhiên những cảm xúc thật, phong cách hẹn hò và sở thích thân mật vốn thường khó hỏi. Hãy bắt đầu ngay để kiểm tra khả năng tương thích và giới hạn của bạn!',
     'seo.attachment.desc': 'Dựa trên các lý thuyết tâm lý học phát triển của John Bowlby và Mary Ainsworth, Bài kiểm tra phong cách gắn bó của người lớn phân tích sâu sắc cách bạn kết nối với những người khác cũng như cách bạn trao đi hoặc nhận lại tình yêu thương.\n\nTất cả chúng ta đều vô thức hình thành các kiểu gắn bó độc đáo của riêng mình dựa trên trải nghiệm thời thơ ấu và các mối quan hệ trong quá khứ. Hãy làm bài kiểm tra này để chẩn đoán khách quan xem bạn thuộc nhóm An toàn, Lo âu, Né tránh hay Né tránh sợ hãi.\n\nXác định chính xác phong cách gắn bó của bạn là bước đầu tiên để tìm ra nguyên nhân của những xung đột lặp đi lặp lại trong mối quan hệ và xây dựng những kết nối lành mạnh, bền vững hơn. Khám phá hướng dẫn tâm lý này để nuôi dưỡng tình yêu trưởng thành bằng cách hiểu rõ sự khác biệt và giải quyết các mối lo âu tiềm ẩn.',
     'seo.narcissism.desc': 'Tính tự ái (Narcissism) is a đặc điểm tâm lý rất phức tạp và đa chiều, vượt xa việc đơn thuần là khoe khoang. Trong tâm lý học, tính tự ái có thể là thước đo của lòng tự trọng lành mạnh, nhưng nó cũng có thể gây ra sự chia rẽ trong các mối quan hệ cá nhân.\n\nBài kiểm tra này đo lường mức độ và hình thức tự ái ẩn giấu trong bạn từ nhiều góc độ khác nhau. Chúng tôi phân tích kỹ lưỡng mong muốn được công nhận, mức độ đồng cảm của bạn trong các mối quan hệ, cảm giác đặc quyền vô thức và các lỗ hổng phòng vệ.\n\nTìm hiểu xem bạn có dạng tự ái tự cao lành mạnh hay tự ái dễ bị tổn thương, nhạy cảm với đánh giá từ bên ngoài. Đối mặt trực diện với các xu hướng của bạn là cơ hội tuyệt vời để tự hoàn thiện bản thân, nuôi dưỡng khả năng lãnh đạo tốt hơn và giao tiếp hài hòa.',
-    'seo.tetoEgen.desc': 'Bài kiểm tra tính cách Teto-Egen là nội dung chẩn đoán tâm lý vui nhộn và sắc bén, phân tích các kiểu hành vi và định vị độc đáo của bạn trong các mối quan hệ và hẹn hò.\n\nTìm hiểu xem bạn có xu hướng đảm nhận vai trò chủ động và tích cực dẫn dắt mối quan hệ, hay bạn thích nhẹ nhàng thích nghi với sự dẫn dắt của đối tác và mang lại sự ổn định.\n\nChia sẻ kết quả với bạn bè và đối tác để so sánh cách các loại tính cách của bạn tương tác và tạo ra những sức mạnh cộng hưởng nào. Bài kiểm tra mang lại trải nghiệm thú vị để phản ánh động lực của mối quan hệ và các phương pháp giao tiếp tích cực.',
+    'seo.tetoEgen.desc': 'Bài kiểm tra tính cách Teto-Egen là nội dung chẩn đoán tâm lý vui nhộn và sắc bén, phân tích các kiểu hành vi và định vị độc đáo của bạn trong các mối quan hệ và hẹn hò.\n\nTìm hiểu xem bạn có xu hướng đảm nhận vai trò chủ động và tích cực dẫn dắt mối quan hệ, hay bạn thích nhẹ nhàng thích nghi với sự dẫn dắt của đối tác và mang lại sự ổn định.\n\nChia sẻ kết quả với bạn bè và đối tác để so sánh cách các loại tính cách của bạn tương tác và tạo ra những sức mạnh cộng hương nào. Bài kiểm tra mang lại trải nghiệm thú vị để phản ánh động lực của mối quan hệ và các phương pháp giao tiếp tích cực.',
 
     'site.title': 'TypeTest',
     'site.subtitle': 'Tất cả nội dung để bạn khám phá bản thân',
@@ -465,3 +465,42 @@ const translations = {
     'tests.balanceGame.start': 'Bắt đầu'
   }
 };
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguageState] = useState<Language>(() => {
+    const saved = localStorage.getItem('language');
+    if (saved && (saved === 'ko' || saved === 'en' || saved === 'ja' || saved === 'zh-cn')) {
+      return saved as Language;
+    }
+    return 'ko'; // Default to Korean
+  });
+
+  const setLanguage = (newLanguage: Language) => {
+    setLanguageState(newLanguage);
+    localStorage.setItem('language', newLanguage);
+  };
+
+  const t = (key: string): string => {
+    const langTranslations = translations[language];
+    return (langTranslations as any)[key] || (translations['ko'] as any)[key] || key;
+  };
+
+  useEffect(() => {
+    // Set document language attribute
+    document.documentElement.lang = language;
+  }, [language]);
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+}
