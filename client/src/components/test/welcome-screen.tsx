@@ -31,6 +31,11 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto text-base leading-relaxed break-keep">
           {t('welcome.subtitle')}
         </p>
+        <div className="mt-6 p-4 md:p-5 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 text-left">
+          <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed break-keep">
+            {t('seo.tetoEgen.desc')}
+          </p>
+        </div>
         <div className="flex justify-center mt-4">
           <InfoPopup />
         </div>

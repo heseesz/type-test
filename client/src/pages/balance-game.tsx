@@ -470,6 +470,12 @@ export default function BalanceGame() {
                     <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto whitespace-pre-line text-base leading-relaxed break-keep">
                       {t('tests.balanceGame.description')}
                     </p>
+
+                    <div className="mt-6 p-4 md:p-5 bg-zinc-50/50 dark:bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-700/50 text-left">
+                      <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed break-keep">
+                        {t('seo.balanceGame.desc')}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Difficulty selector cards */}

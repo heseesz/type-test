@@ -95,6 +95,11 @@ export function AttachmentWelcomeScreen({ onStart }: AttachmentWelcomeScreenProp
           <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto text-base leading-relaxed break-keep">
             {currentContent.subtitle}
           </p>
+          <div className="mt-6 p-4 md:p-5 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 text-left">
+            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed break-keep">
+              {t('seo.attachment.desc')}
+            </p>
+          </div>
         </div>
 
         <Card className="bg-white/80 dark:bg-zinc-900/90 backdrop-blur border-zinc-200 dark:border-zinc-800 shadow-2xl rounded-2xl overflow-hidden">

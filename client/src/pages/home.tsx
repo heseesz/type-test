@@ -77,6 +77,17 @@ export default function Home() {
           <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-base sm:text-lg leading-relaxed break-keep">
             {t('site.subtitle')}
           </p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mt-6 max-w-3xl mx-auto p-4 md:p-6 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50"
+          >
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm md:text-base leading-relaxed break-keep text-left sm:text-center">
+              {t('seo.home.intro')}
+            </p>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
