@@ -8,6 +8,7 @@ import { AboutUs } from "@/components/about-us";
 import { ContactUs } from "@/components/contact-us";
 import { motion } from "framer-motion";
 import { Sparkles, Heart, Brain, Flame } from "lucide-react";
+import { SeoDescriptionDialog } from "@/components/seo-description-dialog";
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -19,10 +20,7 @@ export default function Home() {
                       '무료 심리 테스트로 나의 진짜 성격을 발견하세요. 애착 유형, 나르시시즘, 테토에겐, 밸런스 게임 등 과학적인 심리 분석을 제공합니다.';
 
   const metaConfig = {
-    title: language === 'en' ? 'TypeTest - Personality Psychology Tests' : 
-           language === 'ja' ? 'タイプテスト - 性格心理テスト' : 
-           language === 'zh-cn' ? 'TypeTest - 性格心理测试' :
-           '타입테스트 - 성격 심리 테스트',
+    title: language === 'ko' ? '타입테스트' : 'TypeTest',
     description,
     canonical: 'https://type-test.site/',
     keywords: language === 'en' ? 'free personality test, psychology test, attachment style test, narcissism test, MBTI alternative, personality analysis, psychological assessment, free mental health test' :
@@ -34,10 +32,7 @@ export default function Home() {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": language === 'en' ? 'TypeTest - Free Personality Tests' : 
-             language === 'ja' ? 'タイプテスト - 無料性格テスト' : 
-             language === 'zh-cn' ? 'TypeTest - 免费性格测试' :
-             '타입테스트 - 무료 성격 테스트',
+      "name": language === 'ko' ? '타입테스트' : 'TypeTest',
       "url": "https://type-test.site",
       "description": description,
       "potentialAction": {
@@ -74,7 +69,7 @@ export default function Home() {
           >
             {t('site.title')}
           </motion.h1>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-base sm:text-lg leading-relaxed break-keep">
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-base sm:text-lg leading-relaxed break-keep mb-6">
             {t('site.subtitle')}
           </p>
           
@@ -82,11 +77,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mt-6 max-w-3xl mx-auto p-4 md:p-6 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50"
+            className="flex justify-center"
           >
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm md:text-base leading-relaxed break-keep text-left sm:text-center">
-              {t('seo.home.intro')}
-            </p>
+            <SeoDescriptionDialog
+              title={t('site.title')}
+              descriptionKey="seo.home.intro"
+              buttonVariant="outline"
+              buttonClassName="bg-white/40 dark:bg-zinc-900/40 border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white/60 dark:hover:bg-zinc-800/60"
+            />
           </motion.div>
         </div>
 

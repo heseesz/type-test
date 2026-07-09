@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gender } from "@/lib/test-types";
 import { useLanguage } from "@/contexts/language-context";
-import { InfoPopup } from "@/components/info-popup";
 import { Home, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import { PrivacyPolicy } from "@/components/privacy-policy";
 import { AboutUs } from "@/components/about-us";
 import { ContactUs } from "@/components/contact-us";
 import { motion } from "framer-motion";
+import { SeoDescriptionDialog } from "@/components/seo-description-dialog";
 
 interface WelcomeScreenProps {
   onGenderSelect: (gender: Gender) => void;
@@ -28,16 +28,17 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         <h1 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-zinc-50 leading-tight mb-4 break-keep">
           {t('welcome.title')}
         </h1>
-        <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto text-base leading-relaxed break-keep">
+        <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto text-base leading-relaxed break-keep mb-6">
           {t('welcome.subtitle')}
         </p>
-        <div className="mt-6 p-4 md:p-5 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 text-left">
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed break-keep">
-            {t('seo.tetoEgen.desc')}
-          </p>
-        </div>
-        <div className="flex justify-center mt-4">
-          <InfoPopup />
+        
+        <div className="flex justify-center">
+          <SeoDescriptionDialog
+            title={t('welcome.title')}
+            descriptionKey="seo.tetoEgen.desc"
+            buttonVariant="outline"
+            buttonClassName="bg-white/40 dark:bg-zinc-900/40 border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white/60 dark:hover:bg-zinc-800/60"
+          />
         </div>
       </div>
       
