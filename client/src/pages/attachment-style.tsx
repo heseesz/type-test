@@ -20,7 +20,7 @@ export default function AttachmentStyle() {
 
   const metaConfig = {
     title: language === 'en' ? 'Adult Attachment Style Test - TypeTest' : 
-           language === 'ja' ? '成人愛着スタイルテスト - タイプテスト' : 
+           language === 'ja' ? '成人愛着スタイルテスト - TypeTest' : 
            language === 'zh-cn' ? '成人依恋风格测试 - TypeTest' :
            '성인 애착 유형 테스트 - 타입테스트',
     description,

@@ -6,6 +6,7 @@ import { PrivacyPolicy } from "@/components/privacy-policy";
 import { AboutUs } from "@/components/about-us";
 import { ContactUs } from "@/components/contact-us";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SeoDescriptionDialog } from "@/components/seo-description-dialog";
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { 
@@ -75,10 +76,7 @@ export default function BalanceGame() {
   const [showSpicyWarningModal, setShowSpicyWarningModal] = useState(false);
 
   // Set meta tags for SEO and sharing
-  const titleText = language === 'en' ? 'Balance Game - TypeTest' :
-                    language === 'ja' ? 'バランスゲーム - タイプテスト' :
-                    language === 'zh-cn' ? '平衡游戏 - TypeTest' :
-                    '밸런스 게임 - 타입테스트';
+  const titleText = language === 'ko' ? '밸런스 게임 - 타입테스트' : 'Balance Game - TypeTest';
 
   const descriptionText = language === 'en' ? 'A light and thrilling balance game to play with friends, crushes, or lovers! Choose between two options across multiple difficulties and compare thoughts.' :
                            language === 'ja' ? '友達、気になる人、恋人と一緒に楽しむスリリングなバランスゲーム！様々な難易度の二択から選び、お互いの考えを合わせてみましょう。' :
@@ -471,10 +469,13 @@ export default function BalanceGame() {
                       {t('tests.balanceGame.description')}
                     </p>
 
-                    <div className="mt-6 p-4 md:p-5 bg-zinc-50/50 dark:bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-200/50 dark:border-zinc-700/50 text-left">
-                      <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed break-keep">
-                        {t('seo.balanceGame.desc')}
-                      </p>
+                    <div className="flex justify-center pt-2">
+                      <SeoDescriptionDialog
+                        title={t('tests.balanceGame.title')}
+                        descriptionKey="seo.balanceGame.desc"
+                        buttonVariant="outline"
+                        buttonClassName="bg-white/40 dark:bg-zinc-900/40 border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white/60 dark:hover:bg-zinc-800/60"
+                      />
                     </div>
                   </div>
 

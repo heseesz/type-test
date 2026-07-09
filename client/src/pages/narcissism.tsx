@@ -31,7 +31,7 @@ export default function NarcissismTest() {
 
   const metaConfig = {
     title: language === 'en' ? 'Narcissism Tendency Test - TypeTest' : 
-           language === 'ja' ? 'ナルシシズム傾向テスト - タイプテスト' : 
+           language === 'ja' ? 'ナルシシズム傾向テスト - TypeTest' : 
            language === 'zh-cn' ? '自恋倾向测试 - TypeTest' :
            '나르시시즘 성향 테스트 - 타입테스트',
     description,

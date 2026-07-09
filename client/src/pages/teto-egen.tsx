@@ -21,7 +21,7 @@ export default function TetoEgen() {
 
   const metaConfig = {
     title: language === 'en' ? 'Teto-Egen Personality Test - TypeTest' : 
-           language === 'ja' ? 'テト-エゲン性格テスト - タイプテスト' : 
+           language === 'ja' ? 'テト-エゲン性格テスト - TypeTest' : 
            language === 'zh-cn' ? 'Teto-Egen性格测试 - TypeTest' :
            '테토-에겐 성격 테스트 - 타입테스트',
     description,

@@ -9,11 +9,11 @@ export default function NotFound() {
   // Set meta tags for 404 page
   const metaConfig = {
     title: language === 'en' ? '404 - Page Not Found | TypeTest' : 
-           language === 'ja' ? '404 - ページが見つかりません | タイプテスト' : 
+           language === 'ja' ? '404 - ページが見つかりません | TypeTest' : 
            language === 'zh-cn' ? '404 - 页面未找到 | TypeTest' :
            '404 - 페이지를 찾을 수 없습니다 | 타입테스트',
     description: language === 'en' ? 'The page you are looking for does not exist. Return to TypeTest homepage to access our personality tests.' :
-                language === 'ja' ? 'お探しのページが存在しません。タイプテストのホームページに戻り、性格テストにアクセスしてください。' :
+                language === 'ja' ? 'お探しのページが存在しません。TypeTestのホームページに戻り、性格テストにアクセスしてください。' :
                 language === 'zh-cn' ? '您查找的页面不存在。返回TypeTest主页访问我们的性格测试。' :
                 '찾으시는 페이지가 존재하지 않습니다. 타입테스트 홈페이지로 돌아가 성격 테스트를 이용하세요.',
     canonical: 'https://type-test.site/',
