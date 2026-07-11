@@ -52,6 +52,7 @@ export default function Snowball() {
   const [years, setYears] = useState<number>(10); // Investment period, default 10 years
   const [brokerModalOpen, setBrokerModalOpen] = useState<boolean>(false);
   const [cardModalOpen, setCardModalOpen] = useState<boolean>(false);
+  const [disclaimerOpen, setDisclaimerOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -366,9 +367,16 @@ export default function Snowball() {
 
         </div>
 
-        {/* Informative Note */}
-        <div className="bg-gray-50 dark:bg-gray-900/30 border border-gray-100 dark:border-gray-800/40 p-4 rounded-2xl text-[11px] text-gray-400 dark:text-gray-500 leading-relaxed text-center">
-          * 위 시뮬레이션은 연 복리 수익률(S&P 500 12%, AI 반도체 22%) 및 매월 정기 적립식 투자를 가정한 세전 원리금 합계입니다. 실제 투자 성과 및 운용 보수 등에 따라 결과가 달라질 수 있습니다.
+        {/* Disclaimer Button */}
+        <div className="flex justify-center">
+          <Button
+            variant="ghost"
+            onClick={() => setDisclaimerOpen(true)}
+            className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 underline underline-offset-4 flex items-center gap-1.5"
+          >
+            <HelpCircle className="h-3.5 w-3.5" />
+            시뮬레이션 유의사항 및 투자 고지 보기
+          </Button>
         </div>
 
         {/* CTA Area (Two-Track Fake Door Buttons) */}
@@ -506,6 +514,58 @@ export default function Snowball() {
               disabled={isSubmitting}
             >
               {isSubmitting ? '신청 처리 중...' : '캐시백 혜택 알림 신청하기'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+      
+      {/* 3. Disclaimer & Legal Notice Modal */}
+      <Dialog open={disclaimerOpen} onOpenChange={setDisclaimerOpen}>
+        <DialogContent className="max-w-md rounded-3xl p-6 bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800">
+          <DialogHeader className="pb-3 border-b border-gray-100 dark:border-gray-800">
+            <DialogTitle className="text-lg font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+              <span>💡</span> 시뮬레이션 유의사항 및 법적 고지
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-4 max-h-[60vh] overflow-y-auto pr-1 space-y-4 text-xs text-gray-650 dark:text-gray-400 leading-relaxed text-left">
+            <p>
+              본 시뮬레이터는 사용자가 지정한 배달 음식 소비액을 투자 재원으로 가정하여 산출한 모의 계산 결과이며, 실제 투자 성과를 보장하지 않습니다.
+            </p>
+            
+            <div className="space-y-1">
+              <h4 className="font-bold text-gray-800 dark:text-gray-200">1. 투자 원금 손실 가능성 및 예금자 보호제도 미적용</h4>
+              <p>
+                본 시뮬레이션에 언급된 S&P 500 지수 추종 상품 및 AI 반도체 ETF 등 모든 금융투자상품은 예금자보호법에 따라 보호되지 않으며, 시장 상황에 따른 가격 변동으로 투자 원금의 일부 또는 전부의 손실이 발생할 수 있습니다. 발생한 모든 투자 손익은 투자자 본인에게 귀속됩니다.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <h4 className="font-bold text-gray-800 dark:text-gray-200">2. 기대 수익률에 대한 유의사항</h4>
+              <p>
+                시뮬레이션에서 가정한 연평균 수익률(시나리오 A: 12%, 시나리오 B: 22%)은 과거 특정 기간의 역사적 통계 지표를 단순 인용한 예시값에 불과합니다. 과거의 우수한 수익률이나 운용 성과가 미래의 성과를 보증하지 않으며, 실제 자산 운용 시 시장 환경 변화, 운용사 보수, 증권 거래세, 양도소득세 등 제반 비용이 반영되면 최종 원리금은 본 결과와 크게 다를 수 있습니다.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <h4 className="font-bold text-gray-800 dark:text-gray-200">3. 비권유 고지 및 면책성명</h4>
+              <p>
+                본 서비스가 제공하는 정보와 계산 수치는 투자 판단을 돕기 위한 참고 자료일 뿐이며, 특정 증권사/카드사의 상품 가입 권유, 주식 매수·매도 추천 또는 투자 권유 목적으로 제작되지 않았습니다. 본 서비스 및 운영진은 사용자가 본 시뮬레이션 결과에 기반하여 내린 어떠한 투자 결정이나 행위에 대해서도 법적 책임을 지지 않습니다.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <h4 className="font-bold text-gray-800 dark:text-gray-200">4. 제휴 서비스 및 혜택의 사전 수요조사 안내</h4>
+              <p>
+                본 페이지를 통해 수집하는 증권사/카드사 제휴 알림 신청은 실제 해당 기관과의 공식 제휴가 완료되지 않은 기획 구상(Fake Door) 및 사전 수요조사 마케팅 단계입니다. 추후 제휴 서비스 출시 시 실제 가입 조건이나 캐시백 및 가입 축하금 등의 구체적 혜택은 변동되거나 금융사의 사정으로 서비스 런칭 자체가 무산될 수 있습니다.
+              </p>
+            </div>
+          </div>
+          <div className="pt-2">
+            <Button 
+              onClick={() => setDisclaimerOpen(false)}
+              className="w-full bg-gray-900 hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 text-white font-bold py-3 rounded-xl transition-all text-xs"
+            >
+              확인 및 닫기
             </Button>
           </div>
         </DialogContent>
