@@ -99,7 +99,7 @@ export function AttachmentResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 Discover your true attachment type!\n`;
       shareText += `👇 Try it now for free!\n`;
-      shareText += `🔗 http://type-test.co.kr/attachment-style`;
+      shareText += `🔗 https://type-test.co.kr/attachment-style`;
     } else if (language === 'ja') {
       shareTitle = '成人愛着タイプテスト結果 - タイプテスト';
       shareText = `🌟 成人愛着タイプテスト結果 🌟\n\n`;
@@ -110,7 +110,7 @@ export function AttachmentResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 あなたの愛着タイプを診断してみましょう！\n`;
       shareText += `👇 無料でテストを開始\n`;
-      shareText += `🔗 http://type-test.co.kr/attachment-style`;
+      shareText += `🔗 https://type-test.co.kr/attachment-style`;
     } else if (language === 'zh-cn') {
       shareTitle = '成人依恋风格测试结果 - TypeTest';
       shareText = `🌟 成人依恋风格测试结果 🌟\n\n`;
@@ -121,7 +121,7 @@ export function AttachmentResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 了解你的依恋类型！\n`;
       shareText += `👇 立即免费测试\n`;
-      shareText += `🔗 http://type-test.co.kr/attachment-style`;
+      shareText += `🔗 https://type-test.co.kr/attachment-style`;
     } else {
       shareTitle = '성인 애착 유형 테스트 결과 - 타입테스트';
       shareText = `🌟 성인 애착 유형 테스트 결과 🌟\n\n`;
@@ -132,7 +132,7 @@ export function AttachmentResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 나의 숨겨진 진짜 애착 유형이 궁금하다면?\n`;
       shareText += `👇 지금 무료로 분석해 보세요!\n`;
-      shareText += `🔗 http://type-test.co.kr/attachment-style`;
+      shareText += `🔗 https://type-test.co.kr/attachment-style`;
     }
     
     if (navigator.share) {
@@ -140,7 +140,7 @@ export function AttachmentResultScreen({
         await navigator.share({
           title: shareTitle,
           text: shareText,
-          url: 'http://type-test.co.kr/attachment-style'
+          url: 'https://type-test.co.kr/attachment-style'
         });
       } catch (err) {
         console.log('공유 취소됨');

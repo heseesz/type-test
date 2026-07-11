@@ -98,7 +98,7 @@ export function NarcissismResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 Check your narcissistic tendency!\n`;
       shareText += `👇 Try it now for free!\n`;
-      shareText += `🔗 http://type-test.co.kr/narcissism`;
+      shareText += `🔗 https://type-test.co.kr/narcissism`;
     } else if (language === 'ja') {
       shareTitle = 'ナルシシズム傾向テスト結果 - タイプテスト';
       shareText = `🌟 ナルシシズム傾向テスト結果 🌟\n\n`;
@@ -109,7 +109,7 @@ export function NarcissismResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 あなたの自己愛レベルを調べてみましょう！\n`;
       shareText += `👇 無料でテストを開始\n`;
-      shareText += `🔗 http://type-test.co.kr/narcissism`;
+      shareText += `🔗 https://type-test.co.kr/narcissism`;
     } else if (language === 'zh-cn') {
       shareTitle = '自恋倾向测试结果 - TypeTest';
       shareText = `🌟 自恋倾向测试结果 🌟\n\n`;
@@ -120,7 +120,7 @@ export function NarcissismResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 了解你的自恋指数！\n`;
       shareText += `👇 立即免费测试\n`;
-      shareText += `🔗 http://type-test.co.kr/narcissism`;
+      shareText += `🔗 https://type-test.co.kr/narcissism`;
     } else {
       shareTitle = '나르시시즘 성향 테스트 결과 - 타입테스트';
       shareText = `🌟 나르시시즘 성향 테스트 결과 🌟\n\n`;
@@ -131,13 +131,13 @@ export function NarcissismResultScreen({
       shareText += `──────────────────\n`;
       shareText += `🔎 나는 자존감이 높은 걸까, 나르시시스트일까?\n`;
       shareText += `👇 지금 무료로 테스트하기\n`;
-      shareText += `🔗 http://type-test.co.kr/narcissism`;
+      shareText += `🔗 https://type-test.co.kr/narcissism`;
     }
 
     const shareData = {
       title: shareTitle,
       text: shareText,
-      url: 'http://type-test.co.kr/narcissism'
+      url: 'https://type-test.co.kr/narcissism'
     };
 
     try {

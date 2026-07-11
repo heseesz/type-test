@@ -44,7 +44,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       shareText += `──────────────────\n`;
       shareText += `🔎 Find out if you are Teto or Egen!\n`;
       shareText += `👇 Try it now for free!\n`;
-      shareText += `🔗 http://type-test.co.kr/teto-egen`;
+      shareText += `🔗 https://type-test.co.kr/teto-egen`;
     } else if (language === 'ja') {
       shareTitle = 'テト-エゲン性格テスト結果 - タイプテスト';
       shareText = `🌟 テト-エゲン性格テスト結果 🌟\n\n`;
@@ -55,7 +55,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       shareText += `──────────────────\n`;
       shareText += `🔎 あなたはテト（感性）ですか、エゲン（理性）ですか？\n`;
       shareText += `👇 無料でテストを開始\n`;
-      shareText += `🔗 http://type-test.co.kr/teto-egen`;
+      shareText += `🔗 https://type-test.co.kr/teto-egen`;
     } else if (language === 'zh-cn') {
       shareTitle = 'Teto-Egen性格测试结果 - TypeTest';
       shareText = `🌟 Teto-Egen性格测试结果 🌟\n\n`;
@@ -66,7 +66,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       shareText += `──────────────────\n`;
       shareText += `🔎 你是感性的Teto还是理性的Egen？\n`;
       shareText += `👇 立即免费测试\n`;
-      shareText += `🔗 http://type-test.co.kr/teto-egen`;
+      shareText += `🔗 https://type-test.co.kr/teto-egen`;
     } else {
       shareTitle = '테토-에겐 성격 테스트 결과 - 타입테스트';
       shareText = `🌟 테토-에겐 성격 테스트 결과 🌟\n\n`;
@@ -77,7 +77,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
       shareText += `──────────────────\n`;
       shareText += `🔎 당신의 이성과 감성의 비율은 어떻게 될까요?\n`;
       shareText += `👇 지금 무료로 확인해 보세요!\n`;
-      shareText += `🔗 http://type-test.co.kr/teto-egen`;
+      shareText += `🔗 https://type-test.co.kr/teto-egen`;
     }
 
     if (navigator.share) {
@@ -85,7 +85,7 @@ export function ResultScreen({ result, tetoScore, egenScore, onRestart }: Result
         await navigator.share({
           title: shareTitle,
           text: shareText,
-          url: 'http://type-test.co.kr/teto-egen'
+          url: 'https://type-test.co.kr/teto-egen'
         });
       } catch (error) {
         handleCopyToClipboard(shareText);

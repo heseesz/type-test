@@ -16,8 +16,8 @@ export default function NotFound() {
                 language === 'ja' ? 'お探しのページが存在しません。TypeTestのホームページに戻り、性格テストにアクセスしてください。' :
                 language === 'zh-cn' ? '您查找的页面不存在。返回TypeTest主页访问我们的性格测试。' :
                 '찾으시는 페이지가 존재하지 않습니다. 타입테스트 홈페이지로 돌아가 성격 테스트를 이용하세요.',
-    canonical: 'http://type-test.co.kr/',
-    ogImage: 'http://type-test.co.kr/og-image.jpg'
+    canonical: 'https://type-test.co.kr/',
+    ogImage: 'https://type-test.co.kr/og-image.jpg'
   };
   
   useMetaTags(metaConfig);

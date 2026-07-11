@@ -22,24 +22,24 @@ export default function Home() {
   const metaConfig = {
     title: language === 'ko' ? '타입테스트' : 'TypeTest',
     description,
-    canonical: 'http://type-test.co.kr/',
+    canonical: 'https://type-test.co.kr/',
     keywords: language === 'en' ? 'free personality test, psychology test, attachment style test, narcissism test, MBTI alternative, personality analysis, psychological assessment, free mental health test' :
               language === 'ja' ? '無料性格テスト、心理テスト、愛着スタイルテスト、ナルシシズムテスト、MBTI代替、性格分析、心理的評価、無料メンタルヘルステスト' :
               language === 'zh-cn' ? '免费性格测试, 心理测试, 依恋风格测试, 自恋测试, MBTI替代, 性格分析, 心理评估, 免费心理健康测试' :
               '무료 성격테스트, 심리테스트, 애착유형 테스트, 나르시시즘 테스트, MBTI 대안, 성격분석, 심리 평가, 무료 정신건강 테스트',
-    ogImage: 'http://type-test.co.kr/og-image.jpg',
+    ogImage: 'https://type-test.co.kr/og-image.jpg',
     type: 'website' as const,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": language === 'ko' ? '타입테스트' : 'TypeTest',
-      "url": "http://type-test.co.kr",
+      "url": "https://type-test.co.kr",
       "description": description,
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "http://type-test.co.kr/?q={search_term_string}"
+          "urlTemplate": "https://type-test.co.kr/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }

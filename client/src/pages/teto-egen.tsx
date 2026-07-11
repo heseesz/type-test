@@ -25,12 +25,12 @@ export default function TetoEgen() {
            language === 'zh-cn' ? 'Teto-Egen性格测试 - TypeTest' :
            '테토-에겐 성격 테스트 - 타입테스트',
     description,
-    canonical: 'http://type-test.co.kr/teto-egen',
+    canonical: 'https://type-test.co.kr/teto-egen',
     keywords: language === 'en' ? 'Teto Egen personality test, free personality test, Korean personality test, energetic vs calm personality, personality analysis' :
               language === 'ja' ? 'テトエゲン性格テスト、無料性格テスト、韓国性格テスト、エネルギッシュvs穏やか性格、性格分析' :
               language === 'zh-cn' ? 'Teto Egen性格测试, 免费性格测试, 韩国性格测试, 活跃vs平静性格, 性格分析' :
               '테토에겐 성격테스트, 무료 성격테스트, 한국 성격테스트, 활발함vs차분함 성격, 성격분석',
-    ogImage: 'http://type-test.co.kr/og-image.jpg',
+    ogImage: 'https://type-test.co.kr/og-image.jpg',
     type: 'article' as const,
     structuredData: {
       "@context": "https://schema.org",
@@ -40,7 +40,7 @@ export default function TetoEgen() {
              language === 'zh-cn' ? 'Teto-Egen性格测试' :
              '테토-에겐 성격 테스트',
       "description": description,
-      "url": "http://type-test.co.kr/teto-egen",
+      "url": "https://type-test.co.kr/teto-egen",
       "author": {
         "@type": "Organization",
         "name": "TypeTest"
