@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMetaTags } from '@/hooks/use-meta-tags';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -9,10 +9,11 @@ import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { AboutUs } from '@/components/about-us';
 import { PrivacyPolicy } from '@/components/privacy-policy';
 import { ContactUs } from '@/components/contact-us';
+import { useLanguage } from '@/contexts/language-context';
 import { 
   TrendingUp, 
   Coins, 
@@ -26,6 +27,15 @@ import {
 
 export default function Snowball() {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const [_, setLocation] = useLocation();
+
+  // Redirect if language is not Korean
+  useEffect(() => {
+    if (language !== 'ko') {
+      setLocation('/');
+    }
+  }, [language, setLocation]);
   
   // SEO & Meta tags configuration
   useMetaTags({

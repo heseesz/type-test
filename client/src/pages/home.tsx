@@ -186,28 +186,30 @@ export default function Home() {
           </motion.div>
 
           {/* Card 5: Snowball Simulator */}
-          <motion.div whileHover={{ scale: 1.025, y: -4 }} whileTap={{ scale: 0.985 }} className="md:col-span-2 flex">
-            <Card className="bg-white/80 dark:bg-zinc-900/90 backdrop-blur border-zinc-200 dark:border-zinc-800 hover:shadow-2xl transition-all duration-300 rounded-2xl flex flex-col md:flex-row w-full overflow-hidden">
-              <CardHeader className="text-center md:text-left pb-4 md:pb-6 relative md:w-1/3 flex flex-col justify-center items-center md:items-start p-6">
-                <div className="text-4xl mb-3 mt-2 flex items-center justify-center gap-1.5 filter drop-shadow">
-                  <span>💰</span><span>❄️</span>
-                </div>
-                <CardTitle className="text-xl font-bold text-zinc-800 dark:text-zinc-100 break-keep">
-                  {t('tests.snowball.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center md:text-left space-y-5 flex-1 flex flex-col justify-between p-6 md:p-6 md:pl-0 md:w-2/3">
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed min-h-[3rem] flex items-center md:justify-start justify-center break-keep font-medium">
-                  {t('tests.snowball.description')}
-                </p>
-                <Link href="/snowball">
-                  <Button className="w-full py-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 text-white rounded-xl font-bold shadow-md shadow-indigo-500/10">
-                    {t('tests.snowball.start')}
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {language === 'ko' && (
+            <motion.div whileHover={{ scale: 1.025, y: -4 }} whileTap={{ scale: 0.985 }} className="md:col-span-2 flex">
+              <Card className="bg-white/80 dark:bg-zinc-900/90 backdrop-blur border-zinc-200 dark:border-zinc-800 hover:shadow-2xl transition-all duration-300 rounded-2xl flex flex-col md:flex-row w-full overflow-hidden">
+                <CardHeader className="text-center md:text-left pb-4 md:pb-6 relative md:w-1/3 flex flex-col justify-center items-center md:items-start p-6">
+                  <div className="text-4xl mb-3 mt-2 flex items-center justify-center gap-1.5 filter drop-shadow">
+                    <span>💰</span><span>❄️</span>
+                  </div>
+                  <CardTitle className="text-xl font-bold text-zinc-800 dark:text-zinc-100 break-keep">
+                    {t('tests.snowball.title')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center md:text-left space-y-5 flex-1 flex flex-col justify-between p-6 md:p-6 md:pl-0 md:w-2/3">
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed min-h-[3rem] flex items-center md:justify-start justify-center break-keep font-medium">
+                    {t('tests.snowball.description')}
+                  </p>
+                  <Link href="/snowball">
+                    <Button className="w-full py-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 text-white rounded-xl font-bold shadow-md shadow-indigo-500/10">
+                      {t('tests.snowball.start')}
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </motion.div>
+          )}
         </div>
 
         {/* Footer Links & Copyright */}
