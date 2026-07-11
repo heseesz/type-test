@@ -93,7 +93,7 @@ const translations = {
     'tests.balanceGame.title': '19금 밸런스 게임',
     'tests.balanceGame.description': '친구, 연인과 함께 즐기는 매운 맛 밸런스 게임!\n(19금 주의 🔞)',
     'tests.balanceGame.start': '시작하기',
-    'tests.snowball.title': '배달비 스노우볼 복리 시뮬레이터',
+    'tests.snowball.title': '복리 시뮬레이터',
     'tests.snowball.description': '매달 지출하는 배달음식 비용을 아껴 복리로 투자했다면 미래에 얼마가 되었을까요? S&P 500과 AI 반도체 ETF 투자의 스노우볼 효과를 직접 시뮬레이션해 보세요.',
     'tests.snowball.start': '스노우볼 굴리러 가기'
   },
@@ -178,7 +178,7 @@ const translations = {
     'tests.balanceGame.title': '19+ Balance Game',
     'tests.balanceGame.description': 'A spicy balance game to enjoy with friends and lovers!\n(18+ warning 🔞)',
     'tests.balanceGame.start': 'Start Game',
-    'tests.snowball.title': 'Delivery Cost Snowball Simulator',
+    'tests.snowball.title': 'Compound Interest Simulator',
     'tests.snowball.description': 'How much would the delivery fee accumulate if invested with compound interest? Simulate the magic of S&P 500 and AI Semiconductor ETFs right now.',
     'tests.snowball.start': 'Start Simulation'
   },
@@ -250,7 +250,7 @@ const translations = {
     'tests.balanceGame.title': 'Juego de Equilibrio 18+',
     'tests.balanceGame.description': '¡Un juego de equilibrio picante para disfrutar con amigos y parejas!\n(Advertencia 18+ 🔞)',
     'tests.balanceGame.start': 'Iniciar Juego',
-    'tests.snowball.title': 'Delivery Cost Snowball Simulator',
+    'tests.snowball.title': 'Compound Interest Simulator',
     'tests.snowball.description': 'How much would the delivery fee accumulate if invested with compound interest? Simulate the magic of S&P 500 and AI Semiconductor ETFs right now.',
     'tests.snowball.start': 'Start Simulation'
   },
@@ -333,7 +333,7 @@ const translations = {
     'tests.balanceGame.title': '19禁平衡游戏',
     'tests.balanceGame.description': '与朋友、恋人一起玩的辣味平衡游戏！\n（18禁注意 🔞）',
     'tests.balanceGame.start': '开始游戏',
-    'tests.snowball.title': '外卖费滚雪球模拟器',
+    'tests.snowball.title': '复利模拟器',
     'tests.snowball.description': '如果把每月的外卖费存下来进行复利投资，未来会变成多少？立即模拟S&P 500与AI半导体ETF滚雪球的魔力。',
     'tests.snowball.start': '开始模拟'
   },
@@ -410,7 +410,7 @@ const translations = {
     'tests.balanceGame.title': '19禁バランスゲーム',
     'tests.balanceGame.description': '友達や恋人と一緒に楽しむ激辛バランスゲーム！\n（19禁注意 🔞）',
     'tests.balanceGame.start': 'ゲーム開始',
-    'tests.snowball.title': '配達料スノーボールシミュレーター',
+    'tests.snowball.title': '複利シミュレーター',
     'tests.snowball.description': '毎月使う配達料を複利で投資していたらいくらになっていたでしょうか？S&P 500とAI半導体ETFの驚くべき複利効果を今すぐ体験してください。',
     'tests.snowball.start': 'シミュレーション開始'
   },
@@ -478,7 +478,7 @@ const translations = {
     'tests.balanceGame.title': 'Trò chơi Cân bằng 18+',
     'tests.balanceGame.description': 'Trò chơi cân bằng cay cú để thưởng thức cùng bạn bè và người yêu!\n(Cảnh báo 18+ 🔞)',
     'tests.balanceGame.start': 'Bắt đầu',
-    'tests.snowball.title': 'Delivery Cost Snowball Simulator',
+    'tests.snowball.title': 'Compound Interest Simulator',
     'tests.snowball.description': 'How much would the delivery fee accumulate if invested with compound interest? Simulate the magic of S&P 500 and AI Semiconductor ETFs right now.',
     'tests.snowball.start': 'Start Simulation'
   }

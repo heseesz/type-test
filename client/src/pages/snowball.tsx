@@ -40,7 +40,7 @@ export default function Snowball() {
   
   // SEO & Meta tags configuration
   useMetaTags({
-    title: '배달비 스노우볼 복리 시뮬레이터 - 타입테스트',
+    title: '복리 시뮬레이터 - 타입테스트',
     description: '매달 지출하는 배달음식 비용을 아껴 투자했다면 얼마가 되었을까요? S&P 500과 AI 반도체 ETF 복리 투자의 마법을 지금 직접 시뮬레이션해 보세요.',
     canonical: 'https://type-test.co.kr/snowball',
     keywords: '복리 계산기, 스노우볼, 배달비 아끼기, S&P 500, AI 반도체 투자, 소액 투자, 재테크 시뮬레이터, 파이어족',
@@ -231,7 +231,7 @@ export default function Snowball() {
             <Coins className="h-6 w-6 animate-pulse" />
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
-            배달비 스노우볼 효과
+            복리 시뮬레이터
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs mx-auto">
             무심코 쓰는 배달 음식을 줄이고 복리로 투자했다면 미래 내 자산은 어떻게 변할까요?
