@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -30,6 +30,8 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
@@ -37,9 +39,11 @@ function App() {
           <TooltipProvider>
             <Toaster />
             {/* Language Toggle - Top Left */}
-            <div className="fixed top-4 left-4 z-50">
-              <LanguageToggle />
-            </div>
+            {location !== '/snowball' && (
+              <div className="fixed top-4 left-4 z-50">
+                <LanguageToggle />
+              </div>
+            )}
             {/* Theme Toggle - Top Right */}
             <div className="fixed top-4 right-4 z-50">
               <ThemeToggle />
