@@ -30,7 +30,7 @@ export default function TetoEgen() {
               language === 'ja' ? 'テトエゲン性格テスト、無料性格テスト、韓国性格テスト、エネルギッシュvs穏やか性格、性格分析' :
               language === 'zh-cn' ? 'Teto Egen性格测试, 免费性格测试, 韩国性格测试, 活跃vs平静性格, 性格分析' :
               '테토에겐 성격테스트, 무료 성격테스트, 한국 성격테스트, 활발함vs차분함 성격, 성격분석',
-    ogImage: 'https://type-test.co.kr/og-image.jpg',
+    ogImage: 'https://type-test.co.kr/og-image-v2.jpg',
     type: 'article' as const,
     structuredData: {
       "@context": "https://schema.org",

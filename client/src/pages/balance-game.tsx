@@ -88,7 +88,7 @@ export default function BalanceGame() {
     description: descriptionText,
     canonical: 'https://type-test.co.kr/balance-game',
     keywords: 'balance game, couple game, icebreaker questions, flirt questions, 19+ balance game, 밸런스 게임, 19금 밸런스 게임, 커플 밸런스게임, 밸런스게임 질문, 썸 질문, 가치관 테스트',
-    ogImage: 'https://type-test.co.kr/og-image.jpg',
+    ogImage: 'https://type-test.co.kr/og-image-v2.jpg',
     type: 'website',
     structuredData: {
       "@context": "https://schema.org",

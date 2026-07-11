@@ -27,7 +27,7 @@ export default function Home() {
               language === 'ja' ? '無料性格テスト、心理テスト、愛着スタイルテスト、ナルシシズムテスト、MBTI代替、性格分析、心理的評価、無料メンタルヘルステスト' :
               language === 'zh-cn' ? '免费性格测试, 心理测试, 依恋风格测试, 自恋测试, MBTI替代, 性格分析, 心理评估, 免费心理健康测试' :
               '무료 성격테스트, 심리테스트, 애착유형 테스트, 나르시시즘 테스트, MBTI 대안, 성격분석, 심리 평가, 무료 정신건강 테스트',
-    ogImage: 'https://type-test.co.kr/og-image.jpg',
+    ogImage: 'https://type-test.co.kr/og-image-v2.jpg',
     type: 'website' as const,
     structuredData: {
       "@context": "https://schema.org",
