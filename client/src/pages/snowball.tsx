@@ -42,9 +42,9 @@ export default function Snowball() {
   useMetaTags({
     title: '복리 시뮬레이터 - 타입테스트',
     description: '매달 지출하는 배달음식 비용을 아껴 투자했다면 얼마가 되었을까요? S&P 500과 AI 반도체 ETF 복리 투자의 마법을 지금 직접 시뮬레이션해 보세요.',
-    canonical: 'https://type-test.co.kr/snowball',
+    canonical: 'http://type-test.co.kr/snowball',
     keywords: '복리 계산기, 스노우볼, 배달비 아끼기, S&P 500, AI 반도체 투자, 소액 투자, 재테크 시뮬레이터, 파이어족',
-    ogImage: 'https://type-test.co.kr/og-image.jpg',
+    ogImage: 'http://type-test.co.kr/og-image.jpg',
     type: 'application'
   });
 
@@ -59,9 +59,9 @@ export default function Snowball() {
 
   // Result Sharing Logic
   const handleShare = async () => {
-    const shareTitle = '배달비 스노우볼 복리 시뮬레이터 - 타입테스트';
-    let shareText = `💸 배달비 아껴 복리로 굴린 스노우볼 결과 💸\n\n`;
-    shareText += `[한 달 배달 소비액]\n👉 ${deliveryCost}만 원\n\n`;
+    const shareTitle = '복리 시뮬레이터 - 타입테스트';
+    let shareText = `💸 복리로 굴린 스노우볼 결과 💸\n\n`;
+    shareText += `[한 달 아낀 지출액]\n👉 ${deliveryCost}만 원\n\n`;
     shareText += `[투자 기간: ${years}년]\n`;
     shareText += `📊 안정형 (S&P 500, 연 12%)\n`;
     shareText += `💰 예상 금액: ${formatMoney(resultA)} (원금 대비 ${multiplierA}배)\n\n`;
@@ -72,16 +72,16 @@ export default function Snowball() {
       shareText += `👉 무려 +${formatMoney(difference)} 더 획득!\n\n`;
     }
     shareText += `──────────────────\n`;
-    shareText += `🔎 당신의 배달비는 복리로 굴리면 얼마가 될까요?\n`;
+    shareText += `🔎 당신의 돈을 복리로 굴리면 얼마가 될까요?\n`;
     shareText += `👇 지금 바로 시뮬레이션해 보세요!\n`;
-    shareText += `🔗 https://type-test.co.kr/snowball`;
+    shareText += `🔗 http://type-test.co.kr/snowball`;
 
     if (navigator.share) {
       try {
         await navigator.share({
           title: shareTitle,
           text: shareText,
-          url: 'https://type-test.co.kr/snowball'
+          url: 'http://type-test.co.kr/snowball'
         });
       } catch (error) {
         handleCopyToClipboard(shareText);
