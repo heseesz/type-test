@@ -1,0 +1,479 @@
+import { useState } from 'react';
+import { useMetaTags } from '@/hooks/use-meta-tags';
+import { useToast } from '@/hooks/use-toast';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Slider } from '@/components/ui/slider';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  TrendingUp, 
+  Coins, 
+  Sparkles, 
+  PiggyBank, 
+  CreditCard, 
+  ArrowUpRight, 
+  HelpCircle 
+} from 'lucide-react';
+
+export default function Snowball() {
+  const { toast } = useToast();
+  
+  // SEO & Meta tags configuration
+  useMetaTags({
+    title: '배달비 스노우볼 복리 시뮬레이터 - 타입테스트',
+    description: '매달 지출하는 배달음식 비용을 아껴 투자했다면 얼마가 되었을까요? S&P 500과 AI 반도체 ETF 복리 투자의 마법을 지금 직접 시뮬레이션해 보세요.',
+    canonical: 'https://type-test.site/snowball',
+    keywords: '복리 계산기, 스노우볼, 배달비 아끼기, S&P 500, AI 반도체 투자, 소액 투자, 재테크 시뮬레이터, 파이어족',
+    ogImage: 'https://type-test.site/favicon.svg',
+    type: 'application'
+  });
+
+  // State Management
+  const [deliveryCost, setDeliveryCost] = useState<number>(20); // Monthly cost in 10,000 KRW, default 20 (200,000 KRW)
+  const [years, setYears] = useState<number>(10); // Investment period, default 10 years
+  const [brokerModalOpen, setBrokerModalOpen] = useState<boolean>(false);
+  const [cardModalOpen, setCardModalOpen] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  // Interest Rates
+  const rateA = 0.12; // S&P 500 (12%)
+  const rateB = 0.22; // SOL AI Semiconductor (22%)
+
+  // Compound Interest Calculation Logic
+  // Formula for Monthly Ordinary Annuity (Compounded Monthly, Deposit at start of month)
+  // S_n = P * (1 + i) * ((1 + i)^n - 1) / i
+  const calculateCompound = (monthlyDeposit: number, annualRate: number, yearsPeriod: number) => {
+    const i = annualRate / 12;
+    const n = yearsPeriod * 12;
+    if (i === 0) return monthlyDeposit * n;
+    return monthlyDeposit * (1 + i) * (Math.pow(1 + i, n) - 1) / i;
+  };
+
+  // Calculations
+  const resultA = calculateCompound(deliveryCost, rateA, years);
+  const resultB = calculateCompound(deliveryCost, rateB, years);
+  const difference = resultB - resultA;
+  const principal = deliveryCost * 12 * years; // Total principal in 10,000 KRW
+
+  const multiplierA = principal > 0 ? (resultA / principal).toFixed(1) : '0';
+  const multiplierB = principal > 0 ? (resultB / principal).toFixed(1) : '0';
+
+  // Money Formatter Helper
+  const formatMoney = (tenThousandWon: number): string => {
+    const rounded = Math.round(tenThousandWon);
+    if (rounded >= 10000) {
+      const eok = Math.floor(rounded / 10000);
+      const man = rounded % 10000;
+      if (man === 0) {
+        return `${eok.toLocaleString()}억 원`;
+      }
+      return `${eok.toLocaleString()}억 ${man.toLocaleString()}만 원`;
+    }
+    return `${rounded.toLocaleString()}만 원`;
+  };
+
+  // CTA Click Handlers with GA4 Tracking
+  const handleCtaClick = (type: 'broker' | 'card') => {
+    if (type === 'broker') {
+      (window as any).gtag?.('event', 'click_broker_cta');
+      setBrokerModalOpen(true);
+    } else {
+      (window as any).gtag?.('event', 'click_card_cta');
+      setCardModalOpen(true);
+    }
+  };
+
+  // Google Forms Submit Handler
+  const handleEmailSubmit = async (type: 'broker' | 'card') => {
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim() || !emailRegex.test(email)) {
+      toast({
+        variant: "destructive",
+        title: "이메일 주소 확인",
+        description: "올바른 이메일 주소를 입력해 주세요.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Track Lead Generation in GA4
+    const eventName = type === 'broker' ? 'generate_lead_broker' : 'generate_lead_card';
+    (window as any).gtag?.('event', eventName, {
+      event_category: 'Lead Generation',
+      event_label: email
+    });
+
+    const formUrl = type === 'broker'
+      ? 'https://docs.google.com/forms/d/e/1FAIpQLSfOJsIblJtr4JnoZeZPjlIxx-iP2TTn8u7LDgZ2rMRLppqK4w/formResponse'
+      : 'https://docs.google.com/forms/d/e/1FAIpQLSebdpc0YPWN1mTnIvBSq4tti93Zdm5apxOuTovl4uL3vVz0VQ/formResponse';
+
+    const formData = new URLSearchParams();
+    formData.append('entry.549071033', email);
+
+    try {
+      // mode: 'no-cors' is required to bypass CORS on Google Forms actions
+      await fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData.toString()
+      });
+
+      toast({
+        title: "알림 신청이 완료되었습니다!",
+        description: "제휴 혜택이 확정되는 대로 가장 먼저 이메일로 안내해 드릴게요.",
+      });
+
+      // Reset state and close modal
+      setEmail('');
+      setBrokerModalOpen(false);
+      setCardModalOpen(false);
+    } catch (error) {
+      console.error('Google Forms Submit Error:', error);
+      // Fallback: opaque response can trigger error in standard fetch wrappers but still succeeds.
+      toast({
+        title: "알림 신청이 완료되었습니다!",
+        description: "제휴 혜택이 확정되는 대로 가장 먼저 이메일로 안내해 드릴게요.",
+      });
+      setEmail('');
+      setBrokerModalOpen(false);
+      setCardModalOpen(false);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950/30 py-12 px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
+      
+      {/* Container */}
+      <div className="max-w-md mx-auto w-full space-y-8 flex-1 flex flex-col justify-center">
+        
+        {/* Header Section */}
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center justify-center p-2.5 bg-indigo-100 dark:bg-indigo-950/50 rounded-2xl text-indigo-600 dark:text-indigo-400 mb-2">
+            <Coins className="h-6 w-6 animate-pulse" />
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
+            배달비 스노우볼 효과
+          </h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs mx-auto">
+            무심코 쓰는 배달 음식을 줄이고 복리로 투자했다면 미래 내 자산은 어떻게 변할까요?
+          </p>
+        </div>
+
+        {/* Input Card */}
+        <Card className="border-gray-200/80 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur shadow-xl rounded-3xl">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-lg font-bold text-gray-800 dark:text-gray-200 flex items-center gap-2">
+              <PiggyBank className="h-5 w-5 text-purple-500" />
+              배달 지출 비용 설정
+            </CardTitle>
+            <CardDescription className="text-xs">
+              한 달에 배달 음식에 쓰는 대략적인 금액을 지정해 주세요.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-semibold text-gray-600 dark:text-gray-400">월 소비액</span>
+                <div className="flex items-center gap-2">
+                  <Input
+                    type="number"
+                    value={deliveryCost === 0 ? '' : deliveryCost}
+                    onChange={(e) => {
+                      const val = Number(e.target.value);
+                      if (val >= 0 && val <= 1000) {
+                        setDeliveryCost(val);
+                      }
+                    }}
+                    className="w-24 text-right text-lg font-bold text-indigo-600 dark:text-indigo-400 bg-gray-50 dark:bg-gray-950 border-gray-200 dark:border-gray-800 focus-visible:ring-indigo-500 rounded-xl"
+                    min={0}
+                    max={1000}
+                  />
+                  <span className="text-sm font-bold text-gray-700 dark:text-gray-300">만 원</span>
+                </div>
+              </div>
+
+              {/* Custom Slider */}
+              <div className="pt-2 px-1">
+                <Slider
+                  defaultValue={[20]}
+                  value={[deliveryCost]}
+                  max={150}
+                  min={1}
+                  step={1}
+                  onValueChange={(val) => setDeliveryCost(val[0])}
+                  className="py-4 cursor-pointer"
+                />
+                <div className="flex justify-between text-[10px] text-gray-400 font-medium px-0.5">
+                  <span>1만 원</span>
+                  <span>50만 원</span>
+                  <span>100만 원</span>
+                  <span>150만 원</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Investment Period Tabs */}
+        <div className="space-y-3">
+          <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider block text-center">
+            투자 시뮬레이션 기간
+          </label>
+          <Tabs 
+            value={years.toString()} 
+            onValueChange={(val) => setYears(Number(val))} 
+            className="w-full"
+          >
+            <TabsList className="grid grid-cols-4 bg-gray-100 dark:bg-gray-900 p-1 rounded-2xl border border-gray-200/50 dark:border-gray-800/50">
+              <TabsTrigger value="1" className="rounded-xl text-xs py-2 font-bold data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm">1년</TabsTrigger>
+              <TabsTrigger value="5" className="rounded-xl text-xs py-2 font-bold data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm">5년</TabsTrigger>
+              <TabsTrigger value="10" className="rounded-xl text-xs py-2 font-bold data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm">10년</TabsTrigger>
+              <TabsTrigger value="30" className="rounded-xl text-xs py-2 font-bold data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm">30년</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+
+        {/* Simulation Results (Vertical Stack) */}
+        <div className="space-y-4">
+          
+          {/* Scenario A (Stable - S&P 500) */}
+          <motion.div
+            layout
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Card className="border-blue-200/70 dark:border-blue-900/50 bg-white/80 dark:bg-gray-900/70 rounded-3xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300 border-blue-200 dark:border-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full mb-2">
+                      안정 투자형
+                    </Badge>
+                    <h3 className="text-base font-bold text-gray-800 dark:text-gray-200 flex items-center gap-1.5">
+                      S&P 500 지수 추종
+                    </h3>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+                      연평균 기대 수익률 12%
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] font-bold text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 px-1.5 py-0.5 rounded-md">
+                      원금의 {multiplierA}배
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-4 flex justify-between items-baseline">
+                  <div className="text-xs font-semibold text-gray-400">
+                    {years}년 후 누적액
+                  </div>
+                  <div className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight">
+                    {formatMoney(resultA)}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Scenario B (Aggressive - AI Semiconductor) */}
+          <motion.div
+            layout
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <Card className="relative overflow-hidden border-purple-200/90 dark:border-purple-900/80 bg-gradient-to-br from-white to-purple-50/50 dark:from-gray-900 dark:to-purple-950/20 rounded-3xl hover:shadow-xl transition-all duration-300 shadow-md">
+              
+              {/* Highlight Background Effect */}
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl pointer-events-none" />
+              
+              <CardContent className="p-6">
+                <div className="flex justify-between items-start">
+                  <div className="space-y-1.5">
+                    <div className="flex flex-wrap gap-1.5 items-center">
+                      <Badge className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white border-0 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        🔥 요즘 대세
+                      </Badge>
+                      <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full border-0">
+                        압도적 수익률
+                      </Badge>
+                    </div>
+                    <h3 className="text-base font-bold text-gray-800 dark:text-gray-200 flex items-center gap-1">
+                      SOL AI반도체 TOP2 플러스
+                      <Sparkles className="h-4 w-4 text-purple-500 fill-purple-200 dark:fill-none" />
+                    </h3>
+                    <p className="text-xs text-gray-400 dark:text-gray-500">
+                      연평균 기대 수익률 22%
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] font-bold text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/50 px-1.5 py-0.5 rounded-md">
+                      원금의 {multiplierB}배
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-5 pt-3 border-t border-purple-100/50 dark:border-purple-900/30 flex justify-between items-baseline">
+                  <div className="text-xs font-semibold text-gray-500 dark:text-gray-400">
+                    {years}년 후 누적액
+                  </div>
+                  <div className="text-3xl font-black text-purple-600 dark:text-purple-400 tracking-tight flex items-baseline gap-1">
+                    <span>{formatMoney(resultB)}</span>
+                  </div>
+                </div>
+
+                {/* Additional Insight Banner */}
+                {difference > 0 && deliveryCost > 0 && (
+                  <div className="mt-3 bg-purple-50 dark:bg-purple-950/40 p-2.5 rounded-2xl flex items-center justify-between text-[11px] font-bold text-purple-700 dark:text-purple-300">
+                    <div className="flex items-center gap-1.5">
+                      <TrendingUp className="h-3.5 w-3.5 text-purple-500" />
+                      <span>안정형 대비 이자 수익 차이</span>
+                    </div>
+                    <span>+{formatMoney(difference)} 더 벌기</span>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
+
+        </div>
+
+        {/* Informative Note */}
+        <div className="bg-gray-50 dark:bg-gray-900/30 border border-gray-100 dark:border-gray-800/40 p-4 rounded-2xl text-[11px] text-gray-400 dark:text-gray-500 leading-relaxed text-center">
+          * 위 시뮬레이션은 연 복리 수익률(S&P 500 12%, AI 반도체 22%) 및 매월 정기 적립식 투자를 가정한 세전 원리금 합계입니다. 실제 투자 성과 및 운용 보수 등에 따라 결과가 달라질 수 있습니다.
+        </div>
+
+        {/* CTA Area (Two-Track Fake Door Buttons) */}
+        <div className="space-y-3 pt-4 border-t border-gray-100 dark:border-gray-800/40">
+          
+          {/* CTA 1: Brokerage Path (Primary) */}
+          <Button
+            onClick={() => handleCtaClick('broker')}
+            className="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-700 hover:from-purple-700 hover:via-indigo-700 hover:to-indigo-800 text-white font-extrabold py-6 rounded-2xl shadow-md transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2 group text-xs sm:text-sm whitespace-normal h-auto min-h-[52px]"
+          >
+            <span className="text-center leading-normal">🚀 배달비 아낀 돈으로 증권사 혜택받고 투자 시작하기</span>
+            <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Button>
+
+          {/* CTA 2: Card Issuer Path (Secondary/Outline) */}
+          <Button
+            onClick={() => handleCtaClick('card')}
+            variant="outline"
+            className="w-full border-2 border-gray-200 hover:border-indigo-200 dark:border-gray-800 dark:hover:border-indigo-900 bg-white/50 dark:bg-gray-950/50 hover:bg-indigo-50/20 dark:hover:bg-indigo-950/10 text-gray-700 dark:text-gray-300 font-bold py-6 rounded-2xl shadow-sm transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2 text-xs sm:text-sm whitespace-normal h-auto min-h-[52px]"
+          >
+            <span className="text-center leading-normal">🍕 배달을 못 끊겠다면? 배달비 10% 아껴주는 카드 찾기</span>
+          </Button>
+
+        </div>
+
+      </div>
+
+      {/* Footer Branding */}
+      <div className="text-center text-[10px] text-gray-400 mt-12">
+        &copy; {new Date().getFullYear()} TypeTest. All rights reserved.
+      </div>
+
+      {/* ========================================================
+          DIALOGS / MODALS FOR FAKE DOOR EMAIL COLLECTION
+          ======================================================== */}
+
+      {/* 1. Brokerage Waiting Modal */}
+      <Dialog open={brokerModalOpen} onOpenChange={setBrokerModalOpen}>
+        <DialogContent className="max-w-sm rounded-3xl p-6 bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800">
+          <DialogHeader className="space-y-2">
+            <DialogTitle className="text-xl font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+              <span className="p-1.5 bg-purple-50 dark:bg-purple-950 rounded-lg text-purple-600 dark:text-purple-400">
+                🚀
+              </span>
+              증권사 제휴 대기 신청
+            </DialogTitle>
+            <DialogDescription className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed pt-2">
+              현재 최적의 증권사 제휴 혜택(가입 축하금, 수수료 우대 등)을 준비 중입니다. 가장 먼저 특별 혜택을 받아보시려면 이메일을 남겨주세요.
+            </DialogDescription>
+          </DialogHeader>
+
+          {/* Email form */}
+          <div className="space-y-4 pt-4">
+            <div className="space-y-2">
+              <label htmlFor="broker-email" className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                이메일 주소
+              </label>
+              <Input
+                id="broker-email"
+                type="email"
+                placeholder="example@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-gray-50 dark:bg-gray-950 border-gray-200 dark:border-gray-800 focus-visible:ring-purple-500 rounded-xl py-5"
+                disabled={isSubmitting}
+              />
+            </div>
+            <Button
+              onClick={() => handleEmailSubmit('broker')}
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-5 rounded-xl transition-all"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? '신청 처리 중...' : '혜택 알림 우선 신청하기'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* 2. Card Issuer Waiting Modal */}
+      <Dialog open={cardModalOpen} onOpenChange={setCardModalOpen}>
+        <DialogContent className="max-w-sm rounded-3xl p-6 bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800">
+          <DialogHeader className="space-y-2">
+            <DialogTitle className="text-xl font-extrabold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+              <span className="p-1.5 bg-indigo-50 dark:bg-indigo-950 rounded-lg text-indigo-600 dark:text-indigo-400">
+                🍕
+              </span>
+              카드 제휴 대기 신청
+            </DialogTitle>
+            <DialogDescription className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed pt-2">
+              현재 배달 할인율이 가장 높은 카드사와 제휴를 협의 중입니다. 발급 캐시백 혜택이 준비되는 대로 이메일로 알려드릴게요.
+            </DialogDescription>
+          </DialogHeader>
+
+          {/* Email form */}
+          <div className="space-y-4 pt-4">
+            <div className="space-y-2">
+              <label htmlFor="card-email" className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                이메일 주소
+              </label>
+              <Input
+                id="card-email"
+                type="email"
+                placeholder="example@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-gray-50 dark:bg-gray-950 border-gray-200 dark:border-gray-800 focus-visible:ring-indigo-500 rounded-xl py-5"
+                disabled={isSubmitting}
+              />
+            </div>
+            <Button
+              onClick={() => handleEmailSubmit('card')}
+              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-5 rounded-xl transition-all"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? '신청 처리 중...' : '캐시백 혜택 알림 신청하기'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+    </div>
+  );
+}

@@ -12,6 +12,7 @@ import TetoEgen from "@/pages/teto-egen";
 import AttachmentStyle from "@/pages/attachment-style";
 import NarcissismTest from "@/pages/narcissism";
 import BalanceGame from "@/pages/balance-game";
+import Snowball from "@/pages/snowball";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/attachment-style" component={AttachmentStyle} />
       <Route path="/narcissism" component={NarcissismTest} />
       <Route path="/balance-game" component={BalanceGame} />
+      <Route path="/snowball" component={Snowball} />
       <Route component={NotFound} />
     </Switch>
   );
