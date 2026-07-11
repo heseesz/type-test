@@ -52,4 +52,4 @@ User-agent: MJ12bot
 Crawl-delay: 10
 
 # Sitemap
-Sitemap: https://type-test.site/sitemap.xml
+Sitemap: http://type-test.co.kr/sitemap.xml

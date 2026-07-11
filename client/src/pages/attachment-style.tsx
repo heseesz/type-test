@@ -24,12 +24,12 @@ export default function AttachmentStyle() {
            language === 'zh-cn' ? '成人依恋风格测试 - TypeTest' :
            '성인 애착 유형 테스트 - 타입테스트',
     description,
-    canonical: 'https://type-test.site/attachment-style',
+    canonical: 'http://type-test.co.kr/attachment-style',
     keywords: language === 'en' ? 'attachment style test, adult attachment, secure attachment, anxious attachment, avoidant attachment, fearful avoidant, psychology test' :
               language === 'ja' ? '愛着スタイルテスト、成人愛着、安定愛着、不安愛着、回避愛着、恐れ回避、心理学テスト' :
               language === 'zh-cn' ? '依恋风格测试, 成人依恋, 安全型依恋, 焦虑型依恋, 回避型依恋, 恐惧回避型, 心理学测试' :
               '애착유형 테스트, 성인 애착, 안정 애착, 불안 애착, 회피 애착, 두려움 회피, 심리학 테스트',
-    ogImage: 'https://type-test.site/favicon.svg',
+    ogImage: 'http://type-test.co.kr/favicon.svg',
     type: 'article' as const,
     structuredData: {
       "@context": "https://schema.org",
@@ -39,7 +39,7 @@ export default function AttachmentStyle() {
              language === 'zh-cn' ? '成人依恋风格测试' :
              '성인 애착 유형 테스트',
       "description": description,
-      "url": "https://type-test.site/attachment-style",
+      "url": "http://type-test.co.kr/attachment-style",
       "author": {
         "@type": "Organization",
         "name": "TypeTest"
