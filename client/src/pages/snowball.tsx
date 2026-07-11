@@ -44,7 +44,7 @@ export default function Snowball() {
     description: '매달 지출하는 배달음식 비용을 아껴 투자했다면 얼마가 되었을까요? S&P 500과 AI 반도체 ETF 복리 투자의 마법을 지금 직접 시뮬레이션해 보세요.',
     canonical: 'https://type-test.co.kr/snowball',
     keywords: '복리 계산기, 스노우볼, 배달비 아끼기, S&P 500, AI 반도체 투자, 소액 투자, 재테크 시뮬레이터, 파이어족',
-    ogImage: 'https://type-test.co.kr/favicon.svg',
+    ogImage: 'https://type-test.co.kr/og-image.jpg',
     type: 'application'
   });
 

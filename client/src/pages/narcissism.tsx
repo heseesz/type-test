@@ -40,7 +40,7 @@ export default function NarcissismTest() {
               language === 'ja' ? 'ナルシシズムテスト、ナルシシスト性格、誇大型ナルシシズム、脆弱型ナルシシズム、性格障害テスト、心理評価' :
               language === 'zh-cn' ? '自恋测试, 自恋人格, 过大型自恋, 脆弱型自恋, 人格障碍测试, 心理评估' :
               '나르시시즘 테스트, 나르시시스트 성격, 과대형 나르시시즘, 취약형 나르시시즘, 성격장애 테스트, 심리 평가',
-    ogImage: 'http://type-test.co.kr/favicon.svg',
+    ogImage: 'http://type-test.co.kr/og-image.jpg',
     type: 'article' as const,
     structuredData: {
       "@context": "https://schema.org",
