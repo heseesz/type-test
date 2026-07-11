@@ -22,7 +22,8 @@ import {
   CreditCard, 
   ArrowUpRight, 
   HelpCircle,
-  Home as HomeIcon
+  Home as HomeIcon,
+  Share2
 } from 'lucide-react';
 
 export default function Snowball() {
@@ -55,6 +56,56 @@ export default function Snowball() {
   const [disclaimerOpen, setDisclaimerOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  // Result Sharing Logic
+  const handleShare = async () => {
+    const shareTitle = '배달비 스노우볼 복리 시뮬레이터 - 타입테스트';
+    let shareText = `💸 배달비 아껴 복리로 굴린 스노우볼 결과 💸\n\n`;
+    shareText += `[한 달 배달 소비액]\n👉 ${deliveryCost}만 원\n\n`;
+    shareText += `[투자 기간: ${years}년]\n`;
+    shareText += `📊 안정형 (S&P 500, 연 12%)\n`;
+    shareText += `💰 예상 금액: ${formatMoney(resultA)} (원금 대비 ${multiplierA}배)\n\n`;
+    shareText += `🔥 공격형 (AI 반도체, 연 22%)\n`;
+    shareText += `💰 예상 금액: ${formatMoney(resultB)} (원금 대비 ${multiplierB}배)\n\n`;
+    if (difference > 0) {
+      shareText += `💡 안정형 대비 추가 이자 수익 차이:\n`;
+      shareText += `👉 무려 +${formatMoney(difference)} 더 획득!\n\n`;
+    }
+    shareText += `──────────────────\n`;
+    shareText += `🔎 당신의 배달비는 복리로 굴리면 얼마가 될까요?\n`;
+    shareText += `👇 지금 바로 시뮬레이션해 보세요!\n`;
+    shareText += `🔗 https://type-test.site/snowball`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: 'https://type-test.site/snowball'
+        });
+      } catch (error) {
+        handleCopyToClipboard(shareText);
+      }
+    } else {
+      handleCopyToClipboard(shareText);
+    }
+  };
+
+  const handleCopyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast({
+        title: "결과가 클립보드에 복사되었습니다!",
+        description: "원하는 곳에 붙여넣어 공유해보세요.",
+      });
+    } catch (error) {
+      toast({
+        title: "복사 실패",
+        description: "클립보드 복사에 실패했습니다.",
+        variant: "destructive"
+      });
+    }
+  };
 
   // Interest Rates
   const rateA = 0.12; // S&P 500 (12%)
@@ -366,6 +417,21 @@ export default function Snowball() {
           </motion.div>
 
         </div>
+
+        {/* Share Button */}
+        <motion.div
+          whileHover={{ scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
+        >
+          <Button
+            onClick={handleShare}
+            variant="outline"
+            className="w-full border border-indigo-200 hover:border-indigo-300 dark:border-indigo-900/65 dark:hover:border-indigo-850 bg-indigo-50/20 hover:bg-indigo-50/40 dark:bg-indigo-950/15 dark:hover:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 font-bold py-5 rounded-2xl shadow-sm transition-all duration-300 flex items-center justify-center gap-2 text-xs sm:text-sm"
+          >
+            <Share2 className="h-4 w-4" />
+            시뮬레이션 결과 공유하기
+          </Button>
+        </motion.div>
 
         {/* CTA Area (Two-Track Fake Door Buttons) */}
         <div className="space-y-3 pt-4 border-t border-gray-100 dark:border-gray-800/40">
