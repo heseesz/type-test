@@ -367,18 +367,6 @@ export default function Snowball() {
 
         </div>
 
-        {/* Disclaimer Button */}
-        <div className="flex justify-center">
-          <Button
-            variant="ghost"
-            onClick={() => setDisclaimerOpen(true)}
-            className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 underline underline-offset-4 flex items-center gap-1.5"
-          >
-            <HelpCircle className="h-3.5 w-3.5" />
-            시뮬레이션 유의사항 및 투자 고지 보기
-          </Button>
-        </div>
-
         {/* CTA Area (Two-Track Fake Door Buttons) */}
         <div className="space-y-3 pt-4 border-t border-gray-100 dark:border-gray-800/40">
           
@@ -402,6 +390,18 @@ export default function Snowball() {
 
         </div>
 
+      </div>
+
+      {/* Disclaimer Button */}
+      <div className="flex justify-center mt-6">
+        <Button
+          variant="ghost"
+          onClick={() => setDisclaimerOpen(true)}
+          className="text-xs text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 underline underline-offset-4 flex items-center gap-1.5"
+        >
+          <HelpCircle className="h-3.5 w-3.5" />
+          시뮬레이션 유의사항 및 투자 고지 보기
+        </Button>
       </div>
 
       {/* Back to Main Button */}
