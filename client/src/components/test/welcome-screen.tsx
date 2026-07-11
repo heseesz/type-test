@@ -90,13 +90,18 @@ export function WelcomeScreen({ onGenderSelect }: WelcomeScreenProps) {
         </a>
       </div>
       
-      {/* Footer Links */}
-      <div className="flex justify-center items-center gap-4 mt-8 text-sm">
-        <AboutUs />
-        <span className="text-zinc-300 dark:text-zinc-700">|</span>
-        <PrivacyPolicy />
-        <span className="text-zinc-300 dark:text-zinc-700">|</span>
-        <ContactUs />
+      {/* Footer Links & Copyright */}
+      <div className="flex flex-col items-center gap-4 mt-8 pb-4">
+        <div className="flex justify-center items-center gap-4 text-sm">
+          <AboutUs />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <PrivacyPolicy />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <ContactUs />
+        </div>
+        <div className="text-center text-[10px] text-zinc-400 dark:text-zinc-500 font-medium">
+          &copy; 2026 TypeTest. All rights reserved.
+        </div>
       </div>
     </motion.div>
   );

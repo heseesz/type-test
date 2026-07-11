@@ -9,6 +9,10 @@ import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'wouter';
+import { AboutUs } from '@/components/about-us';
+import { PrivacyPolicy } from '@/components/privacy-policy';
+import { ContactUs } from '@/components/contact-us';
 import { 
   TrendingUp, 
   Coins, 
@@ -16,7 +20,8 @@ import {
   PiggyBank, 
   CreditCard, 
   ArrowUpRight, 
-  HelpCircle 
+  HelpCircle,
+  Home as HomeIcon
 } from 'lucide-react';
 
 export default function Snowball() {
@@ -381,9 +386,31 @@ export default function Snowball() {
 
       </div>
 
-      {/* Footer Branding */}
-      <div className="text-center text-[10px] text-gray-400 mt-12">
-        &copy; {new Date().getFullYear()} TypeTest. All rights reserved.
+      {/* Back to Main Button */}
+      <div className="flex justify-center mt-8">
+        <Link href="/">
+          <Button
+            variant="outline"
+            className="px-6 py-5 bg-white/80 dark:bg-zinc-900/80 hover:bg-zinc-50 dark:hover:bg-zinc-850 text-zinc-600 dark:text-zinc-300 border-zinc-200 dark:border-zinc-800 rounded-xl font-bold text-sm shadow-sm flex items-center justify-center gap-2"
+          >
+            <HomeIcon className="w-4.5 h-4.5" />
+            타입테스트 홈으로 돌아가기
+          </Button>
+        </Link>
+      </div>
+
+      {/* Footer Links & Copyright */}
+      <div className="flex flex-col items-center gap-4 mt-8 pb-4">
+        <div className="flex justify-center items-center gap-4 text-sm">
+          <AboutUs />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <PrivacyPolicy />
+          <span className="text-zinc-300 dark:text-zinc-700">|</span>
+          <ContactUs />
+        </div>
+        <div className="text-center text-[10px] text-zinc-400 dark:text-zinc-500 font-medium">
+          &copy; 2026 TypeTest. All rights reserved.
+        </div>
       </div>
 
       {/* ========================================================
