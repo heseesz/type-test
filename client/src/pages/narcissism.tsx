@@ -35,12 +35,12 @@ export default function NarcissismTest() {
            language === 'zh-cn' ? '自恋倾向测试 - TypeTest' :
            '나르시시즘 성향 테스트 - 타입테스트',
     description,
-    canonical: 'https://type-test.site/narcissism',
+    canonical: 'http://type-test.co.kr/narcissism',
     keywords: language === 'en' ? 'narcissism test, narcissistic personality, grandiose narcissism, vulnerable narcissism, personality disorder test, psychology assessment' :
               language === 'ja' ? 'ナルシシズムテスト、ナルシシスト性格、誇大型ナルシシズム、脆弱型ナルシシズム、性格障害テスト、心理評価' :
               language === 'zh-cn' ? '自恋测试, 自恋人格, 过大型自恋, 脆弱型自恋, 人格障碍测试, 心理评估' :
               '나르시시즘 테스트, 나르시시스트 성격, 과대형 나르시시즘, 취약형 나르시시즘, 성격장애 테스트, 심리 평가',
-    ogImage: 'https://type-test.site/favicon.svg',
+    ogImage: 'http://type-test.co.kr/favicon.svg',
     type: 'article' as const,
     structuredData: {
       "@context": "https://schema.org",
@@ -50,7 +50,7 @@ export default function NarcissismTest() {
              language === 'zh-cn' ? '自恋倾向测试' :
              '나르시시즘 성향 테스트',
       "description": description,
-      "url": "https://type-test.site/narcissism",
+      "url": "http://type-test.co.kr/narcissism",
       "author": {
         "@type": "Organization",
         "name": "TypeTest"

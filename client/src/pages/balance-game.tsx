@@ -86,9 +86,9 @@ export default function BalanceGame() {
   useMetaTags({
     title: titleText,
     description: descriptionText,
-    canonical: 'https://type-test.site/balance-game',
+    canonical: 'http://type-test.co.kr/balance-game',
     keywords: 'balance game, couple game, icebreaker questions, flirt questions, 19+ balance game, 밸런스 게임, 19금 밸런스 게임, 커플 밸런스게임, 밸런스게임 질문, 썸 질문, 가치관 테스트',
-    ogImage: 'https://type-test.site/favicon.svg',
+    ogImage: 'http://type-test.co.kr/favicon.svg',
     type: 'website',
     structuredData: {
       "@context": "https://schema.org",
@@ -98,7 +98,7 @@ export default function BalanceGame() {
              language === 'zh-cn' ? '平衡游戏' :
              '밸런스 게임',
       "description": descriptionText,
-      "url": "https://type-test.site/balance-game",
+      "url": "http://type-test.co.kr/balance-game",
       "author": {
         "@type": "Organization",
         "name": "TypeTest"
@@ -384,12 +384,12 @@ export default function BalanceGame() {
       text = text + `──────────────────\n`;
       text = text + `🔎 당신의 아슬아슬한 선택은 무엇인가요?\n`;
       text = text + `👇 지금 무료로 테스트하기\n`;
-      text = text + `🔗 https://type-test.site/balance-game`;
+      text = text + `🔗 http://type-test.co.kr/balance-game`;
     } else {
       text = text + `──────────────────\n`;
       text = text + `🔎 What would your choices be?\n`;
       text = text + `👇 Try it now for free!\n`;
-      text = text + `🔗 https://type-test.site/balance-game`;
+      text = text + `🔗 http://type-test.co.kr/balance-game`;
     }
 
     if (navigator.share) {
@@ -397,7 +397,7 @@ export default function BalanceGame() {
         await navigator.share({
           title: title,
           text: text,
-          url: 'https://type-test.site/balance-game'
+          url: 'http://type-test.co.kr/balance-game'
         });
       } catch (err) {
         // Ignored share cancel
